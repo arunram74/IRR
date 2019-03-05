@@ -1,0 +1,102 @@
+#Region "PLCComms"
+    '***********************************************************************************************************
+    '*Handles - PLC Communication
+    '*
+    '***********************************************************************************************************
+
+
+    Private Sub bkgrndWrkr_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bkgrndWrkr.DoWork
+        '' The asynchronous task you want to perform goes here
+        '' the following is an example of how it typically goes.
+
+        Dim MyComms As CommunicationCls = e.Argument
+        Dim sw As Stopwatch = New Stopwatch
+        Dim ms As Long
+
+        Dim i, j As Integer
+
+        While True
+            '' do something
+            '' (I put a sleep to simulate time consumed)
+            'Threading.Thread.Sleep(100)
+
+            '' report progress at regular intervals
+            'If i = 1000 Then
+            '    '     bkgrndWrkr.ReportProgress(i, "Running..." & j.ToString)
+            '    i = 0
+            '    j = j + 1
+            'End If
+
+            sw.Restart()
+            BackgroundWorkerProcess(MyComms) 'This function will be called almost every 250ms
+            sw.Stop()
+            ms = BaseScanTime - sw.ElapsedMilliseconds
+            If ms < 1 Then ms = 1
+            System.Threading.Thread.Sleep(ms)
+
+            '' check at regular intervals for CancellationPending
+            If bkgrndWrkr.CancellationPending Then
+                '      bkgrndWrkr.ReportProgress(i, "Cancelling...")
+                Exit While
+            End If
+            i = i + 1
+            Application.DoEvents()
+        End While
+
+        '' any cleanup code go here
+        '' ensure that you close all open resources before exitting out of this Method.
+        '' try to skip off whatever is not desperately necessary if CancellationPending is True
+
+        '' set the e.Cancel to True to indicate to the RunWorkerCompleted that you cancelled out
+        If bkgrndWrkr.CancellationPending Then
+            e.Cancel = True
+            '    bkgrndWrkr.ReportProgress(100, "Cancelled.")
+        End If
+    End Sub
+
+    Private Sub bkgrndWrkr_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles bkgrndWrkr.ProgressChanged
+        '' This event is fired when you call the ReportProgress method from inside your DoWork.
+        '' Any visual indicators about the progress should go here.
+        ' Label1.Text = CType(e.UserState, String)
+        lblAlarmCaption.Text = e.ProgressPercentage.ToString & "% complete.  " & CType(e.UserState, String)
+    End Sub
+
+    Private Sub bkgrndWrkr_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bkgrndWrkr.RunWorkerCompleted
+        '' This event is fired when your BackgroundWorker exits.
+        '' It may have exitted Normally after completing its task, 
+        '' or because of Cancellation, or due to any Error.
+
+        If e.Error IsNot Nothing Then
+            '' if BackgroundWorker terminated due to error
+            MessageBox.Show(e.Error.Message)
+            lblAlarmCaption.Text = "Error occurred!"
+
+        ElseIf e.Cancelled Then
+            '' otherwise if it was cancelled
+            MessageBox.Show("Task cancelled!")
+            lblAlarmCaption.Text = "Task Cancelled!"
+
+        Else
+            '' otherwise it completed normally
+            MessageBox.Show("Task completed!")
+            lblAlarmCaption.Text = "Error completed!"
+        End If
+
+
+    End Sub
+
+    Private Sub toolBtnModifyPrj_Click(sender As Object, e As EventArgs) Handles toolBtnModifyPrj.Click
+        ShowChildForm(ChildForms.project)
+    End Sub
+
+    Private Sub toolBtnRun_Click(sender As Object, e As EventArgs) Handles toolBtnRun.Click
+        CurrentHead.myProj.StartRun()
+
+    End Sub
+
+    Private Sub toolBtnStp_Click(sender As Object, e As EventArgs) Handles toolBtnStp.Click
+        CurrentHead.myProj.StopRun()
+    End Sub
+
+
+#End Region

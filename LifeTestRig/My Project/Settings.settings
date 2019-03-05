@@ -1,7 +1,80 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" UseMySettingsClassName="true">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="timkenConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=localhost;user id=master;password=Actemium#123;database=timken;persistsecurityinfo=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=localhost;user id=master;password=Actemium#123;database=timken;persistsecurityinfo=True</Value>
+    </Setting>
+    <Setting Name="M1HAPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="M1HBPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="M2HAPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="M2HBPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="M3HAPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="M3HBPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="M4HAPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="M4HBPrjID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PLCStations" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0,0,0,0,0,0,0,0,0,0,0,0</Value>
+    </Setting>
+    <Setting Name="TemplateLoc" Type="System.String" Scope="User">
+      <Value Profile="(Default)">"C:\"</Value>
+    </Setting>
+    <Setting Name="MC1Size" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3.1</Value>
+    </Setting>
+    <Setting Name="MC2Size" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3.2</Value>
+    </Setting>
+    <Setting Name="MC3Size" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3.3</Value>
+    </Setting>
+    <Setting Name="MC4Size" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3.4</Value>
+    </Setting>
+    <Setting Name="MonitorAfter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">99</Value>
+    </Setting>
+    <Setting Name="TagFrom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NOSTRING</Value>
+    </Setting>
+    <Setting Name="TagTo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NOSTRING</Value>
+    </Setting>
+    <Setting Name="MC1Sel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MC2Sel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MC3Sel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MC4Sel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ChartHeadSel" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

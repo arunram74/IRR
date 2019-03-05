@@ -1,0 +1,13 @@
+The PCS has to give a ready signal to PLC after loading all parameters into PLC for the test to start
+Power on Resume?
+Current project load from Test Screen
+IF the project test is running you cannot load other
+SErver string - common and in only one place
+Four threads to monitor 4 test benches?
+Improve performance screenwise
+Udpate function/sub headersn
+Need Details regarding - Test Type, BEaring Type, Bearing Config Bearing Type
+Settings page for specifying Machine Type and numbers. A form with all 4 machine type and machine numbers
+Modify can only modify limit parameters not load!
+Add Max and min fields dynamically, with constant values, in a datasource for displaying Max and min values in chart
+Duration can be stored as TimeSpan.Ticks... in MySQL an intsize of 8 bytes. Duration addition can be done using Timespan

@@ -1,0 +1,2 @@
+StartLoad, EndLoad,LoadDuration, RunDuration, StepNo
+0,8200,2:00:0,00:00:00,0
