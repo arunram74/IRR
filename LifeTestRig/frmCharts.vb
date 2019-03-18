@@ -164,7 +164,8 @@ Public Class frmCharts
 
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '' MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '' ignore for now! Do nothing
         End Try
     End Sub
 

@@ -329,71 +329,91 @@ Public Class ProjectCls
 
         Dim CanStart As Boolean = MyPLC.GetTagVal("StationReady")
 
-        If CanStart Then
+        Dim constr As String = "SELECT * from  LoadSteps  where ProjectID=" & ProjectID & " Order by idLoadSteps"
 
-            If CreatedDate = #1/1/0001 12:00:00 AM# Then
-                CreatedDate = Now()
+        If GetDataMySQL(con, daLoad, ds, dtLoad, False, constr) Then
+
+            If dtLoad.Rows.Count = 0 Then
+
+                If CanStart Then
+
+                    If CreatedDate = #1/1/0001 12:00:00 AM# Then
+                        CreatedDate = Now()
+                    End If
+
+                    StartRuntime = Now
+                    CurrStepNo = -1 'Start from the beginning of steps
+                    LoadSecRem = 0
+                    RunSecRem = 0
+
+                    CurrMonActive = False
+                    PrevMonActive = False
+
+
+                    GetLastlifeandRevolutions()
+                    PrevLife = Life 'For calculating revolutions
+
+
+                    Update_Timers_PLCWithParam() 'Update PLC Values
+                    LifeStrart = Now 'To measure life
+
+                    MyPrevStatus = ProjectStatus.Idle
+                    ''MyStatus = ProjectStatus.Started
+                    StopReason = ""
+                    AlarmNo = 0
+                    OtherHeadAlarmVal = 0
+
+
+                    'PleaseStop = False
+
+                    LoadTmr.AutoReset = True
+                    RunTmr.AutoReset = True
+                    DispUpTmr.AutoReset = True
+                    LoadStopTimer.AutoReset = False
+                    LoadStopTimer.Stop()
+
+
+                    LogUtilities(MyStatus, 0)
+                    LogData(0)
+
+
+                    DispUpTmr.Interval = DispUpdateRate.TotalMilliseconds
+                    LoadTmr.Interval = LoadLogRate.TotalMilliseconds
+                    RunTmr.Interval = RunLogRate.TotalMilliseconds
+
+                    ''  DispUpTmr.Enabled = True
+
+                    Array.Clear(oldArrSL, 0, oldArrSL.Length)
+                    Array.Clear(newArrSL, 0, newArrSL.Length)
+
+                    Array.Clear(oldArrSH, 0, oldArrSH.Length)
+                    Array.Clear(newArrSH, 0, newArrSH.Length)
+
+                    Array.Clear(oldArrWL, 0, oldArrWL.Length)
+                    Array.Clear(newArrWL, 0, newArrWL.Length)
+
+                    Array.Clear(oldArrWH, 0, oldArrWH.Length)
+                    Array.Clear(newArrWH, 0, newArrWH.Length)
+
+                    Array.Clear(oldArrMisc, 0, oldArrMisc.Length)
+                    Array.Clear(newArrMisc, 0, newArrMisc.Length)
+
+                Else
+                    MessageBox.Show("Station Not Ready", "Start Station", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Tmr.Stop()
+                    retval = False
+                    MyStatus = ProjectStatus.Suspended
+                End If
+
+            Else
+                MessageBox.Show("No loadsteps :ProjectCls", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Tmr.Stop()
+                retval = False
+                MyStatus = ProjectStatus.Suspended
             End If
 
-            StartRuntime = Now
-            CurrStepNo = -1 'Start from the beginning of steps
-            LoadSecRem = 0
-            RunSecRem = 0
-
-            CurrMonActive = False
-            PrevMonActive = False
-
-
-            GetLastlifeandRevolutions()
-            PrevLife = Life 'For calculating revolutions
-
-
-            Update_Timers_PLCWithParam() 'Update PLC Values
-            LifeStrart = Now 'To measure life
-
-            MyPrevStatus = ProjectStatus.Idle
-            ''MyStatus = ProjectStatus.Started
-            StopReason = ""
-            AlarmNo = 0
-            OtherHeadAlarmVal = 0
-
-
-            'PleaseStop = False
-
-            LoadTmr.AutoReset = True
-            RunTmr.AutoReset = True
-            DispUpTmr.AutoReset = True
-            LoadStopTimer.AutoReset = False
-            LoadStopTimer.Stop()
-
-
-            LogUtilities(MyStatus, 0)
-            LogData(0)
-
-
-            DispUpTmr.Interval = DispUpdateRate.TotalMilliseconds
-            LoadTmr.Interval = LoadLogRate.TotalMilliseconds
-            RunTmr.Interval = RunLogRate.TotalMilliseconds
-
-            ''  DispUpTmr.Enabled = True
-
-            Array.Clear(oldArrSL, 0, oldArrSL.Length)
-            Array.Clear(newArrSL, 0, newArrSL.Length)
-
-            Array.Clear(oldArrSH, 0, oldArrSH.Length)
-            Array.Clear(newArrSH, 0, newArrSH.Length)
-
-            Array.Clear(oldArrWL, 0, oldArrWL.Length)
-            Array.Clear(newArrWL, 0, newArrWL.Length)
-
-            Array.Clear(oldArrWH, 0, oldArrWH.Length)
-            Array.Clear(newArrWH, 0, newArrWH.Length)
-
-            Array.Clear(oldArrMisc, 0, oldArrMisc.Length)
-            Array.Clear(newArrMisc, 0, newArrMisc.Length)
-
         Else
-            MessageBox.Show("Station Not Ready", "Start Station", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error getting load values: ProjectClass", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Tmr.Stop()
             retval = False
             MyStatus = ProjectStatus.Suspended
@@ -999,16 +1019,16 @@ Public Class ProjectCls
             PrevMonActive = CurrMonActive
         End If
 
-        Dim constr As String = "SELECT * from  LoadSteps  where ProjectID=" & ProjectID & " Order by idLoadSteps"
+        'Dim constr As String = "SELECT * from  LoadSteps  where ProjectID=" & ProjectID & " Order by idLoadSteps"
 
         If Not IsPairBonded Or (IsPairBonded And HeadName = "A") Then
-            If GetDataMySQL(con, daLoad, ds, dtLoad, False, constr) Then
+            'If GetDataMySQL(con, daLoad, ds, dtLoad, False, constr) Then
 
-                If dtLoad.Rows.Count > 0 Then
+            'If dtLoad.Rows.Count > 0 Then
 
 
-                    'When both Load and Run are completed and continue executing the last step till the bearing fails
-                    If LoadSecRem = 0 And RunSecRem = 0 And CurrStepNo < (dtLoad.Rows.Count - 1) Then
+            'When both Load and Run are completed and continue executing the last step till the bearing fails
+            If LoadSecRem = 0 And RunSecRem = 0 And CurrStepNo < (dtLoad.Rows.Count - 1) Then
                         CurrStepNo = CurrStepNo + 1
                         LoadDuration = dtLoad.Rows(CurrStepNo).Item("LoadDuration")
                         RunDuration = dtLoad.Rows(CurrStepNo).Item("RunDuration")
@@ -1065,16 +1085,16 @@ Public Class ProjectCls
                         MyStatus = ProjectStatus.Run
                     End If
 
-                    '' UpdateProject() 'Update All values
+                '' UpdateProject() 'Update All values
 
-                Else
-                    MessageBox.Show("No loadsteps :ProjectCls", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
+                'Else
+                '    MessageBox.Show("No loadsteps :ProjectCls", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'End If
 
+                'Else
+                '    MessageBox.Show("Error getting load values: ProjectClass", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'End If
             Else
-                MessageBox.Show("Error getting load values: ProjectClass", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Else
             CurrentLoad = MyPLC.GetTagVal("Load")
         End If
 
