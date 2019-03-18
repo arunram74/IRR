@@ -349,7 +349,7 @@ Public Class ProjectCls
                 CurrMonActive = False
                 PrevMonActive = False
 
-
+                CurrentLife = 0
                 GetLastlifeandRevolutions()
                 PrevLife = Life 'For calculating revolutions
 
