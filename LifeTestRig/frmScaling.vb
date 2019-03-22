@@ -9,7 +9,7 @@ Public Class frmScaling
     Dim myPLC As PLCCls
     Dim StationNo As Integer = 1
 
-    Private Sub Bordergray(sender As Object, e As PaintEventArgs) Handles Label4.Paint, Label9.Paint, Label17.Paint, Label19.Paint, Label3.Paint, Label7.Paint, Label8.Paint, Label10.Paint, Label34.Paint, Label36.Paint, Label37.Paint, Label38.Paint, Label24.Paint, Label22.Paint, Label28.Paint, Label30.Paint
+    Private Sub Bordergray(sender As Object, e As PaintEventArgs) Handles Label4.Paint, Label9.Paint, Label17.Paint, Label19.Paint, Label3.Paint, Label7.Paint, Label8.Paint, Label10.Paint, Label34.Paint, Label36.Paint, Label37.Paint, Label38.Paint, Label24.Paint, Label22.Paint, Label28.Paint, Label30.Paint, Label47.Paint, Label48.Paint
         ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.LightGray, ButtonBorderStyle.Solid)
     End Sub
 
@@ -65,6 +65,10 @@ Public Class frmScaling
         txtILdB.Text = myPLC.GetTagVal("LoadB_Intercept")
 
         txtLoadMul.Text = myPLC.GetTagVal("LoadMul")
+        txtloadprop.Text = myPLC.GetTagVal("LoadProp")
+        txtLoadInt.Text = myPLC.GetTagVal("LoadInt")
+        txtLoadDer.Text = myPLC.GetTagVal("LoadDer")
+
 
 
     End Sub
@@ -119,8 +123,15 @@ Public Class frmScaling
             myPLC.SetTagVal("LoadB_Intercept", Convert.ToSingle(txtILdB.Text))
 
             myPLC.SetTagVal("LoadMul", Convert.ToSingle(txtLoadMul.Text))
+            myPLC.SetTagVal("LoadProp", Convert.ToSingle(txtLoadProp.Text))
+            myPLC.SetTagVal("LoadInt", Convert.ToSingle(txtLoadInt.Text))
+            myPLC.SetTagVal("LoadDer", Convert.ToSingle(txtLoadDer.Text))
+
 
             txtLoadMul.Enabled = False
+            txtLoadProp.Enabled = False
+            txtLoadInt.Enabled = False
+            txtLoadDer.Enabled = False
             chkLoadMul.Checked = False
 
         Catch ex As Exception
@@ -219,11 +230,21 @@ Public Class frmScaling
         If chkLoadMul.Checked Then
             If MessageBox.Show("Changing this may change actual load. Do you want to Proceed?", "Caution", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 txtLoadMul.Enabled = True
+                txtLoadDer.Enabled = True
+                txtLoadInt.Enabled = True
+                txtLoadProp.Enabled = True
             Else
                 chkLoadMul.Checked = False
+                txtLoadDer.Enabled = False
+                txtLoadInt.Enabled = False
+                txtLoadProp.Enabled = False
             End If
 
         End If
+    End Sub
+
+    Private Sub Label31_Click(sender As Object, e As EventArgs) Handles Label31.Click, Label40.Click, Label46.Click, Label45.Click
+
     End Sub
 
     Sub SaveValuestoDB()

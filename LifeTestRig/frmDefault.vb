@@ -27,6 +27,10 @@ Public Class frmDefault
 
         Tmr.Interval = 100
 
+
+
+        'Me.ToolTip1.SetToolTip(Me.TransPicH1, "WARNING!  This will permanently delete the" & Environment.NewLine & "current record being displayed.")
+
     End Sub
 
 
@@ -237,6 +241,8 @@ Public Class frmDefault
 
     End Sub
 
+
+
     Private Sub H5_Click(sender As HeadDisplay, e As MouseEventArgs) Handles H5.Click
 
         UnselectAll()
@@ -370,9 +376,18 @@ Public Class frmDefault
         If H8.Selected Then H8_Click(H8, e)
     End Sub
 
+    'Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs) Handles ToolTip1.Popup
+    '    RemoveHandler ToolTip1.Popup, AddressOf ToolTip1_Popup
+    '    ToolTip1.SetToolTip(Me.TransPicH1, "How are you")
+    '    AddHandler ToolTip1.Popup, AddressOf ToolTip1_Popup
 
 
+    'End Sub
 
+
+    'Private Sub Panel1_MouseEnter(sender As Object, e As EventArgs) Handles Panel1.MouseEnter
+    '    ToolTip1.SetToolTip(Me.TransPicH1, "How are you")
+    'End Sub
 End Class
 'Private Sub H1_MyStatusChanged(sender As HeadDisplay) Handles H1.MyStatusChanged
 '    If sender.Selected Then

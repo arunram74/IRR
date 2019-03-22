@@ -65,18 +65,20 @@ Public Class frmCharts
 
         If Not (CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Load Or CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Run) Then counter += 1 Else counter = 0
 
-        If (CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Load Or CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Run) Or counter < 1 Then
+        If (CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Load Or CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Run) Or counter < 2 Then
+
+            'If (CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Load Or CurrentHead.myProj.MyStatus = ProjectCls.ProjectStatus.Run) Then
             CalculateAverages()
             UpdateGraphValues()
             UpdateGraphs()
             TmrCharUpdate.Interval = CurrentHead.myProj.DispUpdateRate.TotalMilliseconds
-            'counter = 0
+            counter = 0
         Else
             UpdateStatus()
-        End If
+            End If
 
 
-        TmrCharUpdate.Enabled = True
+            TmrCharUpdate.Enabled = True
 
     End Sub
 

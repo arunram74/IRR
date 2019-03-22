@@ -183,6 +183,7 @@ Partial Class frmDefault
         Me.TransPicH1.Selected = False
         Me.TransPicH1.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH1.TabIndex = 10
+        Me.TransPicH1.Tag = "MC1HA"
         Me.TransPicH1.Text = "TransPic1"
         '
         'lblCreateDtTimeH1
@@ -341,6 +342,7 @@ Partial Class frmDefault
         Me.TransPicH2.Selected = False
         Me.TransPicH2.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH2.TabIndex = 11
+        Me.TransPicH2.Tag = "MC1HB"
         Me.TransPicH2.Text = "TransPic1"
         '
         'ledStopH2
@@ -577,6 +579,7 @@ Partial Class frmDefault
         Me.TransPicH4.Selected = False
         Me.TransPicH4.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH4.TabIndex = 11
+        Me.TransPicH4.Tag = "MC2HB"
         Me.TransPicH4.Text = "TransPic1"
         '
         'ledStopH4
@@ -735,6 +738,7 @@ Partial Class frmDefault
         Me.TransPicH3.Selected = False
         Me.TransPicH3.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH3.TabIndex = 10
+        Me.TransPicH3.Tag = "MC2HA"
         Me.TransPicH3.Text = "TransPic1"
         '
         'lblCreateDtTimeH3
@@ -937,6 +941,7 @@ Partial Class frmDefault
         Me.TransPicH8.Selected = False
         Me.TransPicH8.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH8.TabIndex = 11
+        Me.TransPicH8.Tag = "MC4HB"
         Me.TransPicH8.Text = "TransPic3"
         '
         'ledStopH8
@@ -1095,6 +1100,7 @@ Partial Class frmDefault
         Me.TransPicH7.Selected = False
         Me.TransPicH7.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH7.TabIndex = 10
+        Me.TransPicH7.Tag = "MC4HA"
         Me.TransPicH7.Text = "TransPic1"
         '
         'lblCreateDtTimeH7
@@ -1287,6 +1293,7 @@ Partial Class frmDefault
         Me.TransPicH6.Selected = False
         Me.TransPicH6.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH6.TabIndex = 11
+        Me.TransPicH6.Tag = "MC3HB"
         Me.TransPicH6.Text = "TransPic1"
         '
         'ledStopH6
@@ -1455,6 +1462,7 @@ Partial Class frmDefault
         Me.TransPicH5.Selected = False
         Me.TransPicH5.Size = New System.Drawing.Size(73, 26)
         Me.TransPicH5.TabIndex = 10
+        Me.TransPicH5.Tag = "MC3HA"
         Me.TransPicH5.Text = "TransPic1"
         '
         'lblCreateDtTimeH5

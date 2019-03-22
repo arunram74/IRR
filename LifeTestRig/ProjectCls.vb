@@ -630,7 +630,8 @@ Public Class ProjectCls
         '    MessageBox.Show("Improper project values", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
         '    Return retval
         'End If
-
+        CurrentLoad = 0
+        CurrRev = 0
 
         'create a new record
         Using SQLConnection As New MySqlConnection(serv)
@@ -1612,6 +1613,7 @@ Public Class ProjectCls
     End Sub
 
     Private Sub LoadStopTimer_Elapsed(sender As Object, e As EventArgs) Handles LoadStopTimer.Elapsed
+        LoadStopTimer.Enabled = False
         MyPLC.SetTagVal("Load", 0)
     End Sub
 

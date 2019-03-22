@@ -107,6 +107,14 @@ Partial Class frmScaling
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.chkLoadMul = New System.Windows.Forms.CheckBox()
+        Me.txtLoadDer = New System.Windows.Forms.TextBox()
+        Me.txtLoadProp = New System.Windows.Forms.TextBox()
+        Me.txtLoadInt = New System.Windows.Forms.TextBox()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -866,15 +874,15 @@ Partial Class frmScaling
         '
         Me.txtLoadMul.Enabled = False
         Me.txtLoadMul.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLoadMul.Location = New System.Drawing.Point(1018, 469)
+        Me.txtLoadMul.Location = New System.Drawing.Point(968, 465)
         Me.txtLoadMul.Name = "txtLoadMul"
-        Me.txtLoadMul.Size = New System.Drawing.Size(93, 29)
+        Me.txtLoadMul.Size = New System.Drawing.Size(73, 29)
         Me.txtLoadMul.TabIndex = 479
         '
         'Label31
         '
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(737, 472)
+        Me.Label31.Location = New System.Drawing.Point(737, 465)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(207, 26)
         Me.Label31.TabIndex = 480
@@ -886,7 +894,7 @@ Partial Class frmScaling
         Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox5.Location = New System.Drawing.Point(677, 436)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(601, 76)
+        Me.PictureBox5.Size = New System.Drawing.Size(601, 126)
         Me.PictureBox5.TabIndex = 467
         Me.PictureBox5.TabStop = False
         '
@@ -895,27 +903,109 @@ Partial Class frmScaling
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.Location = New System.Drawing.Point(685, 422)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(97, 26)
+        Me.Label32.Size = New System.Drawing.Size(72, 26)
         Me.Label32.TabIndex = 466
-        Me.Label32.Text = "Output"
+        Me.Label32.Text = "Load"
         Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'chkLoadMul
         '
         Me.chkLoadMul.AutoSize = True
-        Me.chkLoadMul.Location = New System.Drawing.Point(1146, 479)
+        Me.chkLoadMul.Location = New System.Drawing.Point(1154, 473)
         Me.chkLoadMul.Name = "chkLoadMul"
         Me.chkLoadMul.Size = New System.Drawing.Size(63, 17)
         Me.chkLoadMul.TabIndex = 481
         Me.chkLoadMul.Text = "Edit this"
         Me.chkLoadMul.UseVisualStyleBackColor = True
         '
+        'txtLoadDer
+        '
+        Me.txtLoadDer.Enabled = False
+        Me.txtLoadDer.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLoadDer.Location = New System.Drawing.Point(1154, 502)
+        Me.txtLoadDer.Name = "txtLoadDer"
+        Me.txtLoadDer.Size = New System.Drawing.Size(73, 29)
+        Me.txtLoadDer.TabIndex = 479
+        '
+        'txtLoadProp
+        '
+        Me.txtLoadProp.Enabled = False
+        Me.txtLoadProp.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLoadProp.Location = New System.Drawing.Point(797, 502)
+        Me.txtLoadProp.Name = "txtLoadProp"
+        Me.txtLoadProp.Size = New System.Drawing.Size(73, 29)
+        Me.txtLoadProp.TabIndex = 479
+        '
+        'txtLoadInt
+        '
+        Me.txtLoadInt.Enabled = False
+        Me.txtLoadInt.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLoadInt.Location = New System.Drawing.Point(968, 502)
+        Me.txtLoadInt.Name = "txtLoadInt"
+        Me.txtLoadInt.Size = New System.Drawing.Size(73, 29)
+        Me.txtLoadInt.TabIndex = 479
+        '
+        'Label40
+        '
+        Me.Label40.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(699, 503)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(95, 26)
+        Me.Label40.TabIndex = 480
+        Me.Label40.Text = "Proportional"
+        Me.Label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label45
+        '
+        Me.Label45.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(890, 503)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(75, 26)
+        Me.Label45.TabIndex = 480
+        Me.Label45.Text = "Integral"
+        Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label46
+        '
+        Me.Label46.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(1067, 503)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(84, 26)
+        Me.Label46.TabIndex = 480
+        Me.Label46.Text = "Derivative"
+        Me.Label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label47
+        '
+        Me.Label47.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label47.Location = New System.Drawing.Point(696, 498)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(540, 38)
+        Me.Label47.TabIndex = 461
+        '
+        'Label48
+        '
+        Me.Label48.BackColor = System.Drawing.SystemColors.Control
+        Me.Label48.Location = New System.Drawing.Point(696, 460)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(540, 38)
+        Me.Label48.TabIndex = 463
+        '
         'frmScaling
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(1435, 644)
         Me.Controls.Add(Me.chkLoadMul)
+        Me.Controls.Add(Me.txtLoadProp)
+        Me.Controls.Add(Me.txtLoadInt)
+        Me.Controls.Add(Me.txtLoadDer)
         Me.Controls.Add(Me.txtLoadMul)
+        Me.Controls.Add(Me.Label46)
+        Me.Controls.Add(Me.Label45)
+        Me.Controls.Add(Me.Label40)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.txtSLdB)
         Me.Controls.Add(Me.txtILdB)
@@ -986,6 +1076,7 @@ Partial Class frmScaling
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label48)
         Me.Controls.Add(Me.Label36)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label9)
@@ -994,6 +1085,7 @@ Partial Class frmScaling
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Label33)
+        Me.Controls.Add(Me.Label47)
         Me.Controls.Add(Me.Label34)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
@@ -1101,4 +1193,12 @@ Partial Class frmScaling
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label32 As Label
     Friend WithEvents chkLoadMul As CheckBox
+    Friend WithEvents txtLoadDer As TextBox
+    Friend WithEvents txtLoadProp As TextBox
+    Friend WithEvents txtLoadInt As TextBox
+    Friend WithEvents Label40 As Label
+    Friend WithEvents Label45 As Label
+    Friend WithEvents Label46 As Label
+    Friend WithEvents Label47 As Label
+    Friend WithEvents Label48 As Label
 End Class
