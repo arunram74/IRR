@@ -148,6 +148,12 @@
     <Compile Include="frmCSVView2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPID.designer.vb">
+      <DependentUpon>frmPID.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPID.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmReport.Designer.vb">
       <DependentUpon>frmReport.vb</DependentUpon>
     </Compile>
@@ -302,6 +308,12 @@
     <Compile Include="TransPic.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VerticalProgressBar.designer.vb">
+      <DependentUpon>VerticalProgressBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalProgressBar.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="verticalString.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -332,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmParameters.resx">
       <DependentUpon>frmParameters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPID.resx">
+      <DependentUpon>frmPID.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPLC.resx">
       <DependentUpon>frmPLC.vb</DependentUpon>
@@ -484,6 +499,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Actemium Small Logo.ico" />
+    <None Include="Resources\PID Details.png" />
+    <None Include="Resources\PID1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

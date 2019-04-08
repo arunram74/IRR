@@ -265,6 +265,7 @@ Public Class frmReport
             cmbPrjt.DataSource = dt2
             cmbPrjt.DisplayMember = "ProjectIDTxt"
             cmbPrjt.ValueMember = "ProjectID"
+            cmbPrjt.MaxDropDownItems = 20
             cmbPrjt.Refresh()
 
         End If

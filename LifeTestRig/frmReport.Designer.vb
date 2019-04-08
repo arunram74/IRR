@@ -85,11 +85,15 @@ Partial Class frmReport
         '
         'cmbPrjt
         '
+        Me.cmbPrjt.DropDownHeight = 206
+        Me.cmbPrjt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbPrjt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPrjt.FormattingEnabled = True
+        Me.cmbPrjt.IntegralHeight = False
         Me.cmbPrjt.Location = New System.Drawing.Point(243, 66)
+        Me.cmbPrjt.MaxDropDownItems = 20
         Me.cmbPrjt.Name = "cmbPrjt"
-        Me.cmbPrjt.Size = New System.Drawing.Size(174, 28)
+        Me.cmbPrjt.Size = New System.Drawing.Size(247, 28)
         Me.cmbPrjt.TabIndex = 0
         '
         'Label1
@@ -108,7 +112,7 @@ Partial Class frmReport
         Me.cmbPrjStatus.FormattingEnabled = True
         Me.cmbPrjStatus.Location = New System.Drawing.Point(243, 107)
         Me.cmbPrjStatus.Name = "cmbPrjStatus"
-        Me.cmbPrjStatus.Size = New System.Drawing.Size(174, 28)
+        Me.cmbPrjStatus.Size = New System.Drawing.Size(247, 28)
         Me.cmbPrjStatus.TabIndex = 1
         '
         'Label2
@@ -225,9 +229,9 @@ Partial Class frmReport
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(474, 66)
+        Me.Label4.Location = New System.Drawing.Point(496, 66)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(148, 32)
+        Me.Label4.Size = New System.Drawing.Size(126, 32)
         Me.Label4.TabIndex = 361
         Me.Label4.Text = "Machine No"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight

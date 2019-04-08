@@ -530,4 +530,12 @@ Public Class frmMain
             LogLubOilData() 'Log at 4:00 PM. +/- 10 min
         End If
     End Sub
+
+    Private Sub toolBtnPID_Click(sender As Object, e As EventArgs) Handles toolBtnPID.Click
+        For Each f As Form In Me.MdiChildren
+            f.Close()
+        Next
+        frmPID.MdiParent = Me
+        frmPID.Show()
+    End Sub
 End Class

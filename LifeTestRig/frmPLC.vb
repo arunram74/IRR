@@ -2,7 +2,7 @@
 Imports LifeTestRig.Bulb
 
 Public Class frmPLC
-    Dim WithEvents Tmr As New Timer
+    'Dim WithEvents Tmr As New Timer
     Dim GreenColorSet As Color() = {Color.FromArgb(191, 255, 191), Color.FromArgb(128, 255, 128), Color.Lime, Color.FromArgb(0, 0, 0)}
     Dim RedColorSet As Color() = {Color.FromArgb(255, 191, 191), Color.FromArgb(255, 128, 128), Color.Red, Color.FromArgb(0, 0, 0)}
 
@@ -41,8 +41,8 @@ Public Class frmPLC
         rdbMC3A.Text = My.Settings("MC3Size")
         rdbMC4A.Text = My.Settings("MC4Size")
 
-        Tmr.Interval = 5000
-        Tmr.Enabled = True
+        'Tmr.Interval = 5000
+        'Tmr.Enabled = True
         rdbMC1A.Checked = True
 
     End Sub
@@ -130,9 +130,6 @@ Public Class frmPLC
         End If
     End Sub
 
-    Private Sub Tmr_Tick(sender As Object, e As EventArgs) Handles Tmr.Tick
-        UpDatePLCStatus()
-    End Sub
 
 
     Private Sub btnChkStn_Click(sender As Object, e As EventArgs) Handles btnChkStn1.Click, btnChkStn2.Click, btnChkStn3.Click, btnChkStn4.Click, btnChkStn5.Click, btnChkStn6.Click, btnChkStn7.Click, btnChkStn8.Click, btnChkStn9.Click, btnChkStn10.Click, btnChkStn11.Click, btnChkStn12.Click
@@ -141,6 +138,10 @@ Public Class frmPLC
     End Sub
 
     Private Sub frmPLC_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        UpDatePLCStatus()
+    End Sub
+
+    Private Sub Tmr_Tick(sender As Object, e As EventArgs) Handles Tmr.Tick
         UpDatePLCStatus()
     End Sub
 End Class

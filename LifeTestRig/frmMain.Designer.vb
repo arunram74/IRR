@@ -25,26 +25,14 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.toolStrp = New System.Windows.Forms.ToolStrip()
-        Me.toolbtnDefault = New System.Windows.Forms.ToolStripButton()
-        Me.toolbtnNewProj = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnOpenPrj = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnModifyPrj = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnComplete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.toolStrplblHead = New System.Windows.Forms.ToolStripLabel()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
-        Me.toolbtnCommSettings = New System.Windows.Forms.ToolStripButton()
-        Me.toolbtnScale = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
-        Me.toolBtnPLC = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnCharts = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnReports = New System.Windows.Forms.ToolStripButton()
-        Me.toolStrpAlarm = New System.Windows.Forms.ToolStripButton()
         Me.StsStrp = New System.Windows.Forms.StatusStrip()
         Me.pnlBtm = New System.Windows.Forms.Panel()
         Me.dgvAlarmMain = New System.Windows.Forms.DataGridView()
@@ -54,8 +42,20 @@ Partial Class frmMain
         Me.bkgrndWrkr3 = New System.ComponentModel.BackgroundWorker()
         Me.bkgrndWrkr4 = New System.ComponentModel.BackgroundWorker()
         Me.TmrAlarm = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TmrLubOil = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.toolbtnDefault = New System.Windows.Forms.ToolStripButton()
+        Me.toolbtnNewProj = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnOpenPrj = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnModifyPrj = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnComplete = New System.Windows.Forms.ToolStripButton()
+        Me.toolbtnCommSettings = New System.Windows.Forms.ToolStripButton()
+        Me.toolbtnScale = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnPID = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnPLC = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnCharts = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnReports = New System.Windows.Forms.ToolStripButton()
+        Me.toolStrpAlarm = New System.Windows.Forms.ToolStripButton()
         Me.toolStrp.SuspendLayout()
         Me.pnlBtm.SuspendLayout()
         CType(Me.dgvAlarmMain, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,57 +66,12 @@ Partial Class frmMain
         '
         Me.toolStrp.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.toolStrp.ImageScalingSize = New System.Drawing.Size(64, 64)
-        Me.toolStrp.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbtnDefault, Me.toolbtnNewProj, Me.toolBtnOpenPrj, Me.toolBtnModifyPrj, Me.toolBtnComplete, Me.ToolStripLabel3, Me.ToolStripLabel1, Me.toolStrplblHead, Me.toolStripSeparator, Me.ToolStripLabel5, Me.toolbtnCommSettings, Me.toolbtnScale, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.ToolStripLabel6, Me.ToolStripLabel4, Me.toolBtnPLC, Me.toolBtnCharts, Me.toolBtnReports, Me.toolStrpAlarm})
+        Me.toolStrp.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbtnDefault, Me.toolbtnNewProj, Me.toolBtnOpenPrj, Me.toolBtnModifyPrj, Me.toolBtnComplete, Me.ToolStripLabel3, Me.ToolStripLabel1, Me.toolStrplblHead, Me.toolStripSeparator, Me.ToolStripLabel5, Me.toolbtnCommSettings, Me.toolbtnScale, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.ToolStripLabel6, Me.toolBtnPID, Me.toolBtnPLC, Me.toolBtnCharts, Me.toolBtnReports, Me.toolStrpAlarm})
         Me.toolStrp.Location = New System.Drawing.Point(0, 0)
         Me.toolStrp.Name = "toolStrp"
         Me.toolStrp.Size = New System.Drawing.Size(963, 71)
         Me.toolStrp.TabIndex = 2
         Me.toolStrp.Text = "ToolStrip1"
-        '
-        'toolbtnDefault
-        '
-        Me.toolbtnDefault.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolbtnDefault.Image = CType(resources.GetObject("toolbtnDefault.Image"), System.Drawing.Image)
-        Me.toolbtnDefault.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolbtnDefault.Name = "toolbtnDefault"
-        Me.toolbtnDefault.Size = New System.Drawing.Size(68, 68)
-        Me.toolbtnDefault.Text = "Home"
-        '
-        'toolbtnNewProj
-        '
-        Me.toolbtnNewProj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolbtnNewProj.Image = CType(resources.GetObject("toolbtnNewProj.Image"), System.Drawing.Image)
-        Me.toolbtnNewProj.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolbtnNewProj.Name = "toolbtnNewProj"
-        Me.toolbtnNewProj.Size = New System.Drawing.Size(68, 68)
-        Me.toolbtnNewProj.Text = "New Project"
-        '
-        'toolBtnOpenPrj
-        '
-        Me.toolBtnOpenPrj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolBtnOpenPrj.Image = Global.LifeTestRig.My.Resources.Resources.Open
-        Me.toolBtnOpenPrj.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolBtnOpenPrj.Name = "toolBtnOpenPrj"
-        Me.toolBtnOpenPrj.Size = New System.Drawing.Size(68, 68)
-        Me.toolBtnOpenPrj.Text = "Open Existing Project"
-        '
-        'toolBtnModifyPrj
-        '
-        Me.toolBtnModifyPrj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolBtnModifyPrj.Image = Global.LifeTestRig.My.Resources.Resources.edit
-        Me.toolBtnModifyPrj.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolBtnModifyPrj.Name = "toolBtnModifyPrj"
-        Me.toolBtnModifyPrj.Size = New System.Drawing.Size(68, 68)
-        Me.toolBtnModifyPrj.Text = "Modify Project"
-        '
-        'toolBtnComplete
-        '
-        Me.toolBtnComplete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolBtnComplete.Image = Global.LifeTestRig.My.Resources.Resources.Complete
-        Me.toolBtnComplete.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolBtnComplete.Name = "toolBtnComplete"
-        Me.toolBtnComplete.Size = New System.Drawing.Size(68, 68)
-        Me.toolBtnComplete.Text = "ToolStripButton1"
         '
         'ToolStripLabel3
         '
@@ -152,24 +107,6 @@ Partial Class frmMain
         Me.ToolStripLabel5.Text = "       "
         Me.ToolStripLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'toolbtnCommSettings
-        '
-        Me.toolbtnCommSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolbtnCommSettings.Image = Global.LifeTestRig.My.Resources.Resources.communication1
-        Me.toolbtnCommSettings.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolbtnCommSettings.Name = "toolbtnCommSettings"
-        Me.toolbtnCommSettings.Size = New System.Drawing.Size(68, 68)
-        Me.toolbtnCommSettings.Text = "Settings"
-        '
-        'toolbtnScale
-        '
-        Me.toolbtnScale.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolbtnScale.Image = Global.LifeTestRig.My.Resources.Resources.Scale
-        Me.toolbtnScale.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolbtnScale.Name = "toolbtnScale"
-        Me.toolbtnScale.Size = New System.Drawing.Size(68, 68)
-        Me.toolbtnScale.Text = "Scale"
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
@@ -189,50 +126,6 @@ Partial Class frmMain
         Me.ToolStripLabel6.Size = New System.Drawing.Size(28, 68)
         Me.ToolStripLabel6.Text = "       "
         Me.ToolStripLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ToolStripLabel4
-        '
-        Me.ToolStripLabel4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(28, 68)
-        Me.ToolStripLabel4.Text = "       "
-        Me.ToolStripLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'toolBtnPLC
-        '
-        Me.toolBtnPLC.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolBtnPLC.Image = Global.LifeTestRig.My.Resources.Resources.PLC
-        Me.toolBtnPLC.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolBtnPLC.Name = "toolBtnPLC"
-        Me.toolBtnPLC.Size = New System.Drawing.Size(68, 68)
-        Me.toolBtnPLC.Text = "PLC Status"
-        '
-        'toolBtnCharts
-        '
-        Me.toolBtnCharts.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolBtnCharts.Image = Global.LifeTestRig.My.Resources.Resources.charts
-        Me.toolBtnCharts.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolBtnCharts.Name = "toolBtnCharts"
-        Me.toolBtnCharts.Size = New System.Drawing.Size(68, 68)
-        Me.toolBtnCharts.Text = "Graphs"
-        '
-        'toolBtnReports
-        '
-        Me.toolBtnReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolBtnReports.Image = Global.LifeTestRig.My.Resources.Resources.report
-        Me.toolBtnReports.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolBtnReports.Name = "toolBtnReports"
-        Me.toolBtnReports.Size = New System.Drawing.Size(68, 68)
-        Me.toolBtnReports.Text = "Reports"
-        '
-        'toolStrpAlarm
-        '
-        Me.toolStrpAlarm.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.toolStrpAlarm.Image = Global.LifeTestRig.My.Resources.Resources.Alarm
-        Me.toolStrpAlarm.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolStrpAlarm.Name = "toolStrpAlarm"
-        Me.toolStrpAlarm.Size = New System.Drawing.Size(68, 68)
-        Me.toolStrpAlarm.Text = "Alarms"
         '
         'StsStrp
         '
@@ -304,6 +197,11 @@ Partial Class frmMain
         Me.TmrAlarm.Enabled = True
         Me.TmrAlarm.Interval = 10000
         '
+        'TmrLubOil
+        '
+        Me.TmrLubOil.Enabled = True
+        Me.TmrLubOil.Interval = 10000
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.LifeTestRig.My.Resources.Resources.actemium_logo
@@ -314,10 +212,116 @@ Partial Class frmMain
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
-        'TmrLubOil
+        'toolbtnDefault
         '
-        Me.TmrLubOil.Enabled = True
-        Me.TmrLubOil.Interval = 10000
+        Me.toolbtnDefault.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolbtnDefault.Image = CType(resources.GetObject("toolbtnDefault.Image"), System.Drawing.Image)
+        Me.toolbtnDefault.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbtnDefault.Name = "toolbtnDefault"
+        Me.toolbtnDefault.Size = New System.Drawing.Size(68, 68)
+        Me.toolbtnDefault.Text = "Home"
+        '
+        'toolbtnNewProj
+        '
+        Me.toolbtnNewProj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolbtnNewProj.Image = CType(resources.GetObject("toolbtnNewProj.Image"), System.Drawing.Image)
+        Me.toolbtnNewProj.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbtnNewProj.Name = "toolbtnNewProj"
+        Me.toolbtnNewProj.Size = New System.Drawing.Size(68, 68)
+        Me.toolbtnNewProj.Text = "New Project"
+        '
+        'toolBtnOpenPrj
+        '
+        Me.toolBtnOpenPrj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolBtnOpenPrj.Image = Global.LifeTestRig.My.Resources.Resources.Open
+        Me.toolBtnOpenPrj.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolBtnOpenPrj.Name = "toolBtnOpenPrj"
+        Me.toolBtnOpenPrj.Size = New System.Drawing.Size(68, 68)
+        Me.toolBtnOpenPrj.Text = "Open Existing Project"
+        '
+        'toolBtnModifyPrj
+        '
+        Me.toolBtnModifyPrj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolBtnModifyPrj.Image = Global.LifeTestRig.My.Resources.Resources.edit
+        Me.toolBtnModifyPrj.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolBtnModifyPrj.Name = "toolBtnModifyPrj"
+        Me.toolBtnModifyPrj.Size = New System.Drawing.Size(68, 68)
+        Me.toolBtnModifyPrj.Text = "Modify Project"
+        '
+        'toolBtnComplete
+        '
+        Me.toolBtnComplete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolBtnComplete.Image = Global.LifeTestRig.My.Resources.Resources.Complete
+        Me.toolBtnComplete.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolBtnComplete.Name = "toolBtnComplete"
+        Me.toolBtnComplete.Size = New System.Drawing.Size(68, 68)
+        Me.toolBtnComplete.Text = "ToolStripButton1"
+        '
+        'toolbtnCommSettings
+        '
+        Me.toolbtnCommSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolbtnCommSettings.Image = Global.LifeTestRig.My.Resources.Resources.communication1
+        Me.toolbtnCommSettings.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbtnCommSettings.Name = "toolbtnCommSettings"
+        Me.toolbtnCommSettings.Size = New System.Drawing.Size(68, 68)
+        Me.toolbtnCommSettings.Text = "Settings"
+        '
+        'toolbtnScale
+        '
+        Me.toolbtnScale.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolbtnScale.Image = Global.LifeTestRig.My.Resources.Resources.Scale
+        Me.toolbtnScale.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbtnScale.Name = "toolbtnScale"
+        Me.toolbtnScale.Size = New System.Drawing.Size(68, 68)
+        Me.toolbtnScale.Text = "Scale"
+        '
+        'toolBtnPID
+        '
+        Me.toolBtnPID.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolBtnPID.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.toolBtnPID.Image = Global.LifeTestRig.My.Resources.Resources.PID
+        Me.toolBtnPID.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolBtnPID.Name = "toolBtnPID"
+        Me.toolBtnPID.Size = New System.Drawing.Size(68, 68)
+        Me.toolBtnPID.Text = "       "
+        Me.toolBtnPID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.toolBtnPID.ToolTipText = "Load PID"
+        '
+        'toolBtnPLC
+        '
+        Me.toolBtnPLC.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolBtnPLC.Image = Global.LifeTestRig.My.Resources.Resources.PLC
+        Me.toolBtnPLC.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolBtnPLC.Name = "toolBtnPLC"
+        Me.toolBtnPLC.Size = New System.Drawing.Size(68, 68)
+        Me.toolBtnPLC.Text = "PLC Status"
+        '
+        'toolBtnCharts
+        '
+        Me.toolBtnCharts.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolBtnCharts.Image = Global.LifeTestRig.My.Resources.Resources.charts
+        Me.toolBtnCharts.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolBtnCharts.Name = "toolBtnCharts"
+        Me.toolBtnCharts.Size = New System.Drawing.Size(68, 68)
+        Me.toolBtnCharts.Text = "Graphs"
+        '
+        'toolBtnReports
+        '
+        Me.toolBtnReports.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolBtnReports.Image = Global.LifeTestRig.My.Resources.Resources.report
+        Me.toolBtnReports.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolBtnReports.Name = "toolBtnReports"
+        Me.toolBtnReports.Size = New System.Drawing.Size(68, 68)
+        Me.toolBtnReports.Text = "Reports"
+        '
+        'toolStrpAlarm
+        '
+        Me.toolStrpAlarm.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.toolStrpAlarm.Image = Global.LifeTestRig.My.Resources.Resources.Alarm
+        Me.toolStrpAlarm.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolStrpAlarm.Name = "toolStrpAlarm"
+        Me.toolStrpAlarm.Size = New System.Drawing.Size(68, 68)
+        Me.toolStrpAlarm.Text = "Alarms"
         '
         'frmMain
         '
@@ -361,7 +365,6 @@ Partial Class frmMain
     Friend WithEvents toolBtnModifyPrj As ToolStripButton
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents toolStrplblHead As ToolStripLabel
-    Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents ToolStripLabel5 As ToolStripLabel
     Friend WithEvents toolBtnCharts As ToolStripButton
     Friend WithEvents toolBtnReports As ToolStripButton
@@ -376,4 +379,5 @@ Partial Class frmMain
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents toolBtnComplete As ToolStripButton
     Friend WithEvents TmrLubOil As Timer
+    Friend WithEvents toolBtnPID As ToolStripButton
 End Class

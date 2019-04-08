@@ -193,6 +193,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property PID() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("PID", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property PID_Details() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("PID Details", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property PLC() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("PLC", resourceCulture)

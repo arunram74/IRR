@@ -24,7 +24,7 @@ Module commonfunc
         Public Stn As ActUtlTypeLib.ActUtlType = New ActUtlTypeLib.ActUtlType
         Public IsStnAvailable As Boolean = False
         Public CheckComms As Boolean = True
-        Public DataWord(700) As Integer
+        Public DataWord(900) As Integer
         Public MWord(50) As Integer
         Public TagLock As ReaderWriterLockSlim = New ReaderWriterLockSlim()
     End Class

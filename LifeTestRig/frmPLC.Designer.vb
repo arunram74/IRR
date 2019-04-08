@@ -19,6 +19,7 @@ Partial Class frmPLC
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -116,6 +117,7 @@ Partial Class frmPLC
         Me.btnChkStn12 = New System.Windows.Forms.Button()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.ledEmr = New LifeTestRig.Bulb.LedBulb()
+        Me.Tmr = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -1187,6 +1189,11 @@ Partial Class frmPLC
         Me.ledEmr.TabIndex = 86
         Me.ledEmr.Text = "LedBulb1"
         '
+        'Tmr
+        '
+        Me.Tmr.Enabled = True
+        Me.Tmr.Interval = 5000
+        '
         'frmPLC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1391,4 +1398,5 @@ Partial Class frmPLC
     Friend WithEvents btnChkStn12 As Button
     Friend WithEvents Label34 As Label
     Friend WithEvents ledEmr As Bulb.LedBulb
+    Friend WithEvents Tmr As Timer
 End Class
