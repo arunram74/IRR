@@ -19,7 +19,7 @@ Public Class frmCharts
     Dim bsotmp As BindingSource = New BindingSource
 
     Dim daGrph As DataAdapter
-    Dim dtGrphVib, dtGrphSpeed, dtGrphLoadDisp, dtGrphBearing, dtGrphOilTemp As DataView
+    Dim dtGrphVib, dtGrphSpeed, dtGrphLoadDisp, dtGrphBearing, dtGrphOilTemp As DataTable
     Dim counter As Integer = 0
 
     Private Sub frmCharts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -113,7 +113,8 @@ Public Class frmCharts
             '    Srs.Points.Clear()
             'Next
             'chrtSpd.DataSource = CurrentHead.myProj.dtVibration
-            dtGrphVib = New DataView(CurrentHead.myProj.dtVibration)
+            'dtGrphVib = New DataView(CurrentHead.myProj.dtVibration)
+            dtGrphVib = CurrentHead.myProj.dtVibration.Copy
             chrtVib.DataSource = dtGrphVib
 
 
@@ -122,7 +123,8 @@ Public Class frmCharts
             '    Srs.Points.Clear()
             'Next
             'chrtSpd.DataSource = CurrentHead.myProj.dtSpeed
-            dtGrphSpeed = New DataView(CurrentHead.myProj.dtSpeed)
+            'dtGrphSpeed = New DataView(CurrentHead.myProj.dtSpeed)
+            dtGrphSpeed = CurrentHead.myProj.dtSpeed.Copy
             chrtSpd.DataSource = dtGrphSpeed
 
             'chrtLd.DataSource = ""
@@ -130,7 +132,7 @@ Public Class frmCharts
             '    Srs.Points.Clear()
             'Next
             'chrtLd.DataSource = CurrentHead.myProj.dtLoadDisp
-            dtGrphLoadDisp = New DataView(CurrentHead.myProj.dtLoadDisp)
+            dtGrphLoadDisp = CurrentHead.myProj.dtLoadDisp.Copy
             chrtLd.DataSource = dtGrphLoadDisp
 
             'chrtBT.DataSource = ""
@@ -138,7 +140,7 @@ Public Class frmCharts
             '    Srs.Points.Clear()
             'Next
             'chrtBT.DataSource = CurrentHead.myProj.dtBearing
-            dtGrphBearing = New DataView(CurrentHead.myProj.dtBearing)
+            dtGrphBearing = CurrentHead.myProj.dtBearing.Copy
             chrtBT.DataSource = dtGrphBearing
 
             'chrtOT.DataSource = ""
@@ -146,7 +148,7 @@ Public Class frmCharts
             '    Srs.Points.Clear()
             'Next
             'chrtOT.DataSource = CurrentHead.myProj.dtOilTemp
-            dtGrphOilTemp = New DataView(CurrentHead.myProj.dtOilTemp)
+            dtGrphOilTemp = CurrentHead.myProj.dtOilTemp.Copy
             chrtOT.DataSource = dtGrphOilTemp
 
             'bsvb.ResetBindings(False)
@@ -155,18 +157,18 @@ Public Class frmCharts
             'bsbtmp.ResetBindings(False)
             'bsotmp.ResetBindings(False)
 
-            CurrentHead.myProj.DataUpdateLock.EnterReadLock()
+            'CurrentHead.myProj.DataUpdateLock.EnterReadLock()
             chrtVib.DataBind()
             chrtSpd.DataBind()
             chrtLd.DataBind()
             chrtBT.DataBind()
             chrtOT.DataBind()
-            CurrentHead.myProj.DataUpdateLock.ExitReadLock()
+            'CurrentHead.myProj.DataUpdateLock.ExitReadLock()
 
 
 
         Catch ex As Exception
-            '' MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
             '' ignore for now! Do nothing
         End Try
     End Sub
@@ -243,6 +245,7 @@ Public Class frmCharts
         lblSpdWH.Text = CurrentHead.myProj.Speed.WH
         lblSpdWL.Text = CurrentHead.myProj.Speed.WL
         lblSpd.Text = String.Format("{0:n2}", CurrentHead.myProj.Speed.Value)
+        lblSpdSet.Text = String.Format("{0:n2}", CurrentHead.myProj.Speed.Setpoint)
         If CurrentHead.myProj.Speed.Value <= CurrentHead.myProj.Speed.SL Or CurrentHead.myProj.Speed.Value >= CurrentHead.myProj.Speed.SH Then
             lblSpd.BackColor = Color.Red
         ElseIf CurrentHead.myProj.Speed.Value <= CurrentHead.myProj.Speed.WL Or CurrentHead.myProj.Speed.Value >= CurrentHead.myProj.Speed.WH Then

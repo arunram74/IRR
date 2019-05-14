@@ -960,16 +960,16 @@ Public Class ProjectCls
 #End Region 'end of database functions
 
     Private Sub Tmr_Elapsed(sender As Object, e As EventArgs) Handles Tmr.Elapsed
-        Tmr.Enabled = False
+        'Tmr.Enabled = False
         CheckForLoadRunCompletion()
-        Tmr.Enabled = True
+        'Tmr.Enabled = True
     End Sub
 
     Private Sub CheckForLoadRunCompletion()
 
         Dim sw As Stopwatch = New Stopwatch
 
-
+        Tmr.Enabled = False
 
         Dim str As String = MachineName
 
@@ -1156,7 +1156,7 @@ Public Class ProjectCls
         CurrRev = Rev
 
         'Debug.Print("Load Value is  " & CurrentLoad)
-
+        Tmr.Enabled = True
 
         ''If Not IsPairBonded Or (IsPairBonded And HeadName <> "A") Then
     End Sub
@@ -1335,7 +1335,7 @@ Public Class ProjectCls
 
         UpdateTagData()
 
-        DataUpdateLock.EnterWriteLock()
+        'DataUpdateLock.EnterWriteLock()
 
         If dtVibration.Rows.Count > NoOfGraphEntries Then dtVibration.Rows(0).Delete()
         dtVibration.Rows.Add(Vibration.SL, Vibration.SH, Vibration.Value)
@@ -1352,7 +1352,7 @@ Public Class ProjectCls
         If dtOilTemp.Rows.Count > NoOfGraphEntries Then dtOilTemp.Rows(0).Delete()
         dtOilTemp.Rows.Add(OutTankTemp.SL, OutTankTemp.SH, InTankTemp.Value, OutTankTemp.Value)
 
-        DataUpdateLock.ExitWriteLock()
+        'DataUpdateLock.ExitWriteLock()
 
     End Sub
 
@@ -1443,7 +1443,8 @@ Public Class ProjectCls
                     LogAlarm(i + J)
                     Debug.Print("Change in Warning Low value with index-" & i)
                 End If
-                oldArrWL(i) = newArrWL(i)
+                'oldArrWL(i) = newArrWL(i)
+                If newArrWL(i) Then oldArrWL(i) = True
                 'Application.DoEvents()
             Next
 
@@ -1453,7 +1454,8 @@ Public Class ProjectCls
                     LogAlarm(i + J)
                     Debug.Print("Change in Warning High value with index-" & i)
                 End If
-                oldArrWH(i) = newArrWH(i)
+                'oldArrWH(i) = newArrWH(i)
+                If newArrWH(i) Then oldArrWH(i) = True
 
 
                 'Application.DoEvents()

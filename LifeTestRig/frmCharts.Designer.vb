@@ -209,6 +209,8 @@ Partial Class frmCharts
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtITTSP = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblSpdSet = New System.Windows.Forms.Label()
         CType(Me.chrtVib, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chrtSpd, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2052,6 +2054,27 @@ Partial Class frmCharts
         Me.txtITTSP.Text = "0"
         Me.txtITTSP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(786, 130)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 13)
+        Me.Label6.TabIndex = 277
+        Me.Label6.Text = "Set Speed"
+        '
+        'lblSpdSet
+        '
+        Me.lblSpdSet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSpdSet.Location = New System.Drawing.Point(786, 143)
+        Me.lblSpdSet.Name = "lblSpdSet"
+        Me.lblSpdSet.Size = New System.Drawing.Size(59, 21)
+        Me.lblSpdSet.TabIndex = 278
+        Me.lblSpdSet.Text = "0"
+        Me.lblSpdSet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'frmCharts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2187,7 +2210,9 @@ Partial Class frmCharts
         Me.Controls.Add(Me.Label39)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.lblLd)
+        Me.Controls.Add(Me.lblSpdSet)
         Me.Controls.Add(Me.lblLdSet)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblLdSL)
         Me.Controls.Add(Me.Label141)
         Me.Controls.Add(Me.Label140)
@@ -2420,4 +2445,6 @@ Partial Class frmCharts
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtITTSP As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents lblSpdSet As Label
 End Class
