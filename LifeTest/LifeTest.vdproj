@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_138BA5562B3F4604851EFDE6CF135902"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_14F6D99CB472428792D934341587A8D9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -70,6 +76,12 @@
         "Entry"
         {
         "MsmKey" = "8:_756B86609F5B4F818A03D4D9F32A90FA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7E9EE5155B3347A09403246A9A04E5B3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -130,6 +142,12 @@
         "Entry"
         {
         "MsmKey" = "8:_BF7E931EABA345488820EE467CDC38C0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C47F6A7A2E3D465AB37EF455BE41A337"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -238,6 +256,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -305,6 +331,26 @@
             "TargetName" = "8:test.csv"
             "Tag" = "8:"
             "Folder" = "8:_C5763CE96DBC45859C564485A2126B43"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_138BA5562B3F4604851EFDE6CF135902"
+            {
+            "SourcePath" = "8:D:\\PLC_TIMKEN\\PLC2.gxw"
+            "TargetName" = "8:PLC2.gxw"
+            "Tag" = "8:"
+            "Folder" = "8:_9F27178383D749BBB1F99A7F56C193F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -476,6 +522,26 @@
                 }
             "SourcePath" = "8:..\\..\\Resources\\Interop.ActUtlTypeLib.dll"
             "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_9F27178383D749BBB1F99A7F56C193F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7E9EE5155B3347A09403246A9A04E5B3"
+            {
+            "SourcePath" = "8:D:\\PLC_TIMKEN\\PLC1.gxw"
+            "TargetName" = "8:PLC1.gxw"
             "Tag" = "8:"
             "Folder" = "8:_9F27178383D749BBB1F99A7F56C193F8"
             "Condition" = "8:"
@@ -669,6 +735,26 @@
             "TargetName" = "8:Q001H.txt"
             "Tag" = "8:"
             "Folder" = "8:_0A7817DFA1874F559FB3CE86E9290CAF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C47F6A7A2E3D465AB37EF455BE41A337"
+            {
+            "SourcePath" = "8:D:\\PLC_TIMKEN\\PLC3.gxw"
+            "TargetName" = "8:PLC3.gxw"
+            "Tag" = "8:"
+            "Folder" = "8:_9F27178383D749BBB1F99A7F56C193F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
