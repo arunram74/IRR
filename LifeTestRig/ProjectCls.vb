@@ -959,11 +959,15 @@ Public Class ProjectCls
 
 #End Region 'end of database functions
 
+    Private Sub Tmr_Elapsed(sender As Object, e As EventArgs) Handles Tmr.Elapsed
+        Tmr.Enabled = False
+        CheckForLoadRunCompletion()
+        Tmr.Enabled = True
+    End Sub
+
     Private Sub CheckForLoadRunCompletion()
 
         Dim sw As Stopwatch = New Stopwatch
-
-        Tmr.Enabled = False
 
 
 
@@ -1152,14 +1156,12 @@ Public Class ProjectCls
         CurrRev = Rev
 
         'Debug.Print("Load Value is  " & CurrentLoad)
-        Tmr.Enabled = True
+
 
         ''If Not IsPairBonded Or (IsPairBonded And HeadName <> "A") Then
     End Sub
 
-    Private Sub Tmr_Elapsed(sender As Object, e As EventArgs) Handles Tmr.Elapsed
-        CheckForLoadRunCompletion()
-    End Sub
+
 
     Private Sub LoadTmr_Elapsed(sender As Object, e As EventArgs) Handles LoadTmr.Elapsed
         LogData(0)
@@ -1437,20 +1439,24 @@ Public Class ProjectCls
 
             Dim J As Integer = 1
             For i = 0 To 15
-                If Not oldArrWL(i) And newArrWL(i) Then
+                If oldArrWL(i) <> newArrWL(i) And newArrWL(i) Then
                     LogAlarm(i + J)
+                    Debug.Print("Change in Warning Low value with index-" & i)
                 End If
                 oldArrWL(i) = newArrWL(i)
-                Application.DoEvents()
+                'Application.DoEvents()
             Next
 
             J = 17
             For i = 0 To 15
-                If Not oldArrWH(i) And newArrWH(i) Then
+                If oldArrWH(i) <> newArrWH(i) And newArrWH(i) Then
                     LogAlarm(i + J)
+                    Debug.Print("Change in Warning High value with index-" & i)
                 End If
                 oldArrWH(i) = newArrWH(i)
-                Application.DoEvents()
+
+
+                'Application.DoEvents()
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -1492,7 +1498,7 @@ Public Class ProjectCls
             Dim J As Integer
             J = 33
             For i = 0 To 15
-                If Not oldArrSL(i) And newArrSL(i) Then
+                If oldArrSL(i) <> newArrSL(i) And newArrSL(i) Then
                     LogAlarm(i + J)
                     Retval = i + J
                 End If
@@ -1502,7 +1508,7 @@ Public Class ProjectCls
 
             J = 49
             For i = 0 To 15
-                If Not oldArrSH(i) And newArrSH(i) Then
+                If oldArrSH(i) <> newArrSH(i) And newArrSH(i) Then
                     LogAlarm(i + J)
                     Retval = i + J
                 End If
@@ -1512,7 +1518,7 @@ Public Class ProjectCls
 
             J = 65
             For i = 0 To 15
-                If Not oldArrMisc(i) And newArrMisc(i) Then
+                If oldArrMisc(i) <> newArrMisc(i) And newArrMisc(i) Then
                     LogAlarm(i + J)
                     Retval = i + J
                 End If

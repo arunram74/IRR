@@ -71,7 +71,7 @@ Public Class frmCharts
             CalculateAverages()
             UpdateGraphValues()
             UpdateGraphs()
-            TmrCharUpdate.Interval = CurrentHead.myProj.DispUpdateRate.TotalMilliseconds
+            If CurrentHead.myProj.DispUpdateRate.TotalMilliseconds <> 0 Then TmrCharUpdate.Interval = CurrentHead.myProj.DispUpdateRate.TotalMilliseconds
             counter = 0
         Else
             UpdateStatus()
