@@ -25,14 +25,26 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.toolStrp = New System.Windows.Forms.ToolStrip()
+        Me.toolbtnDefault = New System.Windows.Forms.ToolStripButton()
+        Me.toolbtnNewProj = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnOpenPrj = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnModifyPrj = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnComplete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.toolStrplblHead = New System.Windows.Forms.ToolStripLabel()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
+        Me.toolbtnCommSettings = New System.Windows.Forms.ToolStripButton()
+        Me.toolbtnScale = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
+        Me.toolBtnPID = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnPLC = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnCharts = New System.Windows.Forms.ToolStripButton()
+        Me.toolBtnReports = New System.Windows.Forms.ToolStripButton()
+        Me.toolStrpAlarm = New System.Windows.Forms.ToolStripButton()
         Me.StsStrp = New System.Windows.Forms.StatusStrip()
         Me.pnlBtm = New System.Windows.Forms.Panel()
         Me.dgvAlarmMain = New System.Windows.Forms.DataGridView()
@@ -44,18 +56,9 @@ Partial Class frmMain
         Me.TmrAlarm = New System.Windows.Forms.Timer(Me.components)
         Me.TmrLubOil = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.toolbtnDefault = New System.Windows.Forms.ToolStripButton()
-        Me.toolbtnNewProj = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnOpenPrj = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnModifyPrj = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnComplete = New System.Windows.Forms.ToolStripButton()
-        Me.toolbtnCommSettings = New System.Windows.Forms.ToolStripButton()
-        Me.toolbtnScale = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnPID = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnPLC = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnCharts = New System.Windows.Forms.ToolStripButton()
-        Me.toolBtnReports = New System.Windows.Forms.ToolStripButton()
-        Me.toolStrpAlarm = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.toolStrp.SuspendLayout()
         Me.pnlBtm.SuspendLayout()
         CType(Me.dgvAlarmMain, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,151 +69,12 @@ Partial Class frmMain
         '
         Me.toolStrp.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.toolStrp.ImageScalingSize = New System.Drawing.Size(64, 64)
-        Me.toolStrp.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbtnDefault, Me.toolbtnNewProj, Me.toolBtnOpenPrj, Me.toolBtnModifyPrj, Me.toolBtnComplete, Me.ToolStripLabel3, Me.ToolStripLabel1, Me.toolStrplblHead, Me.toolStripSeparator, Me.ToolStripLabel5, Me.toolbtnCommSettings, Me.toolbtnScale, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.ToolStripLabel6, Me.toolBtnPID, Me.toolBtnPLC, Me.toolBtnCharts, Me.toolBtnReports, Me.toolStrpAlarm})
+        Me.toolStrp.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbtnDefault, Me.toolbtnNewProj, Me.toolBtnOpenPrj, Me.toolBtnModifyPrj, Me.toolBtnComplete, Me.ToolStripLabel3, Me.ToolStripLabel1, Me.toolStrplblHead, Me.toolStripSeparator, Me.ToolStripLabel5, Me.toolbtnCommSettings, Me.toolbtnScale, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.ToolStripLabel6, Me.toolBtnPID, Me.toolBtnPLC, Me.toolBtnCharts, Me.toolBtnReports, Me.toolStrpAlarm, Me.ToolStripSeparator2, Me.ToolStripLabel4, Me.ToolStripButton1})
         Me.toolStrp.Location = New System.Drawing.Point(0, 0)
         Me.toolStrp.Name = "toolStrp"
-        Me.toolStrp.Size = New System.Drawing.Size(963, 71)
+        Me.toolStrp.Size = New System.Drawing.Size(1162, 71)
         Me.toolStrp.TabIndex = 2
         Me.toolStrp.Text = "ToolStrip1"
-        '
-        'ToolStripLabel3
-        '
-        Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(28, 68)
-        Me.ToolStripLabel3.Text = "       "
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.AutoSize = False
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(50, 68)
-        Me.ToolStripLabel1.Text = "    "
-        '
-        'toolStrplblHead
-        '
-        Me.toolStrplblHead.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.toolStrplblHead.Name = "toolStrplblHead"
-        Me.toolStrplblHead.Size = New System.Drawing.Size(28, 68)
-        Me.toolStrplblHead.Text = "       "
-        Me.toolStrplblHead.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'toolStripSeparator
-        '
-        Me.toolStripSeparator.Name = "toolStripSeparator"
-        Me.toolStripSeparator.Size = New System.Drawing.Size(6, 71)
-        '
-        'ToolStripLabel5
-        '
-        Me.ToolStripLabel5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripLabel5.Name = "ToolStripLabel5"
-        Me.ToolStripLabel5.Size = New System.Drawing.Size(28, 68)
-        Me.ToolStripLabel5.Text = "       "
-        Me.ToolStripLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 71)
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.AutoSize = False
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(50, 68)
-        Me.ToolStripLabel2.Text = "    "
-        '
-        'ToolStripLabel6
-        '
-        Me.ToolStripLabel6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripLabel6.Name = "ToolStripLabel6"
-        Me.ToolStripLabel6.Size = New System.Drawing.Size(28, 68)
-        Me.ToolStripLabel6.Text = "       "
-        Me.ToolStripLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'StsStrp
-        '
-        Me.StsStrp.Location = New System.Drawing.Point(0, 551)
-        Me.StsStrp.Name = "StsStrp"
-        Me.StsStrp.Size = New System.Drawing.Size(963, 22)
-        Me.StsStrp.TabIndex = 3
-        Me.StsStrp.Text = "StatusStrip1"
-        '
-        'pnlBtm
-        '
-        Me.pnlBtm.Controls.Add(Me.dgvAlarmMain)
-        Me.pnlBtm.Controls.Add(Me.lblAlarmCaption)
-        Me.pnlBtm.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlBtm.Location = New System.Drawing.Point(0, 455)
-        Me.pnlBtm.Name = "pnlBtm"
-        Me.pnlBtm.Size = New System.Drawing.Size(963, 96)
-        Me.pnlBtm.TabIndex = 6
-        '
-        'dgvAlarmMain
-        '
-        Me.dgvAlarmMain.AllowUserToAddRows = False
-        Me.dgvAlarmMain.AllowUserToDeleteRows = False
-        Me.dgvAlarmMain.AllowUserToResizeRows = False
-        Me.dgvAlarmMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dgvAlarmMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAlarmMain.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgvAlarmMain.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgvAlarmMain.Location = New System.Drawing.Point(0, 68)
-        Me.dgvAlarmMain.MultiSelect = False
-        Me.dgvAlarmMain.Name = "dgvAlarmMain"
-        Me.dgvAlarmMain.Size = New System.Drawing.Size(963, 28)
-        Me.dgvAlarmMain.TabIndex = 1
-        '
-        'lblAlarmCaption
-        '
-        Me.lblAlarmCaption.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblAlarmCaption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblAlarmCaption.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblAlarmCaption.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAlarmCaption.Location = New System.Drawing.Point(0, 0)
-        Me.lblAlarmCaption.Name = "lblAlarmCaption"
-        Me.lblAlarmCaption.Size = New System.Drawing.Size(963, 21)
-        Me.lblAlarmCaption.TabIndex = 0
-        Me.lblAlarmCaption.Text = "Alarm"
-        '
-        'bkgrndWrkr1
-        '
-        Me.bkgrndWrkr1.WorkerReportsProgress = True
-        Me.bkgrndWrkr1.WorkerSupportsCancellation = True
-        '
-        'bkgrndWrkr2
-        '
-        Me.bkgrndWrkr2.WorkerReportsProgress = True
-        Me.bkgrndWrkr2.WorkerSupportsCancellation = True
-        '
-        'bkgrndWrkr3
-        '
-        Me.bkgrndWrkr3.WorkerReportsProgress = True
-        Me.bkgrndWrkr3.WorkerSupportsCancellation = True
-        '
-        'bkgrndWrkr4
-        '
-        Me.bkgrndWrkr4.WorkerReportsProgress = True
-        Me.bkgrndWrkr4.WorkerSupportsCancellation = True
-        '
-        'TmrAlarm
-        '
-        Me.TmrAlarm.Enabled = True
-        Me.TmrAlarm.Interval = 10000
-        '
-        'TmrLubOil
-        '
-        Me.TmrLubOil.Enabled = True
-        Me.TmrLubOil.Interval = 10000
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.LifeTestRig.My.Resources.Resources.actemium_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(1279, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(131, 20)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'toolbtnDefault
         '
@@ -257,6 +121,40 @@ Partial Class frmMain
         Me.toolBtnComplete.Size = New System.Drawing.Size(68, 68)
         Me.toolBtnComplete.Text = "ToolStripButton1"
         '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(28, 68)
+        Me.ToolStripLabel3.Text = "       "
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.AutoSize = False
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(50, 68)
+        Me.ToolStripLabel1.Text = "    "
+        '
+        'toolStrplblHead
+        '
+        Me.toolStrplblHead.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.toolStrplblHead.Name = "toolStrplblHead"
+        Me.toolStrplblHead.Size = New System.Drawing.Size(28, 68)
+        Me.toolStrplblHead.Text = "       "
+        Me.toolStrplblHead.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'toolStripSeparator
+        '
+        Me.toolStripSeparator.Name = "toolStripSeparator"
+        Me.toolStripSeparator.Size = New System.Drawing.Size(6, 71)
+        '
+        'ToolStripLabel5
+        '
+        Me.ToolStripLabel5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripLabel5.Name = "ToolStripLabel5"
+        Me.ToolStripLabel5.Size = New System.Drawing.Size(28, 68)
+        Me.ToolStripLabel5.Text = "       "
+        Me.ToolStripLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'toolbtnCommSettings
         '
         Me.toolbtnCommSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -274,6 +172,26 @@ Partial Class frmMain
         Me.toolbtnScale.Name = "toolbtnScale"
         Me.toolbtnScale.Size = New System.Drawing.Size(68, 68)
         Me.toolbtnScale.Text = "Scale"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 71)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.AutoSize = False
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(50, 68)
+        Me.ToolStripLabel2.Text = "    "
+        '
+        'ToolStripLabel6
+        '
+        Me.ToolStripLabel6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripLabel6.Name = "ToolStripLabel6"
+        Me.ToolStripLabel6.Size = New System.Drawing.Size(28, 68)
+        Me.ToolStripLabel6.Text = "       "
+        Me.ToolStripLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'toolBtnPID
         '
@@ -323,12 +241,117 @@ Partial Class frmMain
         Me.toolStrpAlarm.Size = New System.Drawing.Size(68, 68)
         Me.toolStrpAlarm.Text = "Alarms"
         '
+        'StsStrp
+        '
+        Me.StsStrp.Location = New System.Drawing.Point(0, 551)
+        Me.StsStrp.Name = "StsStrp"
+        Me.StsStrp.Size = New System.Drawing.Size(1162, 22)
+        Me.StsStrp.TabIndex = 3
+        Me.StsStrp.Text = "StatusStrip1"
+        '
+        'pnlBtm
+        '
+        Me.pnlBtm.Controls.Add(Me.dgvAlarmMain)
+        Me.pnlBtm.Controls.Add(Me.lblAlarmCaption)
+        Me.pnlBtm.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlBtm.Location = New System.Drawing.Point(0, 455)
+        Me.pnlBtm.Name = "pnlBtm"
+        Me.pnlBtm.Size = New System.Drawing.Size(1162, 96)
+        Me.pnlBtm.TabIndex = 6
+        '
+        'dgvAlarmMain
+        '
+        Me.dgvAlarmMain.AllowUserToAddRows = False
+        Me.dgvAlarmMain.AllowUserToDeleteRows = False
+        Me.dgvAlarmMain.AllowUserToResizeRows = False
+        Me.dgvAlarmMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dgvAlarmMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAlarmMain.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgvAlarmMain.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgvAlarmMain.Location = New System.Drawing.Point(0, 68)
+        Me.dgvAlarmMain.MultiSelect = False
+        Me.dgvAlarmMain.Name = "dgvAlarmMain"
+        Me.dgvAlarmMain.Size = New System.Drawing.Size(1162, 28)
+        Me.dgvAlarmMain.TabIndex = 1
+        '
+        'lblAlarmCaption
+        '
+        Me.lblAlarmCaption.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lblAlarmCaption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblAlarmCaption.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblAlarmCaption.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAlarmCaption.Location = New System.Drawing.Point(0, 0)
+        Me.lblAlarmCaption.Name = "lblAlarmCaption"
+        Me.lblAlarmCaption.Size = New System.Drawing.Size(1162, 21)
+        Me.lblAlarmCaption.TabIndex = 0
+        Me.lblAlarmCaption.Text = "Alarm"
+        '
+        'bkgrndWrkr1
+        '
+        Me.bkgrndWrkr1.WorkerReportsProgress = True
+        Me.bkgrndWrkr1.WorkerSupportsCancellation = True
+        '
+        'bkgrndWrkr2
+        '
+        Me.bkgrndWrkr2.WorkerReportsProgress = True
+        Me.bkgrndWrkr2.WorkerSupportsCancellation = True
+        '
+        'bkgrndWrkr3
+        '
+        Me.bkgrndWrkr3.WorkerReportsProgress = True
+        Me.bkgrndWrkr3.WorkerSupportsCancellation = True
+        '
+        'bkgrndWrkr4
+        '
+        Me.bkgrndWrkr4.WorkerReportsProgress = True
+        Me.bkgrndWrkr4.WorkerSupportsCancellation = True
+        '
+        'TmrAlarm
+        '
+        Me.TmrAlarm.Enabled = True
+        Me.TmrAlarm.Interval = 10000
+        '
+        'TmrLubOil
+        '
+        Me.TmrLubOil.Enabled = True
+        Me.TmrLubOil.Interval = 10000
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.LifeTestRig.My.Resources.Resources.actemium_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(1279, 24)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(131, 20)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 71)
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(19, 68)
+        Me.ToolStripLabel4.Text = "    "
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(68, 68)
+        Me.ToolStripButton1.Text = "ToolStrpInfo"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(963, 573)
+        Me.ClientSize = New System.Drawing.Size(1162, 573)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.pnlBtm)
         Me.Controls.Add(Me.StsStrp)
@@ -380,4 +403,7 @@ Partial Class frmMain
     Friend WithEvents toolBtnComplete As ToolStripButton
     Friend WithEvents TmrLubOil As Timer
     Friend WithEvents toolBtnPID As ToolStripButton
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

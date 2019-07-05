@@ -261,6 +261,18 @@ Public Class frmMain
         frmDefault.SendClick()
     End Sub
 
+    Private Sub toolBtnPID_Click(sender As Object, e As EventArgs) Handles toolBtnPID.Click
+        For Each f As Form In Me.MdiChildren
+            f.Close()
+        Next
+        frmPID.MdiParent = Me
+        frmPID.Show()
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        frmAboutBox.ShowDialog()
+    End Sub
+
 #End Region
 
     Private Sub bkgrndWrkr_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bkgrndWrkr1.DoWork
@@ -531,11 +543,5 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub toolBtnPID_Click(sender As Object, e As EventArgs) Handles toolBtnPID.Click
-        For Each f As Form In Me.MdiChildren
-            f.Close()
-        Next
-        frmPID.MdiParent = Me
-        frmPID.Show()
-    End Sub
+
 End Class

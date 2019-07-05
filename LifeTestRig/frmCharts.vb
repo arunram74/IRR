@@ -108,6 +108,8 @@ Public Class frmCharts
     Sub UpdateGraphs()
 
         Try
+
+
             'chrtVib.DataSource = ""
             'For Each Srs In chrtVib.Series
             '    Srs.Points.Clear()

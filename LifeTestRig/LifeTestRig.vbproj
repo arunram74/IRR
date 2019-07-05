@@ -136,6 +136,12 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="commonfunc.vb" />
+    <Compile Include="frmAboutBox.Designer.vb">
+      <DependentUpon>frmAboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCSVView.Designer.vb">
       <DependentUpon>frmCSVView.vb</DependentUpon>
     </Compile>
@@ -317,6 +323,9 @@
     <Compile Include="verticalString.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAboutBox.resx">
+      <DependentUpon>frmAboutBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAlarms.resx">
       <DependentUpon>frmAlarms.vb</DependentUpon>
       <SubType>Designer</SubType>
