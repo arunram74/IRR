@@ -45,6 +45,9 @@ Partial Class frmMain
         Me.toolBtnCharts = New System.Windows.Forms.ToolStripButton()
         Me.toolBtnReports = New System.Windows.Forms.ToolStripButton()
         Me.toolStrpAlarm = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.StsStrp = New System.Windows.Forms.StatusStrip()
         Me.pnlBtm = New System.Windows.Forms.Panel()
         Me.dgvAlarmMain = New System.Windows.Forms.DataGridView()
@@ -56,9 +59,6 @@ Partial Class frmMain
         Me.TmrAlarm = New System.Windows.Forms.Timer(Me.components)
         Me.TmrLubOil = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.toolStrp.SuspendLayout()
         Me.pnlBtm.SuspendLayout()
         CType(Me.dgvAlarmMain, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,7 +119,7 @@ Partial Class frmMain
         Me.toolBtnComplete.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.toolBtnComplete.Name = "toolBtnComplete"
         Me.toolBtnComplete.Size = New System.Drawing.Size(68, 68)
-        Me.toolBtnComplete.Text = "ToolStripButton1"
+        Me.toolBtnComplete.Text = "Complete Project"
         '
         'ToolStripLabel3
         '
@@ -241,6 +241,26 @@ Partial Class frmMain
         Me.toolStrpAlarm.Size = New System.Drawing.Size(68, 68)
         Me.toolStrpAlarm.Text = "Alarms"
         '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 71)
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(19, 68)
+        Me.ToolStripLabel4.Text = "    "
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(68, 68)
+        Me.ToolStripButton1.Text = "ToolStrpInfo"
+        '
         'StsStrp
         '
         Me.StsStrp.Location = New System.Drawing.Point(0, 551)
@@ -325,26 +345,6 @@ Partial Class frmMain
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 71)
-        '
-        'ToolStripLabel4
-        '
-        Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(19, 68)
-        Me.ToolStripLabel4.Text = "    "
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(68, 68)
-        Me.ToolStripButton1.Text = "ToolStrpInfo"
         '
         'frmMain
         '
