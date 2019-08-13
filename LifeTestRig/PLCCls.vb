@@ -387,6 +387,7 @@ Public Class PLCCls
         If FromTag <> "NOSTRING" Or ToTag <> "NOSTRING" Then
             Dim strarr() As String = ToTag.Split(","c)
             Dim FromUINTVAL As UInt16 = GetTagValUint16(FromTag)
+            '' MessageBox.Show(FromTag & "," & FromUINTVAL)
             For Each strVar In strarr
                 SetTagVal(strVar, FromUINTVAL)
             Next

@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Globalization
+Imports System.IO
 Imports MySql.Data.MySqlClient
 
 
@@ -16,20 +17,20 @@ Public Class frmReport
     Sub UpdateFilters()
 
         StartDate = dtFromDate.Value.ToString("yyyy-MM-dd")
-        StartDate = StartDate & " " & dtFromTime.Value.ToString("HH:mm:ss") & "Z"
+        StartDate = StartDate & " " & dtFromTime.Value.ToString("HH:mm:ss") '' & "Z"
         'StartDate.AddMinutes(dtFromTime.Value.Minute)
         'StartDate.AddSeconds(dtFromTime.Value.Second)
 
         EndDate = dtToDate.Value.ToString("yyyy-MM-dd")
-        EndDate = EndDate & " " & dtToTime.Value.ToString("HH:mm:ss") & "Z"
+        EndDate = EndDate & " " & dtToTime.Value.ToString("HH:mm:ss") '' & "Z"
         'EndDate = dtToDate.Value
         'EndDate.AddHours(dtToTime.Value.Hour)
         'EndDate.AddMinutes(dtToTime.Value.Minute)
         'EndDate.AddSeconds(dtToTime.Value.Second)
 
         If chkDate.Checked Then
-            StartDate = "1900-01-01 12:00:52Z"
-            EndDate = "2050-01-01 12:00:52Z"
+            StartDate = "1900-01-01 12:00:52" 'Z"
+            EndDate = "2050-01-01 12:00:52" 'Z"
         End If
 
         If cmbPrjt.SelectedValue = 0 Then PrjIdFilter = "ProjectID" Else PrjIdFilter = cmbPrjt.SelectedValue
@@ -84,13 +85,16 @@ Public Class frmReport
 
         Dim StartTime, EndTime As DateTime
         Dim RunTime, StopTime, TotalTime As TimeSpan
+        Dim PrevOperation As String = "STRT"
+        Dim provider As CultureInfo = CultureInfo.InvariantCulture
         Dim constr As String = "SELECT  DateandTime, Machine, Head, Concat(ProjectIDTxt,'_',B1Name,'_',B2Name,'_',B3Name,'_',B4Name) as Project, Operation, reasondb.reasontxt as Reason From utility inner join  reasondb on utility.ReasonID=reasondb.reasonID  where ( DateandTime Between '" & StartDate & "' and '" & EndDate & "') and Machine=" & McFilter & " Order by DateandTime"
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             If dt1.Rows.Count > 0 Then
+                If dt1.Rows(0).Item("Operation") <> "STRT" Then StartTime = DateTime.ParseExact(StartDate, "yyyy-MM-dd HH:mm:ss", provider) 'if the mahine was already running at the start date specified
                 Dim PrevStartTime As Date = #1/1/0001 12:00:00 AM#
                 For i = 0 To dt1.Rows.Count - 1
                     If dt1.Rows(i).Item("Operation") = "STRT" Then StartTime = dt1.Rows(i).Item("DateandTime")
-                    If dt1.Rows(i).Item("Operation") <> "STRT" Then
+                    If dt1.Rows(i).Item("Operation") <> "STRT" And PrevOperation = "STRT" Then 'to skip A and B Station starting together
                         If StartTime > #1/1/0001 12:00:00 AM# Then
                             EndTime = dt1.Rows(i).Item("DateandTime")
                             If StartTime <> PrevStartTime Then
@@ -98,12 +102,19 @@ Public Class frmReport
                                 PrevStartTime = StartTime
                             End If
                         End If
-                        End If
+                    End If
+                    PrevOperation = dt1.Rows(i).Item("Operation")
                 Next
 
+                If dt1.Rows(dt1.Rows.Count - 1).Item("Operation") = "STRT" Then 'LAst record is start but there is no suspend
+                    EndTime = DateTime.Parse(EndDate)
+                    If StartTime <> PrevStartTime Then
+                        RunTime += (EndTime - StartTime)
+                    End If
+                End If
 
-                StartTime = dt1.Rows(0).Item("DateandTime")
-                EndTime = dt1.Rows(dt1.Rows.Count - 1).Item("DateandTime")
+                StartTime = DateTime.Parse(StartDate) ' dt1.Rows(0).Item("DateandTime")
+                EndTime = DateTime.Parse(EndDate) 'dt1.Rows(dt1.Rows.Count - 1).Item("DateandTime")
                 TotalTime = EndTime - StartTime
                 StopTime = TotalTime - RunTime
                 WriteDataTable(dt1, Templatepath & "test.csv", True)
