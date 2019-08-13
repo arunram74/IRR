@@ -62,6 +62,9 @@ Partial Class frmSettings
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtTagFrom = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtDBName = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.nupMonAct, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -90,7 +93,7 @@ Partial Class frmSettings
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(739, 316)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(739, 346)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -431,13 +434,42 @@ Partial Class frmSettings
         Me.Label14.Text = "Tag Exchange - From "
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Label15
+        '
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(49, 273)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(276, 26)
+        Me.Label15.TabIndex = 480
+        Me.Label15.Text = "Database Name"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtDBName
+        '
+        Me.txtDBName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDBName.Location = New System.Drawing.Point(325, 272)
+        Me.txtDBName.Name = "txtDBName"
+        Me.txtDBName.Size = New System.Drawing.Size(235, 29)
+        Me.txtDBName.TabIndex = 479
+        '
+        'Label16
+        '
+        Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label16.Location = New System.Drawing.Point(42, 265)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(894, 44)
+        Me.Label16.TabIndex = 478
+        '
         'frmSettings
         '
         Me.AcceptButton = Me.OK_Button
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(957, 373)
+        Me.ClientSize = New System.Drawing.Size(957, 403)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.txtDBName)
+        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.TxtTagTo)
@@ -528,4 +560,7 @@ Partial Class frmSettings
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtTagFrom As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtDBName As TextBox
+    Friend WithEvents Label16 As Label
 End Class

@@ -34,6 +34,7 @@ Public Class frmSettings
         My.Settings.Item("TagTo") = TxtTagTo.Text
         My.Settings.Item("TagFrom") = TxtTagFrom.Text
         My.Settings("MonitorAfter") = CInt(nupMonAct.Value)
+        My.Settings("DBName") = txtDBName.Text
         My.Settings.Save()
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
@@ -52,6 +53,7 @@ Public Class frmSettings
         nupMonAct.Value = My.Settings("MonitorAfter")
         TxtTagFrom.Text = My.Settings("TagFrom")
         TxtTagTo.Text = My.Settings("TagTo")
+        txtDBName.Text = My.Settings("DBName")
 
         Dim strArr() As String
 

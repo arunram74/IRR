@@ -1,0 +1,11 @@
+1. Machine utility. On startup, based on the active projects check data logs. If the the last entry is 'run'or 'load' then add 'susp' entry'and update utility table.
+
+2. After suspension. load will remain at the same level for 100s. This needs to be shifted to PLC.
+
+3. for point 2, also consider communication error when PLC stops communicating to PC
+
+4. Station variable for PLC should be within the thread. - to address PLC off issue and also retry.
+
+5. For tag write, check for Station available, before opening the station.
+
+6. Application shutdown only when no stations are running.

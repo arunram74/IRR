@@ -508,6 +508,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Actemium Small Logo.ico" />
+    <Content Include="issues.txt" />
     <None Include="Resources\PID Details.png" />
     <None Include="Resources\PID1.png" />
   </ItemGroup>

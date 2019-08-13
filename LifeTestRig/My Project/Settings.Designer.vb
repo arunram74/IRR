@@ -328,6 +328,18 @@ Namespace My
                 Me("ChartHeadSel") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("timken")>  _
+        Public Property DBName() As String
+            Get
+                Return CType(Me("DBName"),String)
+            End Get
+            Set
+                Me("DBName") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -19,7 +19,7 @@ Public Class frmMain
 
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        serv = "server = localhost; user id =root; password =Actemium#123; database =" & My.Settings("DBName")
         Station = New StnCls
 
 
