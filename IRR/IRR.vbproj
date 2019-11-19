@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38F12D7A-4D1D-4DDC-AC40-6DA87FFAFF65}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>IRR.My.MyApplication</StartupObject>
+    <RootNamespace>IRR</RootNamespace>
+    <AssemblyName>IRR</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\LifeTest\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>IRR.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>IRR.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Actemium Small Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>IRR.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>IRR.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="Interop.ActUtlTypeLib">
+      <HintPath>..\..\Timken\Source Code\Resources\Interop.ActUtlTypeLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Office\root\Office16\ADDINS\Microsoft Power Query for Excel Integrated\bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="commonfunc.vb" />
+    <Compile Include="frmAboutBox.Designer.vb">
+      <DependentUpon>frmAboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCSVView.Designer.vb">
+      <DependentUpon>frmCSVView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCSVView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCSVView2.Designer.vb">
+      <DependentUpon>frmCSVView2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCSVView2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPID.designer.vb">
+      <DependentUpon>frmPID.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPID.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.vb">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.vb">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuspFail.Designer.vb">
+      <DependentUpon>frmSuspFail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuspFail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplate.Designer.vb">
+      <DependentUpon>frmTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlarms.Designer.vb">
+      <DependentUpon>frmAlarms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlarms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBearing.Designer.vb">
+      <DependentUpon>frmBearing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBearing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCharts.Designer.vb">
+      <DependentUpon>frmCharts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCharts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDefault.Designer.vb">
+      <DependentUpon>frmDefault.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDefault.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenExistingPrj.Designer.vb">
+      <DependentUpon>frmOpenExistingPrj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenExistingPrj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.Designer.vb">
+      <DependentUpon>frmTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRunSusp.Designer.vb">
+      <DependentUpon>frmRunSusp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRunSusp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserDB.Designer.vb">
+      <DependentUpon>frmUserDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPLC.Designer.vb">
+      <DependentUpon>frmPLC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPLC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChild.Designer.vb">
+      <DependentUpon>frmChild.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChild.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParameters.Designer.vb">
+      <DependentUpon>frmParameters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmParameters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrjt.Designer.vb">
+      <DependentUpon>frmPrjt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrjt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoad.Designer.vb">
+      <DependentUpon>frmLoad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScaling.Designer.vb">
+      <DependentUpon>frmScaling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmScaling.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeadCls.vb" />
+    <Compile Include="HeadDisplay.vb" />
+    <Compile Include="LedBulb.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PLCCls.vb" />
+    <Compile Include="ProjectCls.vb" />
+    <Compile Include="RecessEditorControl.Designer.vb">
+      <DependentUpon>RecessEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecessEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoundButton.vb" />
+    <Compile Include="ExtendedGraphics.vb" />
+    <Compile Include="tempProject.vb" />
+    <Compile Include="TransPic.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VerticalProgressBar.designer.vb">
+      <DependentUpon>VerticalProgressBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalProgressBar.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="verticalString.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAboutBox.resx">
+      <DependentUpon>frmAboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlarms.resx">
+      <DependentUpon>frmAlarms.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBearing.resx">
+      <DependentUpon>frmBearing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCharts.resx">
+      <DependentUpon>frmCharts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChild.resx">
+      <DependentUpon>frmChild.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCSVView.resx">
+      <DependentUpon>frmCSVView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCSVView2.resx">
+      <DependentUpon>frmCSVView2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDefault.resx">
+      <DependentUpon>frmDefault.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenExistingPrj.resx">
+      <DependentUpon>frmOpenExistingPrj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParameters.resx">
+      <DependentUpon>frmParameters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPID.resx">
+      <DependentUpon>frmPID.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPLC.resx">
+      <DependentUpon>frmPLC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrjt.resx">
+      <DependentUpon>frmPrjt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoad.resx">
+      <DependentUpon>frmLoad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScaling.resx">
+      <DependentUpon>frmScaling.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuspFail.resx">
+      <DependentUpon>frmSuspFail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplate.resx">
+      <DependentUpon>frmTemplate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <DependentUpon>frmTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRunSusp.resx">
+      <DependentUpon>frmRunSusp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserDB.resx">
+      <DependentUpon>frmUserDB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecessEditorControl.resx">
+      <DependentUpon>RecessEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Timken Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\communication1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Head.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test bench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test bench1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Complete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scaling1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLC1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actemium logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Actemium Small Logo.ico" />
+    <Content Include="issues.txt" />
+    <None Include="Resources\PID Details.png" />
+    <None Include="Resources\PID1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
