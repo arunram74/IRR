@@ -16,6 +16,7 @@ Public Class ProjectCls
     Public IsPairBonded As Boolean = False
 
 
+
     Dim dt1, dt2, dt3, dtData, dtLoad, dtchkLoad, dtreason As DataTable
     Dim cb As MySqlCommandBuilder
     Dim StartLoad, EndLoad As Single
@@ -61,10 +62,10 @@ Public Class ProjectCls
     Public Make As String
     Public Lubrication As String
     Public PartNo As String
-    Public HeadA As String
-    Public HeadB As String
-    Public HeadC As String
-    Public HeadD As String
+    Public HeadA As Integer
+    Public HeadB As Integer
+    Public HeadC As Integer
+    Public HeadD As Integer
 
     Public HeadA_Enable As Boolean
     Public HeadB_Enable As Boolean
@@ -85,7 +86,7 @@ Public Class ProjectCls
     Public LoadLogRate As TimeSpan
     Public DispUpdateRate As TimeSpan
 
-
+    Friend Bearings(24) As BearingData
     Friend BA, SBA, Inlet_TempA, VibrationA As SingleLimits
     Friend BB, SBB, Inlet_TempB, VibrationB As SingleLimits
     Friend BC, SBC, Inlet_TempC, VibrationC As SingleLimits
@@ -179,10 +180,10 @@ Public Class ProjectCls
         Make = ""
         Lubrication = ""
         PartNo = ""
-        HeadA = ""
-        HeadB = ""
-        HeadC = ""
-        HeadD = ""
+        HeadA = 0
+        HeadB = 0
+        HeadC = 0
+        HeadD = 0
         HeadA_Enable = False
         HeadB_Enable = False
         HeadC_Enable = False
@@ -496,6 +497,7 @@ Public Class ProjectCls
         If Not isNew Then
             UpdateProject()
             UpdateParameters()
+            UpdateBearings()
             If MyStatus = ProjectStatus.Run Or MyStatus = ProjectStatus.Load Then Update_Timers_PLCWithParam() 'If the projet is running then update limits
 
         Else
@@ -504,6 +506,7 @@ Public Class ProjectCls
                 LoadProject() 'Load them again!
                 NewParameters()
                 NewLoadSet()
+                NewBearings()
                 isNew = False
             End If
 
@@ -522,6 +525,7 @@ Public Class ProjectCls
         ProjectID = PrjID
         LoadProject()
         LoadParameters()
+        LoadBearings()
 
 
         'Do not raise event when application loads
@@ -619,7 +623,7 @@ Public Class ProjectCls
         Using SQLConnection As New MySqlConnection(serv)
             Using sqlCommand As New MySqlCommand()
                 With sqlCommand
-                    .CommandText = "INSERT INTO Project (`ProjectIDTxt`, `Owner`, `ProjectName`, `PartNo`, `Make`, `Lubrication`, `HeadA`, `HeadB`, `HeadC`, `HeadD`, `HeadA_Enable`, `HeadB_Enable`, `HeadC_Enable`, `HeadD_Enable`,`MaxRev`, `MaxRevActive`, `RunLogRate`,`LoadLogRate`, `DispUpdateRate`,`NoOFBearings`,`LoadDurationRemaining`, `RunDurationRemaining`, `CurrentStep`, `CurrLoad`,  `CurrRev`,  `CreatedDate`, `TerminatedDate`, `ProjectStatus` ) values (@pid,@owner,@prjname,@pn,@mk,@lub,@ha, @hb,@hc,@hd,@ha_en,@hb_en,@hc_en,@hd_en,@maxr,@maxract,@runlrt,@loadlrt,@duprt,@nobr,@ldrm,@rdrm,@curstp,@curld,@crrev,@crdt,@trmDt,@prjsts);" &
+                    .CommandText = "INSERT INTO Project (`ProjectIDTxt`, `Owner`, `ProjectName`, `PartNo`, `Make`, `Lubrication`, `HeadABearing`, `HeadBBearing`, `HeadCBearing`, `HeadDBearing`, `HeadA_Enable`, `HeadB_Enable`, `HeadC_Enable`, `HeadD_Enable`,`MaxRev`, `MaxRevActive`, `RunLogRate`,`LoadLogRate`, `DispUpdateRate`,`LoadDurationRemaining`, `RunDurationRemaining`, `CurrentStep`, `CurrLoad`,  `CurrRev`,  `CreatedDate`, `TerminatedDate`, `ProjectStatus` ) values (@pid,@owner,@prjname,@pn,@mk,@lub,@ha, @hb,@hc,@hd,@ha_en,@hb_en,@hc_en,@hd_en,@maxr,@maxract,@runlrt,@loadlrt,@duprt,@ldrm,@rdrm,@curstp,@curld,@crrev,@crdt,@trmDt,@prjsts);" &
                         " Select LAST_INSERT_ID()"
                     .Connection = SQLConnection
                     .CommandType = CommandType.Text
@@ -648,7 +652,6 @@ Public Class ProjectCls
                     .Parameters.AddWithValue("@runlrt", RunLogRate)
                     .Parameters.AddWithValue("@loadlrt", LoadLogRate)
                     .Parameters.AddWithValue("@duprt", DispUpdateRate)
-                    .Parameters.AddWithValue("@nobr", 0)
                     .Parameters.AddWithValue("@ldrm", 0)
                     .Parameters.AddWithValue("@rdrm", 0)
                     .Parameters.AddWithValue("@curstp", -1) 'Fresh Start
@@ -699,10 +702,10 @@ Public Class ProjectCls
                 dt1.Rows(0).Item("Make") = Make
                 dt1.Rows(0).Item("Lubrication") = Lubrication
 
-                dt1.Rows(0).Item("HeadA") = HeadA
-                dt1.Rows(0).Item("HeadB") = HeadB
-                dt1.Rows(0).Item("HeadC") = HeadC
-                dt1.Rows(0).Item("HeadD") = HeadD
+                dt1.Rows(0).Item("HeadABearing") = HeadA
+                dt1.Rows(0).Item("HeadBBearing") = HeadB
+                dt1.Rows(0).Item("HeadCBearing") = HeadC
+                dt1.Rows(0).Item("HeadDBearing") = HeadD
 
                 dt1.Rows(0).Item("HeadA_Enable") = HeadA_Enable
                 dt1.Rows(0).Item("HeadB_Enable") = HeadB_Enable
@@ -758,8 +761,8 @@ Public Class ProjectCls
         Dim constr As String = "SELECT * from parameters where ProjectID=" & ProjectID & " Order by ParameterID"
         If GetDataMySQL(con, daParam, ds, dt2, False, constr) Then
 
-            If dt2.Rows.Count = 18 Then
-                For i = 0 To 17
+            If dt2.Rows.Count = 19 Then
+                For i = 0 To 18
                     vals(i).Value = dt2.Rows(i).Item("Value")
                     vals(i).WH = dt2.Rows(i).Item("WH")
                     vals(i).WL = dt2.Rows(i).Item("WL")
@@ -793,9 +796,9 @@ Public Class ProjectCls
             Inlet_TempD = vals(14)
             VibrationD = vals(15)
 
-
-            Load = vals(16)
-            Speed = vals(17)
+            TankTemp = vals(16)
+            Load = vals(17)
+            Speed = vals(18)
 
 
 
@@ -815,6 +818,7 @@ Public Class ProjectCls
             SBD.TagName = "SBD"
             Inlet_TempD.TagName = "Inlet_TempD"
             VibrationD.TagName = "VibrationD"
+            TankTemp.TagName = "TankTemp"
             Load.TagName = "Load"
             Speed.TagName = "Speed"
 
@@ -824,7 +828,7 @@ Public Class ProjectCls
     Sub NewParameters()
         'create a new records
         Dim i As Integer
-        Dim vals(18) As SingleLimits
+        Dim vals(19) As SingleLimits
         vals(0) = BA
         vals(1) = SBA
         vals(2) = Inlet_TempA
@@ -848,9 +852,9 @@ Public Class ProjectCls
         vals(14) = Inlet_TempD
         vals(15) = VibrationD
 
-
-        vals(16) = Load
-        vals(17) = Speed
+        vals(16) = TankTemp
+        vals(17) = Load
+        vals(18) = Speed
 
 
 
@@ -864,7 +868,7 @@ Public Class ProjectCls
 
         Try
             SQLConnection.Open()
-            For i = 0 To 17
+            For i = 0 To 18
                 sqlCommand.Parameters.AddWithValue("@pid", ProjectID)
                 sqlCommand.Parameters.AddWithValue("@paramid", i + 1)
                 sqlCommand.Parameters.AddWithValue("@wh", vals(i).WH)
@@ -926,7 +930,7 @@ Public Class ProjectCls
 
     Sub UpdateParameters()
         Dim i As Integer
-        Dim vals(18) As SingleLimits
+        Dim vals(19) As SingleLimits
         Dim MyRow As DataRow
 
         vals(0) = BA
@@ -949,9 +953,9 @@ Public Class ProjectCls
         vals(14) = Inlet_TempD
         vals(15) = VibrationD
 
-
-        vals(16) = Load
-        vals(17) = Speed
+        vals(16) = TankTemp
+        vals(17) = Load
+        vals(18) = Speed
 
         Dim constr As String = "SELECT * from parameters where ProjectID=" & ProjectID & " Order by ParameterID"
         If GetDataMySQL(con, daParam, ds, dt2, False, constr) Then
@@ -997,6 +1001,99 @@ Public Class ProjectCls
     End Function
 
 #End Region ' Parameter Database Region End
+
+#Region "BearingDatabase"
+    Sub LoadBearings()
+
+
+        Dim i As Integer
+        Dim constr As String = "SELECT * from Bearings where ProjectID=" & ProjectID & " Order by BearingNo"
+        If GetDataMySQL(con, daParam, ds, dt2, False, constr) Then
+
+            If dt2.Rows.Count = 24 Then
+                For i = 0 To 23
+                    Bearings(i).ProjectID = dt2.Rows(i).Item("ProjectID")
+                    Bearings(i).BearingNo = dt2.Rows(i).Item("BearingNo")
+                    Bearings(i).Active = dt2.Rows(i).Item("Active")
+                    Bearings(i).Failed = dt2.Rows(i).Item("Failed")
+                    Bearings(i).AddedTime = dt2.Rows(i).Item("AddedTime")
+                    Bearings(i).FailedTime = dt2.Rows(i).Item("FailedTime")
+
+                Next i
+                isParamDataAvailable = True ' The Data is available in the DB
+            End If
+
+        End If
+    End Sub
+
+    Sub NewBearings()
+        'create a new records
+        Dim CurrTime As Date = Now
+        Dim SQLConnection As New MySqlConnection(serv)
+        Dim sqlCommand As New MySqlCommand()
+
+        sqlCommand.CommandText = "INSERT INTO Bearings (`ProjectID`, `BearingNo`, `Active`, `Failed`, `AddedTime`) values (@pid,@bno,@act,@fl,@at)"
+        sqlCommand.CommandType = CommandType.Text
+        sqlCommand.Connection = SQLConnection
+
+        Try
+            SQLConnection.Open()
+            For i = 0 To 23
+                sqlCommand.Parameters.AddWithValue("@pid", ProjectID)
+                sqlCommand.Parameters.AddWithValue("@bno", i + 1)
+                sqlCommand.Parameters.AddWithValue("@act", True)
+                sqlCommand.Parameters.AddWithValue("@fl", False)
+                sqlCommand.Parameters.AddWithValue("@at", CurrTime)
+                sqlCommand.ExecuteNonQuery()
+
+                sqlCommand.Parameters.Clear()
+
+            Next i
+
+        Catch ex As MySqlException
+            MessageBox.Show("Error Creating Bearings", System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            SQLConnection.Close()
+        End Try
+
+        LoadBearings() 'load them again!
+    End Sub
+
+    Public Sub UpdateBearings()
+        Dim i As Integer
+        Dim MyRow As DataRow
+
+
+        Dim constr As String = "SELECT * from Bearings where ProjectID=" & ProjectID & " Order by BearingNo"
+        If GetDataMySQL(con, daParam, ds, dt2, False, constr) Then
+            Try
+                Dim RowCount = dt2.Rows.Count
+                For i = 0 To 23
+                    If RowCount = 0 Then MyRow = dt2.NewRow Else MyRow = dt2.Rows(i)
+                    MyRow.Item("ProjectID") = Bearings(i).ProjectID
+                    MyRow.Item("BearingNo") = Bearings(i).BearingNo
+                    MyRow.Item("Active") = Bearings(i).BearingNo = HeadA Or Bearings(i).BearingNo = HeadB Or Bearings(i).BearingNo = HeadC Or Bearings(i).BearingNo = HeadD
+                    MyRow.Item("Failed") = Bearings(i).Failed
+                    MyRow.Item("AddedTime") = Bearings(i).AddedTime
+                    MyRow.Item("FailedTime") = Bearings(i).FailedTime
+                    If RowCount = 0 Then dt2.Rows.Add(MyRow)
+                Next i
+
+
+                cb = New MySqlCommandBuilder(daParam) 'to make the ds updatable
+                cb.ConflictOption = ConflictOption.OverwriteChanges
+                daParam.Update(dt2)
+            Catch ex As Exception
+                MessageBox.Show("Database:error is:" & ex.Message)
+                Exit Sub
+            End Try
+        End If
+        'MsgBox("Profile Updated!", vbInformation)
+
+        LoadBearings() 'load them again!
+    End Sub
+
+#End Region
 
 #End Region 'end of database functions
 
@@ -1201,8 +1298,6 @@ Public Class ProjectCls
         ''If Not IsPairBonded Or (IsPairBonded And HeadName <> "A") Then
     End Sub
 
-
-
     Private Sub LoadTmr_Elapsed(sender As Object, e As EventArgs) Handles LoadTmr.Elapsed
         LogData(0)
         '    Debug.Print("Load Time Elapsed -" & Now)
@@ -1280,6 +1375,7 @@ Public Class ProjectCls
         If HeadD_Enable Then LogBearings("D", HeadD, StopReason, StatusTxt, BD.Value, SBD.Value, Inlet_TempD.Value, VibrationD.Value)
 
     End Sub
+
     Sub LogBearings(HeadStr As String, BearingNo As Integer, StopReasonIDPar As Integer, StatusTxtPar As String, bVal As Single, sbVal As Single, ItVal As Single, Vibration As Single)
         Dim SQLConnection As New MySqlConnection(serv)
         Dim sqlCommand As New MySqlCommand()
@@ -1312,6 +1408,7 @@ Public Class ProjectCls
         End Try
 
     End Sub
+
     Public Sub LogUtilities(Status As ProjectStatus, ReasonID As Integer)
         Dim SQLConnection As New MySqlConnection(serv)
         Dim sqlCommand As New MySqlCommand()

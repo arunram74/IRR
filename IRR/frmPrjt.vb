@@ -17,6 +17,8 @@ Public Class frmPrjt
         ValuesChanged = False
         CopytoTemp()
         UpdateTemplateList()
+
+
         LoadProjectDetails()
         If TempProjectObj.ProjectID <> 0 Then
             ''btnReturn.Enabled = false
@@ -207,10 +209,15 @@ Public Class frmPrjt
         txtLub.Text = TempProjectObj.Lubrication
 
         txtPN.Text = TempProjectObj.PartNo
-        cmbBA.Text = TempProjectObj.HeadA
-        cmbBB.Text = TempProjectObj.HeadB
-        cmbBC.Text = TempProjectObj.HeadC
-        cmbBD.Text = TempProjectObj.HeadD
+        'cmbBA.Text = TempProjectObj.HeadA
+        'cmbBB.Text = TempProjectObj.HeadB
+        'cmbBC.Text = TempProjectObj.HeadC
+        'cmbBD.Text = TempProjectObj.HeadD
+
+        UpdateHeadList(TempProjectObj.HeadA, cmbBA)
+        UpdateHeadList(TempProjectObj.HeadB, cmbBB)
+        UpdateHeadList(TempProjectObj.HeadC, cmbBC)
+        UpdateHeadList(TempProjectObj.HeadD, cmbBD)
 
         chkHeadA.Checked = TempProjectObj.HeadA_Enable
         chkHeadB.Checked = TempProjectObj.HeadB_Enable
@@ -371,11 +378,11 @@ Public Class frmPrjt
     End Function
 
     Private Function CheckForZero(val As SingleLimits) As Boolean
-        Dim RetVal As Boolean = True
-        If val.WH = 0 Then RetVal = False
-        If val.WL = 0 Then RetVal = False
-        If val.SH = 0 Then RetVal = False
-        If val.SL = 0 Then RetVal = False
+        Dim RetVal As Boolean = False
+        If val.WH = 0 Then RetVal = True
+        If val.WL = 0 Then RetVal = True
+        If val.SH = 0 Then RetVal = True
+        If val.SL = 0 Then RetVal = True
         Return RetVal
     End Function
 
@@ -411,11 +418,22 @@ Public Class frmPrjt
         End If
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+    Sub UpdateHeadList(tmpHeadBearingNo As Integer, cmb As ComboBox)
+        cmb.Items.Clear()
 
+        If tmpHeadBearingNo <> 0 Then
+            cmb.Items.Add(tmpHeadBearingNo)
+            cmb.SelectedIndex = 0
+        Else
+            For i = 0 To 23
+                If (Not Station.MC.myProj.Bearings(i).Failed) And Not (Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadA Or
+                        Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadB Or Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadC Or
+                        Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadD) Then
+                    cmb.Items.Add(Station.MC.myProj.Bearings(i).BearingNo)
+                End If
+            Next
+        End If
     End Sub
-
-
 
     Sub CopyFromTemplate(Filename As String)
 
@@ -468,19 +486,3 @@ Public Class frmPrjt
 End Class
 
 
-Public Class NewCheckBox
-    Inherits CheckBox
-
-    Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
-        MyBase.OnPaint(e)
-
-        'Make the box you check 3/4 the height
-        Dim boxsize As Integer = Me.Height * 0.75
-        Dim rect As New Rectangle(
-            New Point(0, Me.Height / 2 - boxsize / 2),
-            New Size(boxsize, boxsize)
-        )
-
-        ControlPaint.DrawCheckBox(e.Graphics, rect, If(Me.Checked, ButtonState.Checked, ButtonState.Normal))
-    End Sub
-End Class

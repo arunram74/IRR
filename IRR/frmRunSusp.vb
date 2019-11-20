@@ -11,11 +11,12 @@ Public Class frmRunSusp
     End Sub
 
     Private Sub frmTestComplete_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Run Or Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Load Then rndBtnRun.Enabled = False Else rndBtnRun.Enabled = True
-        If Station.MC.myProj.MyStatus <> ProjectCls.ProjectStatus.Run And Station.MC.myProj.MyStatus <> ProjectCls.ProjectStatus.Load Then
+        If Station.MC.myProj.MyStatus <> ProjectCls.ProjectStatus.Suspended Then
             rndBtnSuspend.Enabled = False
+            rndBtnFail.Enabled = False
         Else
             rndBtnSuspend.Enabled = True
+            rndBtnFail.Enabled = True
         End If
 
 
@@ -49,31 +50,53 @@ Public Class frmRunSusp
     End Sub
 
     Private Sub rndBtnSuspend_Click(sender As Object, e As EventArgs) Handles rndBtnSuspend.Click
-        If Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Run Or Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Load Then
-            Dim str As String = InputBox("Please Enter the reason for suspension")
-            If str <> "" Then
-                Station.MC.myProj.StopReason = str
-                Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Suspended
 
+        If SelectedBearingNo <> 0 Then
+            Station.MC.myProj.Bearings(SelectedBearingNo - 1).Active = False
+            Select Case SelectedHead
+                Case "A"
+                    Station.MC.myProj.HeadA = 0
+                Case "B"
+                    Station.MC.myProj.HeadB = 0
+                Case "C"
+                    Station.MC.myProj.HeadC = 0
+                Case "D"
+                    Station.MC.myProj.HeadD = 0
+            End Select
+
+        Else
+                MessageBox.Show("Invalid Bearing Number", "Select Bearing", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
             Me.Close()
-        End If
+
     End Sub
 
-    Private Sub rndBtnRun_Click(sender As Object, e As EventArgs) Handles rndBtnRun.Click
+    Private Sub rndBtnFail_Click(sender As Object, e As EventArgs) Handles rndBtnFail.Click
+
         frmMain.toolbtnNewProj.Enabled = False
         frmMain.toolBtnOpenPrj.Enabled = False
         frmMain.toolBtnModifyPrj.Enabled = False
-        Station.MC.myProj.IsPairBonded = HeadPairBonded
 
-
-        If Station.MC.myProj.StartTest() Then
-
+        If SelectedBearingNo <> 0 Then
+            Station.MC.myProj.Bearings(SelectedBearingNo - 1).Active = False
+            Station.MC.myProj.Bearings(SelectedBearingNo - 1).Failed = True
+            Station.MC.myProj.Bearings(SelectedBearingNo - 1).FailedTime = Now
+            Select Case SelectedHead
+                Case "A"
+                    Station.MC.myProj.HeadA = 0
+                Case "B"
+                    Station.MC.myProj.HeadB = 0
+                Case "C"
+                    Station.MC.myProj.HeadC = 0
+                Case "D"
+                    Station.MC.myProj.HeadD = 0
+            End Select
         Else
-            MessageBox.Show("Station Not Ready", "Start Station", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Invalid Bearing Number", "Select Bearing", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        Me.Close()
+            Me.Close()
+
     End Sub
 
 

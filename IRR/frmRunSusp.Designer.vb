@@ -25,7 +25,7 @@ Partial Class frmRunSusp
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.rndBtnRun = New IRR.GaryPerkin.UserControls.Buttons.RoundButton()
+        Me.rndBtnFail = New IRR.GaryPerkin.UserControls.Buttons.RoundButton()
         Me.rndBtnSuspend = New IRR.GaryPerkin.UserControls.Buttons.RoundButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -44,38 +44,38 @@ Partial Class frmRunSusp
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(77, 124)
+        Me.Label1.Location = New System.Drawing.Point(209, 125)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 13)
+        Me.Label1.Size = New System.Drawing.Size(29, 13)
         Me.Label1.TabIndex = 339
-        Me.Label1.Text = "RUN"
+        Me.Label1.Text = "FAIL"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(180, 127)
+        Me.Label2.Location = New System.Drawing.Point(61, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(59, 13)
         Me.Label2.TabIndex = 339
         Me.Label2.Text = "SUSPEND"
         '
-        'rndBtnRun
+        'rndBtnFail
         '
-        Me.rndBtnRun.BackColor = System.Drawing.Color.ForestGreen
-        Me.rndBtnRun.BackgroundImage = Global.IRR.My.Resources.Resources.Head
-        Me.rndBtnRun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.rndBtnRun.BevelHeight = 2
-        Me.rndBtnRun.Font = New System.Drawing.Font("Webdings", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.rndBtnRun.ForeColor = System.Drawing.Color.ForestGreen
-        Me.rndBtnRun.Image = Global.IRR.My.Resources.Resources.Head
-        Me.rndBtnRun.Location = New System.Drawing.Point(44, 30)
-        Me.rndBtnRun.Name = "rndBtnRun"
-        Me.rndBtnRun.RecessDepth = 3
-        Me.rndBtnRun.Size = New System.Drawing.Size(97, 94)
-        Me.rndBtnRun.TabIndex = 332
-        Me.rndBtnRun.Tag = "Run"
-        Me.rndBtnRun.Text = Nothing
-        Me.rndBtnRun.UseVisualStyleBackColor = False
+        Me.rndBtnFail.BackColor = System.Drawing.Color.Red
+        Me.rndBtnFail.BackgroundImage = Global.IRR.My.Resources.Resources.Head
+        Me.rndBtnFail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.rndBtnFail.BevelHeight = 2
+        Me.rndBtnFail.Font = New System.Drawing.Font("Webdings", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.rndBtnFail.ForeColor = System.Drawing.Color.ForestGreen
+        Me.rndBtnFail.Image = Global.IRR.My.Resources.Resources.Head
+        Me.rndBtnFail.Location = New System.Drawing.Point(176, 31)
+        Me.rndBtnFail.Name = "rndBtnFail"
+        Me.rndBtnFail.RecessDepth = 3
+        Me.rndBtnFail.Size = New System.Drawing.Size(97, 94)
+        Me.rndBtnFail.TabIndex = 332
+        Me.rndBtnFail.Tag = "Run"
+        Me.rndBtnFail.Text = Nothing
+        Me.rndBtnFail.UseVisualStyleBackColor = False
         '
         'rndBtnSuspend
         '
@@ -85,7 +85,7 @@ Partial Class frmRunSusp
         Me.rndBtnSuspend.BevelHeight = 2
         Me.rndBtnSuspend.Font = New System.Drawing.Font("Webdings", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
         Me.rndBtnSuspend.Image = Global.IRR.My.Resources.Resources.Head
-        Me.rndBtnSuspend.Location = New System.Drawing.Point(159, 30)
+        Me.rndBtnSuspend.Location = New System.Drawing.Point(40, 31)
         Me.rndBtnSuspend.Name = "rndBtnSuspend"
         Me.rndBtnSuspend.RecessDepth = 3
         Me.rndBtnSuspend.Size = New System.Drawing.Size(97, 94)
@@ -110,7 +110,7 @@ Partial Class frmRunSusp
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.rndBtnRun)
+        Me.Controls.Add(Me.rndBtnFail)
         Me.Controls.Add(Me.rndBtnSuspend)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -126,7 +126,7 @@ Partial Class frmRunSusp
     End Sub
     Friend WithEvents rndBtnSuspend As GaryPerkin.UserControls.Buttons.RoundButton
     Friend WithEvents btnCancel As Button
-    Friend WithEvents rndBtnRun As GaryPerkin.UserControls.Buttons.RoundButton
+    Friend WithEvents rndBtnFail As GaryPerkin.UserControls.Buttons.RoundButton
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

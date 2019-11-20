@@ -317,7 +317,7 @@ Partial Class frmPrjt
         'chkHeadA
         '
         Me.chkHeadA.AutoSize = True
-        Me.chkHeadA.Location = New System.Drawing.Point(721, 162)
+        Me.chkHeadA.Location = New System.Drawing.Point(772, 162)
         Me.chkHeadA.Name = "chkHeadA"
         Me.chkHeadA.Size = New System.Drawing.Size(15, 14)
         Me.chkHeadA.TabIndex = 347
@@ -326,7 +326,7 @@ Partial Class frmPrjt
         'chkHeadB
         '
         Me.chkHeadB.AutoSize = True
-        Me.chkHeadB.Location = New System.Drawing.Point(721, 208)
+        Me.chkHeadB.Location = New System.Drawing.Point(772, 208)
         Me.chkHeadB.Name = "chkHeadB"
         Me.chkHeadB.Size = New System.Drawing.Size(15, 14)
         Me.chkHeadB.TabIndex = 347
@@ -335,7 +335,7 @@ Partial Class frmPrjt
         'chkHeadC
         '
         Me.chkHeadC.AutoSize = True
-        Me.chkHeadC.Location = New System.Drawing.Point(721, 254)
+        Me.chkHeadC.Location = New System.Drawing.Point(772, 254)
         Me.chkHeadC.Name = "chkHeadC"
         Me.chkHeadC.Size = New System.Drawing.Size(15, 14)
         Me.chkHeadC.TabIndex = 347
@@ -344,7 +344,7 @@ Partial Class frmPrjt
         'chkHeadD
         '
         Me.chkHeadD.AutoSize = True
-        Me.chkHeadD.Location = New System.Drawing.Point(721, 300)
+        Me.chkHeadD.Location = New System.Drawing.Point(772, 300)
         Me.chkHeadD.Name = "chkHeadD"
         Me.chkHeadD.Size = New System.Drawing.Size(15, 14)
         Me.chkHeadD.TabIndex = 347
@@ -354,7 +354,7 @@ Partial Class frmPrjt
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(535, 157)
+        Me.Label6.Location = New System.Drawing.Point(586, 157)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(23, 24)
         Me.Label6.TabIndex = 67
@@ -365,7 +365,7 @@ Partial Class frmPrjt
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(535, 203)
+        Me.Label10.Location = New System.Drawing.Point(586, 203)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(22, 24)
         Me.Label10.TabIndex = 67
@@ -376,7 +376,7 @@ Partial Class frmPrjt
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(534, 249)
+        Me.Label11.Location = New System.Drawing.Point(585, 249)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(23, 24)
         Me.Label11.TabIndex = 67
@@ -387,7 +387,7 @@ Partial Class frmPrjt
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(534, 295)
+        Me.Label13.Location = New System.Drawing.Point(585, 295)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(23, 24)
         Me.Label13.TabIndex = 67
@@ -398,7 +398,7 @@ Partial Class frmPrjt
         '
         Me.cmbBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.cmbBA.FormattingEnabled = True
-        Me.cmbBA.Location = New System.Drawing.Point(587, 153)
+        Me.cmbBA.Location = New System.Drawing.Point(638, 153)
         Me.cmbBA.Name = "cmbBA"
         Me.cmbBA.Size = New System.Drawing.Size(101, 32)
         Me.cmbBA.TabIndex = 348
@@ -407,7 +407,7 @@ Partial Class frmPrjt
         '
         Me.cmbBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.cmbBB.FormattingEnabled = True
-        Me.cmbBB.Location = New System.Drawing.Point(587, 199)
+        Me.cmbBB.Location = New System.Drawing.Point(638, 199)
         Me.cmbBB.Name = "cmbBB"
         Me.cmbBB.Size = New System.Drawing.Size(101, 32)
         Me.cmbBB.TabIndex = 348
@@ -416,7 +416,7 @@ Partial Class frmPrjt
         '
         Me.cmbBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.cmbBC.FormattingEnabled = True
-        Me.cmbBC.Location = New System.Drawing.Point(587, 245)
+        Me.cmbBC.Location = New System.Drawing.Point(638, 245)
         Me.cmbBC.Name = "cmbBC"
         Me.cmbBC.Size = New System.Drawing.Size(101, 32)
         Me.cmbBC.TabIndex = 348
@@ -425,7 +425,7 @@ Partial Class frmPrjt
         '
         Me.cmbBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.cmbBD.FormattingEnabled = True
-        Me.cmbBD.Location = New System.Drawing.Point(587, 291)
+        Me.cmbBD.Location = New System.Drawing.Point(638, 291)
         Me.cmbBD.Name = "cmbBD"
         Me.cmbBD.Size = New System.Drawing.Size(101, 32)
         Me.cmbBD.TabIndex = 348

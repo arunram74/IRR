@@ -44,7 +44,6 @@ Partial Class frmBearing
         Me.chkB1Byp = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -128,6 +127,7 @@ Partial Class frmBearing
         Me.Label41 = New System.Windows.Forms.Label()
         Me.cmbNoOfBearings = New System.Windows.Forms.ComboBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -360,16 +360,6 @@ Partial Class frmBearing
         Me.Label15.TabIndex = 333
         Me.Label15.Text = "Head D Bearing Temp (°F)"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label13
-        '
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(90, 308)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(213, 26)
-        Me.Label13.TabIndex = 330
-        Me.Label13.Text = "Head B Bearing Temp (°F)"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label5
         '
@@ -1157,6 +1147,16 @@ Partial Class frmBearing
         Me.PictureBox3.TabIndex = 471
         Me.PictureBox3.TabStop = False
         '
+        'Label13
+        '
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(90, 308)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(213, 26)
+        Me.Label13.TabIndex = 330
+        Me.Label13.Text = "Head B Bearing Temp (°F)"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'frmBearing
         '
         Me.CancelButton = Me.btnReturn
@@ -1313,7 +1313,6 @@ Partial Class frmBearing
     Friend WithEvents chkB1Byp As CheckBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label13 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
@@ -1397,4 +1396,5 @@ Partial Class frmBearing
     Friend WithEvents Label41 As Label
     Friend WithEvents cmbNoOfBearings As ComboBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label13 As Label
 End Class

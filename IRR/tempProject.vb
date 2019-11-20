@@ -6,13 +6,13 @@
     Public ProjectOwner As String
     Public TestID As String
     'Public MachineSize As Integer
-    Public PartNo As Integer
+    Public PartNo As String
     Public Make As String
     Public Lubrication As String
-    Public HeadA As String
-    Public HeadB As String
-    Public HeadC As String
-    Public HeadD As String
+    Public HeadA As Integer
+    Public HeadB As Integer
+    Public HeadC As Integer
+    Public HeadD As Integer
 
     Public HeadA_Enable As Boolean
     Public HeadB_Enable As Boolean

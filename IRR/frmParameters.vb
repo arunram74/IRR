@@ -336,14 +336,14 @@ Public Class frmParameters
                         Case "VIBA"
                             TempProjectObj.VibrationA = val
                         Case "VIBB"
-                            TempProjectObj.VibrationA = val
+                            TempProjectObj.VibrationB = val
                         Case "VIBC"
-                            TempProjectObj.VibrationA = val
+                            TempProjectObj.VibrationC = val
                         Case "VIBD"
-                            TempProjectObj.VibrationA = val
+                            TempProjectObj.VibrationD = val
                         Case "TANKTEMP"
                             TempProjectObj.TankTemp = val
-                        Case "INLETEMP"
+                        Case "INLETTEMP"
                             TempProjectObj.Inlet_TempA = val
                         Case "LOAD"
                             TempProjectObj.Load = val
@@ -357,14 +357,9 @@ Public Class frmParameters
                             TempProjectObj.BC = val
                         Case "BD"
                             TempProjectObj.BD = val
-                        Case "SBA"
+                        Case "SB"
                             TempProjectObj.SBA = val
-                        Case "SBB"
-                            TempProjectObj.SBB = val
-                        Case "SBC"
-                            TempProjectObj.SBC = val
-                        Case "SBD"
-                            TempProjectObj.SBD = val
+
                         Case "MAXREV"
                             TempProjectObj.MaxRev = val.WH
                             TempProjectObj.MaxRevActive = val.Bypass

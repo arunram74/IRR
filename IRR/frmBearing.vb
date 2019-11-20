@@ -4,7 +4,7 @@ Public Class frmBearing
 
     Public ValuesChanged As Boolean = False
 
-    Private Sub Bordergray(sender As Object, e As PaintEventArgs) Handles Label7.Paint, Label4.Paint, Label9.Paint, Label8.Paint, Label10.Paint, Label11.Paint, Label17.Paint, Label19.Paint, PictureBox7.Paint
+    Private Sub Bordergray(sender As Object, e As PaintEventArgs) ' Handles Label7.Paint, Label4.Paint, Label9.Paint, Label8.Paint, Label10.Paint, Label11.Paint, Label17.Paint, Label19.Paint, PictureBox7.Paint
         ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.LightGray, ButtonBorderStyle.Solid)
     End Sub
 
@@ -64,33 +64,27 @@ Public Class frmBearing
         chkB4Byp.Checked = TempProjectObj.BD.Bypass
 
         txtVibAWH.Text = TempProjectObj.VibrationA.WH
-        txtVibAWH.Text = TempProjectObj.VibrationA.WL
-        txtVibAWH.Text = TempProjectObj.VibrationA.SH
-        txtVibAWH.Text = TempProjectObj.VibrationA.SL
-        chkVibAByp.Checked = TempProjectObj.VibrationA.Bypass
-
-        txtVibAWH.Text = TempProjectObj.VibrationA.WH
-        txtVibAWH.Text = TempProjectObj.VibrationA.WL
-        txtVibAWH.Text = TempProjectObj.VibrationA.SH
-        txtVibAWH.Text = TempProjectObj.VibrationA.SL
+        txtVibAWL.Text = TempProjectObj.VibrationA.WL
+        txtVibASH.Text = TempProjectObj.VibrationA.SH
+        txtVibASL.Text = TempProjectObj.VibrationA.SL
         chkVibAByp.Checked = TempProjectObj.VibrationA.Bypass
 
         txtVibBWH.Text = TempProjectObj.VibrationB.WH
-        txtVibBWH.Text = TempProjectObj.VibrationB.WL
-        txtVibBWH.Text = TempProjectObj.VibrationB.SH
-        txtVibBWH.Text = TempProjectObj.VibrationB.SL
+        txtVibBWL.Text = TempProjectObj.VibrationB.WL
+        txtVibBSH.Text = TempProjectObj.VibrationB.SH
+        txtVibBSL.Text = TempProjectObj.VibrationB.SL
         chkVibBByp.Checked = TempProjectObj.VibrationB.Bypass
 
         txtVibCWH.Text = TempProjectObj.VibrationC.WH
-        txtVibCWH.Text = TempProjectObj.VibrationC.WL
-        txtVibCWH.Text = TempProjectObj.VibrationC.SH
-        txtVibCWH.Text = TempProjectObj.VibrationC.SL
+        txtVibCWL.Text = TempProjectObj.VibrationC.WL
+        txtVibCSH.Text = TempProjectObj.VibrationC.SH
+        txtVibCSL.Text = TempProjectObj.VibrationC.SL
         chkVibCByp.Checked = TempProjectObj.VibrationC.Bypass
 
         txtVibDWH.Text = TempProjectObj.VibrationD.WH
-        txtVibDWH.Text = TempProjectObj.VibrationD.WL
-        txtVibDWH.Text = TempProjectObj.VibrationD.SH
-        txtVibDWH.Text = TempProjectObj.VibrationD.SL
+        txtVibDWL.Text = TempProjectObj.VibrationD.WL
+        txtVibDSH.Text = TempProjectObj.VibrationD.SH
+        txtVibDSL.Text = TempProjectObj.VibrationD.SL
         chkVibDByp.Checked = TempProjectObj.VibrationD.Bypass
 
         cmbNoOfBearings.SelectedIndex = 1
@@ -285,10 +279,6 @@ Public Class frmBearing
         End If
     End Sub
 
-    Private Sub cmbNoOfBearings_SelectedIndexChanged(sender As Object, e As EventArgs)
-        BearingSelection()
-    End Sub
-
     Sub BearingSelection()
         If cmbNoOfBearings.SelectedIndex = 0 Then
             txtB2WH.Visible = False
@@ -325,11 +315,11 @@ Public Class frmBearing
             txtVibCSL.Visible = False
             chkVibCByp.Visible = False
 
-            txtVibCWH.Visible = False
-            txtVibCWL.Visible = False
-            txtVibCSH.Visible = False
-            txtVibCSL.Visible = False
-            chkVibCByp.Visible = False
+            txtVibDWH.Visible = False
+            txtVibDWL.Visible = False
+            txtVibDSH.Visible = False
+            txtVibDSL.Visible = False
+            chkVibDByp.Visible = False
 
             Label25.Visible = False
             Label22.Visible = False
@@ -370,11 +360,11 @@ Public Class frmBearing
             txtVibCSL.Visible = True
             chkVibCByp.Visible = True
 
-            txtVibCWH.Visible = True
-            txtVibCWL.Visible = True
-            txtVibCSH.Visible = True
-            txtVibCSL.Visible = True
-            chkVibCByp.Visible = True
+            txtVibDWH.Visible = True
+            txtVibDWL.Visible = True
+            txtVibDSH.Visible = True
+            txtVibDSL.Visible = True
+            chkVibDByp.Visible = True
 
             Label25.Visible = True
             Label22.Visible = True
@@ -382,5 +372,7 @@ Public Class frmBearing
         End If
     End Sub
 
-
+    Private Sub cmbNoOfBearings_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmbNoOfBearings.SelectedIndexChanged
+        BearingSelection()
+    End Sub
 End Class

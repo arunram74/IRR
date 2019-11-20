@@ -15,6 +15,8 @@ Module commonfunc
     Public Const BaseScanTime As Long = 250 '250ms
 
     Public Const NoOfGraphEntries As Integer = 1500
+    Public SelectedBearingNo As Integer = 0
+    Public SelectedHead As String
 
     Public Station As StnCls
 
@@ -81,6 +83,15 @@ Module commonfunc
 
             TagName = TagNameStr
         End Sub
+    End Structure
+
+    Public Structure BearingData
+        Public ProjectID As Integer
+        Public BearingNo As Integer
+        Public Failed As Boolean
+        Public Active As Boolean
+        Public AddedTime As Date
+        Public FailedTime As Date
     End Structure
 
     Public TagExFrom As String

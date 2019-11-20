@@ -50,7 +50,8 @@ Public Class frmDefault
 
 
         H1.Selected = True
-
+        SelectedBearingNo = Station.MC.myProj.HeadA
+        SelectedHead = "A"
 
         EnableDisable(Station.MC.myProj, Station.MC.myProj.MyStatus, Panel1.Location, e)
         Dim e1 As MouseEventArgs = New MouseEventArgs(System.Windows.Forms.MouseButtons.Left, 0, 0, 0, 0)
@@ -64,7 +65,8 @@ Public Class frmDefault
 
 
         H2.Selected = True
-
+        SelectedBearingNo = Station.MC.myProj.HeadB
+        SelectedHead = "B"
 
         EnableDisable(Station.MC.myProj, Station.MC.myProj.MyStatus, Panel2.Location, e)
         Dim e1 As MouseEventArgs = New MouseEventArgs(System.Windows.Forms.MouseButtons.Left, 0, 0, 0, 0)
@@ -78,7 +80,8 @@ Public Class frmDefault
 
 
         H3.Selected = True
-
+        SelectedBearingNo = Station.MC.myProj.HeadC
+        SelectedHead = "C"
 
         EnableDisable(Station.MC.myProj, Station.MC.myProj.MyStatus, Panel3.Location, e)
         Dim e1 As MouseEventArgs = New MouseEventArgs(System.Windows.Forms.MouseButtons.Left, 0, 0, 0, 0)
@@ -92,7 +95,8 @@ Public Class frmDefault
 
 
         H4.Selected = True
-
+        SelectedBearingNo = Station.MC.myProj.HeadD
+        SelectedHead = "D"
 
         EnableDisable(Station.MC.myProj, Station.MC.myProj.MyStatus, Panel4.Location, e)
         Dim e1 As MouseEventArgs = New MouseEventArgs(System.Windows.Forms.MouseButtons.Left, 0, 0, 0, 0)
