@@ -50,6 +50,7 @@ Public Class ProjectCls
         Started 'for machine utility
         Suspended
         Failure
+        Disabled
     End Enum
 
     Dim mLocked As Boolean = True
@@ -86,7 +87,7 @@ Public Class ProjectCls
     Public LoadLogRate As TimeSpan
     Public DispUpdateRate As TimeSpan
 
-    Friend Bearings(24) As BearingData
+    Friend Bearings(40) As BearingData
     Friend BA, SBA, Inlet_TempA, VibrationA As SingleLimits
     Friend BB, SBB, Inlet_TempB, VibrationB As SingleLimits
     Friend BC, SBC, Inlet_TempC, VibrationC As SingleLimits
@@ -1010,10 +1011,10 @@ Public Class ProjectCls
         Dim constr As String = "SELECT * from Bearings where ProjectID=" & ProjectID & " Order by BearingNo"
         If GetDataMySQL(con, daParam, ds, dt2, False, constr) Then
 
-            If dt2.Rows.Count = 24 Then
-                For i = 0 To 23
-                    Bearings(i).ProjectID = dt2.Rows(i).Item("ProjectID")
-                    Bearings(i).BearingNo = dt2.Rows(i).Item("BearingNo")
+            If dt2.Rows.Count = 40 Then
+                For i = 0 To 39
+                    Bearings(i).ProjectID = ProjectID
+                    Bearings(i).BearingNo = i + 1
                     Bearings(i).Active = dt2.Rows(i).Item("Active")
                     Bearings(i).Failed = dt2.Rows(i).Item("Failed")
                     Bearings(i).AddedTime = dt2.Rows(i).Item("AddedTime")
@@ -1038,7 +1039,7 @@ Public Class ProjectCls
 
         Try
             SQLConnection.Open()
-            For i = 0 To 23
+            For i = 0 To 39
                 sqlCommand.Parameters.AddWithValue("@pid", ProjectID)
                 sqlCommand.Parameters.AddWithValue("@bno", i + 1)
                 sqlCommand.Parameters.AddWithValue("@act", True)
@@ -1068,11 +1069,11 @@ Public Class ProjectCls
         If GetDataMySQL(con, daParam, ds, dt2, False, constr) Then
             Try
                 Dim RowCount = dt2.Rows.Count
-                For i = 0 To 23
+                For i = 0 To 39
                     If RowCount = 0 Then MyRow = dt2.NewRow Else MyRow = dt2.Rows(i)
-                    MyRow.Item("ProjectID") = Bearings(i).ProjectID
-                    MyRow.Item("BearingNo") = Bearings(i).BearingNo
-                    MyRow.Item("Active") = Bearings(i).BearingNo = HeadA Or Bearings(i).BearingNo = HeadB Or Bearings(i).BearingNo = HeadC Or Bearings(i).BearingNo = HeadD
+                    MyRow.Item("ProjectID") = ProjectID
+                    MyRow.Item("BearingNo") = i + 1
+                    MyRow.Item("Active") = Bearings(i).Active
                     MyRow.Item("Failed") = Bearings(i).Failed
                     MyRow.Item("AddedTime") = Bearings(i).AddedTime
                     MyRow.Item("FailedTime") = Bearings(i).FailedTime
@@ -1093,6 +1094,42 @@ Public Class ProjectCls
         LoadBearings() 'load them again!
     End Sub
 
+    Public Sub DisableStn(HeadStr As String)
+        If Not ProjectID = 0 Then
+            Select Case HeadStr
+                Case "A"
+                    Bearings(Station.MC.myProj.HeadA - 1).Active = False
+                    Station.MC.myProj.HeadA = 0
+                    Station.MC.myProj.HeadA_Enable = False
+                Case "B"
+                    Bearings(Station.MC.myProj.HeadB - 1).Active = False
+                    Station.MC.myProj.HeadB = 0
+                    Station.MC.myProj.HeadB_Enable = False
+                Case "C"
+                    Bearings(Station.MC.myProj.HeadC - 1).Active = False
+                    Station.MC.myProj.HeadC = 0
+                    Station.MC.myProj.HeadC_Enable = False
+                Case "D"
+                    Bearings(Station.MC.myProj.HeadD - 1).Active = False
+                    Station.MC.myProj.HeadD = 0
+                    Station.MC.myProj.HeadD_Enable = False
+            End Select
+            UpdateBearings()
+            UpdateProject()
+        End If
+    End Sub
+
+    Public Function CheckforBearings(BearNo As Integer) As Boolean
+        Dim retval As Boolean = False
+        Dim constr As String = "SELECT * from Bearings where ProjectID=" & ProjectID & " and BearingNo=" & BearNo & " and Failed=True "
+
+        If GetDataMySQL(con, daPrj, ds, dt1, False, constr) Then
+            If dt1.Rows.Count > 0 Then
+                retval = True 'Bearing already exists
+            End If
+        End If
+        Return retval
+    End Function
 #End Region
 
 #End Region 'end of database functions
@@ -1487,14 +1524,10 @@ Public Class ProjectCls
         dtBearing.Columns.Add("BB", GetType(Single))
         dtBearing.Columns.Add("BC", GetType(Single))
         dtBearing.Columns.Add("BD", GetType(Single))
-
-        dtSupBearing = dsGraphs.Tables.Add("SupBearings")
-        dtSupBearing.Columns.Add("MinVal", GetType(Single))
-        dtSupBearing.Columns.Add("MaxVal", GetType(Single))
-        dtSupBearing.Columns.Add("SBA", GetType(Single))
-        dtSupBearing.Columns.Add("SBB", GetType(Single))
-        dtSupBearing.Columns.Add("SBC", GetType(Single))
-        dtSupBearing.Columns.Add("SBD", GetType(Single))
+        dtBearing.Columns.Add("SBA", GetType(Single))
+        dtBearing.Columns.Add("SBB", GetType(Single))
+        dtBearing.Columns.Add("SBC", GetType(Single))
+        dtBearing.Columns.Add("SBD", GetType(Single))
 
 
         dtOilTemp = dsGraphs.Tables.Add("OilTemp")
@@ -1504,11 +1537,7 @@ Public Class ProjectCls
         dtOilTemp.Columns.Add("InletOilB", GetType(Single))
         dtOilTemp.Columns.Add("InletOilC", GetType(Single))
         dtOilTemp.Columns.Add("InletOilD", GetType(Single))
-
-        dtTankOilTemp = dsGraphs.Tables.Add("TankOilTemp")
-        dtTankOilTemp.Columns.Add("MinVal", GetType(Single))
-        dtTankOilTemp.Columns.Add("MaxVal", GetType(Single))
-        dtTankOilTemp.Columns.Add("TankOil", GetType(Single))
+        dtOilTemp.Columns.Add("TankOil", GetType(Single))
 
 
 
@@ -1526,16 +1555,10 @@ Public Class ProjectCls
         dtVibration.Rows.Add(VibrationA.SL, VibrationA.SH, VibrationA.Value, VibrationB.Value, VibrationC.Value, VibrationD.Value)
 
         If dtBearing.Rows.Count > NoOfGraphEntries Then dtBearing.Rows(0).Delete()
-        dtBearing.Rows.Add(BA.SL, BA.SH, BA.Value, BB.Value, BC.Value, BD.Value)
-
-        If dtSupBearing.Rows.Count > NoOfGraphEntries Then dtBearing.Rows(0).Delete()
-        dtSupBearing.Rows.Add(SBA.SL, SBA.SH, SBA.Value, SBB.Value, SBC.Value, SBD.Value)
+        dtBearing.Rows.Add(BA.SL, BA.SH, BA.Value, BB.Value, BC.Value, BD.Value, SBA.Value, SBB.Value, SBC.Value, SBD.Value)
 
         If dtOilTemp.Rows.Count > NoOfGraphEntries Then dtOilTemp.Rows(0).Delete()
-        dtOilTemp.Rows.Add(Inlet_TempA.SL, Inlet_TempA.SH, Inlet_TempA.Value, Inlet_TempB.Value, Inlet_TempC.Value, Inlet_TempD.Value)
-
-        If dtTankOilTemp.Rows.Count > NoOfGraphEntries Then dtOilTemp.Rows(0).Delete()
-        dtTankOilTemp.Rows.Add(TankTemp.SL, TankTemp.SH, TankTemp.Value)
+        dtOilTemp.Rows.Add(Inlet_TempA.SL, Inlet_TempA.SH, Inlet_TempA.Value, Inlet_TempB.Value, Inlet_TempC.Value, Inlet_TempD.Value, TankTemp.Value)
 
         If dtSpeed.Rows.Count > NoOfGraphEntries Then dtSpeed.Rows(0).Delete()
         dtSpeed.Rows.Add(Speed.SL, Speed.SH, Speed.Value)
@@ -1552,15 +1575,15 @@ Public Class ProjectCls
 
     Sub UpdateTagData()
         'Update Tag Data
-        BA.Value = MyPLC.GetTagVal("BA_ActVal")
-        BB.Value = MyPLC.GetTagVal("BB_ActVal")
-        BC.Value = MyPLC.GetTagVal("BC_ActVal")
-        BD.Value = MyPLC.GetTagVal("BD_ActVal")
+        BA.Value = MyPLC.GetTagVal("BTempA_actVal")
+        BB.Value = MyPLC.GetTagVal("BTempB_actVal")
+        BC.Value = MyPLC.GetTagVal("BTempC_actVal")
+        BD.Value = MyPLC.GetTagVal("BTempD_actVal")
 
-        SBA.Value = MyPLC.GetTagVal("SBA_ActVal")
-        SBB.Value = MyPLC.GetTagVal("SBB_ActVal")
-        SBC.Value = MyPLC.GetTagVal("SBC_ActVal")
-        SBD.Value = MyPLC.GetTagVal("SBD_ActVal")
+        SBA.Value = MyPLC.GetTagVal("SBTempA_actVal")
+        SBB.Value = MyPLC.GetTagVal("SBTempB_actVal")
+        SBC.Value = MyPLC.GetTagVal("SBTempC_actVal")
+        SBD.Value = MyPLC.GetTagVal("SBTempD_actVal")
 
         Inlet_TempA.Value = MyPLC.GetTagVal("Inlet_TempA_ActVal")
         Inlet_TempB.Value = MyPLC.GetTagVal("Inlet_TempB_ActVal")

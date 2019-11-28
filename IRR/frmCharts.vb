@@ -3,6 +3,7 @@ Imports System.Data.Common
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports MySql.Data.MySqlClient
 
+
 Public Class frmCharts
     Dim tempval As Integer
     Dim SelectedGraphHd As Integer = 0
@@ -23,15 +24,16 @@ Public Class frmCharts
     Dim counter As Integer = 0
 
     Private Sub frmCharts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rdbHA.Checked = True
 
 
         HandleChecks()
 
-        CreateGraphs(chrtVib, bsvb, Station.MC.myProj.dtVibration)
-        CreateGraphs(chrtSpd, bsspd, Station.MC.myProj.dtSpeed)
-        CreateGraphs(chrtLd, bsLd, Station.MC.myProj.dtLoadDisp)
-        CreateGraphs(chrtBT, bsbtmp, Station.MC.myProj.dtBearing)
-        CreateGraphs(chrtOT, bsotmp, Station.MC.myProj.dtOilTemp)
+        CreateGraphs(chrtVib, bsvb, Station.MC.myProj.dtVibration, 3)
+        CreateGraphs(chrtSpd, bsspd, Station.MC.myProj.dtSpeed, 3)
+        CreateGraphs(chrtLd, bsLd, Station.MC.myProj.dtLoadDisp, 3)
+        CreateGraphs(chrtBT, bsbtmp, Station.MC.myProj.dtBearing, 4)
+        CreateGraphs(chrtOT, bsotmp, Station.MC.myProj.dtOilTemp, 4)
         UpdateGraphs()
         TmrCharUpdate.Enabled = True
         counter = 0
@@ -61,13 +63,13 @@ Public Class frmCharts
 
     End Sub
 
-    Sub CreateGraphs(grph As Chart, bs As BindingSource, grphdt As DataTable)
+    Sub CreateGraphs(grph As Chart, bs As BindingSource, grphdt As DataTable, ColumnCount As Integer)
         Try
             Dim ColorSet() = {Color.Red, Color.Blue, Color.Green, Color.Brown, Color.Gray, Color.Purple}
             'bs.DataSource = grphdt
             'grph.DataSource = grphdt
             'grph.DataBind()
-            For i = 0 To grphdt.Columns.Count - 1
+            For i = 0 To ColumnCount - 1
                 If grph.Series.Count < (i + 1) Then grph.Series.Add(i.ToString)
                 grph.Series(i).ChartType = SeriesChartType.Line
                 grph.Series(i).Color = ColorSet(i)
@@ -88,55 +90,46 @@ Public Class frmCharts
 
         Try
 
-
-            'chrtVib.DataSource = ""
-            'For Each Srs In chrtVib.Series
-            '    Srs.Points.Clear()
-            'Next
-            'chrtSpd.DataSource = Station.MC.myProj.dtVibration
-            'dtGrphVib = New DataView(Station.MC.myProj.dtVibration)
-            dtGrphVib = Station.MC.myProj.dtVibration.Copy
-            chrtVib.DataSource = dtGrphVib
-
-
-            'chrtSpd.DataSource = ""
-            'For Each Srs In chrtSpd.Series
-            '    Srs.Points.Clear()
-            'Next
-            'chrtSpd.DataSource = Station.MC.myProj.dtSpeed
-            'dtGrphSpeed = New DataView(Station.MC.myProj.dtSpeed)
             dtGrphSpeed = Station.MC.myProj.dtSpeed.Copy
             chrtSpd.DataSource = dtGrphSpeed
 
-            'chrtLd.DataSource = ""
-            'For Each Srs In chrtLd.Series
-            '    Srs.Points.Clear()
-            'Next
-            'chrtLd.DataSource = Station.MC.myProj.dtLoadDisp
             dtGrphLoadDisp = Station.MC.myProj.dtLoadDisp.Copy
             chrtLd.DataSource = dtGrphLoadDisp
 
-            'chrtBT.DataSource = ""
-            'For Each Srs In chrtBT.Series
-            '    Srs.Points.Clear()
-            'Next
-            'chrtBT.DataSource = Station.MC.myProj.dtBearing
             dtGrphBearing = Station.MC.myProj.dtBearing.Copy
-            chrtBT.DataSource = dtGrphBearing
-
-            'chrtOT.DataSource = ""
-            'For Each Srs In chrtOT.Series
-            '    Srs.Points.Clear()
-            'Next
-            'chrtOT.DataSource = Station.MC.myProj.dtOilTemp
             dtGrphOilTemp = Station.MC.myProj.dtOilTemp.Copy
-            chrtOT.DataSource = dtGrphOilTemp
+            dtGrphVib = Station.MC.myProj.dtVibration.Copy
 
-            'bsvb.ResetBindings(False)
-            'bsspd.ResetBindings(False)
-            'bsLd.ResetBindings(False)
-            'bsbtmp.ResetBindings(False)
-            'bsotmp.ResetBindings(False)
+            dtGrphBearing = Station.MC.myProj.dtBearing.Copy
+            dtGrphOilTemp = Station.MC.myProj.dtOilTemp.Copy
+            dtGrphVib = Station.MC.myProj.dtVibration.Copy
+
+
+            If rdbHA.Checked Then
+
+                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BA", "SBA")
+                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilA", "TankOil")
+                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationA")
+            ElseIf rdbHB.Checked Then
+                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BB", "SBB")
+                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilB", "TankOil")
+                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationB")
+            ElseIf rdbHC.Checked Then
+                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BC", "SBC")
+                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilC", "TankOil")
+                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationC")
+            ElseIf rdbHD.Checked Then
+                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BD", "SBD")
+                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilD", "TankOil")
+                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationD")
+            End If
+
+            For i = 0 To 3
+                chrtBT.Series(i).Name = chrtBT.DataSource.Columns(i).ColumnName
+                chrtOT.Series(i).Name = chrtOT.DataSource.Columns(i).ColumnName
+                If i < 3 Then chrtVib.Series(i).Name = chrtVib.DataSource.Columns(i).ColumnName
+            Next i
+
 
             'Station.MC.myProj.DataUpdateLock.EnterReadLock()
             chrtVib.DataBind()
@@ -145,6 +138,7 @@ Public Class frmCharts
             chrtBT.DataBind()
             chrtOT.DataBind()
             'Station.MC.myProj.DataUpdateLock.ExitReadLock()
+
 
 
 
@@ -182,221 +176,65 @@ Public Class frmCharts
         counter = 0
     End Sub
 
+    Private Sub rdb_CheckedChanged(sender As Object, e As EventArgs) Handles rdbHA.CheckedChanged, rdbHB.CheckedChanged, rdbHC.CheckedChanged, rdbHD.CheckedChanged
+        HandleChecks()
+    End Sub
+
     Sub UpdateGraphValues()
         'Update values
-        lblVibASH.Text = Station.MC.myProj.VibrationA.SH
-        lblVibASL.Text = Station.MC.myProj.VibrationA.SL
-        lblVibAWH.Text = Station.MC.myProj.VibrationA.WH
-        lblVibAWL.Text = Station.MC.myProj.VibrationA.WL
 
-        lblVibA.Text = String.Format("{0:n2}", Station.MC.myProj.VibrationA.Value)
-        If Station.MC.myProj.VibrationA.Value <= Station.MC.myProj.VibrationA.SL Or Station.MC.myProj.VibrationA.Value >= Station.MC.myProj.VibrationA.SH Then
-            lblVibA.BackColor = Color.Red
-        ElseIf Station.MC.myProj.VibrationA.Value <= Station.MC.myProj.VibrationA.WL Or Station.MC.myProj.VibrationA.Value >= Station.MC.myProj.VibrationA.WH Then
-            lblVibA.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.VibrationA.Value < Station.MC.myProj.VibrationA.WH And Station.MC.myProj.VibrationA.Value > Station.MC.myProj.VibrationA.WL Then
-            lblVibA.BackColor = Color.Green
-        Else
-            lblVibA.BackColor = Color.WhiteSmoke
+        If rdbHA.Checked Then
+            UpdateRows(Station.MC.myProj.VibrationA, lblVib, lblVibSH, lblVibSL, lblVibWH, lblVibWL)
+            UpdateRows(Station.MC.myProj.BA, lblBT, lblBSH, lblBSL, lblBWH, lblBWL)
+            UpdateRows(Station.MC.myProj.SBA, lblSBT, lblSBSH, lblSBSL, lblSBWH, lblSBWL)
+            UpdateRows(Station.MC.myProj.Inlet_TempA, lblLub, lblLubSH, lblLubSL, lblLubWH, lblLubWL)
+        ElseIf rdbHB.Checked Then
+            UpdateRows(Station.MC.myProj.VibrationB, lblVib, lblVibSH, lblVibSL, lblVibWH, lblVibWL)
+            UpdateRows(Station.MC.myProj.BB, lblBT, lblBSH, lblBSL, lblBWH, lblBWL)
+            UpdateRows(Station.MC.myProj.SBB, lblSBT, lblSBSH, lblSBSL, lblSBWH, lblSBWL)
+            UpdateRows(Station.MC.myProj.Inlet_TempB, lblLub, lblLubSH, lblLubSL, lblLubWH, lblLubWL)
+        ElseIf rdbHC.Checked Then
+            UpdateRows(Station.MC.myProj.VibrationC, lblVib, lblVibSH, lblVibSL, lblVibWH, lblVibWL)
+            UpdateRows(Station.MC.myProj.BC, lblBT, lblBSH, lblBSL, lblBWH, lblBWL)
+            UpdateRows(Station.MC.myProj.SBC, lblSBT, lblSBSH, lblSBSL, lblSBWH, lblSBWL)
+            UpdateRows(Station.MC.myProj.Inlet_TempC, lblLub, lblLubSH, lblLubSL, lblLubWH, lblLubWL)
+        ElseIf rdbHD.Checked Then
+            UpdateRows(Station.MC.myProj.VibrationD, lblVib, lblVibSH, lblVibSL, lblVibWH, lblVibWL)
+            UpdateRows(Station.MC.myProj.BD, lblBT, lblBSH, lblBSL, lblBWH, lblBWL)
+            UpdateRows(Station.MC.myProj.SBD, lblSBT, lblSBSH, lblSBSL, lblSBWH, lblSBWL)
+            UpdateRows(Station.MC.myProj.Inlet_TempD, lblLub, lblLubSH, lblLubSL, lblLubWH, lblLubWL)
         End If
-        If Station.MC.myProj.VibrationA.Bypass Then lblVibA.BackColor = Color.WhiteSmoke
-
-        'Update values
-        lblVibBSH.Text = Station.MC.myProj.VibrationB.SH
-        lblVibBSL.Text = Station.MC.myProj.VibrationB.SL
-        lblVibBWH.Text = Station.MC.myProj.VibrationB.WH
-        lblVibBWL.Text = Station.MC.myProj.VibrationB.WL
-
-        lblVibB.Text = String.Format("{0:n2}", Station.MC.myProj.VibrationB.Value)
-        If Station.MC.myProj.VibrationB.Value <= Station.MC.myProj.VibrationB.SL Or Station.MC.myProj.VibrationB.Value >= Station.MC.myProj.VibrationB.SH Then
-            lblVibB.BackColor = Color.Red
-        ElseIf Station.MC.myProj.VibrationB.Value <= Station.MC.myProj.VibrationB.WL Or Station.MC.myProj.VibrationB.Value >= Station.MC.myProj.VibrationB.WH Then
-            lblVibB.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.VibrationB.Value < Station.MC.myProj.VibrationB.WH And Station.MC.myProj.VibrationB.Value > Station.MC.myProj.VibrationB.WL Then
-            lblVibB.BackColor = Color.Green
-        Else
-            lblVibB.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.VibrationB.Bypass Then lblVibB.BackColor = Color.WhiteSmoke
-
-        'Update values
-        lblVibCSH.Text = Station.MC.myProj.VibrationC.SH
-        lblVibCSL.Text = Station.MC.myProj.VibrationC.SL
-        lblVibCWH.Text = Station.MC.myProj.VibrationC.WH
-        lblVibCWL.Text = Station.MC.myProj.VibrationC.WL
-
-        lblVibC.Text = String.Format("{0:n2}", Station.MC.myProj.VibrationC.Value)
-        If Station.MC.myProj.VibrationC.Value <= Station.MC.myProj.VibrationC.SL Or Station.MC.myProj.VibrationC.Value >= Station.MC.myProj.VibrationC.SH Then
-            lblVibC.BackColor = Color.Red
-        ElseIf Station.MC.myProj.VibrationC.Value <= Station.MC.myProj.VibrationC.WL Or Station.MC.myProj.VibrationC.Value >= Station.MC.myProj.VibrationC.WH Then
-            lblVibC.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.VibrationC.Value < Station.MC.myProj.VibrationC.WH And Station.MC.myProj.VibrationC.Value > Station.MC.myProj.VibrationC.WL Then
-            lblVibC.BackColor = Color.Green
-        Else
-            lblVibC.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.VibrationC.Bypass Then lblVibC.BackColor = Color.WhiteSmoke
-
-        'Update values
-        lblVibDSH.Text = Station.MC.myProj.VibrationD.SH
-        lblVibDSL.Text = Station.MC.myProj.VibrationD.SL
-        lblVibDWH.Text = Station.MC.myProj.VibrationD.WH
-        lblVibDWL.Text = Station.MC.myProj.VibrationD.WL
-
-        lblVibD.Text = String.Format("{0:n2}", Station.MC.myProj.VibrationD.Value)
-        If Station.MC.myProj.VibrationD.Value <= Station.MC.myProj.VibrationD.SL Or Station.MC.myProj.VibrationD.Value >= Station.MC.myProj.VibrationD.SH Then
-            lblVibD.BackColor = Color.Red
-        ElseIf Station.MC.myProj.VibrationD.Value <= Station.MC.myProj.VibrationD.WL Or Station.MC.myProj.VibrationD.Value >= Station.MC.myProj.VibrationD.WH Then
-            lblVibD.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.VibrationD.Value < Station.MC.myProj.VibrationD.WH And Station.MC.myProj.VibrationD.Value > Station.MC.myProj.VibrationD.WL Then
-            lblVibD.BackColor = Color.Green
-        Else
-            lblVibD.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.VibrationD.Bypass Then lblVibD.BackColor = Color.WhiteSmoke
-
-        'Update values
-        lblSpdSH.Text = Station.MC.myProj.Speed.SH
-        lblSpdSL.Text = Station.MC.myProj.Speed.SL
-        lblSpdWH.Text = Station.MC.myProj.Speed.WH
-        lblSpdWL.Text = Station.MC.myProj.Speed.WL
-        lblSpd.Text = String.Format("{0:n2}", Station.MC.myProj.Speed.Value)
-        lblSpdSet.Text = String.Format("{0:n2}", Station.MC.myProj.Speed.Setpoint)
-        If Station.MC.myProj.Speed.Value <= Station.MC.myProj.Speed.SL Or Station.MC.myProj.Speed.Value >= Station.MC.myProj.Speed.SH Then
-            lblSpd.BackColor = Color.Red
-        ElseIf Station.MC.myProj.Speed.Value <= Station.MC.myProj.Speed.WL Or Station.MC.myProj.Speed.Value >= Station.MC.myProj.Speed.WH Then
-            lblSpd.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.Speed.Value < Station.MC.myProj.Speed.WH And Station.MC.myProj.Speed.Value > Station.MC.myProj.Speed.WL Then
-            lblSpd.BackColor = Color.Green
-        Else
-            lblSpd.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.Speed.Bypass Then lblSpd.BackColor = Color.WhiteSmoke
-
-        'Update values
-        Dim LoadLimitNotActive As Boolean = Station.MC.PLC.GetTagVal("LoadLimNtAct")
-        lblLdSH.Text = Station.MC.myProj.Load.SH
-        lblLdSL.Text = Station.MC.myProj.Load.SL
-        lblLdWH.Text = Station.MC.myProj.Load.WH
-        lblLdWL.Text = Station.MC.myProj.Load.WL
-        lblLd.Text = String.Format("{0:n0}", Station.MC.myProj.Load.Value)
-        lblLdSet.Text = String.Format("{0:n2}", Station.MC.myProj.CurrentLoad)
-        If ((Station.MC.myProj.Load.Value <= Station.MC.myProj.Load.SL) And Not LoadLimitNotActive) Or Station.MC.myProj.Load.Value >= Station.MC.myProj.Load.SH Then
-            lblLd.BackColor = Color.Red
-        ElseIf ((Station.MC.myProj.Load.Value <= Station.MC.myProj.Load.WL) And Not LoadLimitNotActive) Or Station.MC.myProj.Load.Value >= Station.MC.myProj.Load.WH Then
-            lblLd.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.Load.Value < Station.MC.myProj.Load.WH And Station.MC.myProj.Load.Value > Station.MC.myProj.Load.WL Then
-            lblLd.BackColor = Color.Green
-        Else
-            lblLd.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.Load.Bypass Then lblLd.BackColor = Color.WhiteSmoke
 
 
-        'Update values
-        lblB1SH.Text = Station.MC.myProj.BA.SH
-        lblB1SL.Text = Station.MC.myProj.BA.SL
-        lblB1WH.Text = Station.MC.myProj.BA.WH
-        lblB1WL.Text = Station.MC.myProj.BA.WL
-        lblB1.Text = String.Format("{0:0}", Station.MC.myProj.BA.Value)
-        If Station.MC.myProj.BA.Value <= Station.MC.myProj.BA.SL Or Station.MC.myProj.BA.Value >= Station.MC.myProj.BA.SH Then
-            lblB1.BackColor = Color.Red
-        ElseIf Station.MC.myProj.BA.Value <= Station.MC.myProj.BA.WL Or Station.MC.myProj.BA.Value >= Station.MC.myProj.BA.WH Then
-            lblB1.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.BA.Value < Station.MC.myProj.BA.WH And Station.MC.myProj.BA.Value > Station.MC.myProj.BA.WL Then
-            lblB1.BackColor = Color.Green
-        Else
-            lblB1.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.BA.Bypass Then lblB1.BackColor = Color.WhiteSmoke
+        UpdateRows(Station.MC.myProj.Speed, lblSpd, lblSpdSH, lblSpdSL, lblSpdWH, lblSpdWL)
+        UpdateRows(Station.MC.myProj.Load, lblLd, lblLdSH, lblLdSL, lblLdWH, lblLdWL)
+
+
+
 
 
 
         'Update values
-        lblB2SH.Text = Station.MC.myProj.BB.SH
-        lblB2SL.Text = Station.MC.myProj.BB.SL
-        lblB2WH.Text = Station.MC.myProj.BB.WH
-        lblB2WL.Text = Station.MC.myProj.BB.WL
-        lblB2.Text = String.Format("{0:0}", Station.MC.myProj.BB.Value)
-        If Station.MC.myProj.BB.Value <= Station.MC.myProj.BB.SL Or Station.MC.myProj.BB.Value >= Station.MC.myProj.BB.SH Then
-            lblB2.BackColor = Color.Red
-        ElseIf Station.MC.myProj.BB.Value <= Station.MC.myProj.BB.WL Or Station.MC.myProj.BB.Value >= Station.MC.myProj.BB.WH Then
-            lblB2.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.BB.Value < Station.MC.myProj.BB.WH And Station.MC.myProj.BB.Value > Station.MC.myProj.BB.WL Then
-            lblB2.BackColor = Color.Green
-        Else
-            lblB2.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.BB.Bypass Then lblB2.BackColor = Color.WhiteSmoke
+        'Dim LimitNotActive As Boolean = Station.MC.PLC.GetTagVal("TmpLimNtAct")
+        'lblLubSH.Text = Station.MC.myProj.Inlet_TempA.SH
+        'lblLubSL.Text = Station.MC.myProj.Inlet_TempA.SL
+        'lblLubWH.Text = Station.MC.myProj.Inlet_TempA.WH
+        'lblLubWL.Text = Station.MC.myProj.Inlet_TempA.WL
+        'lblLub.Text = String.Format("{0:0}", Station.MC.myProj.Inlet_TempA.Value)
+        'If ((Station.MC.myProj.Inlet_TempA.Value <= Station.MC.myProj.Inlet_TempA.SL) And Not LimitNotActive) Or Station.MC.myProj.Inlet_TempA.Value >= Station.MC.myProj.Inlet_TempA.SH Then
+        '    lblLub.BackColor = Color.Red
+        'ElseIf ((Station.MC.myProj.Inlet_TempA.Value <= Station.MC.myProj.Inlet_TempA.WL) And Not LimitNotActive) Or Station.MC.myProj.Inlet_TempA.Value >= Station.MC.myProj.Inlet_TempA.WH Then
+        '    lblLub.BackColor = Color.Yellow
+        'ElseIf Station.MC.myProj.Inlet_TempA.Value < Station.MC.myProj.Inlet_TempA.WH And Station.MC.myProj.Inlet_TempA.Value > Station.MC.myProj.Inlet_TempA.WL Then
+        '    lblLub.BackColor = Color.Green
+        'Else
+        '    lblLub.BackColor = Color.WhiteSmoke
+        'End If
+        'If Station.MC.myProj.Inlet_TempA.Bypass Then lblLub.BackColor = Color.WhiteSmoke
 
-        'Update values
-        lblB3SH.Text = Station.MC.myProj.BC.SH
-        lblB3SL.Text = Station.MC.myProj.BC.SL
-        lblB3WH.Text = Station.MC.myProj.BC.WH
-        lblB3WL.Text = Station.MC.myProj.BC.WL
-        lblB3.Text = String.Format("{0:0}", Station.MC.myProj.BC.Value)
-        If Station.MC.myProj.BC.Value <= Station.MC.myProj.BC.SL Or Station.MC.myProj.BC.Value >= Station.MC.myProj.BC.SH Then
-            lblB3.BackColor = Color.Red
-        ElseIf Station.MC.myProj.BC.Value <= Station.MC.myProj.BC.WL Or Station.MC.myProj.BC.Value >= Station.MC.myProj.BC.WH Then
-            lblB3.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.BC.Value < Station.MC.myProj.BC.WH And Station.MC.myProj.BC.Value > Station.MC.myProj.BC.WL Then
-            lblB3.BackColor = Color.Green
-        Else
-            lblB3.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.BC.Bypass Then lblB3.BackColor = Color.WhiteSmoke
 
-        'Update values
-        lblB4SH.Text = Station.MC.myProj.BD.SH
-        lblB4SL.Text = Station.MC.myProj.BD.SL
-        lblB4WH.Text = Station.MC.myProj.BD.WH
-        lblB4WL.Text = Station.MC.myProj.BD.WL
-        lblB4.Text = String.Format("{0:0}", Station.MC.myProj.BD.Value)
-        If Station.MC.myProj.BD.Value <= Station.MC.myProj.BD.SL Or Station.MC.myProj.BD.Value >= Station.MC.myProj.BD.SH Then
-            lblB4.BackColor = Color.Red
-        ElseIf Station.MC.myProj.BD.Value <= Station.MC.myProj.BD.WL Or Station.MC.myProj.BD.Value >= Station.MC.myProj.BD.WH Then
-            lblB4.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.BD.Value < Station.MC.myProj.BD.WH And Station.MC.myProj.BD.Value > Station.MC.myProj.BD.WL Then
-            lblB4.BackColor = Color.Green
-        Else
-            lblB4.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.BD.Bypass Then lblB4.BackColor = Color.WhiteSmoke
+        UpdateRows(Station.MC.myProj.TankTemp, lblOT, lblOTSH, lblOTSL, lblOTWH, lblOTWL)
 
-        'Update values
-        Dim LimitNotActive As Boolean = Station.MC.PLC.GetTagVal("TmpLimNtAct")
-        lblLubSH.Text = Station.MC.myProj.Inlet_TempA.SH
-        lblLubSL.Text = Station.MC.myProj.Inlet_TempA.SL
-        lblLubWH.Text = Station.MC.myProj.Inlet_TempA.WH
-        lblLubWL.Text = Station.MC.myProj.Inlet_TempA.WL
-        lblLub.Text = String.Format("{0:0}", Station.MC.myProj.Inlet_TempA.Value)
-        If ((Station.MC.myProj.Inlet_TempA.Value <= Station.MC.myProj.Inlet_TempA.SL) And Not LimitNotActive) Or Station.MC.myProj.Inlet_TempA.Value >= Station.MC.myProj.Inlet_TempA.SH Then
-            lblLub.BackColor = Color.Red
-        ElseIf ((Station.MC.myProj.Inlet_TempA.Value <= Station.MC.myProj.Inlet_TempA.WL) And Not LimitNotActive) Or Station.MC.myProj.Inlet_TempA.Value >= Station.MC.myProj.Inlet_TempA.WH Then
-            lblLub.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.Inlet_TempA.Value < Station.MC.myProj.Inlet_TempA.WH And Station.MC.myProj.Inlet_TempA.Value > Station.MC.myProj.Inlet_TempA.WL Then
-            lblLub.BackColor = Color.Green
-        Else
-            lblLub.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.Inlet_TempA.Bypass Then lblLub.BackColor = Color.WhiteSmoke
-
-        'Update values
-        lblOTSH.Text = Station.MC.myProj.TankTemp.SH
-        lblOTSL.Text = Station.MC.myProj.TankTemp.SL
-        lblOTWH.Text = Station.MC.myProj.TankTemp.WH
-        lblOTWL.Text = Station.MC.myProj.TankTemp.WL
-        lblOT.Text = String.Format("{0:0}", Station.MC.myProj.TankTemp.Value)
-        If Station.MC.myProj.TankTemp.Value <= Station.MC.myProj.TankTemp.SL Or Station.MC.myProj.TankTemp.Value >= Station.MC.myProj.TankTemp.SH Then
-            lblOT.BackColor = Color.Red
-        ElseIf Station.MC.myProj.TankTemp.Value <= Station.MC.myProj.TankTemp.WL Or Station.MC.myProj.TankTemp.Value >= Station.MC.myProj.TankTemp.WH Then
-            lblOT.BackColor = Color.Yellow
-        ElseIf Station.MC.myProj.TankTemp.Value < Station.MC.myProj.TankTemp.WH And Station.MC.myProj.TankTemp.Value > Station.MC.myProj.TankTemp.WL Then
-            lblOT.BackColor = Color.Green
-        Else
-            lblOT.BackColor = Color.WhiteSmoke
-        End If
-        If Station.MC.myProj.TankTemp.Bypass Then lblOT.BackColor = Color.WhiteSmoke
 
 
         If Not Station.MC.myProj.ProjectID = 0 Then
@@ -417,6 +255,25 @@ Public Class frmCharts
 
     End Sub
 
+    Private Sub UpdateRows(val As SingleLimits, lblVal As Label, lblSH As Label, lblSL As Label, lblWH As Label, lblWL As Label)
+        'Update values
+        lblSH.Text = val.SH
+        lblSL.Text = val.SL
+        lblWH.Text = val.WH
+        lblWL.Text = val.WL
+
+        lblVal.Text = String.Format("{0:n2}", val.Value)
+        If val.Value <= val.SL Or val.Value >= val.SH Then
+            lblVal.BackColor = Color.Red
+        ElseIf val.Value <= val.WL Or val.Value >= val.WH Then
+            lblVal.BackColor = Color.Yellow
+        ElseIf val.Value < val.WH And val.Value > val.WL Then
+            lblVal.BackColor = Color.Green
+        Else
+            lblVal.BackColor = Color.WhiteSmoke
+        End If
+        If val.Bypass Then lblVal.BackColor = Color.WhiteSmoke
+    End Sub
 
     Sub UpdateStatus()
         Select Case Station.MC.myProj.MyStatus
@@ -466,24 +323,17 @@ Public Class frmCharts
 
     Sub CalculateAverages()
         If Station.MC.myProj.ProjectID <> 0 Then
-            Dim constr As String = "SELECT Avg(BearingTemp1), Avg(BearingTemp2), Avg(BearingTemp3), Avg(BearingTemp4), Avg(LubOilTemp), Avg(TankOilTemp), Avg(Vibration), Avg(Speed), Avg(Load1)  FROM datalogs  where  ProjectID=" & Station.MC.myProj.ProjectID & " and status='RUN ' order by idDataLogs"
+            Dim constr As String = "SELECT Avg(Load1), Avg(Speed),  Avg(TankOilTemp)  FROM datalogs  where  ProjectID=" & Station.MC.myProj.ProjectID & " and status='RUN ' order by idDataLogs"
             If GetDataMySQL(con, da, ds, dt, False, constr) Then
                 If dt.Rows.Count > 0 Then
                     lblLoadAvg.Text = String.Format("{0:n2}", If(IsDBNull(dt.Rows(0).Item("Avg(Load1)")), 0, dt.Rows(0).Item("Avg(Load1)")))
                     lblSpeedAvg.Text = String.Format("{0:n2}", If(IsDBNull(dt.Rows(0).Item("Avg(Speed)")), 0, dt.Rows(0).Item("Avg(Speed)")))
-                    lblInTankAvg.Text = String.Format("{0:n2}", If(IsDBNull(dt.Rows(0).Item("Avg(LubOilTemp)")), 0, dt.Rows(0).Item("Avg(LubOilTemp)")))
+                    ' lblInTankAvg.Text = String.Format("{0:n2}", If(IsDBNull(dt.Rows(0).Item("Avg(LubOilTemp)")), 0, dt.Rows(0).Item("Avg(LubOilTemp)")))
                     lblOutOilAvg.Text = String.Format("{0:n2}", If(IsDBNull(dt.Rows(0).Item("Avg(TankOilTemp)")), 0, dt.Rows(0).Item("Avg(TankOilTemp)")))
                 End If
             End If
         End If
     End Sub
 
-    Private Sub frmCharts_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
 
-    End Sub
-
-    Private Sub frmCharts_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-
-
-    End Sub
 End Class

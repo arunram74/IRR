@@ -45,6 +45,12 @@ Public Class frmPrjt
             btnCopyFromTemplate.Enabled = True
         End If
 
+        If txtBA.Text <> 0 Then txtBA.Enabled = False
+        If txtBB.Text <> 0 Then txtBB.Enabled = False
+        If txtBC.Text <> 0 Then txtBC.Enabled = False
+        If txtBD.Text <> 0 Then txtBD.Enabled = False
+
+
         If Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Run Or Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Load Then
             Panel1.Enabled = False
         Else
@@ -69,10 +75,10 @@ Public Class frmPrjt
         TempProjectObj.HeadB = Station.MC.myProj.HeadB
         TempProjectObj.HeadC = Station.MC.myProj.HeadC
         TempProjectObj.HeadD = Station.MC.myProj.HeadD
-        TempProjectObj.HeadA_Enable = Station.MC.myProj.HeadA_Enable
-        TempProjectObj.HeadB_Enable = Station.MC.myProj.HeadB_Enable
-        TempProjectObj.HeadC_Enable = Station.MC.myProj.HeadC_Enable
-        TempProjectObj.HeadD_Enable = Station.MC.myProj.HeadD_Enable
+        If Station.MC.myProj.HeadA <> 0 Then TempProjectObj.HeadA_Enable = Station.MC.myProj.Bearings(Station.MC.myProj.HeadA - 1).Active
+        If Station.MC.myProj.HeadB <> 0 Then TempProjectObj.HeadB_Enable = Station.MC.myProj.Bearings(Station.MC.myProj.HeadB - 1).Active
+        If Station.MC.myProj.HeadC <> 0 Then TempProjectObj.HeadC_Enable = Station.MC.myProj.Bearings(Station.MC.myProj.HeadC - 1).Active
+        If Station.MC.myProj.HeadD <> 0 Then TempProjectObj.HeadD_Enable = Station.MC.myProj.Bearings(Station.MC.myProj.HeadD - 1).Active
 
         TempProjectObj.ProjectID = Station.MC.myProj.ProjectID
 
@@ -134,6 +140,11 @@ Public Class frmPrjt
         Station.MC.myProj.HeadB_Enable = TempProjectObj.HeadB_Enable
         Station.MC.myProj.HeadC_Enable = TempProjectObj.HeadC_Enable
         Station.MC.myProj.HeadD_Enable = TempProjectObj.HeadD_Enable
+        If Station.MC.myProj.HeadA <> 0 Then Station.MC.myProj.Bearings(TempProjectObj.HeadA - 1).Active = TempProjectObj.HeadA_Enable
+        If Station.MC.myProj.HeadB <> 0 Then Station.MC.myProj.Bearings(TempProjectObj.HeadB - 1).Active = TempProjectObj.HeadB_Enable
+        If Station.MC.myProj.HeadC <> 0 Then Station.MC.myProj.Bearings(TempProjectObj.HeadC - 1).Active = TempProjectObj.HeadC_Enable
+        If Station.MC.myProj.HeadD <> 0 Then Station.MC.myProj.Bearings(TempProjectObj.HeadD - 1).Active = TempProjectObj.HeadD_Enable
+
 
         Station.MC.myProj.ProjectID = TempProjectObj.ProjectID
 
@@ -187,10 +198,10 @@ Public Class frmPrjt
         TempProjectObj.Lubrication = txtLub.Text
 
         TempProjectObj.PartNo = If(String.IsNullOrEmpty(txtPN.Text), 0, txtPN.Text)
-        TempProjectObj.HeadA = If(String.IsNullOrEmpty(cmbBA.Text), 0, cmbBA.Text)
-        TempProjectObj.HeadB = If(String.IsNullOrEmpty(cmbBB.Text), 0, cmbBB.Text)
-        TempProjectObj.HeadC = If(String.IsNullOrEmpty(cmbBC.Text), 0, cmbBC.Text)
-        TempProjectObj.HeadD = If(String.IsNullOrEmpty(cmbBD.Text), 0, cmbBD.Text)
+        TempProjectObj.HeadA = If(String.IsNullOrEmpty(txtBA.Text), 0, txtBA.Text)
+        TempProjectObj.HeadB = If(String.IsNullOrEmpty(txtBB.Text), 0, txtBB.Text)
+        TempProjectObj.HeadC = If(String.IsNullOrEmpty(txtBC.Text), 0, txtBC.Text)
+        TempProjectObj.HeadD = If(String.IsNullOrEmpty(txtBD.Text), 0, txtBD.Text)
 
         TempProjectObj.HeadA_Enable = chkHeadA.Checked
         TempProjectObj.HeadB_Enable = chkHeadB.Checked
@@ -209,15 +220,11 @@ Public Class frmPrjt
         txtLub.Text = TempProjectObj.Lubrication
 
         txtPN.Text = TempProjectObj.PartNo
-        'cmbBA.Text = TempProjectObj.HeadA
-        'cmbBB.Text = TempProjectObj.HeadB
-        'cmbBC.Text = TempProjectObj.HeadC
-        'cmbBD.Text = TempProjectObj.HeadD
 
-        UpdateHeadList(TempProjectObj.HeadA, cmbBA)
-        UpdateHeadList(TempProjectObj.HeadB, cmbBB)
-        UpdateHeadList(TempProjectObj.HeadC, cmbBC)
-        UpdateHeadList(TempProjectObj.HeadD, cmbBD)
+        txtBA.Text = TempProjectObj.HeadA
+        txtBB.Text = TempProjectObj.HeadB
+        txtBC.Text = TempProjectObj.HeadC
+        txtBD.Text = TempProjectObj.HeadD
 
         chkHeadA.Checked = TempProjectObj.HeadA_Enable
         chkHeadB.Checked = TempProjectObj.HeadB_Enable
@@ -267,6 +274,23 @@ Public Class frmPrjt
             MessageBox.Show("Error in Load Steps. Please check", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
 
+        End If
+
+        If TempProjectObj.HeadA > 40 Or TempProjectObj.HeadB > 40 Or TempProjectObj.HeadC > 40 Or TempProjectObj.HeadD > 40 Then
+            MessageBox.Show("Bearing number out of bounds. Please select other bearing number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End If
+
+        If TempProjectObj.HeadA = TempProjectObj.HeadB Or TempProjectObj.HeadA = TempProjectObj.HeadC Or TempProjectObj.HeadA = TempProjectObj.HeadD Or
+           TempProjectObj.HeadB = TempProjectObj.HeadC Or TempProjectObj.HeadB = TempProjectObj.HeadD Or
+           TempProjectObj.HeadC = TempProjectObj.HeadD Then
+            MessageBox.Show("Select different bearing numbers", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End If
+
+        If Station.MC.myProj.CheckforBearings(TempProjectObj.HeadA) Or Station.MC.myProj.CheckforBearings(TempProjectObj.HeadB) Or Station.MC.myProj.CheckforBearings(TempProjectObj.HeadC) Or Station.MC.myProj.CheckforBearings(TempProjectObj.HeadD) Then
+            MessageBox.Show("Bearing already in use or failed. Please select other bearing number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
         End If
 
         Station.MC.myProj.Save()
@@ -418,22 +442,6 @@ Public Class frmPrjt
         End If
     End Sub
 
-    Sub UpdateHeadList(tmpHeadBearingNo As Integer, cmb As ComboBox)
-        cmb.Items.Clear()
-
-        If tmpHeadBearingNo <> 0 Then
-            cmb.Items.Add(tmpHeadBearingNo)
-            cmb.SelectedIndex = 0
-        Else
-            For i = 0 To 23
-                If (Not Station.MC.myProj.Bearings(i).Failed) And Not (Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadA Or
-                        Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadB Or Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadC Or
-                        Station.MC.myProj.Bearings(i).BearingNo = Station.MC.myProj.HeadD) Then
-                    cmb.Items.Add(Station.MC.myProj.Bearings(i).BearingNo)
-                End If
-            Next
-        End If
-    End Sub
 
     Sub CopyFromTemplate(Filename As String)
 

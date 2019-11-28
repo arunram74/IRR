@@ -53,16 +53,7 @@ Public Class frmRunSusp
 
         If SelectedBearingNo <> 0 Then
             Station.MC.myProj.Bearings(SelectedBearingNo - 1).Active = False
-            Select Case SelectedHead
-                Case "A"
-                    Station.MC.myProj.HeadA = 0
-                Case "B"
-                    Station.MC.myProj.HeadB = 0
-                Case "C"
-                    Station.MC.myProj.HeadC = 0
-                Case "D"
-                    Station.MC.myProj.HeadD = 0
-            End Select
+            Station.MC.myProj.DisableStn(SelectedHead)
 
         Else
                 MessageBox.Show("Invalid Bearing Number", "Select Bearing", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -81,16 +72,7 @@ Public Class frmRunSusp
             Station.MC.myProj.Bearings(SelectedBearingNo - 1).Active = False
             Station.MC.myProj.Bearings(SelectedBearingNo - 1).Failed = True
             Station.MC.myProj.Bearings(SelectedBearingNo - 1).FailedTime = Now
-            Select Case SelectedHead
-                Case "A"
-                    Station.MC.myProj.HeadA = 0
-                Case "B"
-                    Station.MC.myProj.HeadB = 0
-                Case "C"
-                    Station.MC.myProj.HeadC = 0
-                Case "D"
-                    Station.MC.myProj.HeadD = 0
-            End Select
+            Station.MC.myProj.DisableStn(SelectedHead)
         Else
             MessageBox.Show("Invalid Bearing Number", "Select Bearing", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If

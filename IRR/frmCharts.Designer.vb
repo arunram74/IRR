@@ -20,32 +20,24 @@ Partial Class frmCharts
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend10 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.chrtVib = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.lblChartTitle = New System.Windows.Forms.Label()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.lblVibA = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblVibB = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblVibC = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.lblVibD = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblSpdSL = New System.Windows.Forms.Label()
@@ -60,13 +52,13 @@ Partial Class frmCharts
         Me.Label19 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.lblB1SL = New System.Windows.Forms.Label()
+        Me.lblBSL = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.lblB1SH = New System.Windows.Forms.Label()
+        Me.lblBSH = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.lblB1WL = New System.Windows.Forms.Label()
+        Me.lblBWL = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.lblB1WH = New System.Windows.Forms.Label()
+        Me.lblBWH = New System.Windows.Forms.Label()
         Me.chrtBT = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
@@ -80,44 +72,20 @@ Partial Class frmCharts
         Me.Label56 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label40 = New System.Windows.Forms.Label()
-        Me.lblB2SL = New System.Windows.Forms.Label()
+        Me.lblSBSL = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.lblB2SH = New System.Windows.Forms.Label()
+        Me.lblSBSH = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
-        Me.lblB2WL = New System.Windows.Forms.Label()
+        Me.lblSBWL = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
-        Me.lblB2WH = New System.Windows.Forms.Label()
+        Me.lblSBWH = New System.Windows.Forms.Label()
         Me.Label58 = New System.Windows.Forms.Label()
-        Me.Label59 = New System.Windows.Forms.Label()
-        Me.lblB3SL = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.lblB3SH = New System.Windows.Forms.Label()
-        Me.Label63 = New System.Windows.Forms.Label()
-        Me.lblB3WL = New System.Windows.Forms.Label()
-        Me.Label65 = New System.Windows.Forms.Label()
-        Me.lblB3WH = New System.Windows.Forms.Label()
-        Me.Label67 = New System.Windows.Forms.Label()
-        Me.Label68 = New System.Windows.Forms.Label()
-        Me.lblB4SL = New System.Windows.Forms.Label()
-        Me.Label70 = New System.Windows.Forms.Label()
-        Me.lblB4SH = New System.Windows.Forms.Label()
-        Me.Label72 = New System.Windows.Forms.Label()
-        Me.lblB4WL = New System.Windows.Forms.Label()
-        Me.Label74 = New System.Windows.Forms.Label()
-        Me.lblB4WH = New System.Windows.Forms.Label()
-        Me.Label76 = New System.Windows.Forms.Label()
         Me.Label77 = New System.Windows.Forms.Label()
         Me.Label78 = New System.Windows.Forms.Label()
-        Me.Label79 = New System.Windows.Forms.Label()
-        Me.Label80 = New System.Windows.Forms.Label()
         Me.Label81 = New System.Windows.Forms.Label()
-        Me.lblB4 = New System.Windows.Forms.Label()
+        Me.lblSBT = New System.Windows.Forms.Label()
         Me.Label83 = New System.Windows.Forms.Label()
-        Me.lblB3 = New System.Windows.Forms.Label()
-        Me.Label85 = New System.Windows.Forms.Label()
-        Me.lblB2 = New System.Windows.Forms.Label()
-        Me.Label87 = New System.Windows.Forms.Label()
-        Me.lblB1 = New System.Windows.Forms.Label()
+        Me.lblBT = New System.Windows.Forms.Label()
         Me.Label89 = New System.Windows.Forms.Label()
         Me.Label90 = New System.Windows.Forms.Label()
         Me.Label91 = New System.Windows.Forms.Label()
@@ -178,6 +146,14 @@ Partial Class frmCharts
         Me.txtITTSP = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblSpdSet = New System.Windows.Forms.Label()
+        Me.lblVibWH = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblVibWL = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblVibSH = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.lblVibSL = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.lblLd = New System.Windows.Forms.Label()
         Me.lblLdSet = New System.Windows.Forms.Label()
@@ -194,46 +170,11 @@ Partial Class frmCharts
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.lblVibDSL = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.lblVibDSH = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.lblVibDWL = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.lblVibDWH = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.lblVibCSL = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.lblVibCSH = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.lblVibCWL = New System.Windows.Forms.Label()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.lblVibCWH = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.lblVibBSL = New System.Windows.Forms.Label()
-        Me.Label64 = New System.Windows.Forms.Label()
-        Me.lblVibBSH = New System.Windows.Forms.Label()
-        Me.Label69 = New System.Windows.Forms.Label()
-        Me.lblVibBWL = New System.Windows.Forms.Label()
-        Me.Label73 = New System.Windows.Forms.Label()
-        Me.lblVibBWH = New System.Windows.Forms.Label()
-        Me.Label82 = New System.Windows.Forms.Label()
-        Me.Label84 = New System.Windows.Forms.Label()
-        Me.lblVibASL = New System.Windows.Forms.Label()
-        Me.Label88 = New System.Windows.Forms.Label()
-        Me.lblVibASH = New System.Windows.Forms.Label()
-        Me.Label95 = New System.Windows.Forms.Label()
-        Me.lblVibAWL = New System.Windows.Forms.Label()
-        Me.Label99 = New System.Windows.Forms.Label()
-        Me.lblVibAWH = New System.Windows.Forms.Label()
-        Me.Label104 = New System.Windows.Forms.Label()
+        Me.rdbHD = New System.Windows.Forms.RadioButton()
+        Me.rdbHC = New System.Windows.Forms.RadioButton()
+        Me.rdbHB = New System.Windows.Forms.RadioButton()
+        Me.rdbHA = New System.Windows.Forms.RadioButton()
+        Me.Label145 = New System.Windows.Forms.Label()
         CType(Me.chrtVib, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chrtSpd, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -249,16 +190,16 @@ Partial Class frmCharts
         '
         'chrtVib
         '
-        ChartArea6.Name = "ChartArea1"
-        Me.chrtVib.ChartAreas.Add(ChartArea6)
-        Legend6.Name = "Legend1"
-        Me.chrtVib.Legends.Add(Legend6)
-        Me.chrtVib.Location = New System.Drawing.Point(890, 28)
+        ChartArea1.Name = "ChartArea1"
+        Me.chrtVib.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.chrtVib.Legends.Add(Legend1)
+        Me.chrtVib.Location = New System.Drawing.Point(28, 28)
         Me.chrtVib.Name = "chrtVib"
-        Series6.ChartArea = "ChartArea1"
-        Series6.Legend = "Legend1"
-        Series6.Name = "Series1"
-        Me.chrtVib.Series.Add(Series6)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.chrtVib.Series.Add(Series1)
         Me.chrtVib.Size = New System.Drawing.Size(388, 175)
         Me.chrtVib.TabIndex = 133
         Me.chrtVib.Text = "Chart1"
@@ -266,7 +207,7 @@ Partial Class frmCharts
         'lblChartTitle
         '
         Me.lblChartTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblChartTitle.Location = New System.Drawing.Point(1035, 0)
+        Me.lblChartTitle.Location = New System.Drawing.Point(173, 0)
         Me.lblChartTitle.Name = "lblChartTitle"
         Me.lblChartTitle.Size = New System.Drawing.Size(100, 30)
         Me.lblChartTitle.TabIndex = 199
@@ -276,100 +217,16 @@ Partial Class frmCharts
         'PictureBox11
         '
         Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox11.Location = New System.Drawing.Point(874, 15)
+        Me.PictureBox11.Location = New System.Drawing.Point(12, 15)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(425, 239)
         Me.PictureBox11.TabIndex = 200
         Me.PictureBox11.TabStop = False
         '
-        'lblVibA
-        '
-        Me.lblVibA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVibA.Location = New System.Drawing.Point(921, 220)
-        Me.lblVibA.Name = "lblVibA"
-        Me.lblVibA.Size = New System.Drawing.Size(68, 30)
-        Me.lblVibA.TabIndex = 201
-        Me.lblVibA.Text = "0"
-        Me.lblVibA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(892, 227)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(24, 13)
-        Me.Label2.TabIndex = 202
-        Me.Label2.Text = "HA"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(995, 227)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(24, 13)
-        Me.Label3.TabIndex = 204
-        Me.Label3.Text = "HB"
-        '
-        'lblVibB
-        '
-        Me.lblVibB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVibB.Location = New System.Drawing.Point(1021, 220)
-        Me.lblVibB.Name = "lblVibB"
-        Me.lblVibB.Size = New System.Drawing.Size(68, 30)
-        Me.lblVibB.TabIndex = 203
-        Me.lblVibB.Text = "0"
-        Me.lblVibB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(1097, 227)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(24, 13)
-        Me.Label5.TabIndex = 206
-        Me.Label5.Text = "HC"
-        '
-        'lblVibC
-        '
-        Me.lblVibC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVibC.Location = New System.Drawing.Point(1121, 220)
-        Me.lblVibC.Name = "lblVibC"
-        Me.lblVibC.Size = New System.Drawing.Size(68, 30)
-        Me.lblVibC.TabIndex = 205
-        Me.lblVibC.Text = "0"
-        Me.lblVibC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(1198, 227)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(25, 13)
-        Me.Label7.TabIndex = 208
-        Me.Label7.Text = "HD"
-        '
-        'lblVibD
-        '
-        Me.lblVibD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVibD.Location = New System.Drawing.Point(1221, 220)
-        Me.lblVibD.Name = "lblVibD"
-        Me.lblVibD.Size = New System.Drawing.Size(68, 30)
-        Me.lblVibD.TabIndex = 207
-        Me.lblVibD.Text = "0"
-        Me.lblVibD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Label9
         '
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label9.Location = New System.Drawing.Point(874, 215)
+        Me.Label9.Location = New System.Drawing.Point(12, 215)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(425, 39)
         Me.Label9.TabIndex = 209
@@ -457,16 +314,16 @@ Partial Class frmCharts
         '
         'chrtSpd
         '
-        ChartArea7.Name = "ChartArea1"
-        Me.chrtSpd.ChartAreas.Add(ChartArea7)
-        Legend7.Name = "Legend1"
-        Me.chrtSpd.Legends.Add(Legend7)
+        ChartArea2.Name = "ChartArea1"
+        Me.chrtSpd.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.chrtSpd.Legends.Add(Legend2)
         Me.chrtSpd.Location = New System.Drawing.Point(459, 28)
         Me.chrtSpd.Name = "chrtSpd"
-        Series7.ChartArea = "ChartArea1"
-        Series7.Legend = "Legend1"
-        Series7.Name = "Series1"
-        Me.chrtSpd.Series.Add(Series7)
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.chrtSpd.Series.Add(Series2)
         Me.chrtSpd.Size = New System.Drawing.Size(388, 175)
         Me.chrtSpd.TabIndex = 257
         Me.chrtSpd.Text = "Chart1"
@@ -510,16 +367,16 @@ Partial Class frmCharts
         Me.Label30.TabIndex = 291
         Me.Label30.Text = "SL"
         '
-        'lblB1SL
+        'lblBSL
         '
-        Me.lblB1SL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB1SL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB1SL.Location = New System.Drawing.Point(375, 518)
-        Me.lblB1SL.Name = "lblB1SL"
-        Me.lblB1SL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB1SL.TabIndex = 290
-        Me.lblB1SL.Text = "0"
-        Me.lblB1SL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblBSL.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblBSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBSL.Location = New System.Drawing.Point(375, 518)
+        Me.lblBSL.Name = "lblBSL"
+        Me.lblBSL.Size = New System.Drawing.Size(56, 21)
+        Me.lblBSL.TabIndex = 290
+        Me.lblBSL.Text = "0"
+        Me.lblBSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label32
         '
@@ -532,16 +389,16 @@ Partial Class frmCharts
         Me.Label32.TabIndex = 289
         Me.Label32.Text = "SH"
         '
-        'lblB1SH
+        'lblBSH
         '
-        Me.lblB1SH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB1SH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB1SH.Location = New System.Drawing.Point(280, 518)
-        Me.lblB1SH.Name = "lblB1SH"
-        Me.lblB1SH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB1SH.TabIndex = 288
-        Me.lblB1SH.Text = "0"
-        Me.lblB1SH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblBSH.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblBSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBSH.Location = New System.Drawing.Point(280, 518)
+        Me.lblBSH.Name = "lblBSH"
+        Me.lblBSH.Size = New System.Drawing.Size(56, 21)
+        Me.lblBSH.TabIndex = 288
+        Me.lblBSH.Text = "0"
+        Me.lblBSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label34
         '
@@ -554,16 +411,16 @@ Partial Class frmCharts
         Me.Label34.TabIndex = 287
         Me.Label34.Text = "WL"
         '
-        'lblB1WL
+        'lblBWL
         '
-        Me.lblB1WL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB1WL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB1WL.Location = New System.Drawing.Point(186, 518)
-        Me.lblB1WL.Name = "lblB1WL"
-        Me.lblB1WL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB1WL.TabIndex = 286
-        Me.lblB1WL.Text = "0"
-        Me.lblB1WL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblBWL.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblBWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBWL.Location = New System.Drawing.Point(186, 518)
+        Me.lblBWL.Name = "lblBWL"
+        Me.lblBWL.Size = New System.Drawing.Size(56, 21)
+        Me.lblBWL.TabIndex = 286
+        Me.lblBWL.Text = "0"
+        Me.lblBWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label36
         '
@@ -576,29 +433,29 @@ Partial Class frmCharts
         Me.Label36.TabIndex = 285
         Me.Label36.Text = "WH"
         '
-        'lblB1WH
+        'lblBWH
         '
-        Me.lblB1WH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB1WH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB1WH.Location = New System.Drawing.Point(92, 518)
-        Me.lblB1WH.Name = "lblB1WH"
-        Me.lblB1WH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB1WH.TabIndex = 284
-        Me.lblB1WH.Text = "0"
-        Me.lblB1WH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblBWH.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblBWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBWH.Location = New System.Drawing.Point(92, 518)
+        Me.lblBWH.Name = "lblBWH"
+        Me.lblBWH.Size = New System.Drawing.Size(56, 21)
+        Me.lblBWH.TabIndex = 284
+        Me.lblBWH.Text = "0"
+        Me.lblBWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'chrtBT
         '
-        ChartArea8.Name = "ChartArea1"
-        Me.chrtBT.ChartAreas.Add(ChartArea8)
-        Legend8.Name = "Legend1"
-        Me.chrtBT.Legends.Add(Legend8)
+        ChartArea3.Name = "ChartArea1"
+        Me.chrtBT.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.chrtBT.Legends.Add(Legend3)
         Me.chrtBT.Location = New System.Drawing.Point(28, 286)
         Me.chrtBT.Name = "chrtBT"
-        Series8.ChartArea = "ChartArea1"
-        Series8.Legend = "Legend1"
-        Series8.Name = "Series1"
-        Me.chrtBT.Series.Add(Series8)
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.chrtBT.Series.Add(Series3)
         Me.chrtBT.Size = New System.Drawing.Size(388, 175)
         Me.chrtBT.TabIndex = 281
         Me.chrtBT.Text = "Chart1"
@@ -636,7 +493,7 @@ Partial Class frmCharts
         '
         Me.lblOT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblOT.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOT.Location = New System.Drawing.Point(790, 478)
+        Me.lblOT.Location = New System.Drawing.Point(777, 478)
         Me.lblOT.Name = "lblOT"
         Me.lblOT.Size = New System.Drawing.Size(68, 30)
         Me.lblOT.TabIndex = 302
@@ -646,7 +503,7 @@ Partial Class frmCharts
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(662, 486)
+        Me.Label49.Location = New System.Drawing.Point(650, 486)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(130, 13)
         Me.Label49.TabIndex = 301
@@ -656,7 +513,7 @@ Partial Class frmCharts
         '
         Me.lblLub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblLub.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLub.Location = New System.Drawing.Point(590, 478)
+        Me.lblLub.Location = New System.Drawing.Point(578, 478)
         Me.lblLub.Name = "lblLub"
         Me.lblLub.Size = New System.Drawing.Size(68, 30)
         Me.lblLub.TabIndex = 298
@@ -666,7 +523,7 @@ Partial Class frmCharts
         '
         Me.Label53.AutoSize = True
         Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(461, 486)
+        Me.Label53.Location = New System.Drawing.Point(459, 486)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(122, 13)
         Me.Label53.TabIndex = 297
@@ -674,16 +531,16 @@ Partial Class frmCharts
         '
         'chrtOT
         '
-        ChartArea9.Name = "ChartArea1"
-        Me.chrtOT.ChartAreas.Add(ChartArea9)
-        Legend9.Name = "Legend1"
-        Me.chrtOT.Legends.Add(Legend9)
+        ChartArea4.Name = "ChartArea1"
+        Me.chrtOT.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.chrtOT.Legends.Add(Legend4)
         Me.chrtOT.Location = New System.Drawing.Point(459, 286)
         Me.chrtOT.Name = "chrtOT"
-        Series9.ChartArea = "ChartArea1"
-        Series9.Legend = "Legend1"
-        Series9.Name = "Series1"
-        Me.chrtOT.Series.Add(Series9)
+        Series4.ChartArea = "ChartArea1"
+        Series4.Legend = "Legend1"
+        Series4.Name = "Series1"
+        Me.chrtOT.Series.Add(Series4)
         Me.chrtOT.Size = New System.Drawing.Size(388, 175)
         Me.chrtOT.TabIndex = 293
         Me.chrtOT.Text = "Chart1"
@@ -726,15 +583,15 @@ Partial Class frmCharts
         Me.Label40.TabIndex = 312
         Me.Label40.Text = "SL"
         '
-        'lblB2SL
+        'lblSBSL
         '
-        Me.lblB2SL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB2SL.Location = New System.Drawing.Point(375, 544)
-        Me.lblB2SL.Name = "lblB2SL"
-        Me.lblB2SL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB2SL.TabIndex = 311
-        Me.lblB2SL.Text = "0"
-        Me.lblB2SL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblSBSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBSL.Location = New System.Drawing.Point(375, 544)
+        Me.lblSBSL.Name = "lblSBSL"
+        Me.lblSBSL.Size = New System.Drawing.Size(56, 21)
+        Me.lblSBSL.TabIndex = 311
+        Me.lblSBSL.Text = "0"
+        Me.lblSBSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label42
         '
@@ -746,15 +603,15 @@ Partial Class frmCharts
         Me.Label42.TabIndex = 310
         Me.Label42.Text = "SH"
         '
-        'lblB2SH
+        'lblSBSH
         '
-        Me.lblB2SH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB2SH.Location = New System.Drawing.Point(280, 544)
-        Me.lblB2SH.Name = "lblB2SH"
-        Me.lblB2SH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB2SH.TabIndex = 309
-        Me.lblB2SH.Text = "0"
-        Me.lblB2SH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblSBSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBSH.Location = New System.Drawing.Point(280, 544)
+        Me.lblSBSH.Name = "lblSBSH"
+        Me.lblSBSH.Size = New System.Drawing.Size(56, 21)
+        Me.lblSBSH.TabIndex = 309
+        Me.lblSBSH.Text = "0"
+        Me.lblSBSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label44
         '
@@ -766,15 +623,15 @@ Partial Class frmCharts
         Me.Label44.TabIndex = 308
         Me.Label44.Text = "WL"
         '
-        'lblB2WL
+        'lblSBWL
         '
-        Me.lblB2WL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB2WL.Location = New System.Drawing.Point(186, 544)
-        Me.lblB2WL.Name = "lblB2WL"
-        Me.lblB2WL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB2WL.TabIndex = 307
-        Me.lblB2WL.Text = "0"
-        Me.lblB2WL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblSBWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBWL.Location = New System.Drawing.Point(186, 544)
+        Me.lblSBWL.Name = "lblSBWL"
+        Me.lblSBWL.Size = New System.Drawing.Size(56, 21)
+        Me.lblSBWL.TabIndex = 307
+        Me.lblSBWL.Text = "0"
+        Me.lblSBWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label47
         '
@@ -786,15 +643,15 @@ Partial Class frmCharts
         Me.Label47.TabIndex = 306
         Me.Label47.Text = "WH"
         '
-        'lblB2WH
+        'lblSBWH
         '
-        Me.lblB2WH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB2WH.Location = New System.Drawing.Point(92, 544)
-        Me.lblB2WH.Name = "lblB2WH"
-        Me.lblB2WH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB2WH.TabIndex = 305
-        Me.lblB2WH.Text = "0"
-        Me.lblB2WH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblSBWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBWH.Location = New System.Drawing.Point(92, 544)
+        Me.lblSBWH.Name = "lblSBWH"
+        Me.lblSBWH.Size = New System.Drawing.Size(56, 21)
+        Me.lblSBWH.TabIndex = 305
+        Me.lblSBWH.Text = "0"
+        Me.lblSBWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label58
         '
@@ -805,193 +662,6 @@ Partial Class frmCharts
         Me.Label58.TabIndex = 313
         Me.Label58.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label59
-        '
-        Me.Label59.AutoSize = True
-        Me.Label59.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label59.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label59.Location = New System.Drawing.Point(353, 573)
-        Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(22, 13)
-        Me.Label59.TabIndex = 321
-        Me.Label59.Text = "SL"
-        '
-        'lblB3SL
-        '
-        Me.lblB3SL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB3SL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB3SL.Location = New System.Drawing.Point(375, 569)
-        Me.lblB3SL.Name = "lblB3SL"
-        Me.lblB3SL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB3SL.TabIndex = 320
-        Me.lblB3SL.Text = "0"
-        Me.lblB3SL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label61.Location = New System.Drawing.Point(251, 573)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(24, 13)
-        Me.Label61.TabIndex = 319
-        Me.Label61.Text = "SH"
-        '
-        'lblB3SH
-        '
-        Me.lblB3SH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB3SH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB3SH.Location = New System.Drawing.Point(280, 569)
-        Me.lblB3SH.Name = "lblB3SH"
-        Me.lblB3SH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB3SH.TabIndex = 318
-        Me.lblB3SH.Text = "0"
-        Me.lblB3SH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label63
-        '
-        Me.Label63.AutoSize = True
-        Me.Label63.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label63.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.Location = New System.Drawing.Point(160, 573)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(26, 13)
-        Me.Label63.TabIndex = 317
-        Me.Label63.Text = "WL"
-        '
-        'lblB3WL
-        '
-        Me.lblB3WL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB3WL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB3WL.Location = New System.Drawing.Point(186, 569)
-        Me.lblB3WL.Name = "lblB3WL"
-        Me.lblB3WL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB3WL.TabIndex = 316
-        Me.lblB3WL.Text = "0"
-        Me.lblB3WL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label65
-        '
-        Me.Label65.AutoSize = True
-        Me.Label65.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label65.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label65.Location = New System.Drawing.Point(64, 573)
-        Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(28, 13)
-        Me.Label65.TabIndex = 315
-        Me.Label65.Text = "WH"
-        '
-        'lblB3WH
-        '
-        Me.lblB3WH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblB3WH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB3WH.Location = New System.Drawing.Point(92, 569)
-        Me.lblB3WH.Name = "lblB3WH"
-        Me.lblB3WH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB3WH.TabIndex = 314
-        Me.lblB3WH.Text = "0"
-        Me.lblB3WH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label67
-        '
-        Me.Label67.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label67.Location = New System.Drawing.Point(12, 565)
-        Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(425, 29)
-        Me.Label67.TabIndex = 322
-        Me.Label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label68
-        '
-        Me.Label68.AutoSize = True
-        Me.Label68.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label68.Location = New System.Drawing.Point(353, 598)
-        Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(22, 13)
-        Me.Label68.TabIndex = 330
-        Me.Label68.Text = "SL"
-        '
-        'lblB4SL
-        '
-        Me.lblB4SL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB4SL.Location = New System.Drawing.Point(375, 594)
-        Me.lblB4SL.Name = "lblB4SL"
-        Me.lblB4SL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB4SL.TabIndex = 329
-        Me.lblB4SL.Text = "0"
-        Me.lblB4SL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label70
-        '
-        Me.Label70.AutoSize = True
-        Me.Label70.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label70.Location = New System.Drawing.Point(251, 598)
-        Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(24, 13)
-        Me.Label70.TabIndex = 328
-        Me.Label70.Text = "SH"
-        '
-        'lblB4SH
-        '
-        Me.lblB4SH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB4SH.Location = New System.Drawing.Point(280, 594)
-        Me.lblB4SH.Name = "lblB4SH"
-        Me.lblB4SH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB4SH.TabIndex = 327
-        Me.lblB4SH.Text = "0"
-        Me.lblB4SH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label72
-        '
-        Me.Label72.AutoSize = True
-        Me.Label72.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.Location = New System.Drawing.Point(160, 598)
-        Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(26, 13)
-        Me.Label72.TabIndex = 326
-        Me.Label72.Text = "WL"
-        '
-        'lblB4WL
-        '
-        Me.lblB4WL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB4WL.Location = New System.Drawing.Point(186, 594)
-        Me.lblB4WL.Name = "lblB4WL"
-        Me.lblB4WL.Size = New System.Drawing.Size(56, 21)
-        Me.lblB4WL.TabIndex = 325
-        Me.lblB4WL.Text = "0"
-        Me.lblB4WL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label74
-        '
-        Me.Label74.AutoSize = True
-        Me.Label74.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label74.Location = New System.Drawing.Point(64, 598)
-        Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(28, 13)
-        Me.Label74.TabIndex = 324
-        Me.Label74.Text = "WH"
-        '
-        'lblB4WH
-        '
-        Me.lblB4WH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB4WH.Location = New System.Drawing.Point(92, 594)
-        Me.lblB4WH.Name = "lblB4WH"
-        Me.lblB4WH.Size = New System.Drawing.Size(56, 21)
-        Me.lblB4WH.TabIndex = 323
-        Me.lblB4WH.Text = "0"
-        Me.lblB4WH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label76
-        '
-        Me.Label76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label76.Location = New System.Drawing.Point(12, 590)
-        Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(425, 29)
-        Me.Label76.TabIndex = 331
-        Me.Label76.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Label77
         '
         Me.Label77.AutoSize = True
@@ -999,9 +669,9 @@ Partial Class frmCharts
         Me.Label77.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label77.Location = New System.Drawing.Point(17, 522)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(23, 13)
+        Me.Label77.Size = New System.Drawing.Size(43, 13)
         Me.Label77.TabIndex = 332
-        Me.Label77.Text = "BA"
+        Me.Label77.Text = "B Tmp"
         '
         'Label78
         '
@@ -1009,112 +679,50 @@ Partial Class frmCharts
         Me.Label78.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label78.Location = New System.Drawing.Point(17, 548)
         Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(23, 13)
+        Me.Label78.Size = New System.Drawing.Size(51, 13)
         Me.Label78.TabIndex = 333
-        Me.Label78.Text = "BB"
-        '
-        'Label79
-        '
-        Me.Label79.AutoSize = True
-        Me.Label79.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label79.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label79.Location = New System.Drawing.Point(17, 573)
-        Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(23, 13)
-        Me.Label79.TabIndex = 334
-        Me.Label79.Text = "BC"
-        '
-        'Label80
-        '
-        Me.Label80.AutoSize = True
-        Me.Label80.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label80.Location = New System.Drawing.Point(17, 598)
-        Me.Label80.Name = "Label80"
-        Me.Label80.Size = New System.Drawing.Size(24, 13)
-        Me.Label80.TabIndex = 335
-        Me.Label80.Text = "BD"
+        Me.Label78.Text = "SB Tmp"
         '
         'Label81
         '
         Me.Label81.AutoSize = True
         Me.Label81.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label81.Location = New System.Drawing.Point(336, 486)
+        Me.Label81.Location = New System.Drawing.Point(325, 486)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(25, 13)
+        Me.Label81.Size = New System.Drawing.Size(31, 13)
         Me.Label81.TabIndex = 343
-        Me.Label81.Text = "HD"
+        Me.Label81.Text = "SBT"
         '
-        'lblB4
+        'lblSBT
         '
-        Me.lblB4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.lblB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB4.Location = New System.Drawing.Point(359, 478)
-        Me.lblB4.Name = "lblB4"
-        Me.lblB4.Size = New System.Drawing.Size(68, 30)
-        Me.lblB4.TabIndex = 342
-        Me.lblB4.Text = "0"
+        Me.lblSBT.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblSBT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBT.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSBT.Location = New System.Drawing.Point(356, 478)
+        Me.lblSBT.Name = "lblSBT"
+        Me.lblSBT.Size = New System.Drawing.Size(68, 30)
+        Me.lblSBT.TabIndex = 342
+        Me.lblSBT.Text = "0"
         '
         'Label83
         '
         Me.Label83.AutoSize = True
         Me.Label83.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label83.Location = New System.Drawing.Point(235, 486)
+        Me.Label83.Location = New System.Drawing.Point(221, 486)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(24, 13)
+        Me.Label83.Size = New System.Drawing.Size(23, 13)
         Me.Label83.TabIndex = 341
-        Me.Label83.Text = "HC"
+        Me.Label83.Text = "BT"
         '
-        'lblB3
+        'lblBT
         '
-        Me.lblB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB3.Location = New System.Drawing.Point(259, 478)
-        Me.lblB3.Name = "lblB3"
-        Me.lblB3.Size = New System.Drawing.Size(68, 30)
-        Me.lblB3.TabIndex = 340
-        Me.lblB3.Text = "0"
-        '
-        'Label85
-        '
-        Me.Label85.AutoSize = True
-        Me.Label85.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label85.Location = New System.Drawing.Point(133, 486)
-        Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(24, 13)
-        Me.Label85.TabIndex = 339
-        Me.Label85.Text = "HB"
-        '
-        'lblB2
-        '
-        Me.lblB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB2.Location = New System.Drawing.Point(159, 478)
-        Me.lblB2.Name = "lblB2"
-        Me.lblB2.Size = New System.Drawing.Size(68, 30)
-        Me.lblB2.TabIndex = 338
-        Me.lblB2.Text = "0"
-        '
-        'Label87
-        '
-        Me.Label87.AutoSize = True
-        Me.Label87.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label87.Location = New System.Drawing.Point(30, 486)
-        Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(24, 13)
-        Me.Label87.TabIndex = 337
-        Me.Label87.Text = "HA"
-        '
-        'lblB1
-        '
-        Me.lblB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB1.Location = New System.Drawing.Point(59, 478)
-        Me.lblB1.Name = "lblB1"
-        Me.lblB1.Size = New System.Drawing.Size(68, 30)
-        Me.lblB1.TabIndex = 336
-        Me.lblB1.Text = "0"
-        Me.lblB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblBT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBT.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBT.Location = New System.Drawing.Point(248, 478)
+        Me.lblBT.Name = "lblBT"
+        Me.lblBT.Size = New System.Drawing.Size(68, 30)
+        Me.lblBT.TabIndex = 340
+        Me.lblBT.Text = "0"
         '
         'Label89
         '
@@ -1336,7 +944,7 @@ Partial Class frmCharts
         'Label46
         '
         Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(1315, 386)
+        Me.Label46.Location = New System.Drawing.Point(885, 255)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(100, 30)
         Me.Label46.TabIndex = 365
@@ -1346,9 +954,9 @@ Partial Class frmCharts
         'PictureBox5
         '
         Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox5.Location = New System.Drawing.Point(1305, 404)
+        Me.PictureBox5.Location = New System.Drawing.Point(875, 273)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(125, 214)
+        Me.PictureBox5.Size = New System.Drawing.Size(424, 126)
         Me.PictureBox5.TabIndex = 366
         Me.PictureBox5.TabStop = False
         '
@@ -1356,7 +964,7 @@ Partial Class frmCharts
         '
         Me.Label115.AutoSize = True
         Me.Label115.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label115.Location = New System.Drawing.Point(1320, 533)
+        Me.Label115.Location = New System.Drawing.Point(1084, 341)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(36, 13)
         Me.Label115.TabIndex = 382
@@ -1366,7 +974,7 @@ Partial Class frmCharts
         'lblOutOilAvg
         '
         Me.lblOutOilAvg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblOutOilAvg.Location = New System.Drawing.Point(1359, 525)
+        Me.lblOutOilAvg.Location = New System.Drawing.Point(1123, 333)
         Me.lblOutOilAvg.Name = "lblOutOilAvg"
         Me.lblOutOilAvg.Size = New System.Drawing.Size(56, 28)
         Me.lblOutOilAvg.TabIndex = 381
@@ -1377,7 +985,7 @@ Partial Class frmCharts
         '
         Me.Label117.AutoSize = True
         Me.Label117.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label117.Location = New System.Drawing.Point(1324, 504)
+        Me.Label117.Location = New System.Drawing.Point(1088, 312)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(32, 13)
         Me.Label117.TabIndex = 380
@@ -1387,7 +995,7 @@ Partial Class frmCharts
         'lblInTankAvg
         '
         Me.lblInTankAvg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblInTankAvg.Location = New System.Drawing.Point(1359, 496)
+        Me.lblInTankAvg.Location = New System.Drawing.Point(1123, 304)
         Me.lblInTankAvg.Name = "lblInTankAvg"
         Me.lblInTankAvg.Size = New System.Drawing.Size(56, 28)
         Me.lblInTankAvg.TabIndex = 379
@@ -1398,7 +1006,7 @@ Partial Class frmCharts
         '
         Me.Label119.AutoSize = True
         Me.Label119.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label119.Location = New System.Drawing.Point(1321, 475)
+        Me.Label119.Location = New System.Drawing.Point(891, 341)
         Me.Label119.Name = "Label119"
         Me.Label119.Size = New System.Drawing.Size(35, 13)
         Me.Label119.TabIndex = 378
@@ -1408,7 +1016,7 @@ Partial Class frmCharts
         'lblLoadAvg
         '
         Me.lblLoadAvg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLoadAvg.Location = New System.Drawing.Point(1359, 467)
+        Me.lblLoadAvg.Location = New System.Drawing.Point(929, 333)
         Me.lblLoadAvg.Name = "lblLoadAvg"
         Me.lblLoadAvg.Size = New System.Drawing.Size(56, 28)
         Me.lblLoadAvg.TabIndex = 377
@@ -1419,7 +1027,7 @@ Partial Class frmCharts
         '
         Me.Label121.AutoSize = True
         Me.Label121.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label121.Location = New System.Drawing.Point(1313, 446)
+        Me.Label121.Location = New System.Drawing.Point(883, 312)
         Me.Label121.Name = "Label121"
         Me.Label121.Size = New System.Drawing.Size(43, 13)
         Me.Label121.TabIndex = 376
@@ -1429,7 +1037,7 @@ Partial Class frmCharts
         'lblSpeedAvg
         '
         Me.lblSpeedAvg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblSpeedAvg.Location = New System.Drawing.Point(1359, 438)
+        Me.lblSpeedAvg.Location = New System.Drawing.Point(929, 304)
         Me.lblSpeedAvg.Name = "lblSpeedAvg"
         Me.lblSpeedAvg.Size = New System.Drawing.Size(56, 28)
         Me.lblSpeedAvg.TabIndex = 375
@@ -1673,7 +1281,7 @@ Partial Class frmCharts
         '
         Me.lblVib.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblVib.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVib.Location = New System.Drawing.Point(1218, 177)
+        Me.lblVib.Location = New System.Drawing.Point(356, 177)
         Me.lblVib.Name = "lblVib"
         Me.lblVib.Size = New System.Drawing.Size(59, 26)
         Me.lblVib.TabIndex = 406
@@ -1685,7 +1293,7 @@ Partial Class frmCharts
         Me.Label143.AutoSize = True
         Me.Label143.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label143.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label143.Location = New System.Drawing.Point(1218, 164)
+        Me.Label143.Location = New System.Drawing.Point(356, 164)
         Me.Label143.Name = "Label143"
         Me.Label143.Size = New System.Drawing.Size(25, 13)
         Me.Label143.TabIndex = 403
@@ -1741,44 +1349,124 @@ Partial Class frmCharts
         Me.lblSpdSet.Text = "0"
         Me.lblSpdSet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'lblVibWH
+        '
+        Me.lblVibWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblVibWH.Location = New System.Drawing.Point(60, 223)
+        Me.lblVibWH.Name = "lblVibWH"
+        Me.lblVibWH.Size = New System.Drawing.Size(56, 21)
+        Me.lblVibWH.TabIndex = 260
+        Me.lblVibWH.Text = "0"
+        Me.lblVibWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(31, 227)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(28, 13)
+        Me.Label3.TabIndex = 261
+        Me.Label3.Text = "WH"
+        '
+        'lblVibWL
+        '
+        Me.lblVibWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblVibWL.Location = New System.Drawing.Point(160, 223)
+        Me.lblVibWL.Name = "lblVibWL"
+        Me.lblVibWL.Size = New System.Drawing.Size(56, 21)
+        Me.lblVibWL.TabIndex = 262
+        Me.lblVibWL.Text = "0"
+        Me.lblVibWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(134, 227)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(26, 13)
+        Me.Label7.TabIndex = 263
+        Me.Label7.Text = "WL"
+        '
+        'lblVibSH
+        '
+        Me.lblVibSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblVibSH.Location = New System.Drawing.Point(260, 223)
+        Me.lblVibSH.Name = "lblVibSH"
+        Me.lblVibSH.Size = New System.Drawing.Size(56, 21)
+        Me.lblVibSH.TabIndex = 264
+        Me.lblVibSH.Text = "0"
+        Me.lblVibSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(236, 227)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(24, 13)
+        Me.Label25.TabIndex = 265
+        Me.Label25.Text = "SH"
+        '
+        'lblVibSL
+        '
+        Me.lblVibSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblVibSL.Location = New System.Drawing.Point(360, 223)
+        Me.lblVibSL.Name = "lblVibSL"
+        Me.lblVibSL.Size = New System.Drawing.Size(56, 21)
+        Me.lblVibSL.TabIndex = 266
+        Me.lblVibSL.Text = "0"
+        Me.lblVibSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(338, 227)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(22, 13)
+        Me.Label35.TabIndex = 267
+        Me.Label35.Text = "SL"
+        '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(337, 227)
+        Me.Label20.Location = New System.Drawing.Point(1201, 227)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(22, 13)
-        Me.Label20.TabIndex = 421
+        Me.Label20.TabIndex = 437
         Me.Label20.Text = "SL"
         '
         'lblLd
         '
         Me.lblLd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblLd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLd.Location = New System.Drawing.Point(350, 177)
+        Me.lblLd.Location = New System.Drawing.Point(1214, 177)
         Me.lblLd.Name = "lblLd"
         Me.lblLd.Size = New System.Drawing.Size(68, 26)
-        Me.lblLd.TabIndex = 418
+        Me.lblLd.TabIndex = 434
         Me.lblLd.Text = "0"
         Me.lblLd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblLdSet
         '
         Me.lblLdSet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLdSet.Location = New System.Drawing.Point(359, 140)
+        Me.lblLdSet.Location = New System.Drawing.Point(1223, 140)
         Me.lblLdSet.Name = "lblLdSet"
         Me.lblLdSet.Size = New System.Drawing.Size(59, 21)
-        Me.lblLdSet.TabIndex = 419
+        Me.lblLdSet.TabIndex = 435
         Me.lblLdSet.Text = "0"
         Me.lblLdSet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblLdSL
         '
         Me.lblLdSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLdSL.Location = New System.Drawing.Point(359, 223)
+        Me.lblLdSL.Location = New System.Drawing.Point(1223, 223)
         Me.lblLdSL.Name = "lblLdSL"
         Me.lblLdSL.Size = New System.Drawing.Size(56, 21)
-        Me.lblLdSL.TabIndex = 420
+        Me.lblLdSL.TabIndex = 436
         Me.lblLdSL.Text = "0"
         Me.lblLdSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -1787,10 +1475,10 @@ Partial Class frmCharts
         Me.Label141.AutoSize = True
         Me.Label141.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label141.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label141.Location = New System.Drawing.Point(359, 127)
+        Me.Label141.Location = New System.Drawing.Point(1223, 127)
         Me.Label141.Name = "Label141"
         Me.Label141.Size = New System.Drawing.Size(58, 13)
-        Me.Label141.TabIndex = 415
+        Me.Label141.TabIndex = 431
         Me.Label141.Text = "Set Load"
         '
         'Label140
@@ -1798,29 +1486,29 @@ Partial Class frmCharts
         Me.Label140.AutoSize = True
         Me.Label140.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label140.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label140.Location = New System.Drawing.Point(364, 162)
+        Me.Label140.Location = New System.Drawing.Point(1228, 162)
         Me.Label140.Name = "Label140"
         Me.Label140.Size = New System.Drawing.Size(35, 13)
-        Me.Label140.TabIndex = 416
+        Me.Label140.TabIndex = 432
         Me.Label140.Text = "Load"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(235, 227)
+        Me.Label22.Location = New System.Drawing.Point(1099, 227)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(24, 13)
-        Me.Label22.TabIndex = 417
+        Me.Label22.TabIndex = 433
         Me.Label22.Text = "SH"
         '
         'lblLdSH
         '
         Me.lblLdSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLdSH.Location = New System.Drawing.Point(259, 223)
+        Me.lblLdSH.Location = New System.Drawing.Point(1123, 223)
         Me.lblLdSH.Name = "lblLdSH"
         Me.lblLdSH.Size = New System.Drawing.Size(56, 21)
-        Me.lblLdSH.TabIndex = 414
+        Me.lblLdSH.TabIndex = 430
         Me.lblLdSH.Text = "0"
         Me.lblLdSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -1828,19 +1516,19 @@ Partial Class frmCharts
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(133, 227)
+        Me.Label24.Location = New System.Drawing.Point(997, 227)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(26, 13)
-        Me.Label24.TabIndex = 413
+        Me.Label24.TabIndex = 429
         Me.Label24.Text = "WL"
         '
         'lblLdWL
         '
         Me.lblLdWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLdWL.Location = New System.Drawing.Point(159, 223)
+        Me.lblLdWL.Location = New System.Drawing.Point(1023, 223)
         Me.lblLdWL.Name = "lblLdWL"
         Me.lblLdWL.Size = New System.Drawing.Size(56, 21)
-        Me.lblLdWL.TabIndex = 412
+        Me.lblLdWL.TabIndex = 428
         Me.lblLdWL.Text = "0"
         Me.lblLdWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -1848,528 +1536,137 @@ Partial Class frmCharts
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(30, 227)
+        Me.Label26.Location = New System.Drawing.Point(894, 227)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(28, 13)
-        Me.Label26.TabIndex = 411
+        Me.Label26.TabIndex = 427
         Me.Label26.Text = "WH"
         '
         'lblLdWH
         '
         Me.lblLdWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLdWH.Location = New System.Drawing.Point(59, 223)
+        Me.lblLdWH.Location = New System.Drawing.Point(923, 223)
         Me.lblLdWH.Name = "lblLdWH"
         Me.lblLdWH.Size = New System.Drawing.Size(56, 21)
-        Me.lblLdWH.TabIndex = 410
+        Me.lblLdWH.TabIndex = 426
         Me.lblLdWH.Text = "0"
         Me.lblLdWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'chrtLd
         '
-        ChartArea10.Name = "ChartArea1"
-        Me.chrtLd.ChartAreas.Add(ChartArea10)
-        Legend10.Name = "Legend1"
-        Me.chrtLd.Legends.Add(Legend10)
-        Me.chrtLd.Location = New System.Drawing.Point(28, 28)
+        ChartArea5.Name = "ChartArea1"
+        Me.chrtLd.ChartAreas.Add(ChartArea5)
+        Legend5.Name = "Legend1"
+        Me.chrtLd.Legends.Add(Legend5)
+        Me.chrtLd.Location = New System.Drawing.Point(892, 28)
         Me.chrtLd.Name = "chrtLd"
-        Series10.ChartArea = "ChartArea1"
-        Series10.Legend = "Legend1"
-        Series10.Name = "Series1"
-        Me.chrtLd.Series.Add(Series10)
+        Series5.ChartArea = "ChartArea1"
+        Series5.Legend = "Legend1"
+        Series5.Name = "Series1"
+        Me.chrtLd.Series.Add(Series5)
         Me.chrtLd.Size = New System.Drawing.Size(388, 175)
-        Me.chrtLd.TabIndex = 407
+        Me.chrtLd.TabIndex = 423
         Me.chrtLd.Text = "Chart1"
         '
         'Label28
         '
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(173, 0)
+        Me.Label28.Location = New System.Drawing.Point(1037, 0)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(100, 30)
-        Me.Label28.TabIndex = 408
+        Me.Label28.TabIndex = 424
         Me.Label28.Text = "LOAD"
         Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label29
         '
         Me.Label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label29.Location = New System.Drawing.Point(12, 215)
+        Me.Label29.Location = New System.Drawing.Point(876, 215)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(425, 39)
-        Me.Label29.TabIndex = 422
+        Me.Label29.TabIndex = 438
         Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 15)
+        Me.PictureBox2.Location = New System.Drawing.Point(876, 15)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(425, 239)
-        Me.PictureBox2.TabIndex = 409
+        Me.PictureBox2.TabIndex = 425
         Me.PictureBox2.TabStop = False
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(880, 343)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(34, 13)
-        Me.Label8.TabIndex = 462
-        Me.Label8.Text = "VibD"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(880, 318)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(33, 13)
-        Me.Label11.TabIndex = 461
-        Me.Label11.Text = "VibC"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(880, 293)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(33, 13)
-        Me.Label13.TabIndex = 460
-        Me.Label13.Text = "VibB"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(880, 267)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(33, 13)
-        Me.Label15.TabIndex = 459
-        Me.Label15.Text = "VibA"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(1216, 343)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(22, 13)
-        Me.Label17.TabIndex = 457
-        Me.Label17.Text = "SL"
-        '
-        'lblVibDSL
-        '
-        Me.lblVibDSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibDSL.Location = New System.Drawing.Point(1238, 339)
-        Me.lblVibDSL.Name = "lblVibDSL"
-        Me.lblVibDSL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibDSL.TabIndex = 456
-        Me.lblVibDSL.Text = "0"
-        Me.lblVibDSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(1114, 343)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(24, 13)
-        Me.Label23.TabIndex = 455
-        Me.Label23.Text = "SH"
-        '
-        'lblVibDSH
-        '
-        Me.lblVibDSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibDSH.Location = New System.Drawing.Point(1143, 339)
-        Me.lblVibDSH.Name = "lblVibDSH"
-        Me.lblVibDSH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibDSH.TabIndex = 454
-        Me.lblVibDSH.Text = "0"
-        Me.lblVibDSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(1023, 343)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(26, 13)
-        Me.Label27.TabIndex = 453
-        Me.Label27.Text = "WL"
-        '
-        'lblVibDWL
-        '
-        Me.lblVibDWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibDWL.Location = New System.Drawing.Point(1049, 339)
-        Me.lblVibDWL.Name = "lblVibDWL"
-        Me.lblVibDWL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibDWL.TabIndex = 452
-        Me.lblVibDWL.Text = "0"
-        Me.lblVibDWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(927, 343)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(28, 13)
-        Me.Label33.TabIndex = 451
-        Me.Label33.Text = "WH"
-        '
-        'lblVibDWH
-        '
-        Me.lblVibDWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibDWH.Location = New System.Drawing.Point(955, 339)
-        Me.lblVibDWH.Name = "lblVibDWH"
-        Me.lblVibDWH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibDWH.TabIndex = 450
-        Me.lblVibDWH.Text = "0"
-        Me.lblVibDWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label37
-        '
-        Me.Label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label37.Location = New System.Drawing.Point(875, 335)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(425, 29)
-        Me.Label37.TabIndex = 458
-        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(1216, 318)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(22, 13)
-        Me.Label41.TabIndex = 448
-        Me.Label41.Text = "SL"
-        '
-        'lblVibCSL
-        '
-        Me.lblVibCSL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibCSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibCSL.Location = New System.Drawing.Point(1238, 314)
-        Me.lblVibCSL.Name = "lblVibCSL"
-        Me.lblVibCSL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibCSL.TabIndex = 447
-        Me.lblVibCSL.Text = "0"
-        Me.lblVibCSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(1114, 318)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(24, 13)
-        Me.Label45.TabIndex = 446
-        Me.Label45.Text = "SH"
-        '
-        'lblVibCSH
-        '
-        Me.lblVibCSH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibCSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibCSH.Location = New System.Drawing.Point(1143, 314)
-        Me.lblVibCSH.Name = "lblVibCSH"
-        Me.lblVibCSH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibCSH.TabIndex = 445
-        Me.lblVibCSH.Text = "0"
-        Me.lblVibCSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(1023, 318)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(26, 13)
-        Me.Label50.TabIndex = 444
-        Me.Label50.Text = "WL"
-        '
-        'lblVibCWL
-        '
-        Me.lblVibCWL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibCWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibCWL.Location = New System.Drawing.Point(1049, 314)
-        Me.lblVibCWL.Name = "lblVibCWL"
-        Me.lblVibCWL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibCWL.TabIndex = 443
-        Me.lblVibCWL.Text = "0"
-        Me.lblVibCWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(927, 318)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(28, 13)
-        Me.Label52.TabIndex = 442
-        Me.Label52.Text = "WH"
-        '
-        'lblVibCWH
-        '
-        Me.lblVibCWH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibCWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibCWH.Location = New System.Drawing.Point(955, 314)
-        Me.lblVibCWH.Name = "lblVibCWH"
-        Me.lblVibCWH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibCWH.TabIndex = 441
-        Me.lblVibCWH.Text = "0"
-        Me.lblVibCWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label57
-        '
-        Me.Label57.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label57.Location = New System.Drawing.Point(875, 310)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(425, 29)
-        Me.Label57.TabIndex = 449
-        Me.Label57.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label60
-        '
-        Me.Label60.AutoSize = True
-        Me.Label60.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.Location = New System.Drawing.Point(1216, 293)
-        Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(22, 13)
-        Me.Label60.TabIndex = 439
-        Me.Label60.Text = "SL"
-        '
-        'lblVibBSL
-        '
-        Me.lblVibBSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibBSL.Location = New System.Drawing.Point(1238, 289)
-        Me.lblVibBSL.Name = "lblVibBSL"
-        Me.lblVibBSL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibBSL.TabIndex = 438
-        Me.lblVibBSL.Text = "0"
-        Me.lblVibBSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label64
-        '
-        Me.Label64.AutoSize = True
-        Me.Label64.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(1114, 293)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(24, 13)
-        Me.Label64.TabIndex = 437
-        Me.Label64.Text = "SH"
-        '
-        'lblVibBSH
-        '
-        Me.lblVibBSH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibBSH.Location = New System.Drawing.Point(1143, 289)
-        Me.lblVibBSH.Name = "lblVibBSH"
-        Me.lblVibBSH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibBSH.TabIndex = 436
-        Me.lblVibBSH.Text = "0"
-        Me.lblVibBSH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label69
-        '
-        Me.Label69.AutoSize = True
-        Me.Label69.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label69.Location = New System.Drawing.Point(1023, 293)
-        Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(26, 13)
-        Me.Label69.TabIndex = 435
-        Me.Label69.Text = "WL"
-        '
-        'lblVibBWL
-        '
-        Me.lblVibBWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibBWL.Location = New System.Drawing.Point(1049, 289)
-        Me.lblVibBWL.Name = "lblVibBWL"
-        Me.lblVibBWL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibBWL.TabIndex = 434
-        Me.lblVibBWL.Text = "0"
-        Me.lblVibBWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label73
-        '
-        Me.Label73.AutoSize = True
-        Me.Label73.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label73.Location = New System.Drawing.Point(927, 293)
-        Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(28, 13)
-        Me.Label73.TabIndex = 433
-        Me.Label73.Text = "WH"
-        '
-        'lblVibBWH
-        '
-        Me.lblVibBWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibBWH.Location = New System.Drawing.Point(955, 289)
-        Me.lblVibBWH.Name = "lblVibBWH"
-        Me.lblVibBWH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibBWH.TabIndex = 432
-        Me.lblVibBWH.Text = "0"
-        Me.lblVibBWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label82
-        '
-        Me.Label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label82.Location = New System.Drawing.Point(875, 285)
-        Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(425, 29)
-        Me.Label82.TabIndex = 440
-        Me.Label82.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label84
-        '
-        Me.Label84.AutoSize = True
-        Me.Label84.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label84.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label84.Location = New System.Drawing.Point(1216, 267)
-        Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(22, 13)
-        Me.Label84.TabIndex = 430
-        Me.Label84.Text = "SL"
-        '
-        'lblVibASL
-        '
-        Me.lblVibASL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibASL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibASL.Location = New System.Drawing.Point(1238, 263)
-        Me.lblVibASL.Name = "lblVibASL"
-        Me.lblVibASL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibASL.TabIndex = 429
-        Me.lblVibASL.Text = "0"
-        Me.lblVibASL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label88
-        '
-        Me.Label88.AutoSize = True
-        Me.Label88.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label88.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label88.Location = New System.Drawing.Point(1114, 267)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(24, 13)
-        Me.Label88.TabIndex = 428
-        Me.Label88.Text = "SH"
-        '
-        'lblVibASH
-        '
-        Me.lblVibASH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibASH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibASH.Location = New System.Drawing.Point(1143, 263)
-        Me.lblVibASH.Name = "lblVibASH"
-        Me.lblVibASH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibASH.TabIndex = 427
-        Me.lblVibASH.Text = "0"
-        Me.lblVibASH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label95
-        '
-        Me.Label95.AutoSize = True
-        Me.Label95.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label95.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label95.Location = New System.Drawing.Point(1023, 267)
-        Me.Label95.Name = "Label95"
-        Me.Label95.Size = New System.Drawing.Size(26, 13)
-        Me.Label95.TabIndex = 426
-        Me.Label95.Text = "WL"
-        '
-        'lblVibAWL
-        '
-        Me.lblVibAWL.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibAWL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibAWL.Location = New System.Drawing.Point(1049, 263)
-        Me.lblVibAWL.Name = "lblVibAWL"
-        Me.lblVibAWL.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibAWL.TabIndex = 425
-        Me.lblVibAWL.Text = "0"
-        Me.lblVibAWL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label99
-        '
-        Me.Label99.AutoSize = True
-        Me.Label99.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label99.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label99.Location = New System.Drawing.Point(927, 267)
-        Me.Label99.Name = "Label99"
-        Me.Label99.Size = New System.Drawing.Size(28, 13)
-        Me.Label99.TabIndex = 424
-        Me.Label99.Text = "WH"
-        '
-        'lblVibAWH
-        '
-        Me.lblVibAWH.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblVibAWH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblVibAWH.Location = New System.Drawing.Point(955, 263)
-        Me.lblVibAWH.Name = "lblVibAWH"
-        Me.lblVibAWH.Size = New System.Drawing.Size(56, 21)
-        Me.lblVibAWH.TabIndex = 423
-        Me.lblVibAWH.Text = "0"
-        Me.lblVibAWH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label104
-        '
-        Me.Label104.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label104.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label104.Location = New System.Drawing.Point(875, 260)
-        Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(425, 29)
-        Me.Label104.TabIndex = 431
-        Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        'rdbHD
+        '
+        Me.rdbHD.AutoSize = True
+        Me.rdbHD.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdbHD.Location = New System.Drawing.Point(1332, 156)
+        Me.rdbHD.Name = "rdbHD"
+        Me.rdbHD.Size = New System.Drawing.Size(53, 24)
+        Me.rdbHD.TabIndex = 442
+        Me.rdbHD.TabStop = True
+        Me.rdbHD.Tag = "4"
+        Me.rdbHD.Text = "HD"
+        Me.rdbHD.UseVisualStyleBackColor = True
+        '
+        'rdbHC
+        '
+        Me.rdbHC.AutoSize = True
+        Me.rdbHC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdbHC.Location = New System.Drawing.Point(1332, 127)
+        Me.rdbHC.Name = "rdbHC"
+        Me.rdbHC.Size = New System.Drawing.Size(52, 24)
+        Me.rdbHC.TabIndex = 441
+        Me.rdbHC.TabStop = True
+        Me.rdbHC.Tag = "3"
+        Me.rdbHC.Text = "HC"
+        Me.rdbHC.UseVisualStyleBackColor = True
+        '
+        'rdbHB
+        '
+        Me.rdbHB.AutoSize = True
+        Me.rdbHB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdbHB.Location = New System.Drawing.Point(1332, 98)
+        Me.rdbHB.Name = "rdbHB"
+        Me.rdbHB.Size = New System.Drawing.Size(52, 24)
+        Me.rdbHB.TabIndex = 440
+        Me.rdbHB.TabStop = True
+        Me.rdbHB.Tag = "2"
+        Me.rdbHB.Text = "HB"
+        Me.rdbHB.UseVisualStyleBackColor = True
+        '
+        'rdbHA
+        '
+        Me.rdbHA.AutoSize = True
+        Me.rdbHA.Checked = True
+        Me.rdbHA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdbHA.Location = New System.Drawing.Point(1332, 69)
+        Me.rdbHA.Name = "rdbHA"
+        Me.rdbHA.Size = New System.Drawing.Size(52, 24)
+        Me.rdbHA.TabIndex = 439
+        Me.rdbHA.TabStop = True
+        Me.rdbHA.Tag = "1"
+        Me.rdbHA.Text = "HA"
+        Me.rdbHA.UseVisualStyleBackColor = True
+        '
+        'Label145
+        '
+        Me.Label145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label145.Location = New System.Drawing.Point(1307, 15)
+        Me.Label145.Name = "Label145"
+        Me.Label145.Size = New System.Drawing.Size(117, 239)
+        Me.Label145.TabIndex = 443
+        Me.Label145.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'frmCharts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(1435, 644)
-        Me.Controls.Add(Me.lblVibD)
-        Me.Controls.Add(Me.lblB4)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.lblVibDSL)
-        Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.lblVibDSH)
-        Me.Controls.Add(Me.Label27)
-        Me.Controls.Add(Me.lblVibDWL)
-        Me.Controls.Add(Me.Label33)
-        Me.Controls.Add(Me.lblVibDWH)
-        Me.Controls.Add(Me.Label37)
-        Me.Controls.Add(Me.Label41)
-        Me.Controls.Add(Me.lblVibCSL)
-        Me.Controls.Add(Me.Label45)
-        Me.Controls.Add(Me.lblVibCSH)
-        Me.Controls.Add(Me.Label50)
-        Me.Controls.Add(Me.lblVibCWL)
-        Me.Controls.Add(Me.Label52)
-        Me.Controls.Add(Me.lblVibCWH)
-        Me.Controls.Add(Me.Label57)
-        Me.Controls.Add(Me.Label60)
-        Me.Controls.Add(Me.lblVibBSL)
-        Me.Controls.Add(Me.Label64)
-        Me.Controls.Add(Me.lblVibBSH)
-        Me.Controls.Add(Me.Label69)
-        Me.Controls.Add(Me.lblVibBWL)
-        Me.Controls.Add(Me.Label73)
-        Me.Controls.Add(Me.lblVibBWH)
-        Me.Controls.Add(Me.Label82)
-        Me.Controls.Add(Me.Label84)
-        Me.Controls.Add(Me.lblVibASL)
-        Me.Controls.Add(Me.Label88)
-        Me.Controls.Add(Me.lblVibASH)
-        Me.Controls.Add(Me.Label95)
-        Me.Controls.Add(Me.lblVibAWL)
-        Me.Controls.Add(Me.Label99)
-        Me.Controls.Add(Me.lblVibAWH)
-        Me.Controls.Add(Me.Label104)
+        Me.Controls.Add(Me.rdbHD)
+        Me.Controls.Add(Me.rdbHC)
+        Me.Controls.Add(Me.rdbHB)
+        Me.Controls.Add(Me.rdbHA)
+        Me.Controls.Add(Me.Label145)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.lblLd)
         Me.Controls.Add(Me.lblLdSet)
@@ -2386,6 +1683,7 @@ Partial Class frmCharts
         Me.Controls.Add(Me.Label28)
         Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.lblSBT)
         Me.Controls.Add(Me.txtITTSP)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.lblVib)
@@ -2443,41 +1741,17 @@ Partial Class frmCharts
         Me.Controls.Add(Me.Label109)
         Me.Controls.Add(Me.Label81)
         Me.Controls.Add(Me.Label83)
-        Me.Controls.Add(Me.lblB3)
-        Me.Controls.Add(Me.Label85)
-        Me.Controls.Add(Me.lblB2)
-        Me.Controls.Add(Me.Label87)
-        Me.Controls.Add(Me.lblB1)
-        Me.Controls.Add(Me.Label80)
-        Me.Controls.Add(Me.Label79)
+        Me.Controls.Add(Me.lblBT)
         Me.Controls.Add(Me.Label78)
         Me.Controls.Add(Me.Label77)
-        Me.Controls.Add(Me.Label68)
-        Me.Controls.Add(Me.lblB4SL)
-        Me.Controls.Add(Me.Label70)
-        Me.Controls.Add(Me.lblB4SH)
-        Me.Controls.Add(Me.Label72)
-        Me.Controls.Add(Me.lblB4WL)
-        Me.Controls.Add(Me.Label74)
-        Me.Controls.Add(Me.lblB4WH)
-        Me.Controls.Add(Me.Label76)
-        Me.Controls.Add(Me.Label59)
-        Me.Controls.Add(Me.lblB3SL)
-        Me.Controls.Add(Me.Label61)
-        Me.Controls.Add(Me.lblB3SH)
-        Me.Controls.Add(Me.Label63)
-        Me.Controls.Add(Me.lblB3WL)
-        Me.Controls.Add(Me.Label65)
-        Me.Controls.Add(Me.lblB3WH)
-        Me.Controls.Add(Me.Label67)
         Me.Controls.Add(Me.Label40)
-        Me.Controls.Add(Me.lblB2SL)
+        Me.Controls.Add(Me.lblSBSL)
         Me.Controls.Add(Me.Label42)
-        Me.Controls.Add(Me.lblB2SH)
+        Me.Controls.Add(Me.lblSBSH)
         Me.Controls.Add(Me.Label44)
-        Me.Controls.Add(Me.lblB2WL)
+        Me.Controls.Add(Me.lblSBWL)
         Me.Controls.Add(Me.Label47)
-        Me.Controls.Add(Me.lblB2WH)
+        Me.Controls.Add(Me.lblSBWH)
         Me.Controls.Add(Me.Label58)
         Me.Controls.Add(Me.lblOT)
         Me.Controls.Add(Me.Label49)
@@ -2488,38 +1762,39 @@ Partial Class frmCharts
         Me.Controls.Add(Me.Label56)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.Label30)
-        Me.Controls.Add(Me.lblB1SL)
+        Me.Controls.Add(Me.lblBSL)
         Me.Controls.Add(Me.Label32)
-        Me.Controls.Add(Me.lblB1SH)
+        Me.Controls.Add(Me.lblBSH)
         Me.Controls.Add(Me.Label34)
-        Me.Controls.Add(Me.lblB1WL)
+        Me.Controls.Add(Me.lblBWL)
         Me.Controls.Add(Me.Label36)
-        Me.Controls.Add(Me.lblB1WH)
+        Me.Controls.Add(Me.lblBWH)
         Me.Controls.Add(Me.chrtBT)
         Me.Controls.Add(Me.Label38)
         Me.Controls.Add(Me.Label39)
         Me.Controls.Add(Me.lblSpdSet)
         Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.lblSpd)
+        Me.Controls.Add(Me.lblVibSL)
+        Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.lblSpdSL)
+        Me.Controls.Add(Me.lblVibSH)
         Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblSpdSH)
+        Me.Controls.Add(Me.lblVibWL)
         Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblSpdWL)
+        Me.Controls.Add(Me.lblVibWH)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.lblSpdWH)
         Me.Controls.Add(Me.chrtSpd)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.lblVibC)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.lblVibB)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.lblVibA)
         Me.Controls.Add(Me.chrtVib)
         Me.Controls.Add(Me.lblChartTitle)
         Me.Controls.Add(Me.Label9)
@@ -2546,14 +1821,6 @@ Partial Class frmCharts
     Friend WithEvents chrtVib As DataVisualization.Charting.Chart
     Friend WithEvents lblChartTitle As Label
     Friend WithEvents PictureBox11 As PictureBox
-    Friend WithEvents lblVibA As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents lblVibB As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents lblVibC As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents lblVibD As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents lblSpdSL As Label
@@ -2568,13 +1835,13 @@ Partial Class frmCharts
     Friend WithEvents Label19 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label30 As Label
-    Friend WithEvents lblB1SL As Label
+    Friend WithEvents lblBSL As Label
     Friend WithEvents Label32 As Label
-    Friend WithEvents lblB1SH As Label
+    Friend WithEvents lblBSH As Label
     Friend WithEvents Label34 As Label
-    Friend WithEvents lblB1WL As Label
+    Friend WithEvents lblBWL As Label
     Friend WithEvents Label36 As Label
-    Friend WithEvents lblB1WH As Label
+    Friend WithEvents lblBWH As Label
     Friend WithEvents chrtBT As DataVisualization.Charting.Chart
     Friend WithEvents Label38 As Label
     Friend WithEvents Label39 As Label
@@ -2588,44 +1855,20 @@ Partial Class frmCharts
     Friend WithEvents Label56 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label40 As Label
-    Friend WithEvents lblB2SL As Label
+    Friend WithEvents lblSBSL As Label
     Friend WithEvents Label42 As Label
-    Friend WithEvents lblB2SH As Label
+    Friend WithEvents lblSBSH As Label
     Friend WithEvents Label44 As Label
-    Friend WithEvents lblB2WL As Label
+    Friend WithEvents lblSBWL As Label
     Friend WithEvents Label47 As Label
-    Friend WithEvents lblB2WH As Label
+    Friend WithEvents lblSBWH As Label
     Friend WithEvents Label58 As Label
-    Friend WithEvents Label59 As Label
-    Friend WithEvents lblB3SL As Label
-    Friend WithEvents Label61 As Label
-    Friend WithEvents lblB3SH As Label
-    Friend WithEvents Label63 As Label
-    Friend WithEvents lblB3WL As Label
-    Friend WithEvents Label65 As Label
-    Friend WithEvents lblB3WH As Label
-    Friend WithEvents Label67 As Label
-    Friend WithEvents Label68 As Label
-    Friend WithEvents lblB4SL As Label
-    Friend WithEvents Label70 As Label
-    Friend WithEvents lblB4SH As Label
-    Friend WithEvents Label72 As Label
-    Friend WithEvents lblB4WL As Label
-    Friend WithEvents Label74 As Label
-    Friend WithEvents lblB4WH As Label
-    Friend WithEvents Label76 As Label
     Friend WithEvents Label77 As Label
     Friend WithEvents Label78 As Label
-    Friend WithEvents Label79 As Label
-    Friend WithEvents Label80 As Label
     Friend WithEvents Label81 As Label
-    Friend WithEvents lblB4 As Label
+    Friend WithEvents lblSBT As Label
     Friend WithEvents Label83 As Label
-    Friend WithEvents lblB3 As Label
-    Friend WithEvents Label85 As Label
-    Friend WithEvents lblB2 As Label
-    Friend WithEvents Label87 As Label
-    Friend WithEvents lblB1 As Label
+    Friend WithEvents lblBT As Label
     Friend WithEvents Label89 As Label
     Friend WithEvents Label90 As Label
     Friend WithEvents Label91 As Label
@@ -2686,6 +1929,14 @@ Partial Class frmCharts
     Friend WithEvents txtITTSP As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents lblSpdSet As Label
+    Friend WithEvents lblVibWH As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblVibWL As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents lblVibSH As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents lblVibSL As Label
+    Friend WithEvents Label35 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents lblLd As Label
     Friend WithEvents lblLdSet As Label
@@ -2702,44 +1953,9 @@ Partial Class frmCharts
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents lblVibDSL As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents lblVibDSH As Label
-    Friend WithEvents Label27 As Label
-    Friend WithEvents lblVibDWL As Label
-    Friend WithEvents Label33 As Label
-    Friend WithEvents lblVibDWH As Label
-    Friend WithEvents Label37 As Label
-    Friend WithEvents Label41 As Label
-    Friend WithEvents lblVibCSL As Label
-    Friend WithEvents Label45 As Label
-    Friend WithEvents lblVibCSH As Label
-    Friend WithEvents Label50 As Label
-    Friend WithEvents lblVibCWL As Label
-    Friend WithEvents Label52 As Label
-    Friend WithEvents lblVibCWH As Label
-    Friend WithEvents Label57 As Label
-    Friend WithEvents Label60 As Label
-    Friend WithEvents lblVibBSL As Label
-    Friend WithEvents Label64 As Label
-    Friend WithEvents lblVibBSH As Label
-    Friend WithEvents Label69 As Label
-    Friend WithEvents lblVibBWL As Label
-    Friend WithEvents Label73 As Label
-    Friend WithEvents lblVibBWH As Label
-    Friend WithEvents Label82 As Label
-    Friend WithEvents Label84 As Label
-    Friend WithEvents lblVibASL As Label
-    Friend WithEvents Label88 As Label
-    Friend WithEvents lblVibASH As Label
-    Friend WithEvents Label95 As Label
-    Friend WithEvents lblVibAWL As Label
-    Friend WithEvents Label99 As Label
-    Friend WithEvents lblVibAWH As Label
-    Friend WithEvents Label104 As Label
+    Friend WithEvents rdbHD As RadioButton
+    Friend WithEvents rdbHC As RadioButton
+    Friend WithEvents rdbHB As RadioButton
+    Friend WithEvents rdbHA As RadioButton
+    Friend WithEvents Label145 As Label
 End Class

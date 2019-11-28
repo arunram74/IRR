@@ -121,6 +121,14 @@ Public Class HeadDisplay
                     m_LedIdle.On = False
                     m_LedLoad.On = False
                     m_LedStop.On = True
+                Case ProjectCls.ProjectStatus.Disabled
+                    m_LedRun.On = False
+                    m_lblStatus.Text = "Disabled"
+                    m_lblStatus.BackColor = Color.Bisque
+                    m_LedIdle.On = False
+                    m_LedLoad.On = False
+                    m_LedStop.On = True
+
                 Case ProjectCls.ProjectStatus.Started
                     m_LedRun.On = False
                     m_lblStatus.Text = "Starting"
@@ -158,45 +166,55 @@ Public Class HeadDisplay
         RaiseEvent Click(Me, e)
     End Sub
 
-
-
     Private Sub chkBoxEvent(sender As Object, e As EventArgs)
-        m_chkHeadActive.Checked = Not m_chkHeadActive.Checked
-        Selected = True
-        Select Case HeadName
-            Case "A"
-                Station.MC.myProj.HeadA_Enable = m_chkHeadActive.Checked
-            Case "B"
-                Station.MC.myProj.HeadB_Enable = m_chkHeadActive.Checked
-            Case "C"
-                Station.MC.myProj.HeadC_Enable = m_chkHeadActive.Checked
-            Case "D"
-                Station.MC.myProj.HeadD_Enable = m_chkHeadActive.Checked
-        End Select
+
+        If m_Status <> ProjectCls.ProjectStatus.Run And m_Status <> ProjectCls.ProjectStatus.Load Then
+            m_chkHeadActive.Checked = Not m_chkHeadActive.Checked
+            Selected = True
+            Select Case HeadName
+                Case "A"
+                    Station.MC.myProj.HeadA_Enable = m_chkHeadActive.Checked
+                Case "B"
+                    Station.MC.myProj.HeadB_Enable = m_chkHeadActive.Checked
+                Case "C"
+                    Station.MC.myProj.HeadC_Enable = m_chkHeadActive.Checked
+                Case "D"
+                    Station.MC.myProj.HeadD_Enable = m_chkHeadActive.Checked
+            End Select
+        End If
     End Sub
 
     Private Sub Tmr_Tick(sender As Object, e As EventArgs) Handles Tmr.Tick
         Status = Station.MC.myProj.MyStatus
         If Not Station.MC.myProj.ProjectID = 0 Then
+
             Select Case HeadName
                 Case "A"
                     m_lblBearningNo.Text = Station.MC.myProj.HeadA
                     m_chkHeadActive.Checked = Station.MC.myProj.HeadA_Enable
+                    If Not Station.MC.myProj.HeadA_Enable Then Status = ProjectCls.ProjectStatus.Disabled
                 Case "B"
                     m_lblBearningNo.Text = Station.MC.myProj.HeadB
                     m_chkHeadActive.Checked = Station.MC.myProj.HeadB_Enable
+                    If Not Station.MC.myProj.HeadB_Enable Then Status = ProjectCls.ProjectStatus.Disabled
+
                 Case "C"
                     m_lblBearningNo.Text = Station.MC.myProj.HeadC
                     m_chkHeadActive.Checked = Station.MC.myProj.HeadC_Enable
+                    If Not Station.MC.myProj.HeadC_Enable Then Status = ProjectCls.ProjectStatus.Disabled
+
                 Case "D"
                     m_lblBearningNo.Text = Station.MC.myProj.HeadD
                     m_chkHeadActive.Checked = Station.MC.myProj.HeadD_Enable
+                    If Not Station.MC.myProj.HeadD_Enable Then Status = ProjectCls.ProjectStatus.Disabled
+
             End Select
         Else
             m_lblBearningNo.Text = ""
             '            m_chkHeadActive.Checked = False
 
         End If
+
 
 
 
@@ -207,9 +225,12 @@ Public Class HeadDisplay
             RaiseEvent MyStatusChanged(Me)
             MyPrevStatus = m_Status
         End If
+
     End Sub
 
     'Private Sub HeadObj_HeadStatusChanged() Handles Station.MC.HeadStatusChanged
     '    RaiseEvent MyStatusChanged(Me)
     'End Sub
+
+
 End Class

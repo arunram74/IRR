@@ -53,10 +53,10 @@ Partial Class frmPrjt
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.cmbBA = New System.Windows.Forms.ComboBox()
-        Me.cmbBB = New System.Windows.Forms.ComboBox()
-        Me.cmbBC = New System.Windows.Forms.ComboBox()
-        Me.cmbBD = New System.Windows.Forms.ComboBox()
+        Me.txtBA = New System.Windows.Forms.TextBox()
+        Me.txtBB = New System.Windows.Forms.TextBox()
+        Me.txtBC = New System.Windows.Forms.TextBox()
+        Me.txtBD = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Panel3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -394,50 +394,46 @@ Partial Class frmPrjt
         Me.Label13.Text = "D"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'cmbBA
+        'txtBA
         '
-        Me.cmbBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmbBA.FormattingEnabled = True
-        Me.cmbBA.Location = New System.Drawing.Point(638, 153)
-        Me.cmbBA.Name = "cmbBA"
-        Me.cmbBA.Size = New System.Drawing.Size(101, 32)
-        Me.cmbBA.TabIndex = 348
+        Me.txtBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBA.Location = New System.Drawing.Point(638, 154)
+        Me.txtBA.Name = "txtBA"
+        Me.txtBA.Size = New System.Drawing.Size(101, 29)
+        Me.txtBA.TabIndex = 349
         '
-        'cmbBB
+        'txtBB
         '
-        Me.cmbBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmbBB.FormattingEnabled = True
-        Me.cmbBB.Location = New System.Drawing.Point(638, 199)
-        Me.cmbBB.Name = "cmbBB"
-        Me.cmbBB.Size = New System.Drawing.Size(101, 32)
-        Me.cmbBB.TabIndex = 348
+        Me.txtBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBB.Location = New System.Drawing.Point(638, 200)
+        Me.txtBB.Name = "txtBB"
+        Me.txtBB.Size = New System.Drawing.Size(101, 29)
+        Me.txtBB.TabIndex = 350
         '
-        'cmbBC
+        'txtBC
         '
-        Me.cmbBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmbBC.FormattingEnabled = True
-        Me.cmbBC.Location = New System.Drawing.Point(638, 245)
-        Me.cmbBC.Name = "cmbBC"
-        Me.cmbBC.Size = New System.Drawing.Size(101, 32)
-        Me.cmbBC.TabIndex = 348
+        Me.txtBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBC.Location = New System.Drawing.Point(638, 244)
+        Me.txtBC.Name = "txtBC"
+        Me.txtBC.Size = New System.Drawing.Size(101, 29)
+        Me.txtBC.TabIndex = 351
         '
-        'cmbBD
+        'txtBD
         '
-        Me.cmbBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmbBD.FormattingEnabled = True
-        Me.cmbBD.Location = New System.Drawing.Point(638, 291)
-        Me.cmbBD.Name = "cmbBD"
-        Me.cmbBD.Size = New System.Drawing.Size(101, 32)
-        Me.cmbBD.TabIndex = 348
+        Me.txtBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBD.Location = New System.Drawing.Point(638, 292)
+        Me.txtBD.Name = "txtBD"
+        Me.txtBD.Size = New System.Drawing.Size(101, 29)
+        Me.txtBD.TabIndex = 352
         '
         'frmPrjt
         '
         Me.ClientSize = New System.Drawing.Size(1217, 444)
         Me.ControlBox = False
-        Me.Controls.Add(Me.cmbBD)
-        Me.Controls.Add(Me.cmbBC)
-        Me.Controls.Add(Me.cmbBB)
-        Me.Controls.Add(Me.cmbBA)
+        Me.Controls.Add(Me.txtBD)
+        Me.Controls.Add(Me.txtBC)
+        Me.Controls.Add(Me.txtBB)
+        Me.Controls.Add(Me.txtBA)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
@@ -517,8 +513,8 @@ Partial Class frmPrjt
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents cmbBA As ComboBox
-    Friend WithEvents cmbBB As ComboBox
-    Friend WithEvents cmbBC As ComboBox
-    Friend WithEvents cmbBD As ComboBox
+    Friend WithEvents txtBA As TextBox
+    Friend WithEvents txtBB As TextBox
+    Friend WithEvents txtBC As TextBox
+    Friend WithEvents txtBD As TextBox
 End Class

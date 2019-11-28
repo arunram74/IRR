@@ -8,44 +8,14 @@ Public Class frmPLC
 
 
 
-    Private Sub LedBulb1_Click(sender As Object, e As EventArgs)
 
-    End Sub
+    Private Sub rdbMC1B_CheckedChanged(sender As Object, e As EventArgs)
 
-    Private Sub rdbMC1B_CheckedChanged(sender As Object, e As EventArgs) Handles rdbMC1A.CheckedChanged, rdbMC2A.CheckedChanged, rdbMC3A.CheckedChanged, rdbMC4A.CheckedChanged
-        HandleChecks()
         UpDatePLCStatus()
     End Sub
-    Sub HandleChecks()
-        'If rdbMC1A.Checked Then
-        '    CurrentHead = Station.MC1.HeadA
-
-        'ElseIf rdbMC2A.Checked Then
-        '    CurrentHead = Station.MC2.HeadA
-
-        'ElseIf rdbMC3A.Checked Then
-        '    CurrentHead = Station.MC3.HeadA
-
-        'ElseIf rdbMC4A.Checked Then
-        '    CurrentHead = Station.MC4.HeadA
-
-        'End If
-
-    End Sub
-
-    Private Sub frmPLC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
-        rdbMC1A.Text = My.Settings("MC1Size")
-        rdbMC2A.Text = My.Settings("MC2Size")
-        rdbMC3A.Text = My.Settings("MC3Size")
-        rdbMC4A.Text = My.Settings("MC4Size")
 
-        'Tmr.Interval = 5000
-        'Tmr.Enabled = True
-        rdbMC1A.Checked = True
-
-    End Sub
 
     Sub UpDatePLCStatus()
         SetLED(ledPnu, Station.MC.PLC.GetTagVal("PnuematicPressure"))
@@ -65,22 +35,28 @@ Public Class frmPLC
 
         lblVibA.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationA_actVal"))
         lblVibB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationB_actVal"))
+        lblVibC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationA_actVal"))
+        lblVibD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationB_actVal"))
 
         lblSpd.Text = String.Format("{0:n0}", Station.MC.PLC.GetTagVal("Speed_actVal"))
-        lblLdA.Text = String.Format("{0:n0}", Station.MC.PLC.GetTagVal("LoadA_actVal"))
-        lblLDB.Text = String.Format("{0:n0}", Station.MC.PLC.GetTagVal("LoadB_actVal"))
+        lblLoad.Text = String.Format("{0:n0}", Station.MC.PLC.GetTagVal("Load_actVal"))
 
-        lblB1A.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B1TempA_actVal"))
-        lblB2A.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B2TempA_actVal"))
-        lblB3A.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B3TempA_actVal"))
-        lblB4A.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B4TempA_actVal"))
+        lblBA.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
+        lblBB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
+        lblBC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
+        lblBD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
 
-        lblB1B.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B1TempB_actVal"))
-        lblB2B.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B2TempB_actVal"))
-        lblB3B.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B3TempB_actVal"))
-        lblB4B.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("B4TempB_actVal"))
+        lblSBA.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("SBTempA_actVal"))
+        lblSBB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("SBTempB_actVal"))
+        lblSBC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("SBTempC_actVal"))
+        lblSBD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("SBTempD_actVal"))
 
-        lblLub.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("InTankTemp_actVal"))
+        lblInlet_TempA.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("Inlet_TempA_ActVal"))
+        lblInlet_TempB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("Inlet_TempB_ActVal"))
+        lblInlet_TempC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("Inlet_TempC_ActVal"))
+        lblInlet_TempD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("Inlet_TempD_ActVal"))
+
+
         lblOT.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("OutTankTemp_actVal"))
 
 
@@ -144,4 +120,6 @@ Public Class frmPLC
     Private Sub Tmr_Tick(sender As Object, e As EventArgs) Handles Tmr.Tick
         UpDatePLCStatus()
     End Sub
+
+
 End Class

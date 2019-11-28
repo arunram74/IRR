@@ -40,44 +40,35 @@ Partial Class frmPLC
         Me.ledMediaLvl = New IRR.Bulb.LedBulb()
         Me.ledMCBStat = New IRR.Bulb.LedBulb()
         Me.ledBoost = New IRR.Bulb.LedBulb()
-        Me.rdbMC4A = New System.Windows.Forms.RadioButton()
-        Me.rdbMC2A = New System.Windows.Forms.RadioButton()
-        Me.rdbMC3A = New System.Windows.Forms.RadioButton()
-        Me.rdbMC1A = New System.Windows.Forms.RadioButton()
-        Me.Label145 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblVibA = New System.Windows.Forms.Label()
         Me.Label143 = New System.Windows.Forms.Label()
         Me.Label81 = New System.Windows.Forms.Label()
-        Me.lblB4B = New System.Windows.Forms.Label()
+        Me.lblSBD = New System.Windows.Forms.Label()
         Me.Label83 = New System.Windows.Forms.Label()
-        Me.lblB3B = New System.Windows.Forms.Label()
+        Me.lblSBC = New System.Windows.Forms.Label()
         Me.Label85 = New System.Windows.Forms.Label()
-        Me.lblB2B = New System.Windows.Forms.Label()
+        Me.lblSBB = New System.Windows.Forms.Label()
         Me.Label87 = New System.Windows.Forms.Label()
-        Me.lblB1B = New System.Windows.Forms.Label()
+        Me.lblSBA = New System.Windows.Forms.Label()
         Me.lblOT = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
-        Me.lblLub = New System.Windows.Forms.Label()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.lblLdA = New System.Windows.Forms.Label()
+        Me.lblVibD = New System.Windows.Forms.Label()
         Me.Label140 = New System.Windows.Forms.Label()
-        Me.lblSpd = New System.Windows.Forms.Label()
+        Me.lblVibC = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.lblVibB = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.lblB4A = New System.Windows.Forms.Label()
+        Me.lblBD = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.lblB3A = New System.Windows.Forms.Label()
+        Me.lblBC = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.lblB2A = New System.Windows.Forms.Label()
+        Me.lblBB = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.lblB1A = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.lblLDB = New System.Windows.Forms.Label()
+        Me.lblBA = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Stn1 = New IRR.Bulb.LedBulb()
         Me.Stn2 = New IRR.Bulb.LedBulb()
@@ -118,12 +109,24 @@ Partial Class frmPLC
         Me.Label34 = New System.Windows.Forms.Label()
         Me.ledEmr = New IRR.Bulb.LedBulb()
         Me.Tmr = New System.Windows.Forms.Timer(Me.components)
+        Me.lblInlet_TempA = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.lblInlet_TempB = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.lblInlet_TempC = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.lblInlet_TempD = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.lblSpd = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.lblLoad = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(280, 47)
+        Me.Label1.Location = New System.Drawing.Point(345, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(183, 32)
         Me.Label1.TabIndex = 63
@@ -133,7 +136,7 @@ Partial Class frmPLC
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(280, 99)
+        Me.Label2.Location = New System.Drawing.Point(345, 99)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(183, 32)
         Me.Label2.TabIndex = 65
@@ -143,7 +146,7 @@ Partial Class frmPLC
         'Label3
         '
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(280, 150)
+        Me.Label3.Location = New System.Drawing.Point(345, 150)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(183, 32)
         Me.Label3.TabIndex = 67
@@ -153,7 +156,7 @@ Partial Class frmPLC
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(280, 251)
+        Me.Label4.Location = New System.Drawing.Point(345, 251)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(183, 32)
         Me.Label4.TabIndex = 73
@@ -163,7 +166,7 @@ Partial Class frmPLC
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(264, 201)
+        Me.Label6.Location = New System.Drawing.Point(329, 201)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(199, 32)
         Me.Label6.TabIndex = 69
@@ -173,7 +176,7 @@ Partial Class frmPLC
         'Label8
         '
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(592, 251)
+        Me.Label8.Location = New System.Drawing.Point(740, 251)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(197, 32)
         Me.Label8.TabIndex = 83
@@ -183,7 +186,7 @@ Partial Class frmPLC
         'Label9
         '
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(606, 201)
+        Me.Label9.Location = New System.Drawing.Point(754, 201)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(183, 32)
         Me.Label9.TabIndex = 81
@@ -193,7 +196,7 @@ Partial Class frmPLC
         'Label10
         '
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(606, 150)
+        Me.Label10.Location = New System.Drawing.Point(754, 150)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(183, 32)
         Me.Label10.TabIndex = 79
@@ -203,7 +206,7 @@ Partial Class frmPLC
         'Label11
         '
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(606, 99)
+        Me.Label11.Location = New System.Drawing.Point(754, 99)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(183, 32)
         Me.Label11.TabIndex = 77
@@ -213,7 +216,7 @@ Partial Class frmPLC
         'Label12
         '
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(606, 47)
+        Me.Label12.Location = New System.Drawing.Point(754, 47)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(183, 32)
         Me.Label12.TabIndex = 75
@@ -226,7 +229,7 @@ Partial Class frmPLC
         Me.ledDriveStat.DarkColor = System.Drawing.Color.Red
         Me.ledDriveStat.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledDriveStat.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledDriveStat.Location = New System.Drawing.Point(813, 40)
+        Me.ledDriveStat.Location = New System.Drawing.Point(961, 40)
         Me.ledDriveStat.Name = "ledDriveStat"
         Me.ledDriveStat.On = True
         Me.ledDriveStat.Size = New System.Drawing.Size(45, 45)
@@ -239,7 +242,7 @@ Partial Class frmPLC
         Me.ledPnu.DarkColor = System.Drawing.Color.Lime
         Me.ledPnu.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledPnu.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledPnu.Location = New System.Drawing.Point(479, 40)
+        Me.ledPnu.Location = New System.Drawing.Point(544, 40)
         Me.ledPnu.Name = "ledPnu"
         Me.ledPnu.On = True
         Me.ledPnu.Size = New System.Drawing.Size(45, 45)
@@ -252,7 +255,7 @@ Partial Class frmPLC
         Me.ledLubLevel.DarkColor = System.Drawing.Color.Lime
         Me.ledLubLevel.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledLubLevel.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledLubLevel.Location = New System.Drawing.Point(479, 92)
+        Me.ledLubLevel.Location = New System.Drawing.Point(544, 92)
         Me.ledLubLevel.Name = "ledLubLevel"
         Me.ledLubLevel.On = True
         Me.ledLubLevel.Size = New System.Drawing.Size(45, 45)
@@ -265,7 +268,7 @@ Partial Class frmPLC
         Me.ledLubPres.DarkColor = System.Drawing.Color.Lime
         Me.ledLubPres.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledLubPres.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledLubPres.Location = New System.Drawing.Point(479, 143)
+        Me.ledLubPres.Location = New System.Drawing.Point(544, 143)
         Me.ledLubPres.Name = "ledLubPres"
         Me.ledLubPres.On = True
         Me.ledLubPres.Size = New System.Drawing.Size(45, 45)
@@ -278,7 +281,7 @@ Partial Class frmPLC
         Me.ledLubPS.DarkColor = System.Drawing.Color.Lime
         Me.ledLubPS.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledLubPS.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledLubPS.Location = New System.Drawing.Point(479, 194)
+        Me.ledLubPS.Location = New System.Drawing.Point(544, 194)
         Me.ledLubPS.Name = "ledLubPS"
         Me.ledLubPS.On = True
         Me.ledLubPS.Size = New System.Drawing.Size(45, 45)
@@ -291,7 +294,7 @@ Partial Class frmPLC
         Me.ledMotTemp.DarkColor = System.Drawing.Color.Lime
         Me.ledMotTemp.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledMotTemp.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledMotTemp.Location = New System.Drawing.Point(479, 244)
+        Me.ledMotTemp.Location = New System.Drawing.Point(544, 244)
         Me.ledMotTemp.Name = "ledMotTemp"
         Me.ledMotTemp.On = True
         Me.ledMotTemp.Size = New System.Drawing.Size(45, 45)
@@ -304,7 +307,7 @@ Partial Class frmPLC
         Me.ledHtTherm.DarkColor = System.Drawing.Color.Lime
         Me.ledHtTherm.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledHtTherm.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledHtTherm.Location = New System.Drawing.Point(813, 92)
+        Me.ledHtTherm.Location = New System.Drawing.Point(961, 92)
         Me.ledHtTherm.Name = "ledHtTherm"
         Me.ledHtTherm.On = True
         Me.ledHtTherm.Size = New System.Drawing.Size(45, 45)
@@ -317,7 +320,7 @@ Partial Class frmPLC
         Me.ledMediaLvl.DarkColor = System.Drawing.Color.Lime
         Me.ledMediaLvl.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledMediaLvl.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledMediaLvl.Location = New System.Drawing.Point(813, 143)
+        Me.ledMediaLvl.Location = New System.Drawing.Point(961, 143)
         Me.ledMediaLvl.Name = "ledMediaLvl"
         Me.ledMediaLvl.On = True
         Me.ledMediaLvl.Size = New System.Drawing.Size(45, 45)
@@ -330,7 +333,7 @@ Partial Class frmPLC
         Me.ledMCBStat.DarkColor = System.Drawing.Color.Lime
         Me.ledMCBStat.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledMCBStat.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledMCBStat.Location = New System.Drawing.Point(813, 194)
+        Me.ledMCBStat.Location = New System.Drawing.Point(961, 194)
         Me.ledMCBStat.Name = "ledMCBStat"
         Me.ledMCBStat.On = True
         Me.ledMCBStat.Size = New System.Drawing.Size(45, 45)
@@ -343,77 +346,19 @@ Partial Class frmPLC
         Me.ledBoost.DarkColor = System.Drawing.Color.Lime
         Me.ledBoost.DarkDarkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ledBoost.LightLightColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.ledBoost.Location = New System.Drawing.Point(813, 244)
+        Me.ledBoost.Location = New System.Drawing.Point(961, 244)
         Me.ledBoost.Name = "ledBoost"
         Me.ledBoost.On = True
         Me.ledBoost.Size = New System.Drawing.Size(45, 45)
         Me.ledBoost.TabIndex = 86
         Me.ledBoost.Text = "LedBulb1"
         '
-        'rdbMC4A
-        '
-        Me.rdbMC4A.AutoSize = True
-        Me.rdbMC4A.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdbMC4A.Location = New System.Drawing.Point(932, 251)
-        Me.rdbMC4A.Name = "rdbMC4A"
-        Me.rdbMC4A.Size = New System.Drawing.Size(64, 24)
-        Me.rdbMC4A.TabIndex = 6
-        Me.rdbMC4A.TabStop = True
-        Me.rdbMC4A.Text = "5.4A"
-        Me.rdbMC4A.UseVisualStyleBackColor = True
-        '
-        'rdbMC2A
-        '
-        Me.rdbMC2A.AutoSize = True
-        Me.rdbMC2A.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdbMC2A.Location = New System.Drawing.Point(932, 115)
-        Me.rdbMC2A.Name = "rdbMC2A"
-        Me.rdbMC2A.Size = New System.Drawing.Size(64, 24)
-        Me.rdbMC2A.TabIndex = 2
-        Me.rdbMC2A.TabStop = True
-        Me.rdbMC2A.Text = "5.2A"
-        Me.rdbMC2A.UseVisualStyleBackColor = True
-        '
-        'rdbMC3A
-        '
-        Me.rdbMC3A.AutoSize = True
-        Me.rdbMC3A.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdbMC3A.Location = New System.Drawing.Point(932, 183)
-        Me.rdbMC3A.Name = "rdbMC3A"
-        Me.rdbMC3A.Size = New System.Drawing.Size(64, 24)
-        Me.rdbMC3A.TabIndex = 4
-        Me.rdbMC3A.TabStop = True
-        Me.rdbMC3A.Text = "5.3A"
-        Me.rdbMC3A.UseVisualStyleBackColor = True
-        '
-        'rdbMC1A
-        '
-        Me.rdbMC1A.AutoSize = True
-        Me.rdbMC1A.Checked = True
-        Me.rdbMC1A.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdbMC1A.Location = New System.Drawing.Point(932, 47)
-        Me.rdbMC1A.Name = "rdbMC1A"
-        Me.rdbMC1A.Size = New System.Drawing.Size(64, 24)
-        Me.rdbMC1A.TabIndex = 0
-        Me.rdbMC1A.TabStop = True
-        Me.rdbMC1A.Text = "5.1A"
-        Me.rdbMC1A.UseVisualStyleBackColor = True
-        '
-        'Label145
-        '
-        Me.Label145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label145.Location = New System.Drawing.Point(907, 33)
-        Me.Label145.Name = "Label145"
-        Me.Label145.Size = New System.Drawing.Size(117, 274)
-        Me.Label145.TabIndex = 408
-        Me.Label145.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Label13
         '
         Me.Label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label13.Location = New System.Drawing.Point(569, 33)
+        Me.Label13.Location = New System.Drawing.Point(642, 33)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(307, 274)
+        Me.Label13.Size = New System.Drawing.Size(382, 274)
         Me.Label13.TabIndex = 409
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -422,7 +367,7 @@ Partial Class frmPLC
         Me.Label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label14.Location = New System.Drawing.Point(236, 33)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(307, 274)
+        Me.Label14.Size = New System.Drawing.Size(382, 274)
         Me.Label14.TabIndex = 410
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -430,7 +375,7 @@ Partial Class frmPLC
         '
         Me.lblVibA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblVibA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVibA.Location = New System.Drawing.Point(421, 445)
+        Me.lblVibA.Location = New System.Drawing.Point(421, 459)
         Me.lblVibA.Name = "lblVibA"
         Me.lblVibA.Size = New System.Drawing.Size(68, 30)
         Me.lblVibA.TabIndex = 427
@@ -442,7 +387,7 @@ Partial Class frmPLC
         Me.Label143.AutoSize = True
         Me.Label143.BackColor = System.Drawing.SystemColors.Control
         Me.Label143.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label143.Location = New System.Drawing.Point(355, 450)
+        Me.Label143.Location = New System.Drawing.Point(361, 462)
         Me.Label143.Name = "Label143"
         Me.Label143.Size = New System.Drawing.Size(55, 24)
         Me.Label143.TabIndex = 426
@@ -452,89 +397,89 @@ Partial Class frmPLC
         '
         Me.Label81.AutoSize = True
         Me.Label81.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label81.Location = New System.Drawing.Point(831, 408)
+        Me.Label81.Location = New System.Drawing.Point(828, 388)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(34, 24)
+        Me.Label81.Size = New System.Drawing.Size(50, 24)
         Me.Label81.TabIndex = 425
-        Me.Label81.Text = "B4"
+        Me.Label81.Text = "SBD"
         '
-        'lblB4B
+        'lblSBD
         '
-        Me.lblB4B.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.lblB4B.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB4B.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB4B.Location = New System.Drawing.Point(884, 405)
-        Me.lblB4B.Name = "lblB4B"
-        Me.lblB4B.Size = New System.Drawing.Size(68, 30)
-        Me.lblB4B.TabIndex = 424
-        Me.lblB4B.Text = "0"
+        Me.lblSBD.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblSBD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSBD.Location = New System.Drawing.Point(884, 385)
+        Me.lblSBD.Name = "lblSBD"
+        Me.lblSBD.Size = New System.Drawing.Size(68, 30)
+        Me.lblSBD.TabIndex = 424
+        Me.lblSBD.Text = "0"
         '
         'Label83
         '
         Me.Label83.AutoSize = True
         Me.Label83.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label83.Location = New System.Drawing.Point(669, 408)
+        Me.Label83.Location = New System.Drawing.Point(672, 388)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(34, 24)
+        Me.Label83.Size = New System.Drawing.Size(50, 24)
         Me.Label83.TabIndex = 423
-        Me.Label83.Text = "B3"
+        Me.Label83.Text = "SBC"
         '
-        'lblB3B
+        'lblSBC
         '
-        Me.lblB3B.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB3B.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB3B.Location = New System.Drawing.Point(727, 403)
-        Me.lblB3B.Name = "lblB3B"
-        Me.lblB3B.Size = New System.Drawing.Size(68, 30)
-        Me.lblB3B.TabIndex = 422
-        Me.lblB3B.Text = "0"
+        Me.lblSBC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSBC.Location = New System.Drawing.Point(727, 385)
+        Me.lblSBC.Name = "lblSBC"
+        Me.lblSBC.Size = New System.Drawing.Size(68, 30)
+        Me.lblSBC.TabIndex = 422
+        Me.lblSBC.Text = "0"
         '
         'Label85
         '
         Me.Label85.AutoSize = True
         Me.Label85.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label85.Location = New System.Drawing.Point(512, 408)
+        Me.Label85.Location = New System.Drawing.Point(516, 388)
         Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(34, 24)
+        Me.Label85.Size = New System.Drawing.Size(49, 24)
         Me.Label85.TabIndex = 421
-        Me.Label85.Text = "B2"
+        Me.Label85.Text = "SBB"
         '
-        'lblB2B
+        'lblSBB
         '
-        Me.lblB2B.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB2B.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB2B.Location = New System.Drawing.Point(570, 403)
-        Me.lblB2B.Name = "lblB2B"
-        Me.lblB2B.Size = New System.Drawing.Size(68, 30)
-        Me.lblB2B.TabIndex = 420
-        Me.lblB2B.Text = "0"
+        Me.lblSBB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSBB.Location = New System.Drawing.Point(570, 385)
+        Me.lblSBB.Name = "lblSBB"
+        Me.lblSBB.Size = New System.Drawing.Size(68, 30)
+        Me.lblSBB.TabIndex = 420
+        Me.lblSBB.Text = "0"
         '
         'Label87
         '
         Me.Label87.AutoSize = True
         Me.Label87.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label87.Location = New System.Drawing.Point(363, 408)
+        Me.Label87.Location = New System.Drawing.Point(366, 388)
         Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(34, 24)
+        Me.Label87.Size = New System.Drawing.Size(50, 24)
         Me.Label87.TabIndex = 419
-        Me.Label87.Text = "B1"
+        Me.Label87.Text = "SBA"
         '
-        'lblB1B
+        'lblSBA
         '
-        Me.lblB1B.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB1B.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB1B.Location = New System.Drawing.Point(421, 403)
-        Me.lblB1B.Name = "lblB1B"
-        Me.lblB1B.Size = New System.Drawing.Size(68, 30)
-        Me.lblB1B.TabIndex = 418
-        Me.lblB1B.Text = "0"
-        Me.lblB1B.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblSBA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSBA.Location = New System.Drawing.Point(421, 385)
+        Me.lblSBA.Name = "lblSBA"
+        Me.lblSBA.Size = New System.Drawing.Size(68, 30)
+        Me.lblSBA.TabIndex = 418
+        Me.lblSBA.Text = "0"
+        Me.lblSBA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblOT
         '
         Me.lblOT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblOT.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOT.Location = New System.Drawing.Point(727, 487)
+        Me.lblOT.Location = New System.Drawing.Point(884, 496)
         Me.lblOT.Name = "lblOT"
         Me.lblOT.Size = New System.Drawing.Size(68, 30)
         Me.lblOT.TabIndex = 417
@@ -544,74 +489,54 @@ Partial Class frmPLC
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(568, 490)
+        Me.Label49.Location = New System.Drawing.Point(796, 499)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(148, 24)
+        Me.Label49.Size = New System.Drawing.Size(82, 24)
         Me.Label49.TabIndex = 416
-        Me.Label49.Text = "Tank Oil Temp"
+        Me.Label49.Text = "TankOil"
         '
-        'lblLub
+        'lblVibD
         '
-        Me.lblLub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLub.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLub.Location = New System.Drawing.Point(421, 487)
-        Me.lblLub.Name = "lblLub"
-        Me.lblLub.Size = New System.Drawing.Size(68, 30)
-        Me.lblLub.TabIndex = 415
-        Me.lblLub.Text = "0"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(273, 490)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(137, 24)
-        Me.Label53.TabIndex = 414
-        Me.Label53.Text = "Lub Oil Temp"
-        '
-        'lblLdA
-        '
-        Me.lblLdA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLdA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLdA.Location = New System.Drawing.Point(884, 449)
-        Me.lblLdA.Name = "lblLdA"
-        Me.lblLdA.Size = New System.Drawing.Size(68, 26)
-        Me.lblLdA.TabIndex = 413
-        Me.lblLdA.Text = "0"
-        Me.lblLdA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblVibD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblVibD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVibD.Location = New System.Drawing.Point(884, 461)
+        Me.lblVibD.Name = "lblVibD"
+        Me.lblVibD.Size = New System.Drawing.Size(68, 26)
+        Me.lblVibD.TabIndex = 413
+        Me.lblVibD.Text = "0"
+        Me.lblVibD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label140
         '
         Me.Label140.AutoSize = True
         Me.Label140.BackColor = System.Drawing.SystemColors.Control
         Me.Label140.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label140.Location = New System.Drawing.Point(808, 450)
+        Me.Label140.Location = New System.Drawing.Point(823, 462)
         Me.Label140.Name = "Label140"
-        Me.Label140.Size = New System.Drawing.Size(70, 24)
+        Me.Label140.Size = New System.Drawing.Size(55, 24)
         Me.Label140.TabIndex = 412
-        Me.Label140.Text = "LoadA"
+        Me.Label140.Text = "VibD"
         '
-        'lblSpd
+        'lblVibC
         '
-        Me.lblSpd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblSpd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSpd.Location = New System.Drawing.Point(726, 445)
-        Me.lblSpd.Name = "lblSpd"
-        Me.lblSpd.Size = New System.Drawing.Size(68, 30)
-        Me.lblSpd.TabIndex = 411
-        Me.lblSpd.Text = "0"
-        Me.lblSpd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblVibC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblVibC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVibC.Location = New System.Drawing.Point(726, 459)
+        Me.lblVibC.Name = "lblVibC"
+        Me.lblVibC.Size = New System.Drawing.Size(68, 30)
+        Me.lblVibC.TabIndex = 411
+        Me.lblVibC.Text = "0"
+        Me.lblVibC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(645, 450)
+        Me.Label5.Location = New System.Drawing.Point(667, 462)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(71, 24)
+        Me.Label5.Size = New System.Drawing.Size(55, 24)
         Me.Label5.TabIndex = 419
-        Me.Label5.Text = "Speed"
+        Me.Label5.Text = "VibC"
         '
         'Label7
         '
@@ -627,7 +552,7 @@ Partial Class frmPLC
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.SystemColors.Control
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(505, 450)
+        Me.Label15.Location = New System.Drawing.Point(511, 462)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(54, 24)
         Me.Label15.TabIndex = 426
@@ -637,7 +562,7 @@ Partial Class frmPLC
         '
         Me.lblVibB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblVibB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVibB.Location = New System.Drawing.Point(570, 445)
+        Me.lblVibB.Location = New System.Drawing.Point(570, 459)
         Me.lblVibB.Name = "lblVibB"
         Me.lblVibB.Size = New System.Drawing.Size(68, 30)
         Me.lblVibB.TabIndex = 427
@@ -648,105 +573,83 @@ Partial Class frmPLC
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(830, 364)
+        Me.Label17.Location = New System.Drawing.Point(841, 351)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(35, 24)
+        Me.Label17.Size = New System.Drawing.Size(37, 24)
         Me.Label17.TabIndex = 435
-        Me.Label17.Text = "A4"
+        Me.Label17.Text = "BD"
         '
-        'lblB4A
+        'lblBD
         '
-        Me.lblB4A.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.lblB4A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB4A.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB4A.Location = New System.Drawing.Point(884, 361)
-        Me.lblB4A.Name = "lblB4A"
-        Me.lblB4A.Size = New System.Drawing.Size(68, 30)
-        Me.lblB4A.TabIndex = 434
-        Me.lblB4A.Text = "0"
+        Me.lblBD.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblBD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBD.Location = New System.Drawing.Point(884, 348)
+        Me.lblBD.Name = "lblBD"
+        Me.lblBD.Size = New System.Drawing.Size(68, 30)
+        Me.lblBD.TabIndex = 434
+        Me.lblBD.Text = "0"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(668, 364)
+        Me.Label19.Location = New System.Drawing.Point(685, 351)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(35, 24)
+        Me.Label19.Size = New System.Drawing.Size(37, 24)
         Me.Label19.TabIndex = 433
-        Me.Label19.Text = "A3"
+        Me.Label19.Text = "BC"
         '
-        'lblB3A
+        'lblBC
         '
-        Me.lblB3A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB3A.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB3A.Location = New System.Drawing.Point(727, 361)
-        Me.lblB3A.Name = "lblB3A"
-        Me.lblB3A.Size = New System.Drawing.Size(68, 30)
-        Me.lblB3A.TabIndex = 432
-        Me.lblB3A.Text = "0"
+        Me.lblBC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBC.Location = New System.Drawing.Point(727, 348)
+        Me.lblBC.Name = "lblBC"
+        Me.lblBC.Size = New System.Drawing.Size(68, 30)
+        Me.lblBC.TabIndex = 432
+        Me.lblBC.Text = "0"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(511, 364)
+        Me.Label21.Location = New System.Drawing.Point(529, 351)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(35, 24)
+        Me.Label21.Size = New System.Drawing.Size(36, 24)
         Me.Label21.TabIndex = 431
-        Me.Label21.Text = "A2"
+        Me.Label21.Text = "BB"
         '
-        'lblB2A
+        'lblBB
         '
-        Me.lblB2A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB2A.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB2A.Location = New System.Drawing.Point(570, 361)
-        Me.lblB2A.Name = "lblB2A"
-        Me.lblB2A.Size = New System.Drawing.Size(68, 30)
-        Me.lblB2A.TabIndex = 430
-        Me.lblB2A.Text = "0"
+        Me.lblBB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBB.Location = New System.Drawing.Point(570, 348)
+        Me.lblBB.Name = "lblBB"
+        Me.lblBB.Size = New System.Drawing.Size(68, 30)
+        Me.lblBB.TabIndex = 430
+        Me.lblBB.Text = "0"
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(362, 364)
+        Me.Label23.Location = New System.Drawing.Point(379, 351)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(35, 24)
+        Me.Label23.Size = New System.Drawing.Size(37, 24)
         Me.Label23.TabIndex = 429
-        Me.Label23.Text = "A1"
+        Me.Label23.Text = "BA"
         '
-        'lblB1A
+        'lblBA
         '
-        Me.lblB1A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblB1A.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblB1A.Location = New System.Drawing.Point(421, 361)
-        Me.lblB1A.Name = "lblB1A"
-        Me.lblB1A.Size = New System.Drawing.Size(68, 30)
-        Me.lblB1A.TabIndex = 428
-        Me.lblB1A.Text = "0"
-        Me.lblB1A.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.BackColor = System.Drawing.SystemColors.Control
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(809, 490)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(69, 24)
-        Me.Label18.TabIndex = 412
-        Me.Label18.Text = "LoadB"
-        '
-        'lblLDB
-        '
-        Me.lblLDB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLDB.Location = New System.Drawing.Point(884, 489)
-        Me.lblLDB.Name = "lblLDB"
-        Me.lblLDB.Size = New System.Drawing.Size(68, 26)
-        Me.lblLDB.TabIndex = 413
-        Me.lblLDB.Text = "0"
-        Me.lblLDB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblBA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBA.Location = New System.Drawing.Point(421, 348)
+        Me.lblBA.Name = "lblBA"
+        Me.lblBA.Size = New System.Drawing.Size(68, 30)
+        Me.lblBA.TabIndex = 428
+        Me.lblBA.Text = "0"
+        Me.lblBA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label16
         '
@@ -1194,6 +1097,131 @@ Partial Class frmPLC
         Me.Tmr.Enabled = True
         Me.Tmr.Interval = 5000
         '
+        'lblInlet_TempA
+        '
+        Me.lblInlet_TempA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblInlet_TempA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInlet_TempA.Location = New System.Drawing.Point(421, 422)
+        Me.lblInlet_TempA.Name = "lblInlet_TempA"
+        Me.lblInlet_TempA.Size = New System.Drawing.Size(68, 30)
+        Me.lblInlet_TempA.TabIndex = 418
+        Me.lblInlet_TempA.Text = "0"
+        Me.lblInlet_TempA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(353, 425)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(63, 24)
+        Me.Label36.TabIndex = 419
+        Me.Label36.Text = "InletA"
+        '
+        'lblInlet_TempB
+        '
+        Me.lblInlet_TempB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblInlet_TempB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInlet_TempB.Location = New System.Drawing.Point(570, 422)
+        Me.lblInlet_TempB.Name = "lblInlet_TempB"
+        Me.lblInlet_TempB.Size = New System.Drawing.Size(68, 30)
+        Me.lblInlet_TempB.TabIndex = 420
+        Me.lblInlet_TempB.Text = "0"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.Location = New System.Drawing.Point(503, 425)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(62, 24)
+        Me.Label38.TabIndex = 421
+        Me.Label38.Text = "InletB"
+        '
+        'lblInlet_TempC
+        '
+        Me.lblInlet_TempC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblInlet_TempC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInlet_TempC.Location = New System.Drawing.Point(727, 422)
+        Me.lblInlet_TempC.Name = "lblInlet_TempC"
+        Me.lblInlet_TempC.Size = New System.Drawing.Size(68, 30)
+        Me.lblInlet_TempC.TabIndex = 422
+        Me.lblInlet_TempC.Text = "0"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(659, 425)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(63, 24)
+        Me.Label40.TabIndex = 423
+        Me.Label40.Text = "InletC"
+        '
+        'lblInlet_TempD
+        '
+        Me.lblInlet_TempD.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblInlet_TempD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblInlet_TempD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInlet_TempD.Location = New System.Drawing.Point(884, 422)
+        Me.lblInlet_TempD.Name = "lblInlet_TempD"
+        Me.lblInlet_TempD.Size = New System.Drawing.Size(68, 30)
+        Me.lblInlet_TempD.TabIndex = 424
+        Me.lblInlet_TempD.Text = "0"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(815, 425)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(63, 24)
+        Me.Label42.TabIndex = 425
+        Me.Label42.Text = "InletD"
+        '
+        'lblSpd
+        '
+        Me.lblSpd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSpd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSpd.Location = New System.Drawing.Point(421, 496)
+        Me.lblSpd.Name = "lblSpd"
+        Me.lblSpd.Size = New System.Drawing.Size(68, 30)
+        Me.lblSpd.TabIndex = 411
+        Me.lblSpd.Text = "0"
+        Me.lblSpd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.BackColor = System.Drawing.SystemColors.Control
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(509, 499)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(56, 24)
+        Me.Label44.TabIndex = 412
+        Me.Label44.Text = "Load"
+        '
+        'lblLoad
+        '
+        Me.lblLoad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblLoad.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLoad.Location = New System.Drawing.Point(570, 498)
+        Me.lblLoad.Name = "lblLoad"
+        Me.lblLoad.Size = New System.Drawing.Size(68, 26)
+        Me.lblLoad.TabIndex = 413
+        Me.lblLoad.Text = "0"
+        Me.lblLoad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(345, 499)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(71, 24)
+        Me.Label46.TabIndex = 419
+        Me.Label46.Text = "Speed"
+        '
         'frmPLC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1223,40 +1251,43 @@ Partial Class frmPLC
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.lblB4A)
+        Me.Controls.Add(Me.lblBD)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.lblB3A)
+        Me.Controls.Add(Me.lblBC)
         Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.lblB2A)
+        Me.Controls.Add(Me.lblBB)
         Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.lblB1A)
+        Me.Controls.Add(Me.lblBA)
         Me.Controls.Add(Me.lblVibB)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.lblVibA)
         Me.Controls.Add(Me.Label143)
+        Me.Controls.Add(Me.Label42)
         Me.Controls.Add(Me.Label81)
-        Me.Controls.Add(Me.lblB4B)
+        Me.Controls.Add(Me.lblInlet_TempD)
+        Me.Controls.Add(Me.Label40)
+        Me.Controls.Add(Me.lblSBD)
+        Me.Controls.Add(Me.lblInlet_TempC)
         Me.Controls.Add(Me.Label83)
-        Me.Controls.Add(Me.lblB3B)
+        Me.Controls.Add(Me.Label38)
+        Me.Controls.Add(Me.lblSBC)
+        Me.Controls.Add(Me.lblInlet_TempB)
         Me.Controls.Add(Me.Label85)
-        Me.Controls.Add(Me.lblB2B)
+        Me.Controls.Add(Me.lblSBB)
+        Me.Controls.Add(Me.Label36)
+        Me.Controls.Add(Me.Label46)
         Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblInlet_TempA)
         Me.Controls.Add(Me.Label87)
-        Me.Controls.Add(Me.lblB1B)
+        Me.Controls.Add(Me.lblSBA)
         Me.Controls.Add(Me.lblOT)
         Me.Controls.Add(Me.Label49)
-        Me.Controls.Add(Me.lblLub)
-        Me.Controls.Add(Me.Label53)
-        Me.Controls.Add(Me.lblLDB)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.lblLdA)
+        Me.Controls.Add(Me.lblLoad)
+        Me.Controls.Add(Me.lblVibD)
+        Me.Controls.Add(Me.Label44)
         Me.Controls.Add(Me.Label140)
         Me.Controls.Add(Me.lblSpd)
-        Me.Controls.Add(Me.rdbMC4A)
-        Me.Controls.Add(Me.rdbMC2A)
-        Me.Controls.Add(Me.rdbMC3A)
-        Me.Controls.Add(Me.rdbMC1A)
-        Me.Controls.Add(Me.Label145)
+        Me.Controls.Add(Me.lblVibC)
         Me.Controls.Add(Me.ledDriveStat)
         Me.Controls.Add(Me.ledBoost)
         Me.Controls.Add(Me.Stn12)
@@ -1321,44 +1352,35 @@ Partial Class frmPLC
     Friend WithEvents ledMediaLvl As Bulb.LedBulb
     Friend WithEvents ledMCBStat As Bulb.LedBulb
     Friend WithEvents ledBoost As Bulb.LedBulb
-    Friend WithEvents rdbMC4A As RadioButton
-    Friend WithEvents rdbMC2A As RadioButton
-    Friend WithEvents rdbMC3A As RadioButton
-    Friend WithEvents rdbMC1A As RadioButton
-    Friend WithEvents Label145 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents lblVibA As Label
     Friend WithEvents Label143 As Label
     Friend WithEvents Label81 As Label
-    Friend WithEvents lblB4B As Label
+    Friend WithEvents lblSBD As Label
     Friend WithEvents Label83 As Label
-    Friend WithEvents lblB3B As Label
+    Friend WithEvents lblSBC As Label
     Friend WithEvents Label85 As Label
-    Friend WithEvents lblB2B As Label
+    Friend WithEvents lblSBB As Label
     Friend WithEvents Label87 As Label
-    Friend WithEvents lblB1B As Label
+    Friend WithEvents lblSBA As Label
     Friend WithEvents lblOT As Label
     Friend WithEvents Label49 As Label
-    Friend WithEvents lblLub As Label
-    Friend WithEvents Label53 As Label
-    Friend WithEvents lblLdA As Label
+    Friend WithEvents lblVibD As Label
     Friend WithEvents Label140 As Label
-    Friend WithEvents lblSpd As Label
+    Friend WithEvents lblVibC As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents lblVibB As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents lblB4A As Label
+    Friend WithEvents lblBD As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents lblB3A As Label
+    Friend WithEvents lblBC As Label
     Friend WithEvents Label21 As Label
-    Friend WithEvents lblB2A As Label
+    Friend WithEvents lblBB As Label
     Friend WithEvents Label23 As Label
-    Friend WithEvents lblB1A As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents lblLDB As Label
+    Friend WithEvents lblBA As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Stn1 As Bulb.LedBulb
     Friend WithEvents Stn2 As Bulb.LedBulb
@@ -1399,4 +1421,16 @@ Partial Class frmPLC
     Friend WithEvents Label34 As Label
     Friend WithEvents ledEmr As Bulb.LedBulb
     Friend WithEvents Tmr As Timer
+    Friend WithEvents lblInlet_TempA As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents lblInlet_TempB As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents lblInlet_TempC As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents lblInlet_TempD As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents lblSpd As Label
+    Friend WithEvents Label44 As Label
+    Friend WithEvents lblLoad As Label
+    Friend WithEvents Label46 As Label
 End Class
