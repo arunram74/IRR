@@ -172,7 +172,7 @@ Partial Class frmLoad
         Me.btnReturn.RecessDepth = 3
         Me.btnReturn.Size = New System.Drawing.Size(125, 125)
         Me.btnReturn.TabIndex = 14
-        Me.btnReturn.Text = ""
+        Me.btnReturn.Text = "↺"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
         'PictureBox7

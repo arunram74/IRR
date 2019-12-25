@@ -15,7 +15,7 @@ Public Class frmAlarms
     Private Sub dgvAlarm_RowPrePaint(sender As Object, e As DataGridViewRowPrePaintEventArgs) Handles dgvAlarm.RowPrePaint
         If dgvAlarm.Rows.Count > 0 Then
             If Not IsDBNull(dgvAlarm.Rows(e.RowIndex).Cells("alarmid").Value) Then
-                If dgvAlarm.Rows(e.RowIndex).Cells("alarmid").Value > 32 Then
+                If dgvAlarm.Rows(e.RowIndex).Cells("alarmid").Value > 64 Then
                     dgvAlarm.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red
                 ElseIf dgvAlarm.Rows(e.RowIndex).Cells("alarmid").Value > 0 And dgvAlarm.Rows(e.RowIndex).Cells("alarmid").Value < 33 Then
                     dgvAlarm.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Yellow

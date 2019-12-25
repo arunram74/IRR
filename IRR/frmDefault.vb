@@ -166,7 +166,6 @@ Public Class frmDefault
                 Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Suspended
 
             End If
-            Me.Close()
         End If
     End Sub
 

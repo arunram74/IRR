@@ -4,8 +4,8 @@
 
     Public Sub frmChild_Resize(sender As Object, e As EventArgs) Handles Me.Resize
 
-        Me.Width = 1435
-        Me.Height = 644
+        Me.Width = 1275
+        Me.Height = 704
 
 
     End Sub
@@ -22,8 +22,8 @@
 
         Me.Left = 0
         Me.Top = 0
-        Me.Width = 1435
-        Me.Height = 644
+        Me.Width = 1275
+        Me.Height = 704
 
 
         'btnCancel.Left = Me.Width - btnCancel.Width - 30

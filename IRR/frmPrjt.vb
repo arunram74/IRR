@@ -454,7 +454,7 @@ Public Class frmPrjt
                 TempProjectObj.TestID = dt1.Rows(0).Item("ProjectName")
                 TempProjectObj.Make = dt1.Rows(0).Item("Make")
                 TempProjectObj.Lubrication = dt1.Rows(0).Item("Lubrication")
-                TempProjectObj.PartNo = dt1.Rows(0).Item("PVNo")
+                TempProjectObj.PartNo = dt1.Rows(0).Item("PartNo")
                 TempProjectObj.HeadA = dt1.Rows(0).Item("HeadABearing")
                 TempProjectObj.HeadB = dt1.Rows(0).Item("HeadBBearing")
                 TempProjectObj.HeadC = dt1.Rows(0).Item("HeadCBearing")

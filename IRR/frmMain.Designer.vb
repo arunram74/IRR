@@ -271,9 +271,9 @@ Partial Class frmMain
         Me.pnlBtm.Controls.Add(Me.dgvAlarmMain)
         Me.pnlBtm.Controls.Add(Me.lblAlarmCaption)
         Me.pnlBtm.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlBtm.Location = New System.Drawing.Point(0, 455)
+        Me.pnlBtm.Location = New System.Drawing.Point(0, 392)
         Me.pnlBtm.Name = "pnlBtm"
-        Me.pnlBtm.Size = New System.Drawing.Size(1162, 96)
+        Me.pnlBtm.Size = New System.Drawing.Size(1162, 159)
         Me.pnlBtm.TabIndex = 6
         '
         'dgvAlarmMain
@@ -285,7 +285,7 @@ Partial Class frmMain
         Me.dgvAlarmMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvAlarmMain.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgvAlarmMain.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgvAlarmMain.Location = New System.Drawing.Point(0, 68)
+        Me.dgvAlarmMain.Location = New System.Drawing.Point(0, 131)
         Me.dgvAlarmMain.MultiSelect = False
         Me.dgvAlarmMain.Name = "dgvAlarmMain"
         Me.dgvAlarmMain.Size = New System.Drawing.Size(1162, 28)

@@ -405,7 +405,7 @@ Partial Class frmPLC
         '
         'lblSBD
         '
-        Me.lblSBD.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblSBD.BackColor = System.Drawing.SystemColors.Control
         Me.lblSBD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblSBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSBD.Location = New System.Drawing.Point(884, 385)
@@ -581,7 +581,7 @@ Partial Class frmPLC
         '
         'lblBD
         '
-        Me.lblBD.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblBD.BackColor = System.Drawing.SystemColors.Control
         Me.lblBD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBD.Location = New System.Drawing.Point(884, 348)
@@ -1160,7 +1160,7 @@ Partial Class frmPLC
         '
         'lblInlet_TempD
         '
-        Me.lblInlet_TempD.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblInlet_TempD.BackColor = System.Drawing.SystemColors.Control
         Me.lblInlet_TempD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblInlet_TempD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblInlet_TempD.Location = New System.Drawing.Point(884, 422)
@@ -1225,7 +1225,7 @@ Partial Class frmPLC
         'frmPLC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(1435, 644)
+        Me.ClientSize = New System.Drawing.Size(1275, 704)
         Me.Controls.Add(Me.btnChkStn12)
         Me.Controls.Add(Me.btnChkStn11)
         Me.Controls.Add(Me.btnChkStn10)
