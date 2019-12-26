@@ -1514,101 +1514,204 @@ Public Class ProjectCls
         'constr = "SELECT * from chrt_oiltemp"
         'GetDataMySQL(con, daGrph, ds, dtOilTemp, False, constr)
 
+        'Empty graph tables
+        Dim delstr(5) As String
+        delstr(1) = "Delete from chrt_vib"
+        delstr(2) = "Delete from chrt_speed"
+        delstr(3) = "Delete from chrt_load"
+        delstr(4) = "Delete from chrt_bearings"
+        delstr(5) = "Delete from chrt_oiltemp"
 
+        Dim SQLConnection As New MySqlConnection(serv)
+        Dim sqlCommand As New MySqlCommand()
+
+        Try
+            For i = 1 To 5
+                sqlCommand.CommandText = delstr(i)
+                sqlCommand.CommandType = CommandType.Text
+                sqlCommand.Connection = SQLConnection
+
+                SQLConnection.Open()
+                sqlCommand.ExecuteNonQuery()
+                sqlCommand.Parameters.Clear()
+                SQLConnection.Close()
+            Next i
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            SQLConnection.Close()
+        End Try
     End Sub
 
     Sub UpdateGraphData()
 
         'If MyPLC.GetTagVal("MonitorLimits" & HeadName) = 0 Then Exit Sub
-        Dim MyRow As DataRow
+
 
         UpdateTagData()
 
         'DataUpdateLock.EnterWriteLock()
 
-        Try
-            Dim constr As String = "SELECT * from chrt_vib"
-            GetDataMySQL(con, daGrph, ds, dtVibration, False, constr)
-            If dtVibration.Rows.Count > NoOfGraphEntries Then dtVibration.Rows(0).Delete()
-            MyRow = dtVibration.NewRow
-            MyRow.Item("MinVal") = VibrationA.SL
-            MyRow.Item("MaxVal") = VibrationA.SH
-            MyRow.Item("VibrationA") = VibrationA.Value
-            MyRow.Item("VibrationB") = VibrationB.Value
-            MyRow.Item("VibrationC") = VibrationC.Value
-            MyRow.Item("VibrationD") = VibrationD.Value
-            dtVibration.Rows.Add(MyRow)
-            cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
-            cb.ConflictOption = ConflictOption.OverwriteChanges
-            daGrph.Update(dtVibration)
-
-            constr = "SELECT * from chrt_bearings"
-            GetDataMySQL(con, daGrph, ds, dtBearing, False, constr)
-            If dtBearing.Rows.Count > NoOfGraphEntries Then dtBearing.Rows(0).Delete()
-            MyRow = dtBearing.NewRow
-            MyRow.Item("MinVal") = BA.SL
-            MyRow.Item("MaxVal") = BA.SH
-            MyRow.Item("BA") = BA.Value
-            MyRow.Item("BB") = BB.Value
-            MyRow.Item("BC") = BC.Value
-            MyRow.Item("BD") = BD.Value
-            MyRow.Item("SBA") = SBA.Value
-            MyRow.Item("SBB") = SBB.Value
-            MyRow.Item("SBC") = SBC.Value
-            MyRow.Item("SBD") = SBD.Value
-            dtBearing.Rows.Add(MyRow)
-            cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
-            cb.ConflictOption = ConflictOption.OverwriteChanges
-            daGrph.Update(dtBearing)
-
-            constr = "SELECT * from chrt_oiltemp"
-            GetDataMySQL(con, daGrph, ds, dtOilTemp, False, constr)
-            If dtOilTemp.Rows.Count > NoOfGraphEntries Then dtOilTemp.Rows(0).Delete()
-            MyRow = dtOilTemp.NewRow
-            MyRow.Item("MinVal") = Inlet_TempA.SL
-            MyRow.Item("MaxVal") = Inlet_TempA.SH
-            MyRow.Item("InletOilA") = Inlet_TempA.Value
-            MyRow.Item("InletOilB") = Inlet_TempB.Value
-            MyRow.Item("InletOilC") = Inlet_TempC.Value
-            MyRow.Item("InletOilD") = Inlet_TempD.Value
-            MyRow.Item("TankOil") = TankTemp.Value
-            dtOilTemp.Rows.Add(MyRow)
-            cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
-            cb.ConflictOption = ConflictOption.OverwriteChanges
-            daGrph.Update(dtOilTemp)
 
 
-            constr = "SELECT * from chrt_speed"
-            GetDataMySQL(con, daGrph, ds, dtSpeed, False, constr)
-            If dtSpeed.Rows.Count > NoOfGraphEntries Then dtSpeed.Rows(0).Delete()
-            MyRow = dtSpeed.NewRow
-            MyRow.Item("MinVal") = Speed.SL
-            MyRow.Item("MaxVal") = Speed.SH
-            MyRow.Item("Speed") = Speed.Value
-            dtSpeed.Rows.Add(MyRow)
-            cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
-            cb.ConflictOption = ConflictOption.OverwriteChanges
-            daGrph.Update(dtSpeed)
+        Dim SQLConnection As New MySqlConnection(serv)
+            Dim sqlCommand As New MySqlCommand()
 
-            constr = "SELECT * from chrt_load"
-            GetDataMySQL(con, daGrph, ds, dtLoadDisp, False, constr)
-            If dtLoadDisp.Rows.Count > NoOfGraphEntries Then dtLoadDisp.Rows(0).Delete()
-            MyRow = dtLoadDisp.NewRow
-            MyRow.Item("MinVal") = Load.SL
-            MyRow.Item("MaxVal") = Load.SH
-            MyRow.Item("Load") = Load.Value
-            dtLoadDisp.Rows.Add(MyRow)
-            cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
-            cb.ConflictOption = ConflictOption.OverwriteChanges
-            daGrph.Update(dtLoadDisp)
 
-        Catch ex As Exception
-            MessageBox.Show("Database:error is:" & ex.Message)
-            Exit Sub
-        End Try
+            sqlCommand.CommandType = CommandType.Text
+            sqlCommand.Connection = SQLConnection
+
+            Try
+                sqlCommand.CommandText = "INSERT INTO chrt_vib (`MinVal`, `MaxVal`,  `VibrationA`,  `VibrationB`,  `VibrationC`,  `VibrationD` ) values (@minv,@maxv,@va, @vb, @vc,@vd)"
+                SQLConnection.Open()
+                sqlCommand.Parameters.AddWithValue("@minv", VibrationA.SL)
+                sqlCommand.Parameters.AddWithValue("@maxv", VibrationA.SH)
+                sqlCommand.Parameters.AddWithValue("@va", VibrationA.Value)
+                sqlCommand.Parameters.AddWithValue("@vb", VibrationB.Value)
+                sqlCommand.Parameters.AddWithValue("@vc", VibrationC.Value)
+                sqlCommand.Parameters.AddWithValue("@vd", VibrationD.Value)
+                sqlCommand.ExecuteNonQuery()
+                sqlCommand.Parameters.Clear()
+                SQLConnection.Close()
+
+                sqlCommand.CommandText = "INSERT INTO chrt_bearings (`MinVal`, `MaxVal`,  `BA`,  `BB`,  `BC`,  `BD`,  `SBA`,  `SBB`,  `SBC`,  `SBD` ) values (@minv,@maxv,@ba, @bb, @bc,@bd,@sba, @sbb, @sbc,@sbd)"
+                SQLConnection.Open()
+                sqlCommand.Parameters.AddWithValue("@minv", BA.SL)
+                sqlCommand.Parameters.AddWithValue("@maxv", BA.SH)
+                sqlCommand.Parameters.AddWithValue("@ba", BA.Value)
+                sqlCommand.Parameters.AddWithValue("@bb", BB.Value)
+                sqlCommand.Parameters.AddWithValue("@bc", BC.Value)
+                sqlCommand.Parameters.AddWithValue("@bd", BD.Value)
+                sqlCommand.Parameters.AddWithValue("@sba", SBA.Value)
+                sqlCommand.Parameters.AddWithValue("@sbb", SBB.Value)
+                sqlCommand.Parameters.AddWithValue("@sbc", SBC.Value)
+                sqlCommand.Parameters.AddWithValue("@sbd", SBD.Value)
+                sqlCommand.ExecuteNonQuery()
+                sqlCommand.Parameters.Clear()
+                SQLConnection.Close()
+
+                sqlCommand.CommandText = "INSERT INTO chrt_oiltemp (`MinVal`, `MaxVal`,  `InletOilA`,  `InletOilB`,  `InletOilC`,  `InletOilD`,  `TankOil` ) values (@minv,@maxv,@ia, @ib, @ic,@id, @to)"
+                SQLConnection.Open()
+                sqlCommand.Parameters.AddWithValue("@minv", Inlet_TempA.SL)
+                sqlCommand.Parameters.AddWithValue("@maxv", Inlet_TempA.SH)
+                sqlCommand.Parameters.AddWithValue("@ia", Inlet_TempA.Value)
+                sqlCommand.Parameters.AddWithValue("@ib", Inlet_TempB.Value)
+                sqlCommand.Parameters.AddWithValue("@ic", Inlet_TempC.Value)
+                sqlCommand.Parameters.AddWithValue("@id", Inlet_TempD.Value)
+                sqlCommand.Parameters.AddWithValue("@to", TankTemp.Value)
+                sqlCommand.ExecuteNonQuery()
+                sqlCommand.Parameters.Clear()
+                SQLConnection.Close()
+
+                sqlCommand.CommandText = "INSERT INTO chrt_speed (`MinVal`, `MaxVal`,  `Speed` ) values (@minv,@maxv,@spd)"
+                SQLConnection.Open()
+                sqlCommand.Parameters.AddWithValue("@minv", Speed.SL)
+                sqlCommand.Parameters.AddWithValue("@maxv", Speed.SH)
+                sqlCommand.Parameters.AddWithValue("@spd", Speed.Value)
+                sqlCommand.ExecuteNonQuery()
+                sqlCommand.Parameters.Clear()
+                SQLConnection.Close()
+
+                sqlCommand.CommandText = "INSERT INTO chrt_load (`MinVal`, `MaxVal`,  `Load` ) values (@minv,@maxv,@ld)"
+                SQLConnection.Open()
+                sqlCommand.Parameters.AddWithValue("@minv", Load.SL)
+                sqlCommand.Parameters.AddWithValue("@maxv", Load.SH)
+                sqlCommand.Parameters.AddWithValue("@ld", Load.Value)
+                sqlCommand.ExecuteNonQuery()
+                sqlCommand.Parameters.Clear()
+                SQLConnection.Close()
+
+            Catch ex As MySqlException
+                MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                SQLConnection.Close()
+            End Try
+
+#Region "chrtdatacomment"
+        '    Dim MyRow As DataRow   
+        '    Dim constr As String = "SELECT * from chrt_vib"
+        '    GetDataMySQL(con, daGrph, ds, dtVibration, False, constr)
+        '    If dtVibration.Rows.Count > NoOfGraphEntries Then dtVibration.Rows(0).Delete()
+        '    MyRow = dtVibration.NewRow
+        '    MyRow.Item("MinVal") = VibrationA.SL
+        '    MyRow.Item("MaxVal") = VibrationA.SH
+        '    MyRow.Item("VibrationA") = VibrationA.Value
+        '    MyRow.Item("VibrationB") = VibrationB.Value
+        '    MyRow.Item("VibrationC") = VibrationC.Value
+        '    MyRow.Item("VibrationD") = VibrationD.Value
+        '    dtVibration.Rows.Add(MyRow)
+        '    cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
+        '    cb.ConflictOption = ConflictOption.OverwriteChanges
+        '    daGrph.Update(dtVibration)
+
+        '    constr = "SELECT * from chrt_bearings"
+        '    GetDataMySQL(con, daGrph, ds, dtBearing, False, constr)
+        '    If dtBearing.Rows.Count > NoOfGraphEntries Then dtBearing.Rows(0).Delete()
+        '    MyRow = dtBearing.NewRow
+        '    MyRow.Item("MinVal") = BA.SL
+        '    MyRow.Item("MaxVal") = BA.SH
+        '    MyRow.Item("BA") = BA.Value
+        '    MyRow.Item("BB") = BB.Value
+        '    MyRow.Item("BC") = BC.Value
+        '    MyRow.Item("BD") = BD.Value
+        '    MyRow.Item("SBA") = SBA.Value
+        '    MyRow.Item("SBB") = SBB.Value
+        '    MyRow.Item("SBC") = SBC.Value
+        '    MyRow.Item("SBD") = SBD.Value
+        '    dtBearing.Rows.Add(MyRow)
+        '    cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
+        '    cb.ConflictOption = ConflictOption.OverwriteChanges
+        '    daGrph.Update(dtBearing)
+
+        '    constr = "SELECT * from chrt_oiltemp"
+        '    GetDataMySQL(con, daGrph, ds, dtOilTemp, False, constr)
+        '    If dtOilTemp.Rows.Count > NoOfGraphEntries Then dtOilTemp.Rows(0).Delete()
+        '    MyRow = dtOilTemp.NewRow
+        '    MyRow.Item("MinVal") = Inlet_TempA.SL
+        '    MyRow.Item("MaxVal") = Inlet_TempA.SH
+        '    MyRow.Item("InletOilA") = Inlet_TempA.Value
+        '    MyRow.Item("InletOilB") = Inlet_TempB.Value
+        '    MyRow.Item("InletOilC") = Inlet_TempC.Value
+        '    MyRow.Item("InletOilD") = Inlet_TempD.Value
+        '    MyRow.Item("TankOil") = TankTemp.Value
+        '    dtOilTemp.Rows.Add(MyRow)
+        '    cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
+        '    cb.ConflictOption = ConflictOption.OverwriteChanges
+        '    daGrph.Update(dtOilTemp)
+
+
+        '    constr = "SELECT * from chrt_speed"
+        '    GetDataMySQL(con, daGrph, ds, dtSpeed, False, constr)
+        '    If dtSpeed.Rows.Count > NoOfGraphEntries Then dtSpeed.Rows(0).Delete()
+        '    MyRow = dtSpeed.NewRow
+        '    MyRow.Item("MinVal") = Speed.SL
+        '    MyRow.Item("MaxVal") = Speed.SH
+        '    MyRow.Item("Speed") = Speed.Value
+        '    dtSpeed.Rows.Add(MyRow)
+        '    cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
+        '    cb.ConflictOption = ConflictOption.OverwriteChanges
+        '    daGrph.Update(dtSpeed)
+
+        '    constr = "SELECT * from chrt_load"
+        '    GetDataMySQL(con, daGrph, ds, dtLoadDisp, False, constr)
+        '    If dtLoadDisp.Rows.Count > NoOfGraphEntries Then dtLoadDisp.Rows(0).Delete()
+        '    MyRow = dtLoadDisp.NewRow
+        '    MyRow.Item("MinVal") = Load.SL
+        '    MyRow.Item("MaxVal") = Load.SH
+        '    MyRow.Item("Load") = Load.Value
+        '    dtLoadDisp.Rows.Add(MyRow)
+        '    cb = New MySqlCommandBuilder(daGrph) 'to make the ds updatable
+        '    cb.ConflictOption = ConflictOption.OverwriteChanges
+        '    daGrph.Update(dtLoadDisp)
+
+        'Catch ex As Exception
+        '    MessageBox.Show("Database:error is:" & ex.Message)
+        '    Exit Sub
+        'End Try
 
 
         'DataUpdateLock.ExitWriteLock()
+#End Region
 
     End Sub
 

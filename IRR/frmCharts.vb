@@ -134,7 +134,19 @@ Public Class frmCharts
                 chrtVib.Series(i).Name = dtGrphVib.Columns(i).ColumnName
             Next i
 
+            For i = 0 To dtGrphSpeed.Columns.Count - 1
+                chrtSpd.Series(i).Name = dtGrphSpeed.Columns(i).ColumnName
+            Next i
 
+            For i = 0 To dtGrphLoadDisp.Columns.Count - 1
+                chrtLd.Series(i).Name = dtGrphLoadDisp.Columns(i).ColumnName
+            Next i
+
+            chrtVib.DataSource = dtGrphVib
+            chrtSpd.DataSource = dtGrphSpeed
+            chrtLd.DataSource = dtGrphLoadDisp
+            chrtBT.DataSource = dtGrphBearing
+            chrtOT.DataSource = dtGrphOilTemp
 
             'Station.MC.myProj.DataUpdateLock.EnterReadLock()
             chrtVib.DataBind()
@@ -162,11 +174,7 @@ Public Class frmCharts
 
 
 
-        chrtVib.DataSource = dtGrphVib
-        chrtSpd.DataSource = dtGrphSpeed
-        chrtLd.DataSource = dtGrphLoadDisp
-        chrtBT.DataSource = dtGrphBearing
-        chrtOT.DataSource = dtGrphOilTemp
+
 
         UpdateGraphValues()
         UpdateGraphs()
