@@ -509,6 +509,7 @@
   <ItemGroup>
     <Content Include="Actemium Small Logo.ico" />
     <Content Include="issues.txt" />
+    <Content Include="SQLbkp.sql" />
     <None Include="Resources\PID Details.png" />
     <None Include="Resources\PID1.png" />
   </ItemGroup>
