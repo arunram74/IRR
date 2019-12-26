@@ -24,16 +24,17 @@ Public Class frmCharts
     Dim counter As Integer = 0
 
     Private Sub frmCharts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        rdbHA.Checked = True
 
+        CreateGraphs(chrtVib, 3)
+        CreateGraphs(chrtSpd, 3)
+        CreateGraphs(chrtLd, 3)
+        CreateGraphs(chrtBT, 4)
+        CreateGraphs(chrtOT, 4)
+
+        rdbHA.Checked = True
 
         HandleChecks()
 
-        CreateGraphs(chrtVib, bsvb, Station.MC.myProj.dtVibration, 3)
-        CreateGraphs(chrtSpd, bsspd, Station.MC.myProj.dtSpeed, 3)
-        CreateGraphs(chrtLd, bsLd, Station.MC.myProj.dtLoadDisp, 3)
-        CreateGraphs(chrtBT, bsbtmp, Station.MC.myProj.dtBearing, 4)
-        CreateGraphs(chrtOT, bsotmp, Station.MC.myProj.dtOilTemp, 4)
         UpdateGraphs()
         TmrCharUpdate.Enabled = True
         counter = 0
@@ -63,7 +64,7 @@ Public Class frmCharts
 
     End Sub
 
-    Sub CreateGraphs(grph As Chart, bs As BindingSource, grphdt As DataTable, ColumnCount As Integer)
+    Sub CreateGraphs(grph As Chart, ColumnCount As Integer)
         Try
             Dim ColorSet() = {Color.Red, Color.Blue, Color.Green, Color.Brown, Color.Gray, Color.Purple}
             'bs.DataSource = grphdt
@@ -73,8 +74,8 @@ Public Class frmCharts
                 If grph.Series.Count < (i + 1) Then grph.Series.Add(i.ToString)
                 grph.Series(i).ChartType = SeriesChartType.Line
                 grph.Series(i).Color = ColorSet(i)
-                grph.Series(i).Name = grphdt.Columns(i).ColumnName
-                grph.Series(i).YValueMembers = grphdt.Columns(i).ColumnName
+                grph.Series(i).Name = i 'grphdt.Columns(i).ColumnName
+                grph.Series(i).YValueMembers = i 'grphdt.Columns(i).ColumnName
             Next
 
             grph.ChartAreas(0).AxisX.LabelStyle.Enabled = False
@@ -89,46 +90,50 @@ Public Class frmCharts
     Sub UpdateGraphs()
 
         Try
+            Dim constrbt, constrot, constrvib As String
 
-            dtGrphSpeed = Station.MC.myProj.dtSpeed.Copy
-            chrtSpd.DataSource = dtGrphSpeed
+            Dim constr As String = "SELECT * from chrt_speed"
+            GetDataMySQL(con, daGrph, ds, dtGrphSpeed, False, constr)
 
-            dtGrphLoadDisp = Station.MC.myProj.dtLoadDisp.Copy
-            chrtLd.DataSource = dtGrphLoadDisp
-
-            dtGrphBearing = Station.MC.myProj.dtBearing.Copy
-            dtGrphOilTemp = Station.MC.myProj.dtOilTemp.Copy
-            dtGrphVib = Station.MC.myProj.dtVibration.Copy
-
-            dtGrphBearing = Station.MC.myProj.dtBearing.Copy
-            dtGrphOilTemp = Station.MC.myProj.dtOilTemp.Copy
-            dtGrphVib = Station.MC.myProj.dtVibration.Copy
-
+            constr = "SELECT * from chrt_load"
+            GetDataMySQL(con, daGrph, ds, dtGrphLoadDisp, False, constr)
 
             If rdbHA.Checked Then
-
-                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BA", "SBA")
-                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilA", "TankOil")
-                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationA")
+                constrbt = "SELECT MinVal, MaxVal, BA, SBA from chrt_bearings"
+                constrot = "SELECT MinVal, MaxVal, InletOilA, TankOil from chrt_oiltemp"
+                constrvib = "SELECT MinVal, MaxVal, VibrationA from chrt_vib"
             ElseIf rdbHB.Checked Then
-                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BB", "SBB")
-                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilB", "TankOil")
-                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationB")
+                constrbt = "SELECT MinVal, MaxVal, BB, SBB from chrt_bearings"
+                constrot = "SELECT MinVal, MaxVal, InletOilB, TankOil from chrt_oiltemp"
+                constrvib = "SELECT MinVal, MaxVal, VibrationB from chrt_vib"
             ElseIf rdbHC.Checked Then
-                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BC", "SBC")
-                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilC", "TankOil")
-                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationC")
+                constrbt = "SELECT MinVal, MaxVal, BC, SBC from chrt_bearings"
+                constrot = "SELECT MinVal, MaxVal, InletOilC, TankOil from chrt_oiltemp"
+                constrvib = "SELECT MinVal, MaxVal, VibrationC from chrt_vib"
             ElseIf rdbHD.Checked Then
-                chrtBT.DataSource = dtGrphBearing.DefaultView.ToTable(True, "MinVal", "MaxVal", "BD", "SBD")
-                chrtOT.DataSource = dtGrphOilTemp.DefaultView.ToTable(True, "MinVal", "MaxVal", "InletOilD", "TankOil")
-                chrtVib.DataSource = dtGrphVib.DefaultView.ToTable(True, "MinVal", "MaxVal", "VibrationD")
+                constrbt = "SELECT MinVal, MaxVal, BD, SBD from chrt_bearings"
+                constrot = "SELECT MinVal, MaxVal, InletOilD, TankOil from chrt_oiltemp"
+                constrvib = "SELECT MinVal, MaxVal, VibrationD from chrt_vib"
             End If
 
-            For i = 0 To 3
-                chrtBT.Series(i).Name = chrtBT.DataSource.Columns(i).ColumnName
-                chrtOT.Series(i).Name = chrtOT.DataSource.Columns(i).ColumnName
-                If i < 3 Then chrtVib.Series(i).Name = chrtVib.DataSource.Columns(i).ColumnName
+            GetDataMySQL(con, daGrph, ds, dtGrphBearing, False, constrbt)
+            GetDataMySQL(con, daGrph, ds, dtGrphOilTemp, False, constrot)
+            GetDataMySQL(con, daGrph, ds, dtGrphVib, False, constrvib)
+
+
+
+            For i = 0 To dtGrphBearing.Columns.Count - 1
+                chrtBT.Series(i).Name = dtGrphBearing.Columns(i).ColumnName
             Next i
+
+            For i = 0 To dtGrphOilTemp.Columns.Count - 1
+                chrtOT.Series(i).Name = dtGrphOilTemp.Columns(i).ColumnName
+            Next i
+
+            For i = 0 To dtGrphVib.Columns.Count - 1
+                chrtVib.Series(i).Name = dtGrphVib.Columns(i).ColumnName
+            Next i
+
 
 
             'Station.MC.myProj.DataUpdateLock.EnterReadLock()
@@ -143,7 +148,7 @@ Public Class frmCharts
 
 
         Catch ex As Exception
-            ''MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
             '' ignore for now! Do nothing
         End Try
     End Sub
@@ -155,11 +160,13 @@ Public Class frmCharts
 
     Sub HandleChecks()
 
-        'chrtVib.DataSource = Station.MC.myProj.dtVibration
-        'chrtSpd.DataSource = Station.MC.myProj.dtSpeed
-        'chrtLd.DataSource = Station.MC.myProj.dtLoadDisp
-        'chrtBT.DataSource = Station.MC.myProj.dtBearing
-        'chrtOT.DataSource = Station.MC.myProj.dtOilTemp
+
+
+        chrtVib.DataSource = dtGrphVib
+        chrtSpd.DataSource = dtGrphSpeed
+        chrtLd.DataSource = dtGrphLoadDisp
+        chrtBT.DataSource = dtGrphBearing
+        chrtOT.DataSource = dtGrphOilTemp
 
         UpdateGraphValues()
         UpdateGraphs()
