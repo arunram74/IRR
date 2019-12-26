@@ -23,14 +23,14 @@ Partial Class frmScaling
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.txtSAB4 = New System.Windows.Forms.TextBox()
-        Me.txtIAB4 = New System.Windows.Forms.TextBox()
-        Me.txtSAB3 = New System.Windows.Forms.TextBox()
-        Me.txtIAB3 = New System.Windows.Forms.TextBox()
-        Me.txtSAB2 = New System.Windows.Forms.TextBox()
-        Me.txtIAB2 = New System.Windows.Forms.TextBox()
-        Me.txtSAB1 = New System.Windows.Forms.TextBox()
-        Me.txtIAB1 = New System.Windows.Forms.TextBox()
+        Me.txtSBD = New System.Windows.Forms.TextBox()
+        Me.txtIBD = New System.Windows.Forms.TextBox()
+        Me.txtSBC = New System.Windows.Forms.TextBox()
+        Me.txtIBC = New System.Windows.Forms.TextBox()
+        Me.txtSBB = New System.Windows.Forms.TextBox()
+        Me.txtIBB = New System.Windows.Forms.TextBox()
+        Me.txtSBA = New System.Windows.Forms.TextBox()
+        Me.txtIBA = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -64,14 +64,14 @@ Partial Class frmScaling
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtIBB1 = New System.Windows.Forms.TextBox()
-        Me.txtSBB1 = New System.Windows.Forms.TextBox()
-        Me.txtIBB2 = New System.Windows.Forms.TextBox()
-        Me.txtSBB2 = New System.Windows.Forms.TextBox()
-        Me.txtIBB3 = New System.Windows.Forms.TextBox()
-        Me.txtSBB3 = New System.Windows.Forms.TextBox()
-        Me.txtIBB4 = New System.Windows.Forms.TextBox()
-        Me.txtSBB4 = New System.Windows.Forms.TextBox()
+        Me.txtIVibA = New System.Windows.Forms.TextBox()
+        Me.txtSVibA = New System.Windows.Forms.TextBox()
+        Me.txtIVibB = New System.Windows.Forms.TextBox()
+        Me.txtSVibB = New System.Windows.Forms.TextBox()
+        Me.txtIVibC = New System.Windows.Forms.TextBox()
+        Me.txtSVibC = New System.Windows.Forms.TextBox()
+        Me.txtIVibD = New System.Windows.Forms.TextBox()
+        Me.txtSVibD = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -83,9 +83,28 @@ Partial Class frmScaling
         Me.txtSLd = New System.Windows.Forms.TextBox()
         Me.txtILd = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.txtSupSBA = New System.Windows.Forms.TextBox()
+        Me.txtSupIBA = New System.Windows.Forms.TextBox()
+        Me.txtSupSBB = New System.Windows.Forms.TextBox()
+        Me.txtSupIBB = New System.Windows.Forms.TextBox()
+        Me.txtSupSBC = New System.Windows.Forms.TextBox()
+        Me.txtSupIBC = New System.Windows.Forms.TextBox()
+        Me.txtSupSBD = New System.Windows.Forms.TextBox()
+        Me.txtSupIBD = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -130,69 +149,69 @@ Partial Class frmScaling
         Me.Label14.Text = "Head C Temperature (°F)"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'txtSAB4
+        'txtSBD
         '
-        Me.txtSAB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSAB4.Location = New System.Drawing.Point(397, 277)
-        Me.txtSAB4.Name = "txtSAB4"
-        Me.txtSAB4.Size = New System.Drawing.Size(93, 29)
-        Me.txtSAB4.TabIndex = 10
+        Me.txtSBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSBD.Location = New System.Drawing.Point(397, 277)
+        Me.txtSBD.Name = "txtSBD"
+        Me.txtSBD.Size = New System.Drawing.Size(93, 29)
+        Me.txtSBD.TabIndex = 10
         '
-        'txtIAB4
+        'txtIBD
         '
-        Me.txtIAB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIAB4.Location = New System.Drawing.Point(513, 277)
-        Me.txtIAB4.Name = "txtIAB4"
-        Me.txtIAB4.Size = New System.Drawing.Size(93, 29)
-        Me.txtIAB4.TabIndex = 11
+        Me.txtIBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIBD.Location = New System.Drawing.Point(513, 277)
+        Me.txtIBD.Name = "txtIBD"
+        Me.txtIBD.Size = New System.Drawing.Size(93, 29)
+        Me.txtIBD.TabIndex = 11
         '
-        'txtSAB3
+        'txtSBC
         '
-        Me.txtSAB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSAB3.Location = New System.Drawing.Point(397, 239)
-        Me.txtSAB3.Name = "txtSAB3"
-        Me.txtSAB3.Size = New System.Drawing.Size(93, 29)
-        Me.txtSAB3.TabIndex = 8
+        Me.txtSBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSBC.Location = New System.Drawing.Point(397, 239)
+        Me.txtSBC.Name = "txtSBC"
+        Me.txtSBC.Size = New System.Drawing.Size(93, 29)
+        Me.txtSBC.TabIndex = 8
         '
-        'txtIAB3
+        'txtIBC
         '
-        Me.txtIAB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIAB3.Location = New System.Drawing.Point(513, 239)
-        Me.txtIAB3.Name = "txtIAB3"
-        Me.txtIAB3.Size = New System.Drawing.Size(93, 29)
-        Me.txtIAB3.TabIndex = 9
+        Me.txtIBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIBC.Location = New System.Drawing.Point(513, 239)
+        Me.txtIBC.Name = "txtIBC"
+        Me.txtIBC.Size = New System.Drawing.Size(93, 29)
+        Me.txtIBC.TabIndex = 9
         '
-        'txtSAB2
+        'txtSBB
         '
-        Me.txtSAB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSAB2.Location = New System.Drawing.Point(397, 201)
-        Me.txtSAB2.Name = "txtSAB2"
-        Me.txtSAB2.Size = New System.Drawing.Size(93, 29)
-        Me.txtSAB2.TabIndex = 6
+        Me.txtSBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSBB.Location = New System.Drawing.Point(397, 201)
+        Me.txtSBB.Name = "txtSBB"
+        Me.txtSBB.Size = New System.Drawing.Size(93, 29)
+        Me.txtSBB.TabIndex = 6
         '
-        'txtIAB2
+        'txtIBB
         '
-        Me.txtIAB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIAB2.Location = New System.Drawing.Point(513, 201)
-        Me.txtIAB2.Name = "txtIAB2"
-        Me.txtIAB2.Size = New System.Drawing.Size(93, 29)
-        Me.txtIAB2.TabIndex = 7
+        Me.txtIBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIBB.Location = New System.Drawing.Point(513, 201)
+        Me.txtIBB.Name = "txtIBB"
+        Me.txtIBB.Size = New System.Drawing.Size(93, 29)
+        Me.txtIBB.TabIndex = 7
         '
-        'txtSAB1
+        'txtSBA
         '
-        Me.txtSAB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSAB1.Location = New System.Drawing.Point(397, 163)
-        Me.txtSAB1.Name = "txtSAB1"
-        Me.txtSAB1.Size = New System.Drawing.Size(93, 29)
-        Me.txtSAB1.TabIndex = 4
+        Me.txtSBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSBA.Location = New System.Drawing.Point(397, 163)
+        Me.txtSBA.Name = "txtSBA"
+        Me.txtSBA.Size = New System.Drawing.Size(93, 29)
+        Me.txtSBA.TabIndex = 4
         '
-        'txtIAB1
+        'txtIBA
         '
-        Me.txtIAB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIAB1.Location = New System.Drawing.Point(513, 163)
-        Me.txtIAB1.Name = "txtIAB1"
-        Me.txtIAB1.Size = New System.Drawing.Size(93, 29)
-        Me.txtIAB1.TabIndex = 5
+        Me.txtIBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIBA.Location = New System.Drawing.Point(513, 163)
+        Me.txtIBA.Name = "txtIBA"
+        Me.txtIBA.Size = New System.Drawing.Size(93, 29)
+        Me.txtIBA.TabIndex = 5
         '
         'Label15
         '
@@ -245,7 +264,7 @@ Partial Class frmScaling
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(131, 26)
         Me.Label33.TabIndex = 466
-        Me.Label33.Text = "Temperature"
+        Me.Label33.Text = "Bearing"
         Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label4
@@ -421,7 +440,7 @@ Partial Class frmScaling
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Location = New System.Drawing.Point(677, 130)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(601, 277)
+        Me.PictureBox1.Size = New System.Drawing.Size(601, 204)
         Me.PictureBox1.TabIndex = 467
         Me.PictureBox1.TabStop = False
         '
@@ -487,69 +506,69 @@ Partial Class frmScaling
         Me.Label12.Text = "Head D Vibration (g)"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'txtIBB1
+        'txtIVibA
         '
-        Me.txtIBB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIBB1.Location = New System.Drawing.Point(1134, 163)
-        Me.txtIBB1.Name = "txtIBB1"
-        Me.txtIBB1.Size = New System.Drawing.Size(93, 29)
-        Me.txtIBB1.TabIndex = 17
+        Me.txtIVibA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIVibA.Location = New System.Drawing.Point(1134, 163)
+        Me.txtIVibA.Name = "txtIVibA"
+        Me.txtIVibA.Size = New System.Drawing.Size(93, 29)
+        Me.txtIVibA.TabIndex = 17
         '
-        'txtSBB1
+        'txtSVibA
         '
-        Me.txtSBB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSBB1.Location = New System.Drawing.Point(1018, 163)
-        Me.txtSBB1.Name = "txtSBB1"
-        Me.txtSBB1.Size = New System.Drawing.Size(93, 29)
-        Me.txtSBB1.TabIndex = 16
+        Me.txtSVibA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSVibA.Location = New System.Drawing.Point(1018, 163)
+        Me.txtSVibA.Name = "txtSVibA"
+        Me.txtSVibA.Size = New System.Drawing.Size(93, 29)
+        Me.txtSVibA.TabIndex = 16
         '
-        'txtIBB2
+        'txtIVibB
         '
-        Me.txtIBB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIBB2.Location = New System.Drawing.Point(1134, 201)
-        Me.txtIBB2.Name = "txtIBB2"
-        Me.txtIBB2.Size = New System.Drawing.Size(93, 29)
-        Me.txtIBB2.TabIndex = 19
+        Me.txtIVibB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIVibB.Location = New System.Drawing.Point(1134, 201)
+        Me.txtIVibB.Name = "txtIVibB"
+        Me.txtIVibB.Size = New System.Drawing.Size(93, 29)
+        Me.txtIVibB.TabIndex = 19
         '
-        'txtSBB2
+        'txtSVibB
         '
-        Me.txtSBB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSBB2.Location = New System.Drawing.Point(1018, 201)
-        Me.txtSBB2.Name = "txtSBB2"
-        Me.txtSBB2.Size = New System.Drawing.Size(93, 29)
-        Me.txtSBB2.TabIndex = 18
+        Me.txtSVibB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSVibB.Location = New System.Drawing.Point(1018, 201)
+        Me.txtSVibB.Name = "txtSVibB"
+        Me.txtSVibB.Size = New System.Drawing.Size(93, 29)
+        Me.txtSVibB.TabIndex = 18
         '
-        'txtIBB3
+        'txtIVibC
         '
-        Me.txtIBB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIBB3.Location = New System.Drawing.Point(1134, 239)
-        Me.txtIBB3.Name = "txtIBB3"
-        Me.txtIBB3.Size = New System.Drawing.Size(93, 29)
-        Me.txtIBB3.TabIndex = 21
+        Me.txtIVibC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIVibC.Location = New System.Drawing.Point(1134, 239)
+        Me.txtIVibC.Name = "txtIVibC"
+        Me.txtIVibC.Size = New System.Drawing.Size(93, 29)
+        Me.txtIVibC.TabIndex = 21
         '
-        'txtSBB3
+        'txtSVibC
         '
-        Me.txtSBB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSBB3.Location = New System.Drawing.Point(1018, 239)
-        Me.txtSBB3.Name = "txtSBB3"
-        Me.txtSBB3.Size = New System.Drawing.Size(93, 29)
-        Me.txtSBB3.TabIndex = 20
+        Me.txtSVibC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSVibC.Location = New System.Drawing.Point(1018, 239)
+        Me.txtSVibC.Name = "txtSVibC"
+        Me.txtSVibC.Size = New System.Drawing.Size(93, 29)
+        Me.txtSVibC.TabIndex = 20
         '
-        'txtIBB4
+        'txtIVibD
         '
-        Me.txtIBB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIBB4.Location = New System.Drawing.Point(1134, 277)
-        Me.txtIBB4.Name = "txtIBB4"
-        Me.txtIBB4.Size = New System.Drawing.Size(93, 29)
-        Me.txtIBB4.TabIndex = 23
+        Me.txtIVibD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIVibD.Location = New System.Drawing.Point(1134, 277)
+        Me.txtIVibD.Name = "txtIVibD"
+        Me.txtIVibD.Size = New System.Drawing.Size(93, 29)
+        Me.txtIVibD.TabIndex = 23
         '
-        'txtSBB4
+        'txtSVibD
         '
-        Me.txtSBB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSBB4.Location = New System.Drawing.Point(1018, 277)
-        Me.txtSBB4.Name = "txtSBB4"
-        Me.txtSBB4.Size = New System.Drawing.Size(93, 29)
-        Me.txtSBB4.TabIndex = 22
+        Me.txtSVibD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSVibD.Location = New System.Drawing.Point(1018, 277)
+        Me.txtSVibD.Name = "txtSVibD"
+        Me.txtSVibD.Size = New System.Drawing.Size(93, 29)
+        Me.txtSVibD.TabIndex = 22
         '
         'Label16
         '
@@ -659,10 +678,189 @@ Partial Class frmScaling
         Me.Label22.Text = "Load"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox3.Location = New System.Drawing.Point(677, 356)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(601, 218)
+        Me.PictureBox3.TabIndex = 471
+        Me.PictureBox3.TabStop = False
+        '
+        'Label23
+        '
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(685, 346)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(116, 26)
+        Me.Label23.TabIndex = 472
+        Me.Label23.Text = "Sup Bearing"
+        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label24
+        '
+        Me.Label24.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label24.Location = New System.Drawing.Point(707, 396)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(540, 38)
+        Me.Label24.TabIndex = 473
+        '
+        'Label25
+        '
+        Me.Label25.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label25.Location = New System.Drawing.Point(707, 474)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(540, 38)
+        Me.Label25.TabIndex = 474
+        '
+        'Label26
+        '
+        Me.Label26.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(739, 408)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(209, 26)
+        Me.Label26.TabIndex = 475
+        Me.Label26.Text = "Head A Temperature (°F)"
+        Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label27
+        '
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(735, 448)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(213, 26)
+        Me.Label27.TabIndex = 476
+        Me.Label27.Text = "Head B Temperature (°F)"
+        Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label28
+        '
+        Me.Label28.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(737, 486)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(211, 26)
+        Me.Label28.TabIndex = 477
+        Me.Label28.Text = "Head C Temperature (°F)"
+        Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label29
+        '
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(741, 518)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(207, 26)
+        Me.Label29.TabIndex = 478
+        Me.Label29.Text = "Head D Temperature (°F)"
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label30
+        '
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(1037, 370)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(54, 26)
+        Me.Label30.TabIndex = 479
+        Me.Label30.Text = "Slope"
+        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label31
+        '
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Location = New System.Drawing.Point(1134, 370)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(78, 26)
+        Me.Label31.TabIndex = 480
+        Me.Label31.Text = "Intercept"
+        Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtSupSBA
+        '
+        Me.txtSupSBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupSBA.Location = New System.Drawing.Point(1018, 399)
+        Me.txtSupSBA.Name = "txtSupSBA"
+        Me.txtSupSBA.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupSBA.TabIndex = 481
+        '
+        'txtSupIBA
+        '
+        Me.txtSupIBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupIBA.Location = New System.Drawing.Point(1134, 399)
+        Me.txtSupIBA.Name = "txtSupIBA"
+        Me.txtSupIBA.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupIBA.TabIndex = 482
+        '
+        'txtSupSBB
+        '
+        Me.txtSupSBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupSBB.Location = New System.Drawing.Point(1018, 438)
+        Me.txtSupSBB.Name = "txtSupSBB"
+        Me.txtSupSBB.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupSBB.TabIndex = 483
+        '
+        'txtSupIBB
+        '
+        Me.txtSupIBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupIBB.Location = New System.Drawing.Point(1134, 436)
+        Me.txtSupIBB.Name = "txtSupIBB"
+        Me.txtSupIBB.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupIBB.TabIndex = 484
+        '
+        'txtSupSBC
+        '
+        Me.txtSupSBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupSBC.Location = New System.Drawing.Point(1018, 477)
+        Me.txtSupSBC.Name = "txtSupSBC"
+        Me.txtSupSBC.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupSBC.TabIndex = 485
+        '
+        'txtSupIBC
+        '
+        Me.txtSupIBC.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupIBC.Location = New System.Drawing.Point(1134, 477)
+        Me.txtSupIBC.Name = "txtSupIBC"
+        Me.txtSupIBC.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupIBC.TabIndex = 486
+        '
+        'txtSupSBD
+        '
+        Me.txtSupSBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupSBD.Location = New System.Drawing.Point(1018, 515)
+        Me.txtSupSBD.Name = "txtSupSBD"
+        Me.txtSupSBD.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupSBD.TabIndex = 487
+        '
+        'txtSupIBD
+        '
+        Me.txtSupIBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupIBD.Location = New System.Drawing.Point(1134, 515)
+        Me.txtSupIBD.Name = "txtSupIBD"
+        Me.txtSupIBD.Size = New System.Drawing.Size(93, 29)
+        Me.txtSupIBD.TabIndex = 488
+        '
         'frmScaling
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(1435, 644)
+        Me.ClientSize = New System.Drawing.Size(1275, 704)
+        Me.Controls.Add(Me.txtSupIBD)
+        Me.Controls.Add(Me.txtSupSBD)
+        Me.Controls.Add(Me.txtSupIBC)
+        Me.Controls.Add(Me.txtSupSBC)
+        Me.Controls.Add(Me.txtSupIBB)
+        Me.Controls.Add(Me.txtSupSBB)
+        Me.Controls.Add(Me.txtSupIBA)
+        Me.Controls.Add(Me.txtSupSBA)
+        Me.Controls.Add(Me.Label31)
+        Me.Controls.Add(Me.Label30)
+        Me.Controls.Add(Me.Label29)
+        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.Label27)
+        Me.Controls.Add(Me.Label26)
+        Me.Controls.Add(Me.Label25)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.Label23)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.txtSLd)
         Me.Controls.Add(Me.txtILd)
         Me.Controls.Add(Me.Label22)
@@ -683,27 +881,27 @@ Partial Class frmScaling
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.txtSSpeed)
-        Me.Controls.Add(Me.txtSBB4)
-        Me.Controls.Add(Me.txtSAB4)
+        Me.Controls.Add(Me.txtSVibD)
+        Me.Controls.Add(Me.txtSBD)
         Me.Controls.Add(Me.txtISpeed)
-        Me.Controls.Add(Me.txtIBB4)
-        Me.Controls.Add(Me.txtIAB4)
-        Me.Controls.Add(Me.txtSBB3)
-        Me.Controls.Add(Me.txtSAB3)
-        Me.Controls.Add(Me.txtIBB3)
-        Me.Controls.Add(Me.txtIAB3)
+        Me.Controls.Add(Me.txtIVibD)
+        Me.Controls.Add(Me.txtIBD)
+        Me.Controls.Add(Me.txtSVibC)
+        Me.Controls.Add(Me.txtSBC)
+        Me.Controls.Add(Me.txtIVibC)
+        Me.Controls.Add(Me.txtIBC)
         Me.Controls.Add(Me.txtSTOT)
-        Me.Controls.Add(Me.txtSBB2)
-        Me.Controls.Add(Me.txtSAB2)
+        Me.Controls.Add(Me.txtSVibB)
+        Me.Controls.Add(Me.txtSBB)
         Me.Controls.Add(Me.txtITOT)
-        Me.Controls.Add(Me.txtIBB2)
-        Me.Controls.Add(Me.txtIAB2)
+        Me.Controls.Add(Me.txtIVibB)
+        Me.Controls.Add(Me.txtIBB)
         Me.Controls.Add(Me.txtSLOT)
-        Me.Controls.Add(Me.txtSBB1)
-        Me.Controls.Add(Me.txtSAB1)
+        Me.Controls.Add(Me.txtSVibA)
+        Me.Controls.Add(Me.txtSBA)
         Me.Controls.Add(Me.txtILOT)
-        Me.Controls.Add(Me.txtIBB1)
-        Me.Controls.Add(Me.txtIAB1)
+        Me.Controls.Add(Me.txtIVibA)
+        Me.Controls.Add(Me.txtIBA)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label39)
@@ -731,6 +929,7 @@ Partial Class frmScaling
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -740,14 +939,14 @@ Partial Class frmScaling
     Friend WithEvents Label2 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents txtSAB4 As TextBox
-    Friend WithEvents txtIAB4 As TextBox
-    Friend WithEvents txtSAB3 As TextBox
-    Friend WithEvents txtIAB3 As TextBox
-    Friend WithEvents txtSAB2 As TextBox
-    Friend WithEvents txtIAB2 As TextBox
-    Friend WithEvents txtSAB1 As TextBox
-    Friend WithEvents txtIAB1 As TextBox
+    Friend WithEvents txtSBD As TextBox
+    Friend WithEvents txtIBD As TextBox
+    Friend WithEvents txtSBC As TextBox
+    Friend WithEvents txtIBC As TextBox
+    Friend WithEvents txtSBB As TextBox
+    Friend WithEvents txtIBB As TextBox
+    Friend WithEvents txtSBA As TextBox
+    Friend WithEvents txtIBA As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label19 As Label
@@ -781,14 +980,14 @@ Partial Class frmScaling
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents txtIBB1 As TextBox
-    Friend WithEvents txtSBB1 As TextBox
-    Friend WithEvents txtIBB2 As TextBox
-    Friend WithEvents txtSBB2 As TextBox
-    Friend WithEvents txtIBB3 As TextBox
-    Friend WithEvents txtSBB3 As TextBox
-    Friend WithEvents txtIBB4 As TextBox
-    Friend WithEvents txtSBB4 As TextBox
+    Friend WithEvents txtIVibA As TextBox
+    Friend WithEvents txtSVibA As TextBox
+    Friend WithEvents txtIVibB As TextBox
+    Friend WithEvents txtSVibB As TextBox
+    Friend WithEvents txtIVibC As TextBox
+    Friend WithEvents txtSVibC As TextBox
+    Friend WithEvents txtIVibD As TextBox
+    Friend WithEvents txtSVibD As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label20 As Label
@@ -800,4 +999,22 @@ Partial Class frmScaling
     Friend WithEvents txtSLd As TextBox
     Friend WithEvents txtILd As TextBox
     Friend WithEvents Label22 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents txtSupSBA As TextBox
+    Friend WithEvents txtSupIBA As TextBox
+    Friend WithEvents txtSupSBB As TextBox
+    Friend WithEvents txtSupIBB As TextBox
+    Friend WithEvents txtSupSBC As TextBox
+    Friend WithEvents txtSupIBC As TextBox
+    Friend WithEvents txtSupSBD As TextBox
+    Friend WithEvents txtSupIBD As TextBox
 End Class

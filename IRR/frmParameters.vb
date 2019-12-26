@@ -96,7 +96,7 @@ Public Class frmParameters
         txtSupBTSH.Text = TempProjectObj.SBA.SH
         txtSupBTSL.Text = TempProjectObj.SBA.SL
         chkSupBTAByp.Checked = TempProjectObj.SBA.Bypass
-        chkSupBTBByp.Checked = TempProjectObj.SBD.Bypass
+        chkSupBTBByp.Checked = TempProjectObj.SBB.Bypass
         chkSupBTCByp.Checked = TempProjectObj.SBC.Bypass
         chkSupBTDByp.Checked = TempProjectObj.SBD.Bypass
 

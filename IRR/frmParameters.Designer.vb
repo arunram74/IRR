@@ -1078,7 +1078,7 @@ Partial Class frmParameters
         Me.btnLoad.BackgroundImage = Global.IRR.My.Resources.Resources.Head
         Me.btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnLoad.BevelHeight = 2
-        Me.btnLoad.Font = New System.Drawing.Font("Segoe UI Emoji", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLoad.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLoad.Image = Global.IRR.My.Resources.Resources.Head
         Me.btnLoad.Location = New System.Drawing.Point(1012, 173)
         Me.btnLoad.Name = "btnLoad"
@@ -1124,7 +1124,7 @@ Partial Class frmParameters
         Me.btnReturn.RecessDepth = 3
         Me.btnReturn.Size = New System.Drawing.Size(125, 125)
         Me.btnReturn.TabIndex = 43
-        Me.btnReturn.Text = ""
+        Me.btnReturn.Text = "↺"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
         'lblMcHead

@@ -255,7 +255,7 @@ Partial Class frmPrjt
         Me.btnReturn.RecessDepth = 3
         Me.btnReturn.Size = New System.Drawing.Size(125, 125)
         Me.btnReturn.TabIndex = 18
-        Me.btnReturn.Text = ""
+        Me.btnReturn.Text = "↺"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
         'btnPrjSave
@@ -287,14 +287,14 @@ Partial Class frmPrjt
         Me.btnLimits.BackgroundImage = Global.IRR.My.Resources.Resources.Head
         Me.btnLimits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnLimits.BevelHeight = 2
-        Me.btnLimits.Font = New System.Drawing.Font("Segoe UI Emoji", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimits.Font = New System.Drawing.Font("Segoe UI Symbol", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLimits.Image = Global.IRR.My.Resources.Resources.Head
         Me.btnLimits.Location = New System.Drawing.Point(966, 149)
         Me.btnLimits.Name = "btnLimits"
         Me.btnLimits.RecessDepth = 3
         Me.btnLimits.Size = New System.Drawing.Size(125, 125)
         Me.btnLimits.TabIndex = 16
-        Me.btnLimits.Text = ""
+        Me.btnLimits.Text = "⇒❙❙⇐"
         Me.btnLimits.UseVisualStyleBackColor = True
         '
         'Panel3

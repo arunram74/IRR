@@ -35,16 +35,16 @@ Public Class frmPLC
 
         lblVibA.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationA_actVal"))
         lblVibB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationB_actVal"))
-        lblVibC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationA_actVal"))
-        lblVibD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationB_actVal"))
+        lblVibC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationC_actVal"))
+        lblVibD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("VibrationD_actVal"))
 
         lblSpd.Text = String.Format("{0:n0}", Station.MC.PLC.GetTagVal("Speed_actVal"))
         lblLoad.Text = String.Format("{0:n0}", Station.MC.PLC.GetTagVal("Load_actVal"))
 
         lblBA.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
-        lblBB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
-        lblBC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
-        lblBD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempA_actVal"))
+        lblBB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempB_actVal"))
+        lblBC.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempC_actVal"))
+        lblBD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("BTempD_actVal"))
 
         lblSBA.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("SBTempA_actVal"))
         lblSBB.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("SBTempB_actVal"))

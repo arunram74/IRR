@@ -176,7 +176,7 @@ Public Class frmCharts
         counter = 0
     End Sub
 
-    Private Sub rdb_CheckedChanged(sender As Object, e As EventArgs) Handles rdbHA.CheckedChanged, rdbHB.CheckedChanged, rdbHC.CheckedChanged, rdbHD.CheckedChanged
+    Private Sub rdb_CheckedChanged(sender As Object, e As EventArgs)
         HandleChecks()
     End Sub
 

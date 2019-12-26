@@ -192,13 +192,13 @@ Public Class ProjectCls
 
 
 
-        VibrationA.Init("VibrationA")
-        VibrationB.Init("VibrationB")
-        VibrationC.Init("VibrationC")
-        VibrationD.Init("VibrationD")
+        VibrationA.Init("VibA")
+        VibrationB.Init("VibB")
+        VibrationC.Init("VibC")
+        VibrationD.Init("VibD")
 
 
-        TankTemp.Init("TankTemp")
+        TankTemp.Init("OutTankTemp")
 
 
         Load.Init("Load")
@@ -216,15 +216,15 @@ Public Class ProjectCls
         CreatedDate = #1/1/0001 12:00:00 AM#
         TerminatedDate = #1/1/0001 12:00:00 AM#
 
-        BA.Init("BATemp")
-        BB.Init("BBTemp")
-        BC.Init("BCTemp")
-        BD.Init("BDTemp")
+        BA.Init("BTempA")
+        BB.Init("BTempB")
+        BC.Init("BTempC")
+        BD.Init("BTempD")
 
-        SBA.Init("SBATemp")
-        SBB.Init("SBBTemp")
-        SBC.Init("SBCTemp")
-        SBD.Init("SBDTemp")
+        SBA.Init("SBTempA")
+        SBB.Init("SBTempB")
+        SBC.Init("SBTempC")
+        SBD.Init("SBTempD")
 
         Inlet_TempA.Init("Inlet_TempA")
         Inlet_TempA.Init("Inlet_TempB")
@@ -806,19 +806,19 @@ Public Class ProjectCls
             BA.TagName = "BA"
             SBA.TagName = "SBA"
             Inlet_TempA.TagName = "Inlet_TempA"
-            VibrationA.TagName = "VibrationA"
+            VibrationA.TagName = "VibA"
             BB.TagName = "BB"
             SBB.TagName = "SBB"
             Inlet_TempB.TagName = "Inlet_TempB"
-            VibrationB.TagName = "VibrationB"
+            VibrationB.TagName = "VibB"
             BC.TagName = "BC"
             SBC.TagName = "SBC"
             Inlet_TempC.TagName = "Inlet_TempC"
-            VibrationC.TagName = "VibrationC"
+            VibrationC.TagName = "VibC"
             BD.TagName = "BD"
             SBD.TagName = "SBD"
             Inlet_TempD.TagName = "Inlet_TempD"
-            VibrationD.TagName = "VibrationD"
+            VibrationD.TagName = "VibD"
             TankTemp.TagName = "TankTemp"
             Load.TagName = "Load"
             Speed.TagName = "Speed"
@@ -1017,8 +1017,8 @@ Public Class ProjectCls
                     Bearings(i).BearingNo = i + 1
                     Bearings(i).Active = dt2.Rows(i).Item("Active")
                     Bearings(i).Failed = dt2.Rows(i).Item("Failed")
-                    Bearings(i).AddedTime = dt2.Rows(i).Item("AddedTime")
-                    Bearings(i).FailedTime = dt2.Rows(i).Item("FailedTime")
+                    If Not IsDBNull(dt2.Rows(i).Item("AddedTime")) Then Bearings(i).AddedTime = dt2.Rows(i).Item("AddedTime")
+                    If Not IsDBNull(dt2.Rows(i).Item("FailedTime")) Then Bearings(i).FailedTime = dt2.Rows(i).Item("FailedTime")
 
                 Next i
                 isParamDataAvailable = True ' The Data is available in the DB
@@ -1406,10 +1406,10 @@ Public Class ProjectCls
             SQLConnection.Close()
         End Try
 
-        If HeadA_Enable Then LogBearings("A", HeadA, StopReason, StatusTxt, BA.Value, SBA.Value, Inlet_TempA.Value, VibrationA.Value)
-        If HeadB_Enable Then LogBearings("B", HeadB, StopReason, StatusTxt, BB.Value, SBB.Value, Inlet_TempB.Value, VibrationB.Value)
-        If HeadC_Enable Then LogBearings("C", HeadC, StopReason, StatusTxt, BC.Value, SBC.Value, Inlet_TempC.Value, VibrationC.Value)
-        If HeadD_Enable Then LogBearings("D", HeadD, StopReason, StatusTxt, BD.Value, SBD.Value, Inlet_TempD.Value, VibrationD.Value)
+        If HeadA_Enable Then LogBearings("A", HeadA, StopReasonID, StatusTxt, BA.Value, SBA.Value, Inlet_TempA.Value, VibrationA.Value)
+        If HeadB_Enable Then LogBearings("B", HeadB, StopReasonID, StatusTxt, BB.Value, SBB.Value, Inlet_TempB.Value, VibrationB.Value)
+        If HeadC_Enable Then LogBearings("C", HeadC, StopReasonID, StatusTxt, BC.Value, SBC.Value, Inlet_TempC.Value, VibrationC.Value)
+        If HeadD_Enable Then LogBearings("D", HeadD, StopReasonID, StatusTxt, BD.Value, SBD.Value, Inlet_TempD.Value, VibrationD.Value)
 
     End Sub
 
@@ -1417,7 +1417,7 @@ Public Class ProjectCls
         Dim SQLConnection As New MySqlConnection(serv)
         Dim sqlCommand As New MySqlCommand()
 
-        sqlCommand.CommandText = "INSERT INTO datalogs" & HeadStr & "(`Status`,`StopReason`, `B`, `SB`, `Inlet_Temp`, `Vib`, `ProjectID`, `LogTime`  ) values (@sta,@stpRsn,@b,@sb,@it,@vib,@pid,@bno,@lgdt)"
+        sqlCommand.CommandText = "INSERT INTO datalogs_" & HeadStr & "(`Status`,`StopReason`, `B`, `SB`, `Inlet_Temp`, `Vib`, `ProjectID`,`BearingNo`, `LogTime`  ) values (@sta,@stpRsn,@b,@sb,@it,@vib,@pid,@bno,@lgdt)"
         sqlCommand.CommandType = CommandType.Text
         sqlCommand.Connection = SQLConnection
 
@@ -1717,7 +1717,7 @@ Public Class ProjectCls
             For i = 0 To 15
                 If oldArrWH1(i) <> newArrWH1(i) And newArrWH1(i) Then
                     LogAlarm(i + J)
-                    Debug.Print("Change in Warning High value with index-" & i + J)
+                    Debug.Print("Change in Warning Low value with index-" & i + J)
                 End If
                 If newArrWH1(i) Then oldArrWH1(i) = True
             Next
@@ -1841,7 +1841,7 @@ Public Class ProjectCls
         Dim sqlCommand As New MySqlCommand()
 
 
-        sqlCommand.CommandText = "INSERT INTO alarmlog (`AlarmID`, `LogTime`, `HeadName`, `MachineName`, `ProjectIDTxt` ) values (@alid,@logtm,@hn,@mn,@prjt)"
+        sqlCommand.CommandText = "INSERT INTO alarmlog (`AlarmID`, `LogTime`,  `ProjectIDTxt` ) values (@alid,@logtm,@prjt)"
         sqlCommand.CommandType = CommandType.Text
         sqlCommand.Connection = SQLConnection
 
@@ -1850,7 +1850,7 @@ Public Class ProjectCls
 
             sqlCommand.Parameters.AddWithValue("@alid", AlarmVal)
             sqlCommand.Parameters.AddWithValue("@logtm", Now)
-            sqlCommand.Parameters.AddWithValue("@prjt", ProjectIDTxt & "_" & HeadA & "_" & HeadB & "_" & HeadC & "_" & HeadD)
+            sqlCommand.Parameters.AddWithValue("@prjt", ProjectIDTxt)
 
             sqlCommand.ExecuteNonQuery()
 

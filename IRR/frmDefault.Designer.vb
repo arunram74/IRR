@@ -22,6 +22,7 @@ Partial Class frmDefault
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TransPicH1 = New IRR.TransPic()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.lblH1 = New System.Windows.Forms.Label()
         Me.lblBearingNoHA = New System.Windows.Forms.Label()
         Me.lblStatusH1 = New System.Windows.Forms.Label()
@@ -32,6 +33,7 @@ Partial Class frmDefault
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TransPicH2 = New IRR.TransPic()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.ledStopH2 = New IRR.Bulb.LedBulb()
         Me.ledLoadH2 = New IRR.Bulb.LedBulb()
         Me.ledIdleH2 = New IRR.Bulb.LedBulb()
@@ -42,6 +44,7 @@ Partial Class frmDefault
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TransPicH3 = New IRR.TransPic()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.ledStopH3 = New IRR.Bulb.LedBulb()
         Me.ledLoadH3 = New IRR.Bulb.LedBulb()
         Me.ledIdleH3 = New IRR.Bulb.LedBulb()
@@ -52,6 +55,7 @@ Partial Class frmDefault
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TransPicH4 = New IRR.TransPic()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.lblH3 = New System.Windows.Forms.Label()
         Me.lblBearingNoHD = New System.Windows.Forms.Label()
         Me.lblStatusH4 = New System.Windows.Forms.Label()
@@ -87,10 +91,6 @@ Partial Class frmDefault
         Me.lblMakeHA = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TmrRefresh = New System.Windows.Forms.Timer(Me.components)
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -114,7 +114,7 @@ Partial Class frmDefault
         Me.Panel1.Controls.Add(Me.ledIdleH1)
         Me.Panel1.Controls.Add(Me.ledRunH1)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Location = New System.Drawing.Point(383, 39)
+        Me.Panel1.Location = New System.Drawing.Point(84, 41)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(298, 144)
         Me.Panel1.TabIndex = 3
@@ -132,6 +132,17 @@ Partial Class frmDefault
         Me.TransPicH1.TabIndex = 10
         Me.TransPicH1.Tag = "MC1HA"
         Me.TransPicH1.Text = "TransPic1"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(28, 116)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(110, 24)
+        Me.Label16.TabIndex = 7
+        Me.Label16.Text = "Bearing No."
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblH1
         '
@@ -238,7 +249,7 @@ Partial Class frmDefault
         Me.Panel2.Controls.Add(Me.lblBearingNoHB)
         Me.Panel2.Controls.Add(Me.lblStatusH2)
         Me.Panel2.Controls.Add(Me.Label8)
-        Me.Panel2.Location = New System.Drawing.Point(726, 204)
+        Me.Panel2.Location = New System.Drawing.Point(400, 41)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(298, 142)
         Me.Panel2.TabIndex = 4
@@ -256,6 +267,17 @@ Partial Class frmDefault
         Me.TransPicH2.TabIndex = 11
         Me.TransPicH2.Tag = "MC1HB"
         Me.TransPicH2.Text = "TransPic1"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(28, 116)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(110, 24)
+        Me.Label17.TabIndex = 7
+        Me.Label17.Text = "Bearing No."
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ledStopH2
         '
@@ -362,7 +384,7 @@ Partial Class frmDefault
         Me.Panel3.Controls.Add(Me.lblH4)
         Me.Panel3.Controls.Add(Me.lblStatusH3)
         Me.Panel3.Controls.Add(Me.Label11)
-        Me.Panel3.Location = New System.Drawing.Point(383, 357)
+        Me.Panel3.Location = New System.Drawing.Point(266, 308)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(298, 145)
         Me.Panel3.TabIndex = 4
@@ -380,6 +402,17 @@ Partial Class frmDefault
         Me.TransPicH3.TabIndex = 11
         Me.TransPicH3.Tag = "MC2HB"
         Me.TransPicH3.Text = "TransPic1"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(28, 118)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(110, 24)
+        Me.Label19.TabIndex = 7
+        Me.Label19.Text = "Bearing No."
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ledStopH3
         '
@@ -486,7 +519,7 @@ Partial Class frmDefault
         Me.Panel4.Controls.Add(Me.ledIdleH4)
         Me.Panel4.Controls.Add(Me.ledRunH4)
         Me.Panel4.Controls.Add(Me.Label18)
-        Me.Panel4.Location = New System.Drawing.Point(26, 204)
+        Me.Panel4.Location = New System.Drawing.Point(583, 308)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(298, 142)
         Me.Panel4.TabIndex = 3
@@ -504,6 +537,17 @@ Partial Class frmDefault
         Me.TransPicH4.TabIndex = 10
         Me.TransPicH4.Tag = "MC2HA"
         Me.TransPicH4.Text = "TransPic1"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(28, 116)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(110, 24)
+        Me.Label15.TabIndex = 7
+        Me.Label15.Text = "Bearing No."
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblH3
         '
@@ -603,7 +647,7 @@ Partial Class frmDefault
         Me.Panel9.Controls.Add(Me.chkHeadD)
         Me.Panel9.Controls.Add(Me.Label1)
         Me.Panel9.Controls.Add(Me.Label2)
-        Me.Panel9.Location = New System.Drawing.Point(26, 346)
+        Me.Panel9.Location = New System.Drawing.Point(583, 450)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(298, 76)
         Me.Panel9.TabIndex = 18
@@ -644,7 +688,7 @@ Partial Class frmDefault
         Me.Panel6.Controls.Add(Me.chkHeadA)
         Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Controls.Add(Me.Label4)
-        Me.Panel6.Location = New System.Drawing.Point(383, 183)
+        Me.Panel6.Location = New System.Drawing.Point(84, 183)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(298, 76)
         Me.Panel6.TabIndex = 19
@@ -685,7 +729,7 @@ Partial Class frmDefault
         Me.Panel7.Controls.Add(Me.chkHeadB)
         Me.Panel7.Controls.Add(Me.Label5)
         Me.Panel7.Controls.Add(Me.Label7)
-        Me.Panel7.Location = New System.Drawing.Point(726, 346)
+        Me.Panel7.Location = New System.Drawing.Point(400, 183)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(298, 76)
         Me.Panel7.TabIndex = 20
@@ -727,7 +771,7 @@ Partial Class frmDefault
         Me.Panel8.Controls.Add(Me.chkHeadC)
         Me.Panel8.Controls.Add(Me.Label9)
         Me.Panel8.Controls.Add(Me.Label10)
-        Me.Panel8.Location = New System.Drawing.Point(383, 502)
+        Me.Panel8.Location = New System.Drawing.Point(266, 453)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(298, 76)
         Me.Panel8.TabIndex = 21
@@ -774,16 +818,16 @@ Partial Class frmDefault
         Me.Panel5.Controls.Add(Me.lblPartNoHA)
         Me.Panel5.Controls.Add(Me.lblMakeHA)
         Me.Panel5.Controls.Add(Me.Label14)
-        Me.Panel5.Location = New System.Drawing.Point(1085, 12)
+        Me.Panel5.Location = New System.Drawing.Point(999, 12)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(338, 584)
+        Me.Panel5.Size = New System.Drawing.Size(281, 584)
         Me.Panel5.TabIndex = 22
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(113, 526)
+        Me.Label12.Location = New System.Drawing.Point(93, 427)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(99, 24)
         Me.Label12.TabIndex = 351
@@ -793,7 +837,7 @@ Partial Class frmDefault
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(137, 334)
+        Me.Label13.Location = New System.Drawing.Point(117, 265)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(50, 24)
         Me.Label13.TabIndex = 352
@@ -808,10 +852,10 @@ Partial Class frmDefault
         Me.rndBtnRun.Font = New System.Drawing.Font("Webdings", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
         Me.rndBtnRun.ForeColor = System.Drawing.Color.ForestGreen
         Me.rndBtnRun.Image = Global.IRR.My.Resources.Resources.Head
-        Me.rndBtnRun.Location = New System.Drawing.Point(81, 171)
+        Me.rndBtnRun.Location = New System.Drawing.Point(80, 138)
         Me.rndBtnRun.Name = "rndBtnRun"
         Me.rndBtnRun.RecessDepth = 3
-        Me.rndBtnRun.Size = New System.Drawing.Size(162, 162)
+        Me.rndBtnRun.Size = New System.Drawing.Size(124, 124)
         Me.rndBtnRun.TabIndex = 349
         Me.rndBtnRun.Tag = "Run"
         Me.rndBtnRun.Text = Nothing
@@ -825,10 +869,10 @@ Partial Class frmDefault
         Me.rndBtnSuspend.BevelHeight = 2
         Me.rndBtnSuspend.Font = New System.Drawing.Font("Webdings", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
         Me.rndBtnSuspend.Image = Global.IRR.My.Resources.Resources.Head
-        Me.rndBtnSuspend.Location = New System.Drawing.Point(81, 362)
+        Me.rndBtnSuspend.Location = New System.Drawing.Point(80, 300)
         Me.rndBtnSuspend.Name = "rndBtnSuspend"
         Me.rndBtnSuspend.RecessDepth = 3
-        Me.rndBtnSuspend.Size = New System.Drawing.Size(162, 162)
+        Me.rndBtnSuspend.Size = New System.Drawing.Size(124, 124)
         Me.rndBtnSuspend.TabIndex = 350
         Me.rndBtnSuspend.Text = Nothing
         Me.rndBtnSuspend.UseVisualStyleBackColor = False
@@ -837,7 +881,7 @@ Partial Class frmDefault
         '
         Me.lblTestID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblTestID.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTestID.Location = New System.Drawing.Point(39, 33)
+        Me.lblTestID.Location = New System.Drawing.Point(22, 33)
         Me.lblTestID.Name = "lblTestID"
         Me.lblTestID.Size = New System.Drawing.Size(244, 28)
         Me.lblTestID.TabIndex = 347
@@ -848,7 +892,7 @@ Partial Class frmDefault
         '
         Me.lblCreateDtTimeHA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblCreateDtTimeHA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCreateDtTimeHA.Location = New System.Drawing.Point(39, 103)
+        Me.lblCreateDtTimeHA.Location = New System.Drawing.Point(22, 103)
         Me.lblCreateDtTimeHA.Name = "lblCreateDtTimeHA"
         Me.lblCreateDtTimeHA.Size = New System.Drawing.Size(244, 28)
         Me.lblCreateDtTimeHA.TabIndex = 348
@@ -859,7 +903,7 @@ Partial Class frmDefault
         '
         Me.lblPartNoHA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblPartNoHA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPartNoHA.Location = New System.Drawing.Point(166, 68)
+        Me.lblPartNoHA.Location = New System.Drawing.Point(149, 68)
         Me.lblPartNoHA.Name = "lblPartNoHA"
         Me.lblPartNoHA.Size = New System.Drawing.Size(117, 28)
         Me.lblPartNoHA.TabIndex = 346
@@ -870,7 +914,7 @@ Partial Class frmDefault
         '
         Me.lblMakeHA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblMakeHA.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMakeHA.Location = New System.Drawing.Point(39, 68)
+        Me.lblMakeHA.Location = New System.Drawing.Point(22, 68)
         Me.lblMakeHA.Name = "lblMakeHA"
         Me.lblMakeHA.Size = New System.Drawing.Size(117, 28)
         Me.lblMakeHA.TabIndex = 345
@@ -882,7 +926,7 @@ Partial Class frmDefault
         Me.Label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label14.Location = New System.Drawing.Point(12, 11)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(300, 555)
+        Me.Label14.Size = New System.Drawing.Size(262, 486)
         Me.Label14.TabIndex = 353
         '
         'TmrRefresh
@@ -890,54 +934,10 @@ Partial Class frmDefault
         Me.TmrRefresh.Enabled = True
         Me.TmrRefresh.Interval = 2000
         '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(28, 116)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(110, 24)
-        Me.Label15.TabIndex = 7
-        Me.Label15.Text = "Bearing No."
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(28, 116)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(110, 24)
-        Me.Label16.TabIndex = 7
-        Me.Label16.Text = "Bearing No."
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(28, 116)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(110, 24)
-        Me.Label17.TabIndex = 7
-        Me.Label17.Text = "Bearing No."
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(28, 118)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(110, 24)
-        Me.Label19.TabIndex = 7
-        Me.Label19.Text = "Bearing No."
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'frmDefault
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(1435, 644)
+        Me.ClientSize = New System.Drawing.Size(1275, 704)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)

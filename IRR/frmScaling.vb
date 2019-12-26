@@ -18,34 +18,45 @@ Public Class frmScaling
     End Sub
 
     Sub LoadValuesfromPLC()
-        txtSAB1.Text = myPLC.GetTagVal("BATemp_Scale")
-        txtIAB1.Text = myPLC.GetTagVal("BATemp_Intercept")
+        txtSBA.Text = myPLC.GetTagVal("BTempA_Scale")
+        txtIBA.Text = myPLC.GetTagVal("BTempA_Intercept")
 
-        txtSAB2.Text = myPLC.GetTagVal("BBTemp_Scale")
-        txtIAB2.Text = myPLC.GetTagVal("BBTemp_Intercept")
+        txtSBB.Text = myPLC.GetTagVal("BTempB_Scale")
+        txtIBB.Text = myPLC.GetTagVal("BTempB_Intercept")
 
-        txtSAB3.Text = myPLC.GetTagVal("BCTemp_Scale")
-        txtIAB3.Text = myPLC.GetTagVal("BCTemp_Intercept")
+        txtSBC.Text = myPLC.GetTagVal("BTempC_Scale")
+        txtIBC.Text = myPLC.GetTagVal("BTempC_Intercept")
 
-        txtSAB4.Text = myPLC.GetTagVal("BDTemp_Scale")
-        txtIAB4.Text = myPLC.GetTagVal("BDTemp_Intercept")
+        txtSBD.Text = myPLC.GetTagVal("BTempD_Scale")
+        txtIBD.Text = myPLC.GetTagVal("BTempD_Intercept")
+
+        txtSupSBA.Text = myPLC.GetTagVal("SBTempA_Scale")
+        txtSupIBA.Text = myPLC.GetTagVal("SBTempA_Intercept")
+
+        txtSupSBB.Text = myPLC.GetTagVal("SBTempB_Scale")
+        txtSupIBB.Text = myPLC.GetTagVal("SBTempB_Intercept")
+
+        txtSupSBC.Text = myPLC.GetTagVal("SBTempC_Scale")
+        txtSupIBC.Text = myPLC.GetTagVal("SBTempC_Intercept")
+
+        txtSupSBD.Text = myPLC.GetTagVal("SBTempD_Scale")
+        txtSupIBD.Text = myPLC.GetTagVal("SBTempD_Intercept")
+
+        txtSVibA.Text = myPLC.GetTagVal("VibA_Scale")
+        txtIVibA.Text = myPLC.GetTagVal("VibA_Intercept")
+
+        txtSVibB.Text = myPLC.GetTagVal("VibB_Scale")
+        txtIVibB.Text = myPLC.GetTagVal("VibB_Intercept")
+
+        txtSVibC.Text = myPLC.GetTagVal("VibC_Scale")
+        txtIVibC.Text = myPLC.GetTagVal("VibC_Intercept")
+
+        txtSVibD.Text = myPLC.GetTagVal("VibD_Scale")
+        txtIVibD.Text = myPLC.GetTagVal("VibD_Intercept")
 
 
-        txtSBB1.Text = myPLC.GetTagVal("VibA_Scale")
-        txtIBB1.Text = myPLC.GetTagVal("VibA_Intercept")
-
-        txtSBB2.Text = myPLC.GetTagVal("VibB_Scale")
-        txtIBB2.Text = myPLC.GetTagVal("VibB_Intercept")
-
-        txtSBB3.Text = myPLC.GetTagVal("VibC_Scale")
-        txtIBB3.Text = myPLC.GetTagVal("VibC_Intercept")
-
-        txtSBB4.Text = myPLC.GetTagVal("VibD_Scale")
-        txtIBB4.Text = myPLC.GetTagVal("VibD_Intercept")
-
-
-        txtSLOT.Text = myPLC.GetTagVal("InTankTemp_Scale")
-        txtILOT.Text = myPLC.GetTagVal("InTankTemp_Intercept")
+        txtSLOT.Text = myPLC.GetTagVal("Inlet_TempA_Scale")
+        txtILOT.Text = myPLC.GetTagVal("Inlet_TempA_Intercept")
 
         txtSTOT.Text = myPLC.GetTagVal("OutTankTemp_Scale")
         txtITOT.Text = myPLC.GetTagVal("OutTankTemp_Intercept")
@@ -71,34 +82,45 @@ Public Class frmScaling
     Sub SaveValuestoPLC()
 
         Try
-            myPLC.SetTagVal("BATempA_Scale", Convert.ToSingle(txtSAB1.Text))
-            myPLC.SetTagVal("BATempA_Intercept", Convert.ToSingle(txtIAB1.Text))
+            myPLC.SetTagVal("BTempA_Scale", Convert.ToSingle(txtSBA.Text))
+            myPLC.SetTagVal("BTempA_Intercept", Convert.ToSingle(txtIBA.Text))
 
-            myPLC.SetTagVal("BBTempA_Scale", Convert.ToSingle(txtSAB2.Text))
-            myPLC.SetTagVal("BBTempA_Intercept", Convert.ToSingle(txtIAB2.Text))
+            myPLC.SetTagVal("BTempB_Scale", Convert.ToSingle(txtSBB.Text))
+            myPLC.SetTagVal("BTempB_Intercept", Convert.ToSingle(txtIBB.Text))
 
-            myPLC.SetTagVal("BCTempA_Scale", Convert.ToSingle(txtSAB3.Text))
-            myPLC.SetTagVal("BCTempA_Intercept", Convert.ToSingle(txtIAB3.Text))
+            myPLC.SetTagVal("BTempC_Scale", Convert.ToSingle(txtSBC.Text))
+            myPLC.SetTagVal("BTempC_Intercept", Convert.ToSingle(txtIBC.Text))
 
-            myPLC.SetTagVal("BDTempA_Scale", Convert.ToSingle(txtSAB4.Text))
-            myPLC.SetTagVal("BDTempA_Intercept", Convert.ToSingle(txtIAB4.Text))
+            myPLC.SetTagVal("BTempD_Scale", Convert.ToSingle(txtSBD.Text))
+            myPLC.SetTagVal("BTempD_Intercept", Convert.ToSingle(txtIBD.Text))
+
+            myPLC.SetTagVal("SBTempA_Scale", Convert.ToSingle(txtSupSBA.Text))
+            myPLC.SetTagVal("SBTempA_Intercept", Convert.ToSingle(txtSupIBA.Text))
+
+            myPLC.SetTagVal("SBTempB_Scale", Convert.ToSingle(txtSupSBB.Text))
+            myPLC.SetTagVal("SBTempB_Intercept", Convert.ToSingle(txtSupIBB.Text))
+
+            myPLC.SetTagVal("SBTempC_Scale", Convert.ToSingle(txtSupSBC.Text))
+            myPLC.SetTagVal("SBTempC_Intercept", Convert.ToSingle(txtSupIBC.Text))
+
+            myPLC.SetTagVal("SBTempD_Scale", Convert.ToSingle(txtSupSBD.Text))
+            myPLC.SetTagVal("SBTempD_Intercept", Convert.ToSingle(txtSupIBD.Text))
+
+            myPLC.SetTagVal("VibA_Scale", Convert.ToSingle(txtSVibA.Text))
+            myPLC.SetTagVal("VibA_Intercept", Convert.ToSingle(txtIVibA.Text))
+
+            myPLC.SetTagVal("VibB_Scale", Convert.ToSingle(txtSVibB.Text))
+            myPLC.SetTagVal("VibB_Intercept", Convert.ToSingle(txtIVibB.Text))
+
+            myPLC.SetTagVal("VibC_Scale", Convert.ToSingle(txtSVibC.Text))
+            myPLC.SetTagVal("VibC_Intercept", Convert.ToSingle(txtIVibC.Text))
+
+            myPLC.SetTagVal("VibD_Scale", Convert.ToSingle(txtSVibD.Text))
+            myPLC.SetTagVal("VibD_Intercept", Convert.ToSingle(txtIVibD.Text))
 
 
-            myPLC.SetTagVal("VibA_Scale", Convert.ToSingle(txtSBB1.Text))
-            myPLC.SetTagVal("VibA_Intercept", Convert.ToSingle(txtIBB1.Text))
-
-            myPLC.SetTagVal("VibB_Scale", Convert.ToSingle(txtSBB2.Text))
-            myPLC.SetTagVal("VibB_Intercept", Convert.ToSingle(txtIBB2.Text))
-
-            myPLC.SetTagVal("VibC_Scale", Convert.ToSingle(txtSBB3.Text))
-            myPLC.SetTagVal("VibC_Intercept", Convert.ToSingle(txtIBB3.Text))
-
-            myPLC.SetTagVal("VibD_Scale", Convert.ToSingle(txtSBB4.Text))
-            myPLC.SetTagVal("VibD_Intercept", Convert.ToSingle(txtIBB4.Text))
-
-
-            myPLC.SetTagVal("InTankTemp_Scale", Convert.ToSingle(txtSLOT.Text))
-            myPLC.SetTagVal("InTankTemp_Intercept", Convert.ToSingle(txtILOT.Text))
+            myPLC.SetTagVal("Inlet_TempA_Scale", Convert.ToSingle(txtSLOT.Text))
+            myPLC.SetTagVal("Inlet_TempA_Intercept", Convert.ToSingle(txtILOT.Text))
 
             myPLC.SetTagVal("OutTankTemp_Scale", Convert.ToSingle(txtSTOT.Text))
             myPLC.SetTagVal("OutTankTemp_Intercept", Convert.ToSingle(txtITOT.Text))
@@ -136,44 +158,54 @@ Public Class frmScaling
         Dim constr As String = "SELECT * from scaling where StationNo=" & StationNo & " Order by idScaling "
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
 
-            txtSAB1.Text = dt1.Rows(0).Item("Slope")
-            txtIAB1.Text = dt1.Rows(0).Item("Intercept")
+            txtSBA.Text = dt1.Rows(0).Item("Slope")
+            txtIBA.Text = dt1.Rows(0).Item("Intercept")
 
-            txtSAB2.Text = dt1.Rows(1).Item("Slope")
-            txtIAB2.Text = dt1.Rows(1).Item("Intercept")
+            txtSBB.Text = dt1.Rows(1).Item("Slope")
+            txtIBB.Text = dt1.Rows(1).Item("Intercept")
 
-            txtSAB3.Text = dt1.Rows(2).Item("Slope")
-            txtIAB3.Text = dt1.Rows(2).Item("Intercept")
+            txtSBC.Text = dt1.Rows(2).Item("Slope")
+            txtIBC.Text = dt1.Rows(2).Item("Intercept")
 
-            txtSAB4.Text = dt1.Rows(3).Item("Slope")
-            txtIAB4.Text = dt1.Rows(3).Item("Intercept")
+            txtSBD.Text = dt1.Rows(3).Item("Slope")
+            txtIBD.Text = dt1.Rows(3).Item("Intercept")
+
+            txtSupSBA.Text = dt1.Rows(4).Item("Slope")
+            txtSupIBA.Text = dt1.Rows(4).Item("Intercept")
+
+            txtSupSBB.Text = dt1.Rows(5).Item("Slope")
+            txtSupIBB.Text = dt1.Rows(5).Item("Intercept")
+
+            txtSupSBC.Text = dt1.Rows(6).Item("Slope")
+            txtSupIBC.Text = dt1.Rows(6).Item("Intercept")
+
+            txtSupSBD.Text = dt1.Rows(7).Item("Slope")
+            txtSupIBD.Text = dt1.Rows(7).Item("Intercept")
+
+            txtSVibA.Text = dt1.Rows(8).Item("Slope")
+            txtIVibA.Text = dt1.Rows(8).Item("Intercept")
+
+            txtSVibB.Text = dt1.Rows(9).Item("Slope")
+            txtIVibB.Text = dt1.Rows(9).Item("Intercept")
+
+            txtSVibC.Text = dt1.Rows(10).Item("Slope")
+            txtIVibC.Text = dt1.Rows(10).Item("Intercept")
+
+            txtSVibD.Text = dt1.Rows(11).Item("Slope")
+            txtIVibD.Text = dt1.Rows(11).Item("Intercept")
 
 
+            txtSLOT.Text = dt1.Rows(12).Item("Slope")
+            txtILOT.Text = dt1.Rows(12).Item("Intercept")
 
-            txtSBB1.Text = dt1.Rows(4).Item("Slope")
-            txtIBB1.Text = dt1.Rows(4).Item("Intercept")
+            txtSTOT.Text = dt1.Rows(13).Item("Slope")
+            txtITOT.Text = dt1.Rows(13).Item("Intercept")
 
-            txtSBB2.Text = dt1.Rows(5).Item("Slope")
-            txtIBB2.Text = dt1.Rows(5).Item("Intercept")
+            txtSLd.Text = dt1.Rows(14).Item("Slope")
+            txtILd.Text = dt1.Rows(14).Item("Intercept")
 
-            txtSBB3.Text = dt1.Rows(6).Item("Slope")
-            txtIBB3.Text = dt1.Rows(6).Item("Intercept")
-
-            txtSBB4.Text = dt1.Rows(7).Item("Slope")
-            txtIBB4.Text = dt1.Rows(7).Item("Intercept")
-
-
-            txtSLOT.Text = dt1.Rows(8).Item("Slope")
-            txtILOT.Text = dt1.Rows(8).Item("Intercept")
-
-            txtSTOT.Text = dt1.Rows(9).Item("Slope")
-            txtITOT.Text = dt1.Rows(9).Item("Intercept")
-
-            txtSLd.Text = dt1.Rows(10).Item("Slope")
-            txtILd.Text = dt1.Rows(10).Item("Intercept")
-
-            txtSSpeed.Text = dt1.Rows(11).Item("Slope")
-            txtISpeed.Text = dt1.Rows(11).Item("Intercept")
+            txtSSpeed.Text = dt1.Rows(15).Item("Slope")
+            txtISpeed.Text = dt1.Rows(15).Item("Intercept")
 
 
 
@@ -224,47 +256,84 @@ Public Class frmScaling
 
     End Sub
 
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+
+    End Sub
+
+    Private Sub Label23_Click(sender As Object, e As EventArgs) Handles Label23.Click
+
+    End Sub
+
+    Private Sub Label26_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtSupSBB.TextChanged
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtSupSBA.TextChanged
+
+    End Sub
+
+    Private Sub Label30_Click(sender As Object, e As EventArgs) Handles Label30.Click
+
+    End Sub
+
     Sub SaveValuestoDB()
         Dim constr As String = "SELECT * from scaling where StationNo=" & StationNo & " Order by idScaling "
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             Try
-                dt1.Rows(0).Item("Slope") = txtSAB1.Text
-                dt1.Rows(0).Item("Intercept") = txtIAB1.Text
+                dt1.Rows(0).Item("Slope") = txtSBA.Text
+                dt1.Rows(0).Item("Intercept") = txtIBA.Text
 
-                dt1.Rows(1).Item("Slope") = txtSAB2.Text
-                dt1.Rows(1).Item("Intercept") = txtIAB2.Text
+                dt1.Rows(1).Item("Slope") = txtSBB.Text
+                dt1.Rows(1).Item("Intercept") = txtIBB.Text
 
-                dt1.Rows(2).Item("Slope") = txtSAB3.Text
-                dt1.Rows(2).Item("Intercept") = txtIAB3.Text
+                dt1.Rows(2).Item("Slope") = txtSBC.Text
+                dt1.Rows(2).Item("Intercept") = txtIBC.Text
 
-                dt1.Rows(3).Item("Slope") = txtSAB4.Text
-                dt1.Rows(3).Item("Intercept") = txtIAB4.Text
+                dt1.Rows(3).Item("Slope") = txtSBD.Text
+                dt1.Rows(3).Item("Intercept") = txtIBD.Text
+
+
+                dt1.Rows(4).Item("Slope") = txtSupSBA.Text
+                dt1.Rows(4).Item("Intercept") = txtSupIBA.Text
+
+                dt1.Rows(5).Item("Slope") = txtSupSBB.Text
+                dt1.Rows(5).Item("Intercept") = txtSupIBB.Text
+
+                dt1.Rows(6).Item("Slope") = txtSupSBC.Text
+                dt1.Rows(6).Item("Intercept") = txtSupIBC.Text
+
+                dt1.Rows(7).Item("Slope") = txtSupSBD.Text
+                dt1.Rows(7).Item("Intercept") = txtSupIBD.Text
 
 
 
-                dt1.Rows(4).Item("Slope") = txtSBB1.Text
-                dt1.Rows(4).Item("Intercept") = txtIBB1.Text
+                dt1.Rows(8).Item("Slope") = txtSVibA.Text
+                dt1.Rows(8).Item("Intercept") = txtIVibA.Text
 
-                dt1.Rows(5).Item("Slope") = txtSBB2.Text
-                dt1.Rows(5).Item("Intercept") = txtIBB2.Text
+                dt1.Rows(9).Item("Slope") = txtSVibB.Text
+                dt1.Rows(9).Item("Intercept") = txtIVibB.Text
 
-                dt1.Rows(6).Item("Slope") = txtSBB3.Text
-                dt1.Rows(6).Item("Intercept") = txtIBB3.Text
+                dt1.Rows(10).Item("Slope") = txtSVibC.Text
+                dt1.Rows(10).Item("Intercept") = txtIVibC.Text
 
-                dt1.Rows(7).Item("Slope") = txtSBB4.Text
-                dt1.Rows(7).Item("Intercept") = txtIBB4.Text
+                dt1.Rows(11).Item("Slope") = txtSVibD.Text
+                dt1.Rows(11).Item("Intercept") = txtIVibD.Text
 
-                dt1.Rows(8).Item("Slope") = txtSLOT.Text
-                dt1.Rows(8).Item("Intercept") = txtILOT.Text
+                dt1.Rows(12).Item("Slope") = txtSLOT.Text
+                dt1.Rows(12).Item("Intercept") = txtILOT.Text
 
-                dt1.Rows(9).Item("Slope") = txtSTOT.Text
-                dt1.Rows(9).Item("Intercept") = txtITOT.Text
+                dt1.Rows(13).Item("Slope") = txtSTOT.Text
+                dt1.Rows(13).Item("Intercept") = txtITOT.Text
 
-                dt1.Rows(10).Item("Slope") = txtSLd.Text
-                dt1.Rows(10).Item("Intercept") = txtILd.Text
+                dt1.Rows(14).Item("Slope") = txtSLd.Text
+                dt1.Rows(14).Item("Intercept") = txtILd.Text
 
-                dt1.Rows(11).Item("Slope") = txtSSpeed.Text
-                dt1.Rows(11).Item("Intercept") = txtISpeed.Text
+                dt1.Rows(15).Item("Slope") = txtSSpeed.Text
+                dt1.Rows(15).Item("Intercept") = txtISpeed.Text
 
 
 
