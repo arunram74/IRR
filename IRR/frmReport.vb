@@ -13,6 +13,7 @@ Public Class frmReport
     Dim PrjIdFilter As String
     Dim McFilter As String
     Dim PrjStatusFilter As String
+    Dim HeadNameFilter As String
 
     Sub UpdateFilters()
 
@@ -35,8 +36,7 @@ Public Class frmReport
 
         If cmbPrjt.SelectedValue = 0 Then PrjIdFilter = "ProjectID" Else PrjIdFilter = cmbPrjt.SelectedValue
         If cmbPrjStatus.SelectedValue = 0 Then PrjStatusFilter = "Status" Else PrjStatusFilter = cmbPrjStatus.SelectedValue
-        If cmbMachine.Text = "ALL" Then McFilter = "MachineName" Else McFilter = "'" & cmbMachine.Text & "'"
-
+        HeadNameFilter = cmbHead.Text.ToLower
     End Sub
 
     Private Sub btnDataLogs_Click(sender As Object, e As EventArgs) Handles btnDataLogs.Click
@@ -48,8 +48,8 @@ Public Class frmReport
             MessageBox.Show("Please select a Project", "Run Report", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
-
-        Dim constr As String = "SELECT LogTime,Status,  BearingTemp1, BearingTemp2, BearingTemp3, BearingTemp4, LubOilTemp, TankOilTemp, Vibration, Speed, Load1, Revolutions, NoOfHours, HeadName, MachineName, Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID where ( Logtime Between '" & StartDate & "' and '" & EndDate & "') and ProjectID=" & PrjIdFilter & " and Status=" & PrjStatusFilter & " and MachineName=" & McFilter & " order by idDataLogs"
+        If PrjStatusFilter = "Status" Then PrjStatusFilter = "datalogs.Status"
+        Dim constr As String = "SELECT datalogs.LogTime,datalogs.Status, TankOilTemp, Speed, Load1, Revolutions, NoOfHours, datalogs_" & HeadNameFilter & ".B , datalogs_" & HeadNameFilter & ".SB, datalogs_" & HeadNameFilter & ".Inlet_Temp, datalogs_" & HeadNameFilter & ".Vib, datalogs_" & HeadNameFilter & ".BearingNo,  Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where ( datalogs.Logtime Between '" & StartDate & "' and '" & EndDate & "') and datalogs.ProjectID=" & PrjIdFilter & " and datalogs.Status=" & PrjStatusFilter & " order by idDataLogs"
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             WriteDataTable(dt1, Templatepath & "test.csv", True)
             Viewer.CsvFilePath = Templatepath & "test.csv"
@@ -64,12 +64,11 @@ Public Class frmReport
     End Sub
 
     Private Sub frmReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cmbMachine.Items.Clear()
-        cmbMachine.Items.Add("ALL")
-        cmbMachine.Items.Add(My.Settings("MC1Size"))
-        cmbMachine.Items.Add(My.Settings("MC2Size"))
-        cmbMachine.Items.Add(My.Settings("MC3Size"))
-        cmbMachine.Items.Add(My.Settings("MC4Size"))
+        cmbHead.Items.Clear()
+        cmbHead.Items.Add("A")
+        cmbHead.Items.Add("B")
+        cmbHead.Items.Add("C")
+        cmbHead.Items.Add("D")
 
         UpdateTemplateList()
     End Sub
@@ -78,16 +77,16 @@ Public Class frmReport
 
         UpdateFilters()
 
-        If McFilter = "MachineName" Then
-            MessageBox.Show("Please select a Machine", "Utility", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Exit Sub
-        End If
+        'If McFilter = "MachineName" Then
+        '    MessageBox.Show("Please select a Machine", "Utility", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    Exit Sub
+        'End If
 
         Dim StartTime, EndTime As DateTime
         Dim RunTime, StopTime, TotalTime As TimeSpan
         Dim PrevOperation As String = "STRT"
         Dim provider As CultureInfo = CultureInfo.InvariantCulture
-        Dim constr As String = "SELECT  DateandTime, Machine, Head, Concat(ProjectIDTxt,'_',B1Name,'_',B2Name,'_',B3Name,'_',B4Name) as Project, Operation, reasondb.reasontxt as Reason From utility inner join  reasondb on utility.ReasonID=reasondb.reasonID  where ( DateandTime Between '" & StartDate & "' and '" & EndDate & "') and Machine=" & McFilter & " Order by DateandTime"
+        Dim constr As String = "SELECT  DateandTime, ProjectIDTxt as Project, Operation, reasondb.reasontxt as Reason From utility inner join  reasondb on utility.ReasonID=reasondb.reasonID  where ( DateandTime Between '" & StartDate & "' and '" & EndDate & "')  Order by DateandTime"
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             If dt1.Rows.Count > 0 Then
                 If dt1.Rows(0).Item("Operation") <> "STRT" Then StartTime = DateTime.ParseExact(StartDate, "yyyy-MM-dd HH:mm:ss", provider) 'if the mahine was already running at the start date specified
@@ -124,7 +123,7 @@ Public Class frmReport
                 File.AppendAllText(Templatepath & "test.csv", "Total Run Time ," & RunTime.Hours + RunTime.Days * 24 & "," & RunTime.Minutes & "," & RunTime.Seconds & " " & vbCrLf)
                 File.AppendAllText(Templatepath & "test.csv", "Total Stop Time ," & StopTime.Hours + StopTime.Days * 24 & "," & StopTime.Minutes & "," & StopTime.Seconds & " " & vbCrLf)
                 File.AppendAllText(Templatepath & "test.csv", "Total Time ," & TotalTime.Hours + TotalTime.Days * 24 & "," & TotalTime.Minutes & "," & TotalTime.Seconds & " " & vbCrLf)
-                Viewer.SaveAsFileName = "Utilities_" & cmbMachine.Text
+                Viewer.SaveAsFileName = "Utilities_" & cmbHead.Text
                 Viewer.Text = "Machine Utilities"
                 If Viewer.ShowDialog() = Windows.Forms.DialogResult.OK Then
                     ' MsgBox(frmOpenExistingPrj.PrjName)
@@ -153,48 +152,43 @@ Public Class frmReport
         Dim constr As String = "Select * from Project where ProjectID=" & PrjIdFilter
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             If dt1.Rows.Count > 0 Then
-                File.AppendAllText(Filepath, "ProjectID-," & dt1.Rows(0).Item("ProjectIDTxt") & "_" & dt1.Rows(0).Item("B1Name") & "_" & dt1.Rows(0).Item("B2Name") & "_" & dt1.Rows(0).Item("B3Name") & "_" & dt1.Rows(0).Item("B4Name") & vbCrLf)
+                File.AppendAllText(Filepath, "ProjectID-," & dt1.Rows(0).Item("ProjectIDTxt") & vbCrLf)
                 File.AppendAllText(Filepath, "Owner-," & dt1.Rows(0).Item("Owner") & vbCrLf)
-                File.AppendAllText(Filepath, "Bearing Count-," & dt1.Rows(0).Item("BearingCount") & vbCrLf)
                 File.AppendAllText(Filepath, "Project Name-," & dt1.Rows(0).Item("ProjectName") & vbCrLf)
-                File.AppendAllText(Filepath, "Cup-," & dt1.Rows(0).Item("CupNo") & vbCrLf)
-                File.AppendAllText(Filepath, "Cone-," & dt1.Rows(0).Item("ConeNo") & vbCrLf)
-                File.AppendAllText(Filepath, "Test Type-," & dt1.Rows(0).Item("TestType") & vbCrLf)
-                File.AppendAllText(Filepath, "Bearing Type-," & dt1.Rows(0).Item("BearingType") & vbCrLf)
-                File.AppendAllText(Filepath, "Machine Size-," & dt1.Rows(0).Item("MachineSize") & vbCrLf)
-                File.AppendAllText(Filepath, "PV No-," & dt1.Rows(0).Item("PVNo") & vbCrLf)
+                File.AppendAllText(Filepath, "Make-," & dt1.Rows(0).Item("Make") & vbCrLf)
+                File.AppendAllText(Filepath, "PartNo-," & dt1.Rows(0).Item("PartNo") & vbCrLf)
                 File.AppendAllText(Filepath, "," & vbCrLf)
                 File.AppendAllText(Filepath, "," & vbCrLf)
             End If
         End If
 
 
-        File.AppendAllText(Filepath, "Parameters, BearingTemp1, BearingTemp2, BearingTemp3, BearingTemp4, LubOilTemp, TankOilTemp, Vibration, Speed, Load1 " & vbCrLf)
+        File.AppendAllText(Filepath, "Parameters, BearingTemp, SupBearTemp, InletTemp, Vibration, TankOilTemp, Speed, Load1 " & vbCrLf)
 
         'Max Value for Load
-        constr = "SELECT  Max(BearingTemp1) , Max(BearingTemp2) , Max(BearingTemp3) , Max(BearingTemp4) , Max(LubOilTemp) , Max(TankOilTemp), Max(Vibration) , Max(Speed), Max(Load1) FROM datalogs where Status='LOAD'and ProjectID=" & PrjIdFilter
+        constr = "SELECT  Max(datalogs_" & HeadNameFilter & ".B) , Max(datalogs_" & HeadNameFilter & ".SB) , Max(datalogs_" & HeadNameFilter & ".Inlet_Temp) , Max(datalogs_" & HeadNameFilter & ".Vib) ,  Max(TankOilTemp),  Max(Speed), Max(Load1) FROM datalogs inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where  datalogs.Status='LOAD'and datalogs.ProjectID=" & PrjIdFilter
         WritetoFile(Filepath, "Max Values(Loading)", constr)
 
         'Average Value for Load
-        constr = "SELECT  Avg(BearingTemp1) , Avg(BearingTemp2) , Avg(BearingTemp3) , Avg(BearingTemp4) , Avg(LubOilTemp) , Avg(TankOilTemp), Avg(Vibration) , Avg(Speed), Avg(Load1) FROM datalogs where Status='LOAD' and ProjectID=" & PrjIdFilter
+        constr = "SELECT  Avg(datalogs_" & HeadNameFilter & ".B) , Avg(datalogs_" & HeadNameFilter & ".SB) , Avg(datalogs_" & HeadNameFilter & ".Inlet_Temp) , Avg(datalogs_" & HeadNameFilter & ".Vib) ,  Avg(TankOilTemp), Avg(Speed), Avg(Load1) FROM datalogs inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where datalogs.Status='LOAD' and datalogs.ProjectID=" & PrjIdFilter
         WritetoFile(Filepath, "Average Values", constr)
         File.AppendAllText(Filepath, "," & vbCrLf)
 
         'Max Value for Run
-        constr = "SELECT  Max(BearingTemp1) , Max(BearingTemp2) , Max(BearingTemp3) , Max(BearingTemp4) , Max(LubOilTemp) , Max(TankOilTemp), Max(Vibration) , Max(Speed), Max(Load1) FROM datalogs where Status='RUN ' and ProjectID=" & PrjIdFilter
+        constr = "SELECT  Max(datalogs_" & HeadNameFilter & ".B) , Max(datalogs_" & HeadNameFilter & ".SB) , Max(datalogs_" & HeadNameFilter & ".Inlet_Temp) , Max(datalogs_" & HeadNameFilter & ".Vib) ,  Max(TankOilTemp), Max(Speed), Max(Load1) FROM datalogs inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where datalogs.Status='RUN ' and datalogs.ProjectID=" & PrjIdFilter
         WritetoFile(Filepath, "Max Values(Running)", constr)
 
         'Average Value for Run
-        constr = "SELECT  Avg(BearingTemp1) , Avg(BearingTemp2) , Avg(BearingTemp3) , Avg(BearingTemp4) , Avg(LubOilTemp) , Avg(TankOilTemp), Avg(Vibration) , Avg(Speed), Avg(Load1) FROM datalogs where Status='RUN ' and ProjectID=" & PrjIdFilter
+        constr = "SELECT  Avg(datalogs_" & HeadNameFilter & ".B) , Avg(datalogs_" & HeadNameFilter & ".SB) , Avg(datalogs_" & HeadNameFilter & ".Inlet_Temp) , Avg(datalogs_" & HeadNameFilter & ".Vib) ,  Avg(TankOilTemp),  Avg(Speed), Avg(Load1) FROM datalogs inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where datalogs.Status='RUN ' and datalogs.ProjectID=" & PrjIdFilter
         WritetoFile(Filepath, "Average Values", constr)
         File.AppendAllText(Filepath, "," & vbCrLf)
 
         'Max Value for Total
-        constr = "SELECT  Max(BearingTemp1) , Max(BearingTemp2) , Max(BearingTemp3) , Max(BearingTemp4) , Max(LubOilTemp) , Max(TankOilTemp), Max(Vibration) , Max(Speed), Max(Load1) FROM datalogs Where (Status='RUN ' or Status='LOAD') and ProjectID=" & PrjIdFilter
+        constr = "SELECT  Max(datalogs_" & HeadNameFilter & ".B) , Max(datalogs_" & HeadNameFilter & ".SB) , Max(datalogs_" & HeadNameFilter & ".Inlet_Temp) , Max(datalogs_" & HeadNameFilter & ".Vib) , Max(TankOilTemp),  Max(Speed), Max(Load1) FROM datalogs inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime Where (datalogs.Status='RUN ' or datalogs.Status='LOAD') and datalogs.ProjectID=" & PrjIdFilter
         WritetoFile(Filepath, "Max Values(Total)", constr)
 
         'Average Value for Total
-        constr = "SELECT  Avg(BearingTemp1) , Avg(BearingTemp2) , Avg(BearingTemp3) , Avg(BearingTemp4) , Avg(LubOilTemp) , Avg(TankOilTemp), Avg(Vibration) , Avg(Speed), Avg(Load1) FROM datalogs Where (Status='RUN ' or Status='LOAD') and ProjectID=" & PrjIdFilter
+        constr = "SELECT  Avg(datalogs_" & HeadNameFilter & ".B) , Avg(datalogs_" & HeadNameFilter & ".SB) , Avg(datalogs_" & HeadNameFilter & ".Inlet_Temp) , Avg(datalogs_" & HeadNameFilter & ".Vib) , Avg(TankOilTemp),  Avg(Speed), Avg(Load1) FROM datalogs inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime Where (datalogs.Status='RUN ' or datalogs.Status='LOAD') and datalogs.ProjectID=" & PrjIdFilter
         WritetoFile(Filepath, "Average Values", constr)
 
         Viewer.SaveAsFileName = "RunReport_" & cmbPrjt.Text
@@ -207,7 +201,7 @@ Public Class frmReport
 
     End Sub
 
-    Private Sub cmbMachine_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMachine.SelectedIndexChanged
+    Private Sub cmbMachine_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbHead.SelectedIndexChanged
 
     End Sub
 
@@ -249,7 +243,7 @@ Public Class frmReport
 
         Dim strarr() = cmbPrjt.Text.Split("_"c)
 
-        Dim constr As String = "SELECT DateandTime, reasondb.reasontxt as Status, Machine, Head, ProjectIDTxt, Operation From utility inner join  reasondb on utility.reasonID=reasondb.reasonid  where ProjectIDtxt='" & strarr(0) & "' and Operation<> 'STRT' Order by DateandTime"
+        Dim constr As String = "SELECT DateandTime, reasondb.reasontxt as Status, ProjectIDTxt, Operation From utility inner join  reasondb on utility.reasonID=reasondb.reasonid  where ProjectIDtxt='" & strarr(0) & "' and Operation<> 'STRT' Order by DateandTime"
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             WriteDataTable(dt1, Templatepath & "test.csv", True)
             Viewer.CsvFilePath = Templatepath & "test.csv"
@@ -267,7 +261,7 @@ Public Class frmReport
     Sub UpdateTemplateList()
 
 
-        Dim constr As String = "SELECT Concat(ProjectIDTxt,'_',B1Name,'_',B2Name,'_',B3Name,'_',B4Name) as ProjectIDTxt, ProjectID from Project  Order by ProjectID"
+        Dim constr As String = "SELECT ProjectIDTxt, ProjectID from Project  Order by ProjectID"
         If GetDataMySQL(con, adp, ds, dt2, False, constr) Then
             Dim dr As DataRow = dt2.NewRow
             dr("ProjectIDTxt") = "ALL"
@@ -297,7 +291,7 @@ Public Class frmReport
 
         cmbPrjStatus.Refresh()
 
-        cmbMachine.SelectedIndex = 0
+        cmbHead.SelectedIndex = 0
     End Sub
 
 End Class

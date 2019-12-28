@@ -58,8 +58,8 @@ Public Class frmScaling
         txtSLOT.Text = myPLC.GetTagVal("Inlet_TempA_Scale")
         txtILOT.Text = myPLC.GetTagVal("Inlet_TempA_Intercept")
 
-        txtSTOT.Text = myPLC.GetTagVal("OutTankTemp_Scale")
-        txtITOT.Text = myPLC.GetTagVal("OutTankTemp_Intercept")
+        txtSTOT.Text = myPLC.GetTagVal("TankTemp_Scale")
+        txtITOT.Text = myPLC.GetTagVal("TankTemp_Intercept")
 
 
 
@@ -122,8 +122,8 @@ Public Class frmScaling
             myPLC.SetTagVal("Inlet_TempA_Scale", Convert.ToSingle(txtSLOT.Text))
             myPLC.SetTagVal("Inlet_TempA_Intercept", Convert.ToSingle(txtILOT.Text))
 
-            myPLC.SetTagVal("OutTankTemp_Scale", Convert.ToSingle(txtSTOT.Text))
-            myPLC.SetTagVal("OutTankTemp_Intercept", Convert.ToSingle(txtITOT.Text))
+            myPLC.SetTagVal("TankTemp_Scale", Convert.ToSingle(txtSTOT.Text))
+            myPLC.SetTagVal("TankTemp_Intercept", Convert.ToSingle(txtITOT.Text))
 
 
 

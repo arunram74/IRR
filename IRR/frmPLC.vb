@@ -57,7 +57,7 @@ Public Class frmPLC
         lblInlet_TempD.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("Inlet_TempD_ActVal"))
 
 
-        lblOT.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("OutTankTemp_actVal"))
+        lblOT.Text = String.Format("{0:n2}", Station.MC.PLC.GetTagVal("TankTemp_actVal"))
 
 
         Stn1.On = PLCStations(1).IsStnAvailable

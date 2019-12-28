@@ -36,7 +36,7 @@ Partial Class frmReport
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btStopReason = New System.Windows.Forms.Button()
         Me.btnLubOilTemp = New System.Windows.Forms.Button()
-        Me.cmbMachine = New System.Windows.Forms.ComboBox()
+        Me.cmbHead = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.chkDate = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -215,16 +215,16 @@ Partial Class frmReport
         Me.btnLubOilTemp.Text = "Lube Oil Temp..."
         Me.btnLubOilTemp.UseVisualStyleBackColor = True
         '
-        'cmbMachine
+        'cmbHead
         '
-        Me.cmbMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbMachine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbMachine.FormattingEnabled = True
-        Me.cmbMachine.Items.AddRange(New Object() {"ALL", "5.1", "5.2", "5.3", "5.4"})
-        Me.cmbMachine.Location = New System.Drawing.Point(641, 66)
-        Me.cmbMachine.Name = "cmbMachine"
-        Me.cmbMachine.Size = New System.Drawing.Size(174, 28)
-        Me.cmbMachine.TabIndex = 3
+        Me.cmbHead.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbHead.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbHead.FormattingEnabled = True
+        Me.cmbHead.Items.AddRange(New Object() {"ALL", "A", "B", "C", "D"})
+        Me.cmbHead.Location = New System.Drawing.Point(641, 66)
+        Me.cmbHead.Name = "cmbHead"
+        Me.cmbHead.Size = New System.Drawing.Size(174, 28)
+        Me.cmbHead.TabIndex = 3
         '
         'Label4
         '
@@ -233,7 +233,7 @@ Partial Class frmReport
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(126, 32)
         Me.Label4.TabIndex = 361
-        Me.Label4.Text = "Machine No"
+        Me.Label4.Text = "Head No"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'chkDate
@@ -252,7 +252,7 @@ Partial Class frmReport
         'frmReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(1435, 644)
+        Me.ClientSize = New System.Drawing.Size(1275, 704)
         Me.Controls.Add(Me.chkDate)
         Me.Controls.Add(Me.btnLubOilTemp)
         Me.Controls.Add(Me.btStopReason)
@@ -266,7 +266,7 @@ Partial Class frmReport
         Me.Controls.Add(Me.cmbPrjStatus)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label57)
-        Me.Controls.Add(Me.cmbMachine)
+        Me.Controls.Add(Me.cmbHead)
         Me.Controls.Add(Me.cmbPrjt)
         Me.Controls.Add(Me.btnRunReport)
         Me.Controls.Add(Me.btnUtility)
@@ -298,7 +298,7 @@ Partial Class frmReport
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btStopReason As Button
     Friend WithEvents btnLubOilTemp As Button
-    Friend WithEvents cmbMachine As ComboBox
+    Friend WithEvents cmbHead As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents chkDate As CheckBox
 End Class

@@ -184,7 +184,7 @@ Public Class frmCharts
 
             lblLoadAvg.Text = ""
             lblSpeedAvg.Text = ""
-            lblInTankAvg.Text = ""
+            '        lblInTankAvg.Text = ""
             lblOutOilAvg.Text = ""
         End If
 
@@ -223,7 +223,7 @@ Public Class frmCharts
 
         UpdateRows(Station.MC.myProj.Speed, lblSpd, lblSpdSH, lblSpdSL, lblSpdWH, lblSpdWL)
         UpdateRows(Station.MC.myProj.Load, lblLd, lblLdSH, lblLdSL, lblLdWH, lblLdWL)
-
+        UpdateRows(Station.MC.myProj.TankTemp, lblOT, lblOTSH, lblOTSL, lblOTWH, lblOTWL)
 
 
 
@@ -248,7 +248,7 @@ Public Class frmCharts
         'If Station.MC.myProj.Inlet_TempA.Bypass Then lblLub.BackColor = Color.WhiteSmoke
 
 
-        UpdateRows(Station.MC.myProj.TankTemp, lblOT, lblOTSH, lblOTSL, lblOTWH, lblOTWL)
+        'UpdateRows(Station.MC.myProj.TankTemp, lblOT, lblOTSH, lblOTSL, lblOTWH, lblOTWL)
 
 
 
@@ -265,9 +265,10 @@ Public Class frmCharts
         lblLife.Text = String.Format("{0:n2}", Station.MC.myProj.CurrentLife)
         lblRev.Text = String.Format("{0:n4}", Station.MC.myProj.CurrRev)
         UpdateStatus()
-        txtITTSP.Text = Station.MC.myProj.Inlet_TempA.Setpoint
-
-
+        lblITTSP.Text = Station.MC.myProj.TankTemp.Setpoint
+        lblSpdSet.Text = Station.MC.myProj.Speed.Setpoint
+        lblLdSet.Text = Station.MC.myProj.CurrentLoad
+        lblOT.Text = Station.MC.myProj.TankTemp.Value
     End Sub
 
     Private Sub UpdateRows(val As SingleLimits, lblVal As Label, lblSH As Label, lblSL As Label, lblWH As Label, lblWL As Label)

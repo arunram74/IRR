@@ -20,21 +20,21 @@ Partial Class frmCharts
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend10 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.chrtVib = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.lblChartTitle = New System.Windows.Forms.Label()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
@@ -111,8 +111,6 @@ Partial Class frmCharts
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label115 = New System.Windows.Forms.Label()
         Me.lblOutOilAvg = New System.Windows.Forms.Label()
-        Me.Label117 = New System.Windows.Forms.Label()
-        Me.lblInTankAvg = New System.Windows.Forms.Label()
         Me.Label119 = New System.Windows.Forms.Label()
         Me.lblLoadAvg = New System.Windows.Forms.Label()
         Me.Label121 = New System.Windows.Forms.Label()
@@ -143,7 +141,7 @@ Partial Class frmCharts
         Me.Label143 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtITTSP = New System.Windows.Forms.Label()
+        Me.lblITTSP = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblSpdSet = New System.Windows.Forms.Label()
         Me.lblVibWH = New System.Windows.Forms.Label()
@@ -190,16 +188,16 @@ Partial Class frmCharts
         '
         'chrtVib
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.chrtVib.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.chrtVib.Legends.Add(Legend1)
+        ChartArea6.Name = "ChartArea1"
+        Me.chrtVib.ChartAreas.Add(ChartArea6)
+        Legend6.Name = "Legend1"
+        Me.chrtVib.Legends.Add(Legend6)
         Me.chrtVib.Location = New System.Drawing.Point(21, 28)
         Me.chrtVib.Name = "chrtVib"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.chrtVib.Series.Add(Series1)
+        Series6.ChartArea = "ChartArea1"
+        Series6.Legend = "Legend1"
+        Series6.Name = "Series1"
+        Me.chrtVib.Series.Add(Series6)
         Me.chrtVib.Size = New System.Drawing.Size(388, 175)
         Me.chrtVib.TabIndex = 133
         Me.chrtVib.Text = "Chart1"
@@ -314,16 +312,16 @@ Partial Class frmCharts
         '
         'chrtSpd
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.chrtSpd.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.chrtSpd.Legends.Add(Legend2)
+        ChartArea7.Name = "ChartArea1"
+        Me.chrtSpd.ChartAreas.Add(ChartArea7)
+        Legend7.Name = "Legend1"
+        Me.chrtSpd.Legends.Add(Legend7)
         Me.chrtSpd.Location = New System.Drawing.Point(448, 28)
         Me.chrtSpd.Name = "chrtSpd"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.chrtSpd.Series.Add(Series2)
+        Series7.ChartArea = "ChartArea1"
+        Series7.Legend = "Legend1"
+        Series7.Name = "Series1"
+        Me.chrtSpd.Series.Add(Series7)
         Me.chrtSpd.Size = New System.Drawing.Size(388, 175)
         Me.chrtSpd.TabIndex = 257
         Me.chrtSpd.Text = "Chart1"
@@ -446,16 +444,16 @@ Partial Class frmCharts
         '
         'chrtBT
         '
-        ChartArea3.Name = "ChartArea1"
-        Me.chrtBT.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.chrtBT.Legends.Add(Legend3)
+        ChartArea8.Name = "ChartArea1"
+        Me.chrtBT.ChartAreas.Add(ChartArea8)
+        Legend8.Name = "Legend1"
+        Me.chrtBT.Legends.Add(Legend8)
         Me.chrtBT.Location = New System.Drawing.Point(21, 286)
         Me.chrtBT.Name = "chrtBT"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.chrtBT.Series.Add(Series3)
+        Series8.ChartArea = "ChartArea1"
+        Series8.Legend = "Legend1"
+        Series8.Name = "Series1"
+        Me.chrtBT.Series.Add(Series8)
         Me.chrtBT.Size = New System.Drawing.Size(388, 175)
         Me.chrtBT.TabIndex = 281
         Me.chrtBT.Text = "Chart1"
@@ -531,16 +529,16 @@ Partial Class frmCharts
         '
         'chrtOT
         '
-        ChartArea4.Name = "ChartArea1"
-        Me.chrtOT.ChartAreas.Add(ChartArea4)
-        Legend4.Name = "Legend1"
-        Me.chrtOT.Legends.Add(Legend4)
+        ChartArea9.Name = "ChartArea1"
+        Me.chrtOT.ChartAreas.Add(ChartArea9)
+        Legend9.Name = "Legend1"
+        Me.chrtOT.Legends.Add(Legend9)
         Me.chrtOT.Location = New System.Drawing.Point(448, 286)
         Me.chrtOT.Name = "chrtOT"
-        Series4.ChartArea = "ChartArea1"
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Me.chrtOT.Series.Add(Series4)
+        Series9.ChartArea = "ChartArea1"
+        Series9.Legend = "Legend1"
+        Series9.Name = "Series1"
+        Me.chrtOT.Series.Add(Series9)
         Me.chrtOT.Size = New System.Drawing.Size(388, 175)
         Me.chrtOT.TabIndex = 293
         Me.chrtOT.Text = "Chart1"
@@ -964,7 +962,7 @@ Partial Class frmCharts
         '
         Me.Label115.AutoSize = True
         Me.Label115.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label115.Location = New System.Drawing.Point(1070, 341)
+        Me.Label115.Location = New System.Drawing.Point(1070, 312)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(36, 13)
         Me.Label115.TabIndex = 382
@@ -974,33 +972,12 @@ Partial Class frmCharts
         'lblOutOilAvg
         '
         Me.lblOutOilAvg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblOutOilAvg.Location = New System.Drawing.Point(1109, 333)
+        Me.lblOutOilAvg.Location = New System.Drawing.Point(1109, 304)
         Me.lblOutOilAvg.Name = "lblOutOilAvg"
         Me.lblOutOilAvg.Size = New System.Drawing.Size(56, 28)
         Me.lblOutOilAvg.TabIndex = 381
         Me.lblOutOilAvg.Text = "0"
         Me.lblOutOilAvg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label117
-        '
-        Me.Label117.AutoSize = True
-        Me.Label117.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label117.Location = New System.Drawing.Point(1074, 312)
-        Me.Label117.Name = "Label117"
-        Me.Label117.Size = New System.Drawing.Size(32, 13)
-        Me.Label117.TabIndex = 380
-        Me.Label117.Text = "Inlet"
-        Me.Label117.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'lblInTankAvg
-        '
-        Me.lblInTankAvg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblInTankAvg.Location = New System.Drawing.Point(1109, 304)
-        Me.lblInTankAvg.Name = "lblInTankAvg"
-        Me.lblInTankAvg.Size = New System.Drawing.Size(56, 28)
-        Me.lblInTankAvg.TabIndex = 379
-        Me.lblInTankAvg.Text = "0"
-        Me.lblInTankAvg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label119
         '
@@ -1318,22 +1295,22 @@ Partial Class frmCharts
         Me.Label4.TabIndex = 297
         Me.Label4.Text = "Set Temperature"
         '
-        'txtITTSP
+        'lblITTSP
         '
-        Me.txtITTSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtITTSP.Location = New System.Drawing.Point(606, 573)
-        Me.txtITTSP.Name = "txtITTSP"
-        Me.txtITTSP.Size = New System.Drawing.Size(56, 21)
-        Me.txtITTSP.TabIndex = 298
-        Me.txtITTSP.Text = "0"
-        Me.txtITTSP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblITTSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblITTSP.Location = New System.Drawing.Point(606, 573)
+        Me.lblITTSP.Name = "lblITTSP"
+        Me.lblITTSP.Size = New System.Drawing.Size(56, 21)
+        Me.lblITTSP.TabIndex = 298
+        Me.lblITTSP.Text = "0"
+        Me.lblITTSP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(775, 130)
+        Me.Label6.Location = New System.Drawing.Point(770, 130)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 13)
         Me.Label6.TabIndex = 277
@@ -1443,7 +1420,7 @@ Partial Class frmCharts
         '
         Me.lblLd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblLd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLd.Location = New System.Drawing.Point(1200, 177)
+        Me.lblLd.Location = New System.Drawing.Point(1197, 177)
         Me.lblLd.Name = "lblLd"
         Me.lblLd.Size = New System.Drawing.Size(68, 26)
         Me.lblLd.TabIndex = 434
@@ -1453,7 +1430,7 @@ Partial Class frmCharts
         'lblLdSet
         '
         Me.lblLdSet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLdSet.Location = New System.Drawing.Point(1209, 140)
+        Me.lblLdSet.Location = New System.Drawing.Point(1206, 140)
         Me.lblLdSet.Name = "lblLdSet"
         Me.lblLdSet.Size = New System.Drawing.Size(59, 21)
         Me.lblLdSet.TabIndex = 435
@@ -1475,7 +1452,7 @@ Partial Class frmCharts
         Me.Label141.AutoSize = True
         Me.Label141.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label141.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label141.Location = New System.Drawing.Point(1209, 127)
+        Me.Label141.Location = New System.Drawing.Point(1208, 127)
         Me.Label141.Name = "Label141"
         Me.Label141.Size = New System.Drawing.Size(58, 13)
         Me.Label141.TabIndex = 431
@@ -1554,16 +1531,16 @@ Partial Class frmCharts
         '
         'chrtLd
         '
-        ChartArea5.Name = "ChartArea1"
-        Me.chrtLd.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.chrtLd.Legends.Add(Legend5)
+        ChartArea10.Name = "ChartArea1"
+        Me.chrtLd.ChartAreas.Add(ChartArea10)
+        Legend10.Name = "Legend1"
+        Me.chrtLd.Legends.Add(Legend10)
         Me.chrtLd.Location = New System.Drawing.Point(878, 28)
         Me.chrtLd.Name = "chrtLd"
-        Series5.ChartArea = "ChartArea1"
-        Series5.Legend = "Legend1"
-        Series5.Name = "Series1"
-        Me.chrtLd.Series.Add(Series5)
+        Series10.ChartArea = "ChartArea1"
+        Series10.Legend = "Legend1"
+        Series10.Name = "Series1"
+        Me.chrtLd.Series.Add(Series10)
         Me.chrtLd.Size = New System.Drawing.Size(388, 175)
         Me.chrtLd.TabIndex = 423
         Me.chrtLd.Text = "Chart1"
@@ -1684,7 +1661,7 @@ Partial Class frmCharts
         Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.lblSBT)
-        Me.Controls.Add(Me.txtITTSP)
+        Me.Controls.Add(Me.lblITTSP)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.lblVib)
         Me.Controls.Add(Me.Label143)
@@ -1710,8 +1687,6 @@ Partial Class frmCharts
         Me.Controls.Add(Me.Label123)
         Me.Controls.Add(Me.Label115)
         Me.Controls.Add(Me.lblOutOilAvg)
-        Me.Controls.Add(Me.Label117)
-        Me.Controls.Add(Me.lblInTankAvg)
         Me.Controls.Add(Me.Label119)
         Me.Controls.Add(Me.lblLoadAvg)
         Me.Controls.Add(Me.Label121)
@@ -1894,8 +1869,6 @@ Partial Class frmCharts
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label115 As Label
     Friend WithEvents lblOutOilAvg As Label
-    Friend WithEvents Label117 As Label
-    Friend WithEvents lblInTankAvg As Label
     Friend WithEvents Label119 As Label
     Friend WithEvents lblLoadAvg As Label
     Friend WithEvents Label121 As Label
@@ -1926,7 +1899,7 @@ Partial Class frmCharts
     Friend WithEvents Label143 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtITTSP As Label
+    Friend WithEvents lblITTSP As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents lblSpdSet As Label
     Friend WithEvents lblVibWH As Label

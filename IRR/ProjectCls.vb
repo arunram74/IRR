@@ -198,7 +198,7 @@ Public Class ProjectCls
         VibrationD.Init("VibD")
 
 
-        TankTemp.Init("OutTankTemp")
+        TankTemp.Init("TankTemp")
 
 
         Load.Init("Load")
@@ -819,7 +819,7 @@ Public Class ProjectCls
             SBD.TagName = "SBTempD"
             Inlet_TempD.TagName = "Inlet_TempD"
             VibrationD.TagName = "VibD"
-            TankTemp.TagName = "OutTankTemp"
+            TankTemp.TagName = "TankTemp"
             Load.TagName = "Load"
             Speed.TagName = "Speed"
 
@@ -962,7 +962,7 @@ Public Class ProjectCls
         If GetDataMySQL(con, daParam, ds, dt2, False, constr) Then
             Try
                 Dim RowCount = dt2.Rows.Count
-                For i = 0 To 17
+                For i = 0 To 18
                     If RowCount = 0 Then MyRow = dt2.NewRow Else MyRow = dt2.Rows(i)
                     MyRow.Item("Value") = vals(i).Value
                     MyRow.Item("WH") = vals(i).WH
@@ -1346,7 +1346,7 @@ Public Class ProjectCls
     End Sub
 
     Sub LogData(StopReasonID As Integer)
-
+        Dim CurTime As Date
         If PleaseStop Then Exit Sub
         'Update Tag Data
         UpdateTagData()
@@ -1361,7 +1361,7 @@ Public Class ProjectCls
         Dim SQLConnection As New MySqlConnection(serv)
         Dim sqlCommand As New MySqlCommand()
 
-        sqlCommand.CommandText = "INSERT INTO datalogs (`Status`,`StopReason`, `TankOilTemp`, `Speed`, `Load1`, `Revolutions`, `NoOfHours`, `ProjectID`  ) values (@sta,@stpRsn,@tnkOil,@spd,@ld,@rev,@nohr,@pid)"
+        sqlCommand.CommandText = "INSERT INTO datalogs (`Status`,`StopReason`, `TankOilTemp`, `Speed`, `Load1`, `Revolutions`, `NoOfHours`, `ProjectID` , `LogTime`   ) values (@sta,@stpRsn,@tnkOil,@spd,@ld,@rev,@nohr,@pid,@lt)"
         sqlCommand.CommandType = CommandType.Text
         sqlCommand.Connection = SQLConnection
         Dim StatusTxt As String
@@ -1381,7 +1381,7 @@ Public Class ProjectCls
             Case Else
                 StatusTxt = "INDT" 'indeterminate
         End Select
-
+        CurTime = Now
         Try
             SQLConnection.Open()
 
@@ -1393,6 +1393,7 @@ Public Class ProjectCls
             sqlCommand.Parameters.AddWithValue("@rev", Rev)
             sqlCommand.Parameters.AddWithValue("@nohr", CurrentLife)
             sqlCommand.Parameters.AddWithValue("@pid", ProjectID)
+            sqlCommand.Parameters.AddWithValue("@lt", CurTime)
 
             sqlCommand.ExecuteNonQuery()
 
@@ -1406,14 +1407,14 @@ Public Class ProjectCls
             SQLConnection.Close()
         End Try
 
-        If HeadA_Enable Then LogBearings("A", HeadA, StopReasonID, StatusTxt, BA.Value, SBA.Value, Inlet_TempA.Value, VibrationA.Value)
-        If HeadB_Enable Then LogBearings("B", HeadB, StopReasonID, StatusTxt, BB.Value, SBB.Value, Inlet_TempB.Value, VibrationB.Value)
-        If HeadC_Enable Then LogBearings("C", HeadC, StopReasonID, StatusTxt, BC.Value, SBC.Value, Inlet_TempC.Value, VibrationC.Value)
-        If HeadD_Enable Then LogBearings("D", HeadD, StopReasonID, StatusTxt, BD.Value, SBD.Value, Inlet_TempD.Value, VibrationD.Value)
+        If HeadA_Enable Then LogBearings("A", HeadA, StopReasonID, StatusTxt, BA.Value, SBA.Value, Inlet_TempA.Value, VibrationA.Value, CurTime)
+        If HeadB_Enable Then LogBearings("B", HeadB, StopReasonID, StatusTxt, BB.Value, SBB.Value, Inlet_TempB.Value, VibrationB.Value, CurTime)
+        If HeadC_Enable Then LogBearings("C", HeadC, StopReasonID, StatusTxt, BC.Value, SBC.Value, Inlet_TempC.Value, VibrationC.Value, CurTime)
+        If HeadD_Enable Then LogBearings("D", HeadD, StopReasonID, StatusTxt, BD.Value, SBD.Value, Inlet_TempD.Value, VibrationD.Value, CurTime)
 
     End Sub
 
-    Sub LogBearings(HeadStr As String, BearingNo As Integer, StopReasonIDPar As Integer, StatusTxtPar As String, bVal As Single, sbVal As Single, ItVal As Single, Vibration As Single)
+    Sub LogBearings(HeadStr As String, BearingNo As Integer, StopReasonIDPar As Integer, StatusTxtPar As String, bVal As Single, sbVal As Single, ItVal As Single, Vibration As Single, LogTime As Date)
         Dim SQLConnection As New MySqlConnection(serv)
         Dim sqlCommand As New MySqlCommand()
 
@@ -1432,7 +1433,7 @@ Public Class ProjectCls
             sqlCommand.Parameters.AddWithValue("@vib", Vibration)
             sqlCommand.Parameters.AddWithValue("@pid", ProjectID)
             sqlCommand.Parameters.AddWithValue("@bno", BearingNo)
-            sqlCommand.Parameters.AddWithValue("@lgdt", Now)
+            sqlCommand.Parameters.AddWithValue("@lgdt", LogTime)
 
             sqlCommand.ExecuteNonQuery()
 
@@ -1732,10 +1733,10 @@ Public Class ProjectCls
         Inlet_TempC.Value = MyPLC.GetTagVal("Inlet_TempC_ActVal")
         Inlet_TempD.Value = MyPLC.GetTagVal("Inlet_TempD_ActVal")
 
-        VibrationA.Value = MyPLC.GetTagVal("VibrationA_ActVal")
-        VibrationB.Value = MyPLC.GetTagVal("VibrationB_ActVal")
-        VibrationC.Value = MyPLC.GetTagVal("VibrationC_ActVal")
-        VibrationD.Value = MyPLC.GetTagVal("VibrationD_ActVal")
+        VibrationA.Value = MyPLC.GetTagVal("VibA_ActVal")
+        VibrationB.Value = MyPLC.GetTagVal("VibB_ActVal")
+        VibrationC.Value = MyPLC.GetTagVal("VibC_ActVal")
+        VibrationD.Value = MyPLC.GetTagVal("VibD_ActVal")
 
         TankTemp.Value = MyPLC.GetTagVal("TankTemp_ActVal")
         Speed.Value = MyPLC.GetTagVal("Speed_ActVal")
@@ -1800,10 +1801,10 @@ Public Class ProjectCls
 
             Next i
 
-            'If (Not IsPairBonded) Or (IsPairBonded And HeadName = "A") Then
-            '    MyPLC.SetTagVal("SpeedSP", Speed.Setpoint)
-            '    MyPLC.SetTagVal("LubOilTempSP", InTankTemp.Setpoint)
-            'End If
+
+            MyPLC.SetTagVal("SpeedSP", Speed.Setpoint)
+            MyPLC.SetTagVal("LubOilTempSP", TankTemp.Setpoint)
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message.ToString, System.Reflection.MethodBase.GetCurrentMethod().Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -1826,11 +1827,11 @@ Public Class ProjectCls
             b = New BitArray(BitConverter.GetBytes(value))
             b.CopyTo(newArrWH1, 0)
 
-            value = MyPLC.GetTagValUint16("WarnLow1")
+            value = MyPLC.GetTagValUint16("WarnLow2")
             b = New BitArray(BitConverter.GetBytes(value))
             b.CopyTo(newArrWL2, 0)
 
-            value = MyPLC.GetTagValUint16("WarnHigh1")
+            value = MyPLC.GetTagValUint16("WarnHigh2")
             b = New BitArray(BitConverter.GetBytes(value))
             b.CopyTo(newArrWH2, 0)
 
