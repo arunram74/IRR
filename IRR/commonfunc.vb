@@ -14,7 +14,7 @@ Module commonfunc
     Public testno As Integer = 0
     Public Const BaseScanTime As Long = 250 '250ms
 
-    Public Const NoOfGraphEntries As Integer = 1500
+    Public Const NoOfGraphEntries As Integer = 13 '1500
     Public SelectedBearingNo As Integer = 0
     Public SelectedHead As String
 

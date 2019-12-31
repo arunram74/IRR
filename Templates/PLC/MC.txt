@@ -181,7 +181,7 @@ MCBStatus,M160,1,1,1
 BoosterEndofStroke,M161,1,1,3
 BypassON,M162,1,1,3
 LifeBit,M171,1,1,1
-MonitorLoad,M172,1,1,1
+MonitorLoadA,M172,1,1,1
 MonitorLimits,M173,1,1,1
 MonitorLoadB,M174,1,1,1
 MonitorLimitsB,M175,1,1,1

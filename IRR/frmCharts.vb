@@ -92,28 +92,28 @@ Public Class frmCharts
         Try
             Dim constrbt, constrot, constrvib As String
 
-            Dim constr As String = "SELECT * from chrt_speed"
+            Dim constr As String = "SELECT MinValS as MinVAl, MaxValS as MaxVal, Speed from charts"
             GetDataMySQL(con, daGrph, ds, dtGrphSpeed, False, constr)
 
-            constr = "SELECT * from chrt_load"
+            constr = "SELECT MinValL as MinVAl, MaxValL as MaxVal, Load1 from charts"
             GetDataMySQL(con, daGrph, ds, dtGrphLoadDisp, False, constr)
 
             If rdbHA.Checked Then
-                constrbt = "SELECT MinVal, MaxVal, BA, SBA from chrt_bearings"
-                constrot = "SELECT MinVal, MaxVal, InletOilA, TankOil from chrt_oiltemp"
-                constrvib = "SELECT MinVal, MaxVal, VibrationA from chrt_vib"
+                constrbt = "SELECT MinValB as MinVal, MaxValB as MaxVal, BA, SBA from charts"
+                constrot = "SELECT MinValOil as MinVal, MaxValOil as MaxVal, InletOilA, TankOil from charts"
+                constrvib = "SELECT MinValV as MinVal, MaxValV as MaxVal, VibrationA from charts"
             ElseIf rdbHB.Checked Then
-                constrbt = "SELECT MinVal, MaxVal, BB, SBB from chrt_bearings"
-                constrot = "SELECT MinVal, MaxVal, InletOilB, TankOil from chrt_oiltemp"
-                constrvib = "SELECT MinVal, MaxVal, VibrationB from chrt_vib"
+                constrbt = "SELECT MinValB as MinVal, MaxValB as MaxVal, BB, SBB from charts"
+                constrot = "SELECT MinValOil as MinVal, MaxValOil as MaxVal, InletOilB, TankOil from charts"
+                constrvib = "SELECT MinValV as MinVal, MaxValV as MaxVal, VibrationB from charts"
             ElseIf rdbHC.Checked Then
-                constrbt = "SELECT MinVal, MaxVal, BC, SBC from chrt_bearings"
-                constrot = "SELECT MinVal, MaxVal, InletOilC, TankOil from chrt_oiltemp"
-                constrvib = "SELECT MinVal, MaxVal, VibrationC from chrt_vib"
+                constrbt = "SELECT MinValB as MinVal, MaxValB as MaxVal, BC, SBC from charts"
+                constrot = "SELECT MinValOil as MinVal, MaxValOil as MaxVal, InletOilC, TankOil from charts"
+                constrvib = "SELECT MinValV as MinVal, MaxValV as MaxVal, VibrationC from charts"
             ElseIf rdbHD.Checked Then
-                constrbt = "SELECT MinVal, MaxVal, BD, SBD from chrt_bearings"
-                constrot = "SELECT MinVal, MaxVal, InletOilD, TankOil from chrt_oiltemp"
-                constrvib = "SELECT MinVal, MaxVal, VibrationD from chrt_vib"
+                constrbt = "SELECT MinValB as MinVal, MaxValB as MaxVal, BD, SBD from charts"
+                constrot = "SELECT MinValOil as MinVal, MaxValOil as MaxVal, InletOilD, TankOil from charts"
+                constrvib = "SELECT MinValV as MinVal, MaxValV as MaxVal, VibrationD from charts"
             End If
 
             GetDataMySQL(con, daGrph, ds, dtGrphBearing, False, constrbt)
