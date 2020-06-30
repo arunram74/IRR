@@ -963,7 +963,7 @@ Public Class ProjectCls
             Try
                 Dim RowCount = dt2.Rows.Count
                 For i = 0 To 18
-                    If RowCount = 0 Then MyRow = dt2.NewRow Else MyRow = dt2.Rows(i)
+                    If (RowCount = 0) Or (RowCount <= i) Then MyRow = dt2.NewRow Else MyRow = dt2.Rows(i)
                     MyRow.Item("Value") = vals(i).Value
                     MyRow.Item("WH") = vals(i).WH
                     MyRow.Item("WL") = vals(i).WL
@@ -973,7 +973,7 @@ Public Class ProjectCls
                     MyRow.Item("Bypass") = vals(i).Bypass
                     MyRow.Item("ProjectID") = ProjectID
                     MyRow.Item("ParameterID") = i
-                    If RowCount = 0 Then dt2.Rows.Add(MyRow)
+                    If (RowCount = 0) Or (RowCount <= i) Then dt2.Rows.Add(MyRow)
                 Next i
 
 

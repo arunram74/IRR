@@ -45,16 +45,24 @@ Public Class frmPrjt
             btnCopyFromTemplate.Enabled = True
         End If
 
-        If txtBA.Text <> 0 Then txtBA.Enabled = False
-        If txtBB.Text <> 0 Then txtBB.Enabled = False
-        If txtBC.Text <> 0 Then txtBC.Enabled = False
-        If txtBD.Text <> 0 Then txtBD.Enabled = False
+        'If txtBA.Text <> 0 Then txtBA.Enabled = False
+        'If txtBB.Text <> 0 Then txtBB.Enabled = False
+        'If txtBC.Text <> 0 Then txtBC.Enabled = False
+        'If txtBD.Text <> 0 Then txtBD.Enabled = False
 
 
         If Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Run Or Station.MC.myProj.MyStatus = ProjectCls.ProjectStatus.Load Then
             Panel1.Enabled = False
+            txtBA.Enabled = False
+            txtBB.Enabled = False
+            txtBC.Enabled = False
+            txtBD.Enabled = False
         Else
             Panel1.Enabled = True
+            txtBA.Enabled = True
+            txtBB.Enabled = True
+            txtBC.Enabled = True
+            txtBD.Enabled = True
         End If
 
         For Each txtBox In Me.Controls.OfType(Of TextBox)()
@@ -329,7 +337,7 @@ Public Class frmPrjt
             End If
         End If
 
-        If Not Station.MC.myProj.CheckLoadSteps > 0 And Station.MC.myProj.ProjectID <> 0 Then
+        If (Not Station.MC.myProj.CheckLoadSteps > 0) And Station.MC.myProj.ProjectID <> 0 Then
             MessageBox.Show("Error in Load Steps. Please check", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
