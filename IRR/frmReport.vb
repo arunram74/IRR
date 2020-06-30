@@ -11,6 +11,7 @@ Public Class frmReport
     Dim dt1, dt2, dt3 As DataTable
     Dim StartDate, EndDate As String
     Dim PrjIdFilter As String
+    Dim BearingFilter As String
     Dim McFilter As String
     Dim PrjStatusFilter As String
     Dim HeadNameFilter As String
@@ -35,8 +36,10 @@ Public Class frmReport
         End If
 
         If cmbPrjt.SelectedValue = 0 Then PrjIdFilter = "ProjectID" Else PrjIdFilter = cmbPrjt.SelectedValue
+
         If cmbPrjStatus.SelectedValue = 0 Then PrjStatusFilter = "Status" Else PrjStatusFilter = cmbPrjStatus.SelectedValue
         HeadNameFilter = cmbHead.Text.ToLower
+        If cmbBearing.Text = "ANY" Then BearingFilter = "BearingNo" Else BearingFilter = cmbBearing.Text
     End Sub
 
     Private Sub btnDataLogs_Click(sender As Object, e As EventArgs) Handles btnDataLogs.Click
@@ -49,8 +52,9 @@ Public Class frmReport
             Exit Sub
         End If
         If PrjStatusFilter = "Status" Then PrjStatusFilter = "datalogs.Status"
+        If BearingFilter = "BearingNo" Then BearingFilter = "datalogs_" & HeadNameFilter & ".BearingNo"
         'Dim constr As String = "SELECT datalogs.LogTime,datalogs.Status, TankOilTemp, Speed, Load1, Revolutions, NoOfHours, datalogs_" & HeadNameFilter & ".B , datalogs_" & HeadNameFilter & ".SB, datalogs_" & HeadNameFilter & ".Inlet_Temp, datalogs_" & HeadNameFilter & ".Vib, datalogs_" & HeadNameFilter & ".BearingNo,  Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where ( datalogs.Logtime Between '" & StartDate & "' and '" & EndDate & "') and datalogs.ProjectID=" & PrjIdFilter & " and datalogs.Status=" & PrjStatusFilter & " order by idDataLogs"
-        Dim constr As String = "SELECT datalogs.LogTime, datalogs.Status, datalogs_" & HeadNameFilter & ".BearingNo, Speed, Load1, datalogs_" & HeadNameFilter & ".Vib,  datalogs_" & HeadNameFilter & ".B as BT , datalogs_" & HeadNameFilter & ".SB as SBT, datalogs_" & HeadNameFilter & ".Inlet_Temp,TankOilTemp as Tank_Oil_Temp, NoOfHours, Revolutions,  Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where ( datalogs.Logtime Between '" & StartDate & "' and '" & EndDate & "') and datalogs.ProjectID=" & PrjIdFilter & " and datalogs.Status=" & PrjStatusFilter & " order by idDataLogs"
+        Dim constr As String = "SELECT datalogs.LogTime, datalogs.Status, datalogs_" & HeadNameFilter & ".BearingNo, Speed, Load1, datalogs_" & HeadNameFilter & ".Vib,  datalogs_" & HeadNameFilter & ".B as BT , datalogs_" & HeadNameFilter & ".SB as SBT, datalogs_" & HeadNameFilter & ".Inlet_Temp,TankOilTemp as Tank_Oil_Temp, NoOfHours, Revolutions,  Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where ( datalogs.Logtime Between '" & StartDate & "' and '" & EndDate & "') and datalogs.ProjectID=" & PrjIdFilter & " and datalogs.Status=" & PrjStatusFilter & " and datalogs_" & HeadNameFilter & ".BearingNo=" & BearingFilter & " order by idDataLogs"
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             WriteDataTable(dt1, Templatepath & "test.csv", True)
             Viewer.CsvFilePath = Templatepath & "test.csv"
@@ -202,9 +206,7 @@ Public Class frmReport
 
     End Sub
 
-    Private Sub cmbMachine_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbHead.SelectedIndexChanged
 
-    End Sub
 
     Private Sub btnLubOilTemp_Click(sender As Object, e As EventArgs) Handles btnLubOilTemp.Click
         UpdateFilters()
@@ -293,6 +295,7 @@ Public Class frmReport
         cmbPrjStatus.Refresh()
 
         cmbHead.SelectedIndex = 0
+        cmbBearing.SelectedIndex = 0
     End Sub
 
 End Class

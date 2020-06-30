@@ -39,6 +39,8 @@ Partial Class frmReport
         Me.cmbHead = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.chkDate = New System.Windows.Forms.CheckBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cmbBearing = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -249,10 +251,33 @@ Partial Class frmReport
         Me.chkDate.Text = "Bypass Dates"
         Me.chkDate.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(847, 66)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(126, 32)
+        Me.Label5.TabIndex = 373
+        Me.Label5.Text = "Bearing No"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'cmbBearing
+        '
+        Me.cmbBearing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbBearing.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbBearing.FormattingEnabled = True
+        Me.cmbBearing.Items.AddRange(New Object() {"ANY", "1", "2", "3", "4", "5", "6", "7", "8", "9", "19", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"})
+        Me.cmbBearing.Location = New System.Drawing.Point(992, 66)
+        Me.cmbBearing.Name = "cmbBearing"
+        Me.cmbBearing.Size = New System.Drawing.Size(174, 28)
+        Me.cmbBearing.TabIndex = 372
+        '
         'frmReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(1275, 704)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.cmbBearing)
         Me.Controls.Add(Me.chkDate)
         Me.Controls.Add(Me.btnLubOilTemp)
         Me.Controls.Add(Me.btStopReason)
@@ -301,4 +326,6 @@ Partial Class frmReport
     Friend WithEvents cmbHead As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents chkDate As CheckBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cmbBearing As ComboBox
 End Class
