@@ -43,9 +43,35 @@ Public Class frmReport
     End Sub
 
     Private Sub btnDataLogs_Click(sender As Object, e As EventArgs) Handles btnDataLogs.Click
-
+        Dim constr As String
         UpdateFilters()
 
+        If BearingFilter <> "BearingNo" Then
+            constr = "Select * from datalogs_A where BearingNo=" & BearingFilter & " and ProjectID=" & PrjIdFilter
+            GetDataMySQL(con, adp, ds, dt1, False, constr)
+            If dt1.Rows.Count > 0 Then
+                HeadNameFilter = "A"
+            Else
+                constr = "Select * from datalogs_B where BearingNo=" & BearingFilter & " and ProjectID=" & PrjIdFilter
+                GetDataMySQL(con, adp, ds, dt1, False, constr)
+                If dt1.Rows.Count > 0 Then
+                    HeadNameFilter = "B"
+                Else
+                    constr = "Select * from datalogs_C where BearingNo=" & BearingFilter & " and ProjectID=" & PrjIdFilter
+                    GetDataMySQL(con, adp, ds, dt1, False, constr)
+                    If dt1.Rows.Count > 0 Then
+                        HeadNameFilter = "C"
+                    Else
+                        constr = "Select * from datalogs_D where BearingNo=" & BearingFilter & " and ProjectID=" & PrjIdFilter
+                        GetDataMySQL(con, adp, ds, dt1, False, constr)
+                        If dt1.Rows.Count > 0 Then
+                            HeadNameFilter = "D"
+                        End If
+                    End If
+                    End If
+            End If
+
+        End If
 
         If PrjIdFilter = "ProjectID" Then
             MessageBox.Show("Please select a Project", "Run Report", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -54,7 +80,7 @@ Public Class frmReport
         If PrjStatusFilter = "Status" Then PrjStatusFilter = "datalogs.Status"
         If BearingFilter = "BearingNo" Then BearingFilter = "datalogs_" & HeadNameFilter & ".BearingNo"
         'Dim constr As String = "SELECT datalogs.LogTime,datalogs.Status, TankOilTemp, Speed, Load1, Revolutions, NoOfHours, datalogs_" & HeadNameFilter & ".B , datalogs_" & HeadNameFilter & ".SB, datalogs_" & HeadNameFilter & ".Inlet_Temp, datalogs_" & HeadNameFilter & ".Vib, datalogs_" & HeadNameFilter & ".BearingNo,  Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where ( datalogs.Logtime Between '" & StartDate & "' and '" & EndDate & "') and datalogs.ProjectID=" & PrjIdFilter & " and datalogs.Status=" & PrjStatusFilter & " order by idDataLogs"
-        Dim constr As String = "SELECT datalogs.LogTime, datalogs.Status, datalogs_" & HeadNameFilter & ".BearingNo, Speed, Load1, datalogs_" & HeadNameFilter & ".Vib,  datalogs_" & HeadNameFilter & ".B as BT , datalogs_" & HeadNameFilter & ".SB as SBT, datalogs_" & HeadNameFilter & ".Inlet_Temp,TankOilTemp as Tank_Oil_Temp, NoOfHours, Revolutions,  Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where ( datalogs.Logtime Between '" & StartDate & "' and '" & EndDate & "') and datalogs.ProjectID=" & PrjIdFilter & " and datalogs.Status=" & PrjStatusFilter & " and datalogs_" & HeadNameFilter & ".BearingNo=" & BearingFilter & " order by idDataLogs"
+        constr = "SELECT datalogs.LogTime, datalogs.Status, datalogs_" & HeadNameFilter & ".BearingNo, Speed, Load1, datalogs_" & HeadNameFilter & ".Vib,  datalogs_" & HeadNameFilter & ".B as BT , datalogs_" & HeadNameFilter & ".SB as SBT, datalogs_" & HeadNameFilter & ".Inlet_Temp,TankOilTemp as Tank_Oil_Temp, NoOfHours, Revolutions,  Reasondb.Reasontxt as Reason FROM datalogs inner join  reasondb on datalogs.StopReason=reasondb.ReasonID inner join datalogs_" & HeadNameFilter & " on datalogs.Logtime=datalogs_" & HeadNameFilter & ".LogTime where ( datalogs.Logtime Between '" & StartDate & "' and '" & EndDate & "') and datalogs.ProjectID=" & PrjIdFilter & " and datalogs.Status=" & PrjStatusFilter & " and datalogs_" & HeadNameFilter & ".BearingNo=" & BearingFilter & " order by idDataLogs"
         If GetDataMySQL(con, adp, ds, dt1, False, constr) Then
             WriteDataTable(dt1, Templatepath & "test.csv", True)
             Viewer.CsvFilePath = Templatepath & "test.csv"
@@ -221,6 +247,10 @@ Public Class frmReport
                 Viewer.Close()
             End If
         End If
+    End Sub
+
+    Private Sub cmbHead_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbHead.SelectedIndexChanged
+        cmbBearing.SelectedIndex = 0
     End Sub
 
     Sub WritetoFile(FileName As String, Title As String, ConnectionStr As String)
